@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Montserrat", sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    overflow-y: hidden;
+}
+h5 {
+    font-size: 2rem;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+#main_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+}
+/*************Header_top*************/
+#header_top {
+    z-index: 1030;
+    position: fixed;
+    width: 6rem;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.header_top > .container {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+}
+#header_top .header-brand {
+    padding: 0;
+    transition: opacity 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+#header_top .brand-logo,
+.header {
+    background: #5a5278;
+}
+#header_top .brand-logo {
+    padding: 1rem;
+    color: #fff;
+    border-radius: 3.5rem;
+    display: inline-block;
+}
+#header_top .header-brand:hover {
+    opacity: 0.8;
+    color: inherit;
+    text-decoration: none;
+}
+.dropdown {
+    display: inline-block;
+}
+#header_top .nav-link {
+    padding: 1.2rem;
+    display: inline-flex;
+    color: #333537;
+}
+a.icon:hover {
+    color: #2185d0 !important;
+}
+.nav-link:focus,
+.nav-link:hover {
+    text-decoration: none;
+}
+a.icon {
+    text-decoration: none;
+    cursor: pointer;
+}
+#header_top .nav-link i {
+    font-size: 2rem;
+}
+.icon i {
+    vertical-align: -1px;
+}
+.fa-gear {
+    animation: fa-spin 2s linear infinite;
+}
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+/****************************************/
+/******************left-sidebar**********************/
+#left-sidebar {
+    transition: all 0.3s ease-in-out;
+    width: 28rem;
+    background-color: #fff;
+    border-right: 1px solid #e6e9ed;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    padding: 2rem 0rem 2rem 7.5rem;
+}
+#left-sidebar .brand-name {
+    margin-top: 5px;
+}
+.hide-scrollbar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#left-sidebar .sidebar-nav {
+    height: calc(100vh - 5.8rem);
+    margin-right: -15px;
+    width: 100%;
+    overflow-y: scroll;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+    margin-left: 1.7rem;
+}
+.metismenu {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.metismenu .active > a,
+.metismenu a:hover {
+    color: #5a5278;
+    border-color: #5a5278;
+}
+.metismenu a:hover {
+    letter-spacing: 1px;
+}
+.metismenu .g_heading {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #666a6d;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.metismenu a {
+    transition: all 0.3s ease-out;
+    display: block;
+    vertical-align: middle;
+    /* *vertical-align: auto;
+    *zoom: 1;
+    *display: block; */
+    border-radius: 0;
+    border-right: 0.2rem solid transparent;
+    color: #292b30;
+    position: relative;
+    padding: 1rem 1rem;
+    outline-width: 0;
+    font-size: 1.4rem;
+}
+.metismenu > li {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.metismenu > li i {
+    fontleft-sidebar-nav-size: 1.6rem;
+    width: 3rem;
+    display: inline-block;
+    position: relative;
+    top: 0.1rem;
+}
+.metismenu ul a:before {
+    font-size: 1.4rem;
+    font-family: "feather" !important;
+    content: "...";
+    position: absolute;
+    left: 1px;
+}
+.metismenu ul a.list-c:before {
+    content: "✔";
+}
+.metismenu ul a {
+    color: #4d5052;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem 0.5rem 3rem;
+    position: relative;
+}
+.metismenu ul > li:last-child {
+    padding-bottom: 20px;
+}
+.metismenu .collapse.in {
+    display: block;
+}
+.metismenu .collapse {
+    display: none;
+}
+/****************************************************/
