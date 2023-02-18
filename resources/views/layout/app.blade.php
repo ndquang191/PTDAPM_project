@@ -20,7 +20,6 @@
      
      <div class="flex container-fluid bg-primary">
           <nav class="navbar">
-
                <div id="main_content">
                     <div>
                       <div id="header_top" class="header_top">
