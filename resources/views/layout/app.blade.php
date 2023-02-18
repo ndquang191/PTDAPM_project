@@ -15,6 +15,9 @@
      src="https://kit.fontawesome.com/975a2f75a4.js"
      crossorigin="anonymous"
    ></script>
+
+
+     @yield('linkcss')
 </head>
 <body>
      
@@ -252,12 +255,13 @@
                   </div>
           </nav>
           <div class="container-fluid">
-
                Đây sẽ là nội dung của trang
                @yield('content')
           </div>
      </div>
 
 </body>
+
+     @yield('linkjs')
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
