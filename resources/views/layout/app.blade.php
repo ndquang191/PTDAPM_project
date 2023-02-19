@@ -18,8 +18,6 @@
      src="https://kit.fontawesome.com/975a2f75a4.js"
      crossorigin="anonymous"
    ></script>
-
-
      @yield('linkcss')
 </head>
 <body>
