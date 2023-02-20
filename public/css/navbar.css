@@ -226,3 +226,34 @@ a.icon {
     display: none;
 }
 /****************************************************/
+.page {
+    left: 28rem;
+    width: calc(100% - 28rem);
+    position: relative;
+}
+.page .section-body,
+.page .section-white {
+    background: #f1f1f1;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+.card-body {
+    padding: 20px;
+    flex: 1 1 auto;
+    /* position: relative; */
+}
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
