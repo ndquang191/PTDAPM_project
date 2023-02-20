@@ -15,7 +15,6 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
      <link rel="stylesheet" href="/css/navbar.css">
      <link href="css/main.css" rel="stylesheet">
-<<<<<<< Updated upstream
      <script
      src="https://kit.fontawesome.com/975a2f75a4.js"
      crossorigin="anonymous"
@@ -80,44 +79,6 @@
                                    <a href="" class="list-a">
                                    <i class="fa-brands fa-space-awesome"></i> HRMS
                                    </a>
-=======
-     <script src="https://kit.fontawesome.com/975a2f75a4.js" crossorigin="anonymous"></script>
-     @yield('linkcss')
-</head>
-<body>
-     <div class="flex container-fluid bg-primary">
-          <nav class="navbar">
-               <div id="main_content">
-                    <div>
-                      <div id="header_top" class="header_top">
-                        <div class="container">
-                          <div class="hleft">
-                            <a href="" class="header-brand">
-                              <i class="fa-brands fa-bandcamp brand-logo"></i>
-                            </a>
-                            <div class="dropdown">
-                              <a href="" class="nav-link icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                              </a>
-                              <a href="" class="nav-link icon">
-                                <i class="fa-regular fa-calendar-days"></i>
-                              </a>
-                              <a href="" class="nav-link icon">
-                                <i class="fa-regular fa-address-card"></i>
-                              </a>
-                              <a href="" class="nav-link icon">
-                                <i class="fa-regular fa-comments"></i>
-                              </a>
-                              <a href="" class="nav-link icon">
-                                <i class="fa-regular fa-folder"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div class="hright">
-                            <div class="dropdown">
-                              <span class="nav-link icon">
-                                <i class="fa-sharp fa-solid fa-gear"></i>
->>>>>>> Stashed changes
                               </span>
                               <ul class="collapse in">
                                    <li class="">
