@@ -25,3 +25,6 @@ Route::get('/profile', function () {
     return dd('Thông tin của một nhân viên nào đó');
 })->middleware('checkrole');
 
+
+Route::get('/auth',[AuthenticationController::class,'getAuth']);
+
