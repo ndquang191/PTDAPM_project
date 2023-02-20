@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthenticationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',[AuthenticationController::class,'index']);
+Route::post('/',[AuthenticationController::class,'login'])->name('login');
+Route::get('/logout',[AuthenticationController::class,'logout']);
+Route::get('/register',function (){
+    return view('register');
 });
+Route::post('/register',[AuthenticationController::class,'register']);
+Route::get('/profile', function () {
+    return dd('Thông tin của một nhân viên nào đó');
+})->middleware('checkrole');
+
