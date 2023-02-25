@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use DB;
+use Carbon\Carbon;
+use Hash;
+use Str;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,5 +21,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        for($i=0; $i<10; $i++){
+            DB::table('accounts')->insert([
+                'username' => Str::random(5),
+                'password' => Hash::make('test'),
+                'role' => 'member',
+                'Status' => 1,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 }

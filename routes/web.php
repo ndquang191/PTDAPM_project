@@ -25,3 +25,7 @@ Route::get('/profile', function () {
     return dd('Thông tin của một nhân viên nào đó');
 })->middleware('checkrole');
 
+Route::get('/img',[AuthenticationController::class,'getIndex']);
+Route::post('/img',[AuthenticationController::class,'storeImg']);
+
+

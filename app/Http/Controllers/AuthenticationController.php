@@ -47,4 +47,23 @@ class AuthenticationController extends Controller
         $request->session()->invalidate();
         return redirect('/');
     }
+
+    public function getIndex(){
+        $data = DB::table('image')->where('ID',2)->first();
+        $base64 = base64_encode($data->img);
+        return view('img', ['base64' => $base64]);
+        // $content = file_get_contents($data->img);
+        return dd($data);
+    }
+
+    public function storeImg(Request $request){
+        $file = $request->file('img');
+        $data = file_get_contents($file->getPathname());
+        // DB::table('image')->insert([
+        //     'img' => $data,
+        // ]);
+        // return redirect('/img');
+        // return dd($data);
+        return dd($file->getPathname());
+    }
 }
