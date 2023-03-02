@@ -20,6 +20,7 @@ Route::get('/logout',[AuthenticationController::class,'logout']);
 Route::get('/register',function (){
     return view('register');
 });
+Route::get('/homepage',[AuthenticationController::class,'homePage']);
 Route::post('/register',[AuthenticationController::class,'register']);
 Route::get('/profile', function () {
     return dd('Thông tin của một nhân viên nào đó');

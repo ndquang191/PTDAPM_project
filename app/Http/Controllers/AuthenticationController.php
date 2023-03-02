@@ -15,7 +15,9 @@ class AuthenticationController extends Controller
             return view('login');
         }
     }
-
+    public function homePage(){
+            return view('layout/app');
+    }
     public function login(Request $request){
         $validated = $request->validate([
             'username' => 'required',
