@@ -12,21 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('nhanvien', function (Blueprint $table) {
-            $table->id('MaNV');
+            $table->id('MaNV')->from(10000);
             $table->string('TenNV', 50);
-            $table->binary('HinhAnh');
+            $table->binary('HinhAnh')->nullable();
             $table->date('NgaySinh');
             $table->boolean('GioiTinh');
-            $table->string('CCCD', 20);
-            $table->string('DiaChi');
-            $table->string('NoiSinh');
-            $table->string('TonGiao');
+            $table->string('CCCD', 20)->nullable();
+            $table->string('DiaChi')->nullable();
+            $table->string('NoiSinh')->nullable();
+            $table->string('TonGiao')->nullable();
             $table->string('SDT',12);
             $table->string('Email',100);
-            $table->string('ChuyenNganh');
-            $table->string('TrinhDoHocVan');
-            $table->string('PhongBan');
-            $table->string('ChucVu');
+            $table->string('ChuyenNganh')->nullable();
+            $table->string('TrinhDoHocVan')->nullable();
+            $table->string('PhongBan')->nullable();
+            $table->string('ChucVu')->nullable();
         });
     }
 

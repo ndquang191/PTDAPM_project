@@ -6,7 +6,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Auth;
-class CheckRole
+
+class CheckAdminRole1
 {
     /**
      * Handle an incoming request.
@@ -15,18 +16,12 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()){
-            echo 'Middleware checkrole active'."<br>";
-            echo 'Tài khoản: '.Auth::User()->username."<br>";
-            if (Auth::user()->role == 'admin1'){
-                return $next($request);
-            }
-            else{
-                return dd('Bạn không có quyền truy cập!');
-            }
+        if (Auth::user()->QuyenTruyCap == 'admin1'){
+            return $next($request);
         }
         else{
-            return redirect('/');
+            // return redirect()->back()->withErrors(['msg' => 'Bạn không có quyền truy cập']);
+            return dd('Không có quyền truy cập');
         }
     }
 }
