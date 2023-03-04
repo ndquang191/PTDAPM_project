@@ -16,7 +16,7 @@ class AuthenticationController extends Controller
         }
     }
     public function homePage(){
-            return view('layout/app');
+            return view('homepage');
     }
     public function login(Request $request){
         $validated = $request->validate([
