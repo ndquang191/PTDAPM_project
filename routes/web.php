@@ -14,22 +14,34 @@ use App\Http\Controllers\AuthenticationController;
 |
 // */
 
-Route::get(' /user' , function(){
-    return view('user.index');
+Route::controller(AuthenticationController::class)->prefix('/')->group(function(){
+    Route::get('/','index');
+    Route::post('/','login')->name('login');
+    Route::get('/logout','logout');
 });
-Route::get(' /' , function(){
-    return view('welcome');
+
+Route::controller(/* EmployeeController*/)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
+    Route::get('/','index'); // Hiển thị danh sách nhân viên
+    Route::get('/add','create'); // Hiển thị form thêm nhân viên
+    Route::post('/add','store'); // Hiển thị form thêm nhân viên
+    Route::get('/{id}','getEmployeeInfo'); // Hiển thị chi tiết hồ sơ nhân viên
+    Route::get('/{id}/edit','editEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
+
+});
+
+Route::controller(/* AccountController*/)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
+    Route::get('/','index'); // Hiển thị danh sách tài khoản
+
 });
 
 
-
-Route::get('/auth',[AuthenticationController::class,'getAuth']);
-Route::get('/homepage',[AuthenticationController::class,'homePage']);
-Route::get('/listaccemployee',[AuthenticationController::class,'listaccemployee']);
-Route::post('/register',[AuthenticationController::class,'register']);
 Route::get('/profile', function () {
     return dd('Thông tin của một nhân viên nào đó');
-})->middleware('checkrole');
+})->middleware(['checkLogin','checkAdmin1']);
+
+Route::get('/img',[AuthenticationController::class,'getIndex']);
+Route::post('/img',[AuthenticationController::class,'storeImg']);
+
 
 
 
