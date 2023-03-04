@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('linkcss')
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/css/homepage/index.css">
 @endsection
 @section('content')
 <div class="main_page">

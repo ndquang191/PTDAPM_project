@@ -18,6 +18,9 @@ class AuthenticationController extends Controller
     public function homePage(){
             return view('homepage');
     }
+    public function listaccemployee(){
+        return view('ListAccEmployee/listaccemployee');
+}
     public function login(Request $request){
         $validated = $request->validate([
             'username' => 'required',
