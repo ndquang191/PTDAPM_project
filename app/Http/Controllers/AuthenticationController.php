@@ -18,7 +18,7 @@ class AuthenticationController extends Controller
 
     public function login(Request $request){
         $validated = $request->validate([
-            'username' => 'required',
+            'username' => 'bail|required',
             'password' => 'required',
         ]);
         $credentials = [
@@ -26,7 +26,13 @@ class AuthenticationController extends Controller
             'password' => $request->password,
         ];
         if(Auth::attempt($credentials)){
-            return redirect('/');
+            if(Auth::User()->Status == 1)
+                return redirect('/');
+            else{
+                Auth::guard()->logout();
+                $request->session()->invalidate();
+                return dd('Tài khoản ngừng hoạt động');
+            }
         }
         else{
             dd('Đăng nhập thất bại');
@@ -38,6 +44,7 @@ class AuthenticationController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'role' => $request->role,
+            'Status' => 1,
         ]);
         return dd('Đăng ký thành công');
     }
@@ -46,5 +53,10 @@ class AuthenticationController extends Controller
         Auth::guard()->logout();
         $request->session()->invalidate();
         return redirect('/');
+    }
+
+    public function getAuth(){
+        if(Auth::check()) return Auth::User();
+        return dd('Chưa đăng nhập');
     }
 }
