@@ -14,14 +14,20 @@ use App\Http\Controllers\AuthenticationController;
 |
 */
 
-Route::get('/',[AuthenticationController::class,'index']);
-Route::post('/',[AuthenticationController::class,'login'])->name('login');
-Route::get('/logout',[AuthenticationController::class,'logout']);
-Route::get('/register',function (){
-    return view('register');
+Route::get(' /user' , function(){
+    return view('user.index');
 });
-Route::post('/register',[AuthenticationController::class,'register']);
-Route::get('/profile', function () {
-    return dd('Thông tin của một nhân viên nào đó');
-})->middleware('checkrole');
+Route::get(' /' , function(){
+    return view('welcome');
+});
+// Route::get('/',[AuthenticationController::class,'index']);
+// Route::post('/',[AuthenticationController::class,'login'])->name('login');
+// Route::get('/logout',[AuthenticationController::class,'logout']);
+// Route::get('/register',function (){
+//     return view('register');
+// });
+// Route::post('/register',[AuthenticationController::class,'register']);
+// Route::get('/profile', function () {
+//     return dd('Thông tin của một nhân viên nào đó');
+// })->middleware('checkrole');
 
