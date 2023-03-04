@@ -21,9 +21,89 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" >
             <div class="title-secondary">
-                <div class=""></div>
+                <div class="heading">
+                    <p>Tài Khoản</p>
+                    <div></div>
+                </div>
+                <div class="search">
+                    <div class="form-floating mb-3" style="margin:0!important">
+                        <input type="text" class="form-control input-search" id="floatingInput" placeholder="Tìm kiếm...">
+                        <label for="floatingInput">Tìm kiếm...</label>
+                    </div>
+                    <div class="search-btn">
+                        <i class="bi bi-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="table-acc-list">
+                <table class="table table-striped">
+                    <thead>
+                  <tr>
+                    <th scope="col">Mã nhân viên</th>
+                    <th scope="col">Tên nhân viên</th>
+                    <th scope="col">Tài khoản</th>
+                    <th scope="col">Quyền truy cập</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Ngày tạo</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">2051063756</th>
+                    <td>Ngô Thị Tâm</td>
+                    <td>2051063756</td>
+                    <td >
+                        <span class="employee-color">
+                            Nhân viên
+                        </span>
+                    </td>
+                    <td><p>Hoạt động<p></td>
+                    <td>26/2/2023</td>
+                    <td>
+                        <a href="#">
+                            <i class="bi bi-pencil-square edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2051063756</th>
+                    <td>Ngô Thị Tâm</td>
+                    <td></td>
+                    <td >
+                        <span class="ADMIN1-color">
+                            ADMIN 1
+                        </span>
+                    </td>
+                    <td><p>Hoạt động<p></td>
+                    <td>26/2/2023</td>
+                    <td>
+                        <a href="#">
+                            <i class="bi bi-pencil-square edit"></i></td>
+                        </a>
+                  </tr>
+                  <tr>
+                    <th scope="row">2051063756</th>
+                    <td>Ngô Thị Tâm</td>
+                    <td></td>
+                    <td >
+                        <span class="ADMIN2-color">
+                            ADMIN 2 
+                        </span>
+                    </td>
+                    <td class="stop-active">
+                        <p>Dừng Hoạt động<p> 
+                        </td>
+                    <td>26/2/2023</td>
+                    <td><a href="#">
+                        <i class="bi bi-pencil-square edit"></i></td>
+                    </a>
+                  </tr>
+                </tbody>
+              
+                </table>
             </div>
     </div>
 </div>

@@ -1,3 +1,6 @@
+p {
+    margin: 0;
+}
 .main_page {
     /* float: right; */
     background-color: #dcdcdc;
@@ -63,4 +66,96 @@
     min-height: 40rem;
     background: #ffffff;
     border-radius: 5px;
+}
+.heading {
+    padding: 1.6rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.heading p {
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+.heading div {
+    width: 5.6rem;
+    height: 0px;
+    border: 1px solid #5a5278;
+    align-self: center;
+}
+.title-secondary {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 3rem;
+}
+.search-btn i {
+    font-size: 1.4rem;
+    color: white;
+    align-self: center;
+    justify-self: center;
+}
+.search-btn {
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #5a5278;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.input-search {
+    width: 279px;
+    height: 31px;
+    margin: 0;
+}
+.search {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+}
+th {
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: rgba(0, 0, 0, 0.65);
+}
+td {
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #000000;
+}
+td span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 21px;
+    background-color: red;
+    border-radius: 5px;
+}
+.employee-color {
+    color: #000000;
+    background-color: #d1d3d4;
+}
+.ADMIN1-color {
+    background-color: #e8769f;
+    color: #fff;
+}
+.ADMIN2-color {
+    background-color: #5a5278;
+    color: #fff;
+}
+.stop-active p {
+    color: red;
+}
+.edit {
+    font-size: 2rem;
+    color: #5a5278;
+    cursor: pointer;
 }
