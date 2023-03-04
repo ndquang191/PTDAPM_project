@@ -33,4 +33,10 @@ Route::get(' /' , function(){
 
 
 Route::get('/auth',[AuthenticationController::class,'getAuth']);
+Route::get('/homepage',[AuthenticationController::class,'homePage']);
+Route::get('/listaccemployee',[AuthenticationController::class,'listaccemployee']);
+Route::post('/register',[AuthenticationController::class,'register']);
+Route::get('/profile', function () {
+    return dd('Thông tin của một nhân viên nào đó');
+})->middleware('checkrole');
 

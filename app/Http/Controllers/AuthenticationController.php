@@ -15,7 +15,12 @@ class AuthenticationController extends Controller
             return view('login');
         }
     }
-
+    public function homePage(){
+            return view('homepage');
+    }
+    public function listaccemployee(){
+        return view('ListAccEmployee/listaccemployee');
+}
     public function login(Request $request){
         $validated = $request->validate([
             'username' => 'bail|required',
