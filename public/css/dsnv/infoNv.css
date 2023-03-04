@@ -1,0 +1,98 @@
+*{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+}
+.header-content{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 19px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.container{
+    background-color: #EBEBEB;
+    padding-bottom: 10px;
+    padding-left: 1px;
+    padding-right: 5px;
+}
+.header-content a{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    margin-right: 18px;
+    text-decoration: none;
+}
+.avatar img{
+    width: 114px;
+    height: 128px;
+    margin-bottom: 20px;
+}
+.avatar label{
+    display: block;
+    margin-bottom: 20px;
+}
+.employeecode{
+    color: #1162A0;
+}
+.status{
+    color: #18930D;
+}
+.avatar i{
+    margin-right: 10px;
+}
+.avatar{
+    background-color: #F6F6F8;
+    padding: 10px;
+    padding-left: 50px;
+    padding-top: 20px;
+    width: 25%;
+}
+.Employeeinformationchange{
+    display: flex;
+    justify-content: space-between;
+}
+.container-emloyee{
+    width: 75%;
+    padding: 40px;
+}
+.staffinformation{
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+.info-left label, input,
+.info-right label, input{
+    display: block;
+}
+.info-left div,
+.info-right div{
+    margin-bottom: 20px;
+}
+.info-left input,
+.info-right input{
+    background: rgba(90, 82, 120, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 30px;
+    width: 350px;
+    padding: 5px;
+}
+.btn-exit button{
+    float: right;
+    background-color: #CEDD7A;
+    color: #FFFFFF;
+    width: 70px;
+    height: 27px;
+    border: none;
+}
+.employeecode,
+.status{
+    margin-left: 10px;
+}
