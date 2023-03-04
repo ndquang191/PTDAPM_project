@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="/css/homepage/index.css">
 @endsection
 @section('content')
+<<<<<<< HEAD
 <div class="main_page">
     <div class="container">
       <div class="container_item">
@@ -57,4 +58,7 @@
       </div>
     </div>
   </div>   
+=======
+    <input type="text" class="f-input">
+>>>>>>> origin/Auth
 @endsection

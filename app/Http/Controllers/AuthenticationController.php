@@ -7,6 +7,14 @@ use DB;
 use Hash;
 class AuthenticationController extends Controller
 {
+
+    protected $username = 'MaNV';
+
+
+    // public function username(){
+    //     return 'user';
+    // }
+
     public function index(){
         if(Auth::check()){
             return view('homepage');
@@ -27,7 +35,7 @@ class AuthenticationController extends Controller
             'password' => 'required',
         ]);
         $credentials = [
-            'username' => $request->username,
+            'MaTK' => $request->username,
             'password' => $request->password,
         ];
         if(Auth::attempt($credentials)){
@@ -44,12 +52,21 @@ class AuthenticationController extends Controller
         }
     }
 
+
     public function register(Request $request){
+<<<<<<< HEAD
         DB::table('accounts')->insert([
             'username' => $request->username,
             'password' => Hash::make($request->password),
             'role' => $request->role,
             'Status' => 1,
+=======
+        DB::table('taikhoan')->insert([
+            'MaNV' => 1,
+            'MatKhau' => Hash::make('admin1'),
+            'TrangThai' => 1,
+            'QuyenTruyCap' => 'admin1',
+>>>>>>> origin/Auth
         ]);
         return dd('Đăng ký thành công');
     }
@@ -60,8 +77,28 @@ class AuthenticationController extends Controller
         return redirect('/');
     }
 
+<<<<<<< HEAD
     public function getAuth(){
         if(Auth::check()) return Auth::User();
         return dd('Chưa đăng nhập');
+=======
+    public function getIndex(){
+        $data = DB::table('image')->where('ID',2)->first();
+        $base64 = base64_encode($data->img);
+        // return view('img', ['base64' => $base64]);
+        // $content = file_get_contents($data->img);
+        return dd($data);
+    }
+
+    public function storeImg(Request $request){
+        $file = $request->file('img');
+        $data = file_get_contents($file->getPathname());
+        // DB::table('image')->insert([
+        //     'img' => $data,
+        // ]);
+        // return redirect('/img');
+        // return dd($data);
+        return dd($file->getPathname());
+>>>>>>> origin/Auth
     }
 }
