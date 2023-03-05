@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="login/index.css">
-    <title>Login</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/login.css">
+	<title>Login</title>
 </head>
 <body>
-    <div class="container">
-        <form action="{{route('login')}}" method="post">
-            <label for="">Username</label>
-            <input type="text" name="username" id="">
-            @if($errors->has('username'))
-                <div class="error">{{ $errors->first('username') }}</div>
-            @endif
-            <label for="">Password</label>
-            <input type="password" name="password" id="">
-            @if($errors->has('password'))
-                <div class="error">{{ $errors->first('password') }}</div>
-            @endif
-            <button type="submit" class="login-btn">Login</button>
-            @csrf
-        </form>
-    </div>
-    {{-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif --}}
+	<div class="container">
+		<div class="container-left">
+			<img src="./image/login_left.jpg" alt="">
+		</div>
+		<div class="container-right">
+			<img src="./image/login_right.jpg" alt="">
+		</div>
+		<form action="" method="POST">
+			@csrf
+			<div class="taitle" style="padding: 10px;">
+				<label  for="">ĐĂNG NHẬP HỆ THỐNG</label>
+			</div><hr>
+			<div class="container-form">
+				<label for="username"><b></b></label>
+				<input type="text" placeholder="TÊN ĐĂNG NHẬP" name="username" required>
+		
+				<label for="password"><b></b></label>
+				<input type="password" placeholder="MẬT KHẨU" name="password" required>
+			</div>
+			<div class="login-btn">
+				<button type="submit">Login</button>
+			</div>
+		</form>
+		@if (session('message'))
+			<div class="alert alert-success">
+			  {{ session('message') }}
+			</div>
+		@endif
+	</div>
+	
 </body>
 </html>

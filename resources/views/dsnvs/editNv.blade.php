@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('linkcss')
-    <link rel="stylesheet" href="./css/dsnv/editNv.css">
+    <link rel="stylesheet" href="/css/dsnv/editNv.css">
 
 @endsection
 @section('content')

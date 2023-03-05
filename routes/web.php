@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\TaiKhoanController;
+use App\Http\Controllers\NhanVienController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,22 +16,24 @@ use App\Http\Controllers\AuthenticationController;
 |
 // */
 
-Route::controller(AuthenticationController::class)->prefix('/')->group(function(){
-    Route::get('/','index');
-    Route::post('/','login')->name('login');
+Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
+    Route::get('/','showLoginPage')->name('login');
+    Route::post('/','login');
     Route::get('/logout','logout');
+    Route::get('/homepage','showHomePage')->middleware('checkLogin'); // Trang người dùng
+    // Route tới admin page //
 });
 
-Route::controller(/* EmployeeController*/)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
-    Route::get('/','index'); // Hiển thị danh sách nhân viên
-    Route::get('/add','create'); // Hiển thị form thêm nhân viên
-    Route::post('/add','store'); // Hiển thị form thêm nhân viên
-    Route::get('/{id}','getEmployeeInfo'); // Hiển thị chi tiết hồ sơ nhân viên
+Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
+    Route::get('/','list')->name('listEmployee'); // Hiển thị danh sách nhân viên
+    Route::get('/add','create')->name('addEmployeePage'); // Hiển thị form thêm nhân viên
+    Route::post('/add','store'); // Lưu thông tin nhân viên thêm mới
+    Route::get('/{id}','getEmployeeInfo')->name('getEmployeeInfo'); // Hiển thị chi tiết hồ sơ nhân viên
     Route::get('/{id}/edit','editEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 
 });
 
-Route::controller(/* AccountController*/)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
+Route::controller(/* AccountController*/)->middleware(['auth','checkAdmin1'])->prefix('/account')->group(function(){
     Route::get('/','index'); // Hiển thị danh sách tài khoản
 
 });
@@ -66,4 +70,7 @@ Route::get('/addbcnv', function () {
 });
 Route::get('/editbcnv', function () {
     return view('bangcaps.editbc');
+});
+Route::get('/test',function(){
+    return view('login2');
 });

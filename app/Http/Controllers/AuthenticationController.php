@@ -7,14 +7,6 @@ use DB;
 use Hash;
 class AuthenticationController extends Controller
 {
-
-    protected $username = 'MaNV';
-
-
-    // public function username(){
-    //     return 'user';
-    // }
-
     public function index(){
         if(Auth::check()){
             return view('homepage');
@@ -24,49 +16,53 @@ class AuthenticationController extends Controller
         }
     }
     public function homePage(){
-            return view('homepage');
+        return view('homepage');
     }
     public function listaccemployee(){
         return view('ListAccEmployee/listaccemployee');
 }
     public function login(Request $request){
-        $validated = $request->validate([
-            'username' => 'bail|required',
-            'password' => 'required',
-        ]);
+        // $validated = $request->validate([
+        //     'username' => 'bail|required',
+        //     'password' => 'required',
+        // ],
+        // [
+        //     'username.required' => "Tài khoản không được để trống !",
+        //     'password.required' => "Mật khẩu không được để trống !"
+        // ]);
         $credentials = [
-            'MaTK' => $request->username,
+            'MaNV' => $request->username,
             'password' => $request->password,
         ];
-        if(Auth::attempt($credentials)){
-            if(Auth::User()->Status == 1)
-                return redirect('/');
+        if(DB::table('taikhoan')->where('MaNV',$request->username)->first()){
+            if(Auth::attempt($credentials)){
+                if(Auth::User()->TrangThai == 1){
+                    $user = DB::table('nhanvien')->where('MaNV',Auth::User()->MaNV)->first();
+                    return view('homepage',['user' => $user]);
+                }
+                else{
+                    Auth::guard()->logout();
+                    $request->session()->invalidate();
+                    return redirect()->back()->with(['message' => "Tài khoản ngừng hoạt động"]);
+                }
+                return view('homepage');
+            }
             else{
-                Auth::guard()->logout();
-                $request->session()->invalidate();
-                return dd('Tài khoản ngừng hoạt động');
+                dd('Đăng nhập thất bại');
             }
         }
         else{
-            dd('Đăng nhập thất bại');
+            return dd('Tài khoản không tồn tại!');
         }
     }
 
 
     public function register(Request $request){
-<<<<<<< HEAD
-        DB::table('accounts')->insert([
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'role' => $request->role,
-            'Status' => 1,
-=======
         DB::table('taikhoan')->insert([
             'MaNV' => 1,
             'MatKhau' => Hash::make('admin1'),
             'TrangThai' => 1,
             'QuyenTruyCap' => 'admin1',
->>>>>>> origin/Auth
         ]);
         return dd('Đăng ký thành công');
     }
@@ -77,11 +73,6 @@ class AuthenticationController extends Controller
         return redirect('/');
     }
 
-<<<<<<< HEAD
-    public function getAuth(){
-        if(Auth::check()) return Auth::User();
-        return dd('Chưa đăng nhập');
-=======
     public function getIndex(){
         $data = DB::table('image')->where('ID',2)->first();
         $base64 = base64_encode($data->img);
@@ -99,6 +90,5 @@ class AuthenticationController extends Controller
         // return redirect('/img');
         // return dd($data);
         return dd($file->getPathname());
->>>>>>> origin/Auth
     }
 }

@@ -1,8 +1,7 @@
 @extends('layout.app')
 
 @section('linkcss')
-    <link rel="stylesheet" href="./css/dsnv/editNv.css">
-
+    <link rel="stylesheet" href="/css/dsnv/editNv.css">
 @endsection
 @section('content')
     <div class="container">
@@ -10,7 +9,7 @@
             <div><a class="tab-hosonv" href="">Hồ sơ nhân viên</a></div>
             <div><a class="tab-bangcap" href="">Bằng cấp nhân viên</a></div>
         </div>
-        <div class="body-content">
+        <form class="body-content" method="post" action="">
             <div class="inf-user">
                 <div>
                     <img src="./image/photo_user.jpg" alt="">
@@ -39,19 +38,9 @@
                     <div>  
                         <label for="">Giới tính</label>
                         <select>
-                            <option value="0">Chọn</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Citroen</option>
-                            <option value="4">Ford</option>
-                            <option value="5">Honda</option>
-                            <option value="6">Jaguar</option>
-                            <option value="7">Land Rover</option>
-                            <option value="8">Mercedes</option>
-                            <option value="9">Mini</option>
-                            <option value="10">Nissan</option>
-                            <option value="11">Toyota</option>
-                            <option value="12">Volvo</option>
+                            <option value="-1" hidden>Chọn</option>
+                            <option value="0">Nam</option>
+                            <option value="1">Nữ</option>
                         </select>
                     </div>
                     <div>
@@ -95,7 +84,7 @@
                 <div class="qualification">
                     <label for="">Trình độ học vấn</label>
                     <select>
-                        <option value="0">Chọn</option>
+                        <option value="0" hidden>Chọn</option>
                         <option value="1">Audi</option>
                         <option value="2">BMW</option>
                         <option value="3">Citroen</option>
@@ -113,7 +102,7 @@
                 <div class="status">
                     <label for="">Trạng thái</label>
                     <select>
-                        <option value="0">Chọn</option>
+                        <option value="0" hidden>Chọn</option>
                         <option value="1">Audi</option>
                         <option value="2">BMW</option>
                         <option value="3">Citroen</option>
@@ -133,7 +122,7 @@
                 <div>
                     <label for="">Phòng ban</label>
                     <select>
-                        <option value="0">Chọn</option>
+                        <option value="0" hidden>Chọn</option>
                         <option value="1">Audi</option>
                         <option value="2">BMW</option>
                         <option value="3">Citroen</option>
@@ -151,7 +140,7 @@
                 <div>
                     <label for="">Chức vụ</label>
                     <select>
-                        <option value="0">Chọn</option>
+                        <option value="0" hidden>Chọn</option>
                         <option value="1">Audi</option>
                         <option value="2">BMW</option>
                         <option value="3">Citroen</option>
@@ -169,7 +158,7 @@
                 <div>
                     <label for="">Chuyên ngành</label>
                     <select>
-                        <option value="0">Chọn</option>
+                        <option value="0" hidden >Chọn</option>
                         <option value="1">Audi</option>
                         <option value="2">BMW</option>
                         <option value="3">Citroen</option>
@@ -188,9 +177,9 @@
             <div class="btn-save-exit">
                 <div>
                     <a href="dsnv"><button class="save">Lưu</button></a>
-                    <a href="dsnv"><button class="exit">Thoát</button></a>
+                    <a href="{{route('listEmployee')}}"><button class="exit">Thoát</button></a>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 @endsection
