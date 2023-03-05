@@ -66,8 +66,9 @@ Route::get('/addbcnv', function () {
 Route::get('/editbcnv', function () {
     return view('bangcaps.editbc');
 });
-
-
-Route::get('/test', function () {
-    return view('welcome');
-});
+    //Điều hướng để làm giao diện
+Route::get('/homepage',[AuthenticationController::class,'homePage']);
+Route::get('/listaccemployee',[AuthenticationController::class,'listaccemployee']);
+Route::get('/changepw',[AuthenticationController::class,'changepw']);
+Route::get('/leavelist',[AuthenticationController::class,'leavelist']);
+Route::get('/addleave',[AuthenticationController::class,'addleave']);

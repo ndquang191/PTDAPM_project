@@ -25,12 +25,7 @@ class AuthenticationController extends Controller
             return view('login');
         }
     }
-    public function homePage(){
-            return view('homepage');
-    }
-    public function listaccemployee(){
-        return view('ListAccEmployee/listaccemployee');
-}
+
     public function login(Request $request){
         $validated = $request->validate([
             'username' => 'bail|required',
@@ -89,5 +84,21 @@ class AuthenticationController extends Controller
         // return dd($data);
         return dd($file->getPathname());
     }
+    //Điều hướng để làm giao diện
+    public function homePage(){
+        return view('homepage');
+    }
+    public function listaccemployee(){
+        return view('ListAccEmployee/listaccemployee');
+    }
+    public function changepw(){
+        return view('ListAccEmployee/changepw');
+    }
+        public function leavelist(){
+            return view('LeaveList/leavelist');
+    }
+    public function addleave(){
+        return view('LeaveList/addleave');
+}
 }
 ?>
