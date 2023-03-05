@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('MaNV');
             $table->string('TenBC', 100);
             $table->date('NgayCap');
-            $table->date('NgayHetHan');
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });
     }

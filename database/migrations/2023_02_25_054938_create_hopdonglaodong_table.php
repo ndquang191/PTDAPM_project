@@ -14,14 +14,15 @@ return new class extends Migration
         Schema::create('hopdonglaodong', function (Blueprint $table) {
             $table->id('MaHDLD');
             $table->unsignedBigInteger('MaNV');
+            $table->string('SoHD');
             $table->string('LoaiHopDong');
             $table->date('NgayKi');
             $table->date('NgayBatDau');
             $table->date('NgayKetThuc');
-            $table->string('DiaDiemLamViec');
+            $table->string('DiaDiemc');
             $table->string('ChuyenMon');
             $table->string('PhapNhan');
-            $table->decimal('LuongCoBan', 15, 2);
+            $table->decimal('LuongCoBan', 10, 2);
             $table->decimal('HeSoLuong', 3, 2);
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });

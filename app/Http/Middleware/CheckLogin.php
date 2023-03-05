@@ -20,7 +20,7 @@ class CheckLogin
             return $next($request);
         }
         else{
-            return redirect('/');
+            return redirect('/')->with(['message' => 'Cần dăng nhập']);
         }
     }
 }

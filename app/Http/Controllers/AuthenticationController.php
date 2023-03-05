@@ -9,14 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
-
-    protected $username = 'MaNV';
-
-
-    // public function username(){
-    //     return 'user';
-    // }
-
     public function index(){
         if(Auth::check()){
             return view('homepage');
@@ -27,25 +19,37 @@ class AuthenticationController extends Controller
     }
 
     public function login(Request $request){
-        $validated = $request->validate([
-            'username' => 'bail|required',
-            'password' => 'required',
-        ]);
+        // $validated = $request->validate([
+        //     'username' => 'bail|required',
+        //     'password' => 'required',
+        // ],
+        // [
+        //     'username.required' => "Tài khoản không được để trống !",
+        //     'password.required' => "Mật khẩu không được để trống !"
+        // ]);
         $credentials = [
-            'MaTK' => $request->username,
+            'MaNV' => $request->username,
             'password' => $request->password,
         ];
-        if(Auth::attempt($credentials)){
-            if(Auth::User()->Status == 1)
-                return redirect('/');
+        if(DB::table('taikhoan')->where('MaNV',$request->username)->first()){
+            if(Auth::attempt($credentials)){
+                if(Auth::User()->TrangThai == 1){
+                    $user = DB::table('nhanvien')->where('MaNV',Auth::User()->MaNV)->first();
+                    return view('homepage',['user' => $user]);
+                }
+                else{
+                    Auth::guard()->logout();
+                    $request->session()->invalidate();
+                    return redirect()->back()->with(['message' => "Tài khoản ngừng hoạt động"]);
+                }
+                return view('homepage');
+            }
             else{
-                Auth::guard()->logout();
-                $request->session()->invalidate();
-                return dd('Tài khoản ngừng hoạt động');
+                dd('Đăng nhập thất bại');
             }
         }
         else{
-            dd('Đăng nhập thất bại');
+            return dd('Tài khoản không tồn tại!');
         }
     }
 

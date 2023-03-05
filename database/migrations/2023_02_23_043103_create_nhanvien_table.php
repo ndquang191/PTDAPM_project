@@ -21,12 +21,14 @@ return new class extends Migration
             $table->string('DiaChi')->nullable();
             $table->string('NoiSinh')->nullable();
             $table->string('TonGiao')->nullable();
+            $table->string('DanToc')->nullable();
             $table->string('SDT',12);
             $table->string('Email',100);
             $table->string('ChuyenNganh')->nullable();
             $table->string('TrinhDoHocVan')->nullable();
             $table->string('PhongBan')->nullable();
             $table->string('ChucVu')->nullable();
+            $table->boolean('TrangThai')->default(1);
         });
     }
 

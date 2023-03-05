@@ -50,7 +50,7 @@
                            alt="user"
                            class="user_img"
                          />
-                         <span class="name_user">Tên người dùng</span>
+                         <span class="name_user">{{$user->TenNV}}</span>
                          <i class="fa-solid fa-chevron-down"></i>
                        </a>
                        <ul class="dropdown_user_menu">
@@ -77,7 +77,7 @@
                            </a>
                          </li>
                          <li class="dropdown_user_item">
-                           <a href="">
+                           <a href="/logout">
                              <i class="fa-solid fa-power-off"></i>
                              <span class="dropdown_user_title">Đóng phiên làm việc</span>
                            </a>

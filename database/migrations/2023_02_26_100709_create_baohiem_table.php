@@ -12,11 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('baohiem', function (Blueprint $table) {
-            $table->id('MaBH');
+            $table->id('MaBHXH');
             $table->unsignedBigInteger('MaNV');
-            $table->string('SoBaoHiem',20);
-            $table->date('NgayBatDau');
-            $table->date('NgayKetThuc'); // Thay thế thời hạn
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });
     }

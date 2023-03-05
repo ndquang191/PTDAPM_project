@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $table = 'taikhoan';
-    protected $primaryKey = 'MaTK';
+    protected $primaryKey = 'ID';
     protected $fillable = [
         'MaNV',
         'MatKhau',
@@ -26,7 +26,6 @@ class User extends Authenticatable
         'QuyenTruyCap',
     ];
     
-
     public function getAuthPassword()
     {
         return $this->MatKhau;
@@ -47,7 +46,7 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
 }
