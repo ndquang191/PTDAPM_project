@@ -6,7 +6,10 @@
 
 html {
     font-size: 62.5%;
+<<<<<<< HEAD
     font-family: "Roboto", sans-serif;
+=======
+>>>>>>> origin/trido
 }
 ul {
     list-style-type: none;
@@ -145,7 +148,34 @@ h6 {
 }
 .dropdown_user_item-1 .link_dropdown_user_item {
     position: relative;
+<<<<<<< HEAD
     text-align: center;
+=======
+}
+.page .section-body,
+.page .section-white {
+    background: #f1f1f1;
+}
+.container-fluid {
+    width: 100%;
+    background-color: #dcdcdc;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100vh;
+}
+.row {
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+.card-body {
+    padding: 20px;
+    flex: 1 1 auto;
+    /* position: relative; */
+}
+.table-responsive {
+>>>>>>> origin/trido
     display: block;
     background-color: #39374e;
     padding: 8px 16px;
