@@ -23,12 +23,7 @@ class AuthenticationController extends Controller
             return view('login');
         }
     }
-    public function homePage(){
-            return view('homepage');
-    }
-    public function listaccemployee(){
-        return view('ListAccEmployee/listaccemployee');
-}
+
     public function login(Request $request){
         $validated = $request->validate([
             'username' => 'bail|required',
@@ -54,19 +49,11 @@ class AuthenticationController extends Controller
 
 
     public function register(Request $request){
-<<<<<<< HEAD
-        DB::table('accounts')->insert([
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'role' => $request->role,
-            'Status' => 1,
-=======
         DB::table('taikhoan')->insert([
             'MaNV' => 1,
             'MatKhau' => Hash::make('admin1'),
             'TrangThai' => 1,
             'QuyenTruyCap' => 'admin1',
->>>>>>> origin/Auth
         ]);
         return dd('Đăng ký thành công');
     }
@@ -77,11 +64,6 @@ class AuthenticationController extends Controller
         return redirect('/');
     }
 
-<<<<<<< HEAD
-    public function getAuth(){
-        if(Auth::check()) return Auth::User();
-        return dd('Chưa đăng nhập');
-=======
     public function getIndex(){
         $data = DB::table('image')->where('ID',2)->first();
         $base64 = base64_encode($data->img);
@@ -99,6 +81,21 @@ class AuthenticationController extends Controller
         // return redirect('/img');
         // return dd($data);
         return dd($file->getPathname());
->>>>>>> origin/Auth
     }
+    //Điều hướng để làm giao diện
+    public function homePage(){
+        return view('homepage');
+    }
+    public function listaccemployee(){
+        return view('ListAccEmployee/listaccemployee');
+    }
+    public function changepw(){
+        return view('ListAccEmployee/changepw');
+    }
+        public function leavelist(){
+            return view('LeaveList/leavelist');
+    }
+    public function addleave(){
+        return view('LeaveList/addleave');
+}
 }

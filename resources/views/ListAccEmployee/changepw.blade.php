@@ -106,5 +106,22 @@
             </div>
     </div>
 </div>
-
+<div class="overlay"></div>
+<div class="form-changepw">
+    <button class="btn-close-modal">x</button>
+    <form class=" flex-cl">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label lb-pw">Mật khẩu cũ</label>
+          <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label lb-pw">Mật khẩu mới</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+            <button type="submit" class="btn btn-primary btn-save">Lưu</button>
+      </form>
+</div>
+@endsection
+@section('linkjs')
+    <script src="/js/ListAccEmployee/index.js"></script>
 @endsection

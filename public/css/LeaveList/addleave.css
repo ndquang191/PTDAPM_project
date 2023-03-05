@@ -1,0 +1,72 @@
+.main_page {
+    /* float: right; */
+    background-color: #dcdcdc;
+    height: 100vh;
+    left: 24rem;
+    position: fixed;
+    top: 5rem;
+    width: calc(100% -24rem);
+}
+.container {
+    width: 125rem;
+    margin: 3rem;
+    min-height: 80%;
+    background: #e3e3e3;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 25%);
+}
+.add-function {
+    background: #c6c6c6;
+    display: flex;
+    margin: 3rem;
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    padding: 0.5rem;
+    color: black;
+}
+.navigation,
+.navigation:hover {
+    color: #848484;
+}
+.add-function span {
+    font-size: 2rem;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+.grid {
+    margin: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    justify-content: space-around;
+}
+.lb-add {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.4rem;
+}
+.ip-add {
+    width: 40rem;
+    height: 3rem;
+    font-size: 1.2rem;
+}
+.content {
+    grid-column: 1 / span 2;
+}
+.content textarea {
+    font-size: 1.4rem;
+}
+.save-btn {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    grid-column: 2 / 2;
+    justify-self: end;
+    width: 6.8rem;
+    height: 3.2rem;
+}
