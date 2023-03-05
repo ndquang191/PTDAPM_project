@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\NhanVienController;
+use App\Http\Controllers\BangCapController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,44 +35,9 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
 
 });
 
-Route::controller(/* AccountController*/)->middleware(['auth','checkAdmin1'])->prefix('/account')->group(function(){
-    Route::get('/','index'); // Hiển thị danh sách tài khoản
-
+Route::controller(BangCapController::class)->middleware(['auth','checkAdmin1'])->prefix('/employee')->group(function(){
+    Route::get('/{id}/degree','showByMaNV'); // Hiển thị danh sách bằng cấp của nhân viên
+    Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
+    Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
-
-Route::get('/profile', function () {
-    return dd('Thông tin của một nhân viên nào đó');
-})->middleware(['checkLogin','checkAdmin1']);
-
-Route::get('/img',[AuthenticationController::class,'getIndex']);
-Route::post('/img',[AuthenticationController::class,'storeImg']);
-
-
-
-
-
-Route::get('/dsnv',function(){
-    return view('dsnvs.dsnv');
-});
-Route::get('/addnv',function(){
-    return view('dsnvs.addNv');
-});
-Route::get('/infonv',function(){
-    return view('dsnvs.infoNv');
-});
-Route::get('/editnv',function(){
-    return view('dsnvs.editNv');
-});
-Route::get('/dsbcnv', function () {
-    return view('bangcaps.dsbc');
-});
-Route::get('/addbcnv', function () {
-    return view('bangcaps.addbc');
-});
-Route::get('/editbcnv', function () {
-    return view('bangcaps.editbc');
-});
-Route::get('/test',function(){
-    return view('login2');
-});
