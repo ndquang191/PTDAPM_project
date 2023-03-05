@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Auth;
-use DB;
-use Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Hash;
+
 class AuthenticationController extends Controller
 {
 
@@ -54,19 +56,11 @@ class AuthenticationController extends Controller
 
 
     public function register(Request $request){
-<<<<<<< HEAD
-        DB::table('accounts')->insert([
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'role' => $request->role,
-            'Status' => 1,
-=======
         DB::table('taikhoan')->insert([
             'MaNV' => 1,
             'MatKhau' => Hash::make('admin1'),
             'TrangThai' => 1,
             'QuyenTruyCap' => 'admin1',
->>>>>>> origin/Auth
         ]);
         return dd('Đăng ký thành công');
     }
@@ -77,11 +71,6 @@ class AuthenticationController extends Controller
         return redirect('/');
     }
 
-<<<<<<< HEAD
-    public function getAuth(){
-        if(Auth::check()) return Auth::User();
-        return dd('Chưa đăng nhập');
-=======
     public function getIndex(){
         $data = DB::table('image')->where('ID',2)->first();
         $base64 = base64_encode($data->img);
@@ -99,6 +88,6 @@ class AuthenticationController extends Controller
         // return redirect('/img');
         // return dd($data);
         return dd($file->getPathname());
->>>>>>> origin/Auth
     }
 }
+?>

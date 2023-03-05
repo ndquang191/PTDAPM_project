@@ -5,7 +5,7 @@
 
 @endsection
 @section('content')
-    <div class="container">
+    <div class="fluid-container">
         <div class="container-header">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Danh sách nhân viên</a></div>

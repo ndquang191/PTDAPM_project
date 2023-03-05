@@ -5,8 +5,8 @@
 
 @endsection
 @section('content')
-    <div class="container-all">
-        <div class="container">
+    {{-- <div class="container-all"> --}}
+        <div class="fluid-container">
             <div>
                 <label for="">Tên bằng cấp</label>
                 <input class="degree-name" type="text">
@@ -25,5 +25,5 @@
                 <button>Cập nhật</button>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 @endsection

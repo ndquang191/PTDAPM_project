@@ -205,16 +205,17 @@ h6 {
 .main {
     color: #333;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
+    flex-direction: row;
+    width: 100%;
+    /* justify-content: center; */
+    /* min-height: 100%; */
 }
 .main_navbar {
     left: 0;
     overflow-y: auto;
-    position: fixed;
+    /* position: fixed; */
     top: 5rem;
-    width: 24rem;
+    width: 27rem;
     background-color: #fff;
     height: 100vh;
     border-right: 1px solid #e6e9ed;
@@ -261,4 +262,9 @@ h6 {
     text-align: center;
     display: inline-block;
     padding: 0 1rem;
+}
+
+.main_content{
+    width: calc(100% - 27rem);
+    padding: 0px 5px;
 }

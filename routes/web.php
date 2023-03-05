@@ -34,7 +34,6 @@ Route::controller(/* AccountController*/)->middleware(['checkLogin','checkAdmin1
 
 });
 
-
 Route::get('/profile', function () {
     return dd('Thông tin của một nhân viên nào đó');
 })->middleware(['checkLogin','checkAdmin1']);
@@ -66,4 +65,9 @@ Route::get('/addbcnv', function () {
 });
 Route::get('/editbcnv', function () {
     return view('bangcaps.editbc');
+});
+
+
+Route::get('/test', function () {
+    return view('welcome');
 });
