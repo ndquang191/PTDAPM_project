@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/css/LeaveList/index.css">
 @endsection
 @section('content')
-<div class="main_page">
+<div class="fluid-container main_page">
     <div class="container">
         <h1 class="heading">Danh sách nghỉ phép</h1>
         <div class="add-function">

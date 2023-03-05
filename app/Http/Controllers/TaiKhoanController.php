@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
-use DB;
-use Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class TaiKhoanController extends Controller
 {
@@ -75,3 +75,6 @@ class TaiKhoanController extends Controller
 
     }
 }
+
+
+?>

@@ -5,7 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
-
+use App\Models\NhanVien;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,9 @@ Route::controller(BangCapController::class)->middleware(['auth','checkAdmin1'])-
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
+
+Route::get('/test' , function(){
+
+    $user = NhanVien::find(Auth::user()->MaNV);
+    return view('Leavelist.leavelist',['user' => $user]);
+});

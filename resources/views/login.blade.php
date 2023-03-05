@@ -11,8 +11,6 @@
     <div class="login_page" class="fluid-container">
 
         <div class="login_page--left">
-
-
             <form id="login_form" action="{{route('login')}}" method="post">
                 {{-- <label for="">Username</label> --}}
                 <input type="text" name="username" id="">
