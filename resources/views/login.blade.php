@@ -7,6 +7,12 @@
 	<link rel="stylesheet" href="login/index.css">
 	<title>Login</title>
 </head>
+<style>
+    .error{
+        color: red;
+        float: left;
+    }
+</style>
 <body>
     <div class="login_page" class="fluid-container">
         <div class="login_page--left">
