@@ -8,6 +8,8 @@ use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\TestController;
 
 
+use App\Models\NhanVien;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +50,9 @@ Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
 Route::get('/changepw',[TestController::class,'changepw']);
 Route::get('/leavelist',[TestController::class,'leavelist']);
 Route::get('/addleave',[TestController::class,'addleave']);
+
+Route::get('/test' , function(){
+
+    $user = NhanVien::find(Auth::user()->MaNV);
+    return view('Leavelist.leavelist',['user' => $user]);
+});

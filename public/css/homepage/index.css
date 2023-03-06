@@ -2,10 +2,11 @@
     /* float: right; */
     background-color: #dcdcdc;
     height: 100vh;
-    left: 24rem;
     flex: 1 1 auto;
     position: relative;
 }
+
+
 .container {
     width: 106rem;
     margin-left: 7rem;

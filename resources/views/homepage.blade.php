@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="main_page">
-    <div class="container">
+    <div class="fluid-container">
       <div class="container_item">
         <div class="container_list_item">
           <div class="box_list_item">

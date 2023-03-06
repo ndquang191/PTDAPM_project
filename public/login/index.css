@@ -19,6 +19,8 @@
 
 .login_page--right{
     width: 70%;
+    background-image: url('../image/login_right.jpg');
+    background-size: cover;
 }
 
 

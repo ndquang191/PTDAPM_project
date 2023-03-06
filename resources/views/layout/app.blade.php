@@ -18,15 +18,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
      <link href="css/main.css" rel="stylesheet">
-     <link rel="stylesheet" href="/css/hdld/hdld.css">
+     {{-- <link rel="stylesheet" href="/css/hdld/hdld.css"> --}}
      <script
      src="https://kit.fontawesome.com/975a2f75a4.js"
      crossorigin="anonymous"
+
    ></script>
+
+   @yield('linkcss')
+
 </head>
 <body>
      
-     <div class="">
+     <div class="" action="" method="post">
           <header id="header" class="header">
                <nav class="navbar_header">
                  <div class="navbar_logo_header">
@@ -50,7 +54,7 @@
                            alt="user"
                            class="user_img"
                          />
-                         <span class="name_user">{{$user->TenNV}}</span>
+                         <span class="name_user">1</span>
                          <i class="fa-solid fa-chevron-down"></i>
                        </a>
                        <ul class="dropdown_user_menu">
@@ -150,7 +154,7 @@
           </div>
           </div>
      </div>
-
 </body>
+@yield('linkjs')
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
