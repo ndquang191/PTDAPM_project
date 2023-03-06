@@ -56,8 +56,12 @@ Route::controller(NghiPhepController::class)->middleware(['auth','checkAdmin1'])
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
 });
 
+Route::controller(TaiKhoanController::class)->middleware(['auth','checkAdmin1'])->prefix('/account')->group(function(){
+    Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
+});
+
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
-    return view('ListAccEmployee.changepw',['user' => $user]);
+    return view('ListAccEmployee.listaccemployee',['user' => $user]);
 });

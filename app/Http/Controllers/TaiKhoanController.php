@@ -64,7 +64,8 @@ class TaiKhoanController extends Controller
     }
 
     public function listAccount(){
-
+        $user = NhanVien::find(Auth::user()->MaNV);
+        return view('ListAccEmployee.listaccemployee',['user' => $user]);
     }
 
     public function create(){
