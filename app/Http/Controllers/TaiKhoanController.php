@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\NhanVien;
+use App\Models\TaiKhoan;
+
 class TaiKhoanController extends Controller
 {
     public function showLoginPage(){
@@ -27,11 +29,12 @@ class TaiKhoanController extends Controller
         $exists = DB::table('taikhoan')->where('MaNV',$request->username)->first();
         $validated = $request->validate([
             'username' => 'bail|required',
-            'password' => 'required',
+            'password' => 'required|min:6',
         ],
         [
             'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
             'password.required' => "Vui lòng điển mật khẩu và đăng nhập.",
+            'password.min' => "Mật khẩu phải có 6 kí tự trở lên.",
         ]);
         if($exists){
             $credentials = [
@@ -65,7 +68,17 @@ class TaiKhoanController extends Controller
 
     public function listAccount(){
         $user = NhanVien::find(Auth::user()->MaNV);
-        return view('ListAccEmployee.listaccemployee',['user' => $user]);
+        $accounts = TaiKhoan::with('nhanvien')->get();
+        $activeCount = TaiKhoan::where('TrangThai',1)->count();
+        $stopActiveCount = TaiKhoan::where('TrangThai',0)->count();
+        return view('ListAccEmployee.listaccemployee',
+            [
+                'user' => $user,
+                'accounts' => $accounts,
+                'activeCount' => $activeCount,
+                'stopActiveCount' =>$stopActiveCount,
+            ]
+        );
     }
 
     public function create(){

@@ -9,15 +9,15 @@
         <div class="statistical-list">
             <div class="statistical-item box-violet">
                 <p>Tổng</p>
-                <span>3</span>
+                <span>{{count($accounts)}}</span>
             </div>
             <div class="statistical-item box-gray">
                 <p>Đang hoạt động</p>
-                <span>2</span>
+                <span>{{$activeCount}}</span>
             </div>
             <div class="statistical-item box-white">
                 <p>Dừng hoạt động</p>
-                <span class="flex-end-item">1</span>
+                <span class="flex-end-item">{{$stopActiveCount}}</span>
             </div>
         </div>
     </div>
@@ -51,56 +51,44 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">2051063756</th>
-                    <td>Ngô Thị Tâm</td>
-                    <td>2051063756</td>
-                    <td >
-                        <span class="employee-color">
-                            Nhân viên
-                        </span>
-                    </td>
-                    <td><p>Hoạt động<p></td>
-                    <td>26/2/2023</td>
-                    <td>
-                        <a href="/changepw">
-                            <i class="bi bi-pencil-square edit"></i>
-                        </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2051063756</th>
-                    <td>Ngô Thị Tâm</td>
-                    <td></td>
-                    <td >
-                        <span class="ADMIN1-color">
-                            ADMIN 1
-                        </span>
-                    </td>
-                    <td><p>Hoạt động<p></td>
-                    <td>26/2/2023</td>
-                    <td>
-                        <a href="/changepw">
-                            <i class="bi bi-pencil-square edit"></i></td>
-                        </a>
-                  </tr>
-                  <tr>
-                    <th scope="row">2051063756</th>
-                    <td>Ngô Thị Tâm</td>
-                    <td></td>
-                    <td >
-                        <span class="ADMIN2-color">
-                            ADMIN 2 
-                        </span>
-                    </td>
-                    <td class="stop-active">
-                        <p>Dừng Hoạt động<p> 
-                        </td>
-                    <td>26/2/2023</td>
-                    <td ><a href="/changepw" class="hidden">
-                        <i class="bi bi-pencil-square edit"></i></td>
-                    </a>
-                  </tr>
+                    @if (count($accounts) == 0)
+                        <h5>Không có bản ghi</h5>
+                    @else
+                        @foreach ($accounts as $accounts)
+                        <tr>
+                            <th scope="row">{{$accounts->MaNV}}</th>
+                            <td>{{$accounts->nhanvien->TenNV}}</td>
+                            <td>Trống</td>
+                            <td >
+                                <span class="employee-color">
+                                <span class=
+                                @if ($accounts->QuyenTruyCap == 'member')
+                                    "employee-color"
+                                @else
+                                    @if($accounts->QuyenTruyCap == 'admin1')
+                                        "ADMIN1-color"
+                                    @else
+                                        "ADMIN2-color"
+                                    @endif
+                                @endif
+                                >
+                                    {{$accounts->QuyenTruyCap}}
+                                </span>
+                            </td>
+                            <td class={{$accounts->TrangThai == 0 ? "stop-active" : ""}}>
+                                <p>
+                                    {{$accounts->TrangThai == 1 ? "Hoạt động" : "Dừng hoạt động"}}
+                                <p>
+                            </td>
+                            <td>Trống</td>
+                            <td>
+                                <a href="/changepw">
+                                    <i class="bi bi-pencil-square edit"></i>
+                                </a>
+                            </td>
+                          </tr>
+                        @endforeach
+                    @endif
                 </tbody>
                 </table>
             </div>
