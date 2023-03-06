@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/css/ListAccEmployee/index.css">
 @endsection
 @section('content')
-<div class="main_page">
+<div class="fluid-container main_page">
     <div class="title">
         <h1>Danh sách tài khoản</h1>
         <div class="statistical-list">
@@ -109,11 +109,11 @@
     <button class="btn-close-modal">x</button>
     <form class=" flex-cl">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label lb-pw">Mật khẩu cũ</label>
+          <label for="exampleInputEmail1" class="form-label lb-pw">Mật khẩu mới</label>
           <input type="password" class="form-control ip-pw" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label lb-pw">Mật khẩu mới</label>
+          <label for="exampleInputPassword1" class="form-label lb-pw"> Nhập lại mật khẩu mới</label>
           <input type="password" class="form-control ip-npw" id="exampleInputPassword1">
         </div>
             <button type="submit" class="btn btn-primary btn-save">Lưu</button>
