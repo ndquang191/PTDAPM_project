@@ -44,7 +44,6 @@ Route::controller(BangCapController::class)->middleware(['auth','checkAdmin1'])-
 
 
 Route::get('/test' , function(){
-
     $user = NhanVien::find(Auth::user()->MaNV);
     return view('Leavelist.leavelist',['user' => $user]);
 });

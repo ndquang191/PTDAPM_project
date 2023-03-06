@@ -25,6 +25,14 @@ class TaiKhoanController extends Controller
 
     public function login(Request $request){
         $exists = DB::table('taikhoan')->where('MaNV',$request->username)->first();
+        $validated = $request->validate([
+            'username' => 'bail|required',
+            'password' => 'required',
+        ],
+        [
+            'username.required' => "Tài khoản không được để trống !",
+            'password.required' => "Mật khẩu không được để trống !"
+        ]);
         if($exists){
             $credentials = [
                 'MaNV' => $request->username,
