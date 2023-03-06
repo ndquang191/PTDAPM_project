@@ -1,13 +1,16 @@
 p {
     margin: 0;
 }
+.fluid_container {
+}
 .main_page {
     /* float: right; */
-    background-color: #dcdcdc;
-    height: 100vh;
+
+    /* height: 100vh;
     left: 24rem;
-    position: fixed;
-    top: 5rem;
+    position: fixed; */
+    /* top: 5rem; */
+
     width: calc(100% -24rem);
 }
 .title > h1 {
@@ -66,7 +69,7 @@ p {
 }
 .container {
     width: 125rem;
-    margin: 0 3rem;
+    margin: 0 0.5rem;
     min-height: 40rem;
     background: #ffffff;
     border-radius: 5px;
