@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
+use App\Http\Controllers\TestController;
+
 
 
 /*
@@ -41,3 +43,8 @@ Route::controller(BangCapController::class)->middleware(['auth','checkAdmin1'])-
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
+Route::get('/homepage',[TestController::class,'homePage']);
+Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
+Route::get('/changepw',[TestController::class,'changepw']);
+Route::get('/leavelist',[TestController::class,'leavelist']);
+Route::get('/addleave',[TestController::class,'addleave']);
