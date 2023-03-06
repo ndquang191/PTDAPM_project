@@ -19,14 +19,14 @@ class AuthenticationController extends Controller
     }
 
     public function login(Request $request){
-        // $validated = $request->validate([
-        //     'username' => 'bail|required',
-        //     'password' => 'required',
-        // ],
-        // [
-        //     'username.required' => "Tài khoản không được để trống !",
-        //     'password.required' => "Mật khẩu không được để trống !"
-        // ]);
+        $validated = $request->validate([
+            'username' => 'bail|required',
+            'password' => 'required',
+        ],
+        [
+            'username.required' => "Tài khoản không được để trống !",
+            'password.required' => "Mật khẩu không được để trống !"
+        ]);
         $credentials = [
             'MaNV' => $request->username,
             'password' => $request->password,
@@ -89,20 +89,6 @@ class AuthenticationController extends Controller
         return dd($file->getPathname());
     }
     //Điều hướng để làm giao diện
-    public function homePage(){
-        return view('homepage');
-    }
-    public function listaccemployee(){
-        return view('ListAccEmployee/listaccemployee');
-    }
-    public function changepw(){
-        return view('ListAccEmployee/changepw');
-    }
-        public function leavelist(){
-            return view('LeaveList/leavelist');
-    }
-    public function addleave(){
-        return view('LeaveList/addleave');
-}
+
 }
 ?>

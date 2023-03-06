@@ -8,7 +8,7 @@
             Danh sách hợp đồng lao động
         </div>
         <div class="add_btn">
-            <a href="#" class="link_add_btn"> + Thêm</a>
+            <a href="{{route('createHDLD')}}" class="link_add_btn"> + Thêm</a>
         </div>
     </div>
     <div class="main">

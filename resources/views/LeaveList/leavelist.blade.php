@@ -9,7 +9,7 @@
         <div class="add-function">
             <p class="navigation">Danh Sách nghỉ phép</p>
             <button>
-                <a href="/addleave" class="add-btn">
+                <a href="{{route('createLeave')}}" class="add-btn">
                     <i class="bi bi-plus"></i>
                     <p>Thêm</p>
                 </a>

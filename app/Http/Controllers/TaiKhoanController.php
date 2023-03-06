@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-
+use App\Models\NhanVien;
 class TaiKhoanController extends Controller
 {
     public function showLoginPage(){
@@ -25,6 +25,14 @@ class TaiKhoanController extends Controller
 
     public function login(Request $request){
         $exists = DB::table('taikhoan')->where('MaNV',$request->username)->first();
+        $validated = $request->validate([
+            'username' => 'bail|required',
+            'password' => 'required',
+        ],
+        [
+            'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
+            'password.required' => "Vui lòng điển mật khẩu và đăng nhập.",
+        ]);
         if($exists){
             $credentials = [
                 'MaNV' => $request->username,
@@ -56,7 +64,8 @@ class TaiKhoanController extends Controller
     }
 
     public function listAccount(){
-
+        $user = NhanVien::find(Auth::user()->MaNV);
+        return view('ListAccEmployee.listaccemployee',['user' => $user]);
     }
 
     public function create(){

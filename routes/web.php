@@ -6,6 +6,13 @@ use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\NghiPhepController;
+use App\Http\Controllers\TestController;
+
+
+>>>>>>> main
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,9 +63,29 @@ Route::controller(BangCapController::class)->middleware(['auth','checkAdmin1'])-
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
+Route::controller(HDLDController::class)->middleware(['auth','checkAdmin1'])->prefix('/contract')->group(function(){
+    Route::get('/','showListHDLD')->name('showListHDLD'); // Hiển thị danh sách hợp đồng
+    Route::get('/add','createHDLD')->name('createHDLD'); // Hiển thị form thêm hợp đồng
+    Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
+    Route::get('/{id}/showDetailHDLD','showDetailHDLD')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
+});
+
+Route::controller(NghiPhepController::class)->middleware(['auth','checkAdmin1'])->prefix('/leave')->group(function(){
+    Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
+    Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
+});
+
+Route::controller(TaiKhoanController::class)->middleware(['auth','checkAdmin1'])->prefix('/account')->group(function(){
+    Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
+});
+
+Route::get('/homepage',[TestController::class,'homePage']);
+Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
+Route::get('/changepw',[TestController::class,'changepw']);
+Route::get('/leavelist',[TestController::class,'leavelist']);
+Route::get('/addleave',[TestController::class,'addleave']);
 
 Route::get('/test' , function(){
-
     $user = NhanVien::find(Auth::user()->MaNV);
-    return view('Leavelist.leavelist',['user' => $user]);
+    return view('ListAccEmployee.listaccemployee',['user' => $user]);
 });
