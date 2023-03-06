@@ -1,7 +1,7 @@
 @extends('layout.app');
-{{-- @section('linkcss')
+@section('linkcss')
     <link rel="stylesheet" href="/css/hdld/hdld.css">
-@endsection --}}
+@endsection
 @section('content')
     <div class="header_main">
         <div class="tilte_main">

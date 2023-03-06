@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
+use App\Http\Controllers\HDLDController;
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,16 +23,14 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('hdlds.hdld_ds');
-});
-// Route::get('/', function () {
+Route::get('hdld/hdld_ds',[HDLDController::class,'ds_hdld']);
+// Route::get('/hdld_add', function () {
 //     return view('hdlds.hdld_add');
 //  });
-//  Route::get('/', function () {
+//  Route::get('/hdlad_edit', function () {
 //     return view('hdlds.hdld_edit');
 //  });
-//  Route::get('/', function () {
+//  Route::get('/hdld_show', function () {
 //    return view('hdlds.hdld_show');
 // });
 Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){

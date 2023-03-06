@@ -13,12 +13,12 @@
         <div class="login_page--left">
             <form id="login_form" action="{{route('login')}}" method="post">
                 {{-- <label for="">Username</label> --}}
-                <input type="text" name="username" id="">
+                <input type="text" name="username" id="" placeholder="username">
                 @if($errors->has('username'))
                     <div class="error">{{ $errors->first('username') }}</div>
                 @endif
                 {{-- <label for="">Password</label> --}}
-                <input type="password" name="password" id="">
+                <input type="password" name="password" id="" placeholder="password">
                 @if($errors->has('password'))
                     <div class="error">{{ $errors->first('password') }}</div>
                 @endif
@@ -27,7 +27,7 @@
             </form>
 
         </div>
-        <div class="login_page--right" ">
+        <div class="login_page--right" >
             {{-- <img src="/image/login_right.jpg" alt=""> --}}
         </div>
     </div>
