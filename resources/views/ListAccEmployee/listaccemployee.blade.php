@@ -12,12 +12,16 @@
                 <span>3</span>
             </div>
             <div class="statistical-item box-gray">
-                <p>Đang hoạt động</p>
+                <p>ADMIN 1</p>
                 <span>2</span>
             </div>
             <div class="statistical-item box-white">
-                <p>Dừng hoạt động</p>
-                <span class="flex-end-item">1</span>
+                <p>ADMIN 2</p>
+                <span class="">1</span>
+            </div>
+            <div class="statistical-item box-white">
+                <p>NHÂN VIÊN</p>
+                <span class="">1</span>
             </div>
         </div>
     </div>
@@ -45,7 +49,6 @@
                     <th scope="col">Tên nhân viên</th>
                     <th scope="col">Tài khoản</th>
                     <th scope="col">Quyền truy cập</th>
-                    <th scope="col">Trạng thái</th>
                     <th scope="col">Ngày tạo</th>
                     <th scope="col"></th>
                   </tr>
@@ -60,10 +63,9 @@
                             Nhân viên
                         </span>
                     </td>
-                    <td><p>Hoạt động<p></td>
                     <td>26/2/2023</td>
                     <td>
-                        <a href="/changepw">
+                        <a href="">
                             <i class="bi bi-pencil-square edit"></i>
                         </a>
                     </td>
@@ -77,10 +79,9 @@
                             ADMIN 1
                         </span>
                     </td>
-                    <td><p>Hoạt động<p></td>
                     <td>26/2/2023</td>
                     <td>
-                        <a href="/changepw">
+                        <a href="">
                             <i class="bi bi-pencil-square edit"></i></td>
                         </a>
                   </tr>
@@ -93,11 +94,8 @@
                             ADMIN 2 
                         </span>
                     </td>
-                    <td class="stop-active">
-                        <p>Dừng Hoạt động<p> 
-                        </td>
                     <td>26/2/2023</td>
-                    <td ><a href="/changepw" class="hidden">
+                    <td ><a href="" class="">
                         <i class="bi bi-pencil-square edit"></i></td>
                     </a>
                   </tr>
@@ -106,5 +104,25 @@
             </div>
     </div>
 </div>
-
+<div class="overlay hidden"></div>
+<div class="form-changepw hidden">
+    <button class="btn-close-modal">x</button>
+    <form class=" flex-cl">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label lb-pw">Mật khẩu cũ</label>
+          <input type="password" class="form-control ip-pw" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label lb-pw">Mật khẩu mới</label>
+          <input type="password" class="form-control ip-npw" id="exampleInputPassword1">
+        </div>
+            <button type="submit" class="btn btn-primary btn-save">Lưu</button>
+      </form>
+</div>
+<div class="form-noti hidden">
+    <p></p>
+</div>
+@endsection
+@section('linkjs')
+    <script src="/js/ListAccEmployee/index.js"></script>
 @endsection

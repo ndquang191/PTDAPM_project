@@ -7,6 +7,9 @@ use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
+use App\Http\Controllers\TestController;
+
+
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,6 +63,11 @@ Route::controller(TaiKhoanController::class)->middleware(['auth','checkAdmin1'])
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
 });
 
+Route::get('/homepage',[TestController::class,'homePage']);
+Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
+Route::get('/changepw',[TestController::class,'changepw']);
+Route::get('/leavelist',[TestController::class,'leavelist']);
+Route::get('/addleave',[TestController::class,'addleave']);
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
