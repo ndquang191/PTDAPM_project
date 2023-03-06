@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="login/index.css">
 	<title>Login</title>
 </head>
 <body>
@@ -27,11 +27,11 @@
             </form>
 
         </div>
-        <div class="login_page--right">
-            <img src="/image/login_right.jpg" alt="">
+        <div class="login_page--right" ">
+            {{-- <img src="/image/login_right.jpg" alt=""> --}}
         </div>
     </div>
-    {{-- @if ($errors->any())
+    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -39,6 +39,6 @@
             @endforeach
         </ul>
     </div>
-    @endif --}}
+    @endif
 </body>
 </html>
