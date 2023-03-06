@@ -1,7 +1,7 @@
 @extends('layout.app');
-{{-- @section('linkcss')
+@section('linkcss')
     <link rel="stylesheet" href="/css/hdld/htld.css">
-@endsection --}}
+@endsection
 
 @section('content')
     <div class="add_hdld_main">

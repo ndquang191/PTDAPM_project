@@ -1,0 +1,43 @@
+.container input, label{
+    display: block;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.degree-name{
+    height: 300px;
+    width: 900px;
+    font-size: 20px;
+    background: rgba(90, 82, 120, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.container{
+    padding: 50px;
+    overflow: auto;
+    background-color: #FFFFFF;;
+}
+.container label{
+    font-size: 20px;
+}
+.issue-dateterm{
+    display: flex;
+}
+.issue-dateterm input{
+    margin-right: 100px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+.btn-save button{
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #5A5278;
+    color: #FFFFFF;
+}
+.container-all{
+    background: rgba(90, 82, 120, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 50px;
+}

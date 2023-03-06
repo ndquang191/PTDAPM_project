@@ -1,0 +1,84 @@
+.main_page {
+    /* float: right; */
+    background-color: #dcdcdc;
+    height: 100vh;
+    left: 24rem;
+    position: fixed;
+    top: 5rem;
+    width: calc(100% -24rem);
+}
+.container {
+    width: 125rem;
+    margin: 3rem;
+    min-height: 80%;
+    background: #ffffff;
+    border-radius: 5px;
+}
+.heading {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    color: #000000;
+    padding: 1rem;
+    text-align: center;
+}
+.add-function {
+    background: #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+}
+.navigation {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    color: #000000;
+    cursor: default;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.add-btn {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-items: center;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+.add-btn:hover {
+    color: #ffffff;
+}
+.add-function button {
+    width: 7.3rem;
+    height: 2.4rem;
+    border-radius: 5px;
+    background-color: #5a5278;
+}
+td {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    color: #000000;
+}
+th {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+.edit {
+    font-size: 2rem;
+    color: #5a5278;
+    cursor: pointer;
+}
+.muti-btn {
+    display: flex;
+    gap: 1rem;
+}

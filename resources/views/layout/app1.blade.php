@@ -18,15 +18,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
      <link href="css/main.css" rel="stylesheet">
-     {{-- <link rel="stylesheet" href="/css/hdld/hdld.css"> --}}
+     <link href="css/admin_navbar.css" rel="stylesheet">
      <script
      src="https://kit.fontawesome.com/975a2f75a4.js"
      crossorigin="anonymous"
-
    ></script>
 
-   @yield('linkcss')
-
+     @yield('linkcss')
 </head>
 <body>
      
@@ -54,7 +52,7 @@
                            alt="user"
                            class="user_img"
                          />
-                         <span class="name_user">{{$user->TenNV}}</span>
+                         <span class="name_user">Tên người dùng</span>
                          <i class="fa-solid fa-chevron-down"></i>
                        </a>
                        <ul class="dropdown_user_menu">
@@ -81,7 +79,7 @@
                            </a>
                          </li>
                          <li class="dropdown_user_item">
-                           <a href="/logout">
+                           <a href="">
                              <i class="fa-solid fa-power-off"></i>
                              <span class="dropdown_user_title">Đóng phiên làm việc</span>
                            </a>
@@ -93,59 +91,50 @@
                </nav>
              </header>
              <div class="main">
-               <div class="main_navbar">
-                 <ul class="dropdown_main_menu">
-                   <li class="dropdown_main_menu_item">
-                     <a href="index.html" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-house"></i>
-                       <span>Trang chủ</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-regular fa-address-card"></i>
-                       <span>Thông tin cá nhân</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-address-card"></i>
-                       <span>Hợp đồng lao động</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-id-badge"></i>
-                       <span>Bằng cấp</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-calendar-xmark"></i>
-                       <span>Nghỉ phép</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item dropdown_sub_menu">
-                     <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-book-open"></i>
-                       <span>Đánh giá</span>
-                     </a>
-                     <ul class="sub_menu">
-                       <li class="sub_menu_item">
-                         <a href="#" class="link_sub_menu_item">
-                           <i class="fa-solid fa-user-plus"></i>
-                           <span>Khen thưởng</span>
-                         </a>
-                       </li>
-                       <li class="sub_menu_item">
-                         <a href="#" class="link_sub_menu_item">
-                           <i class="fa-solid fa-user-xmark"></i>
-                           <span>Kỷ luật</span>
-                         </a>
-                       </li>
-                     </ul>
-                   </li>
-                 </ul>
+               <div class="admin_navbar">
+                  <ul>
+                    <li class="admin_navbar_item">
+                      <a href="">
+
+
+                        <div class="img_container">
+                          <img src="/image/navbar/Vector.png">
+                        </div>
+                        <p class="admin_navbar_item">Trang chủ</p>
+                      </a>
+                    </li>
+
+                    <li class="admin_navbar_item">
+                      <a href="">
+                        <div class="img_container">
+  
+                          <img src="/image/navbar/Vector (1).png">
+                        </div>
+                        <p class="admin_navbar_item">Tài khoản</p>
+                      </a>
+                    </li>
+
+                    <li class="admin_navbar_item">
+                      <a href="">
+
+
+                        <div class="img_container">
+                          <img src="/image/navbar/Vector (2).png">
+  
+                        </div>
+                        <p class="admin_navbar_item">Nhân viên</p>  
+                    </a>
+                    </li>
+
+                    <li class="admin_navbar_item">
+                      <a href="">
+                        <div class="img_container">
+                          <img src="/image/navbar/Vector (3).png">
+                        </div>
+                        <p class="admin_navbar_item">Hợp đồng lao động</p>
+                      </a>
+                    </li>                  
+                  </ul>
                </div>
                <div class="main_content" >
               
@@ -156,5 +145,10 @@
      </div>
 
 </body>
+
+     @yield('linkjs')
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </html>

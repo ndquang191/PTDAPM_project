@@ -1,0 +1,36 @@
+
+
+
+.admin_navbar{
+     width: 27rem;
+     margin-top: 50px;
+     display: flex;
+     justify-content: center;
+}
+
+.admin_navbar li{
+     margin-top: 15px;
+}
+.admin_navbar_item a{
+     display: flex;
+     gap: 13px;
+     align-items: center;
+}
+
+.admin_navbar_item .img_container{
+     min-width: 32px;
+     min-height: 32px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.admin_navbar_item p{
+     color: black;
+     font-family: 'Roboto';
+     /* font-style: normal; */
+     font-weight: 400;
+     font-size: 17px;
+     line-height: 20px;
+     margin-top: 8px;
+}
