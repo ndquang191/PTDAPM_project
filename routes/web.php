@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// Route::get('/', function () {
-//     return view('hdlds.hdld_ds');
-// });
+Route::get('/', function () {
+    return view('hdlds.hdld_ds');
+});
 // Route::get('/', function () {
 //     return view('hdlds.hdld_add');
 //  });
 //  Route::get('/', function () {
 //     return view('hdlds.hdld_edit');
 //  });
- Route::get('/', function () {
-   return view('hdlds.hdld_show');
-});
+//  Route::get('/', function () {
+//    return view('hdlds.hdld_show');
+// });
