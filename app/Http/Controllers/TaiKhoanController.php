@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-
+use App\Models\NhanVien;
 class TaiKhoanController extends Controller
 {
     public function showLoginPage(){
@@ -30,8 +30,8 @@ class TaiKhoanController extends Controller
             'password' => 'required',
         ],
         [
-            'username.required' => "Tài khoản không được để trống !",
-            'password.required' => "Mật khẩu không được để trống !"
+            'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
+            'password.required' => "Vui lòng điển mật khẩu và đăng nhập.",
         ]);
         if($exists){
             $credentials = [
