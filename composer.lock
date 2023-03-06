@@ -5859,6 +5859,7 @@
         },
         {
             "name": "nunomaduro/collision",
+<<<<<<< HEAD
             "version": "v7.0.5",
             "source": {
                 "type": "git",
@@ -5869,6 +5870,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/nunomaduro/collision/zipball/5c654ee5fa187cf2f4cb226d773582ec6d402a55",
                 "reference": "5c654ee5fa187cf2f4cb226d773582ec6d402a55",
+=======
+            "version": "v7.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nunomaduro/collision.git",
+                "reference": "fbf3c8a8ee08068bee7d81ee0cee5ddf032aaa84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/fbf3c8a8ee08068bee7d81ee0cee5ddf032aaa84",
+                "reference": "fbf3c8a8ee08068bee7d81ee0cee5ddf032aaa84",
+>>>>>>> origin/trido
                 "shasum": ""
             },
             "require": {
@@ -5878,7 +5891,11 @@
                 "symfony/console": "^6.2.5"
             },
             "require-dev": {
+<<<<<<< HEAD
                 "laravel/framework": "^10.0.3",
+=======
+                "laravel/framework": "^10.0.0",
+>>>>>>> origin/trido
                 "laravel/pint": "^1.5.0",
                 "laravel/sail": "^1.20.2",
                 "laravel/sanctum": "^3.2.1",
@@ -5947,7 +5964,11 @@
                     "type": "patreon"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-02-19T16:25:13+00:00"
+=======
+            "time": "2023-02-16T14:34:30+00:00"
+>>>>>>> origin/trido
         },
         {
             "name": "phar-io/manifest",

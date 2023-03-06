@@ -5,12 +5,12 @@
 
 @endsection
 @section('content')
-    <div class="container">
+    <div class="fluid-container">
         <div class="container-header">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Danh sách nhân viên</a></div>
                 <div class="btn-add">
-                    <a href="addnv"><button>+ Thêm</button></a>
+                    <a href="{{route('addEmployeePage')}}"><button>+ Thêm</button></a>
                 </div>
             </div>
         </div>
@@ -32,18 +32,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2051063756</td>
-                <td>Ngô Thị Tâm</td>
-                <td>0987654321</td>
-                <td>Công tác sinh viên</td>
-                <td>Chuyên viên</td>
-                <td>Đang làm việc</td>
-                <td>
-                  <a class="show" href="/infonv"><i class="fa-solid fa-eye"></i></a>
-                  <a href=""><i class="fa-solid fa-trash"></i></a>
-                </td>
-              </tr>
+              @foreach ($employees as $employee)
+                <tr>
+                  <td>{{$employee->MaNV}}</td>
+                  <td>{{$employee->TenNV}}</td>
+                  <td>{{$employee->SDT != null ? $employee->SDT : "Trống"}}</td>
+                  <td>{{$employee->PhongBan != null ? $employee->PhongBan : "Trống"}}</td>
+                  <td>{{$employee->ChucVu != null ? $employee->ChucVu : "Trống"}}</td>
+                  <td>{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}</td>
+                  <td>
+                    <a class="show" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}"><i class="fa-solid fa-eye"></i></a>
+                    <a href=""><i class="fa-solid fa-trash"></i></a>
+                  </td>
+                </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

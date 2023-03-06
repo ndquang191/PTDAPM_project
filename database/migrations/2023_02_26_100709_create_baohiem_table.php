@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('accounts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('username',60);
-            $table->string('password',100);
-            $table->string('role',10);
+        Schema::create('baohiem', function (Blueprint $table) {
+            $table->id('MaBHXH');
+            $table->unsignedBigInteger('MaNV');
+            $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('accounts');
+        Schema::dropIfExists('baohiem');
     }
 };

@@ -1,3 +1,8 @@
 body{
      background: blue;
 }
+
+.f-input{
+     outline: none;
+     
+}
