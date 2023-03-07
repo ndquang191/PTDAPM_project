@@ -54,7 +54,7 @@
                            alt="user"
                            class="user_img"
                          />
-                         <span class="name_user">{{$user->TenNV}}</span>
+                         <span class="name_user"></span>
                          <i class="fa-solid fa-chevron-down"></i>
                        </a>
                        <ul class="dropdown_user_menu">
