@@ -16,11 +16,13 @@
     <div class="login_page" class="fluid-container">
         <div class="login_page--left">
             <form id="login_form" action="{{route('login')}}" method="post">
-                <input type="text" name="username" id="" placeholder="TÊN ĐĂNG NHẬP">
+                {{-- <label for="">Username</label> --}}
+                <input type="text" name="username" id="">
                 @if($errors->has('username'))
                     <div class="error">{{ $errors->first('username') }}</div>
                 @endif
-                <input type="password" name="password" id="" placeholder="MẬT KHẨU">
+                {{-- <label for="">Password</label> --}}
+                <input type="password" name="password" id="">
                 @if($errors->has('password'))
                     <div class="error">{{ $errors->first('password') }}</div>
                 @endif
@@ -33,7 +35,7 @@
                 @csrf
             </form>
         </div>
-        <div class="login_page--right">
+        <div class="login_page--right" ">
             {{-- <img src="/image/login_right.jpg" alt=""> --}}
         </div>
     </div>

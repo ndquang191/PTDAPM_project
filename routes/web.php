@@ -8,8 +8,6 @@ use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\TestController;
-
-
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +21,14 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 // */
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('hdld/hdld_ds',[HDLDController::class,'ds_hdld']);
+Route::get('hdld/hdld_add',[HDLDController::class,'add_hdld']);
+Route::get('hdld/hdld_edit',[HDLDController::class,'edit_hdld']);
+Route::get('hdld/hdld_show',[HDLDController::class,'show_hdld']);
 
 Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
     Route::get('/','showLoginPage')->name('login');
