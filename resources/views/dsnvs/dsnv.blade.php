@@ -98,6 +98,3 @@
   </script>
 @endsection
 
-@section('linkjs')
-  <script src="./js/...."></script>
-@endsection

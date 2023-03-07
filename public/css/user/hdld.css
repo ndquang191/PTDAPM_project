@@ -1,0 +1,50 @@
+.hdld-container{
+     padding: 60px;
+
+}
+
+
+.hdld_main_container{
+     background: #FFFFFF;
+     border: 1px solid #000000;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     border-radius: 4px;
+     width: 100%;
+     padding: 16px 32px;
+}
+
+.hdld_main_container .h5{
+     font-weight: 600;
+     font-size: 24px;
+     padding-bottom: 4px;
+     border-bottom: 0.3px solid black;
+
+     color: #348CCE;
+}
+
+.hdld_main_container .fullrow{
+     display: flex;
+     flex-direction: row;
+     padding: 8px 0px;
+
+     margin-bottom: 20px;
+
+     border-bottom: 0.5px solid black;
+
+}
+
+.hdld_main_container .title{
+
+     font-weight: 600;
+     font-size: 16px;
+     color: #000000;
+     width: 20%;
+
+}
+
+.hdld_main_container .value{
+     font-weight: 400;
+     font-size: 16px;
+     width: 30%;
+
+}
