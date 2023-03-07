@@ -43,9 +43,16 @@
     float: right;
     font-size: 20px;
 }
+.btn-save a{
+    color: #FFFFFF;
+}
 .btn-save button{
     padding: 5px;
     background-color: #5A5278;
     color: #FFFFFF;
     border: none;
+    margin-left: 10px;
+}
+.edit{
+    background-color: #CEDD7A !important;
 }

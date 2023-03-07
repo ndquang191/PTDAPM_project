@@ -23,7 +23,7 @@
                             <input type="text" id="myInput" onkeyup="searchBhxh()" placeholder="Nhập thông tin">
                         </div>
                         <div>
-                            <button>+ Thêm</button>
+                            <button><a href="addbhxh">+ Thêm</a></button>
                         </div>
                     </div>
                 </div>

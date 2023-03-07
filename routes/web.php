@@ -81,3 +81,6 @@ Route::get('dsbhxh', function () {
 Route::get('infobhxh', function () {
     return view('baohiemxhs.infobhxh');
 });
+Route::get('addbhxh', function () {
+    return view('baohiemxhs.addbhxh');
+});

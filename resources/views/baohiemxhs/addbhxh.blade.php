@@ -51,7 +51,8 @@
                     </div>
                 </div>
                 <div class="btn-save">
-                    <button><a href="dsbhxh">Thoát</a></button>
+                    <button class="save"><a href="dsbhxh">Lưu</a></button>
+                    <button class="edit"><a href="dsbhxh">Thoát</a></button>
                 </div>
             </div>
         </form>

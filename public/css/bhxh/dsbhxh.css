@@ -47,3 +47,6 @@
 .search-slect-btn button, input, select{
     margin-left: 10px;
 }
+.search-slect-btn a{
+    color: #FFFFFF;
+}
