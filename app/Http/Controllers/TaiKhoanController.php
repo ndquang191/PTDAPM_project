@@ -30,7 +30,7 @@ class TaiKhoanController extends Controller
 
     public function showHomePage(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        return view('newhomepage',['user' => $user]);
+        return view('user.index',['user' => $user]);
     }
 
     public function login(Request $request){

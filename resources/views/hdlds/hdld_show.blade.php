@@ -1,9 +1,10 @@
 @extends('layout.app');
-{{-- @section('linkcss')
+@section('linkcss')
     <link rel="stylesheet" href="/css/hdld/hdld.css">
-@endsection --}}
+@endsection
 
 @section('content')
+
     <div class="add_hdld_main">
         <div class="head_add_hdld_main">
             <h1 class="title_add_htld">Hợp đồng lao động</h1>
