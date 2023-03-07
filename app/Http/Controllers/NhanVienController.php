@@ -59,7 +59,7 @@ class NhanVienController extends Controller
             'NgayTao' => Carbon::now(),
         ]);
         // Điều hướng về trang nhân viên
-        return redirect()->route('listEmployee');
+        return redirect()->route('listEmployee')->with(['message' => "Thêm thành công"]);
     }
 
     public function edit(){

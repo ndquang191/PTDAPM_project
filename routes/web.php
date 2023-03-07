@@ -72,7 +72,12 @@ Route::get('/salary',[TestController::class,'salary']);
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
-    return view('user.danhgia',['user' => $user]);
+    return view('test',['user' => $user]);
+});
+
+Route::get('/testSubmit' , function(){
+    $user = NhanVien::find(Auth::user()->MaNV);
+    return redirect('/test')->with(['message' => 'test']);
 });
 
 Route::get('dsnv', function () {
