@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\NhanVien;
+use App\Models\TaiKhoan;
+
 class TaiKhoanController extends Controller
 {
     public function showLoginPage(){
@@ -27,11 +29,12 @@ class TaiKhoanController extends Controller
         $exists = DB::table('taikhoan')->where('MaNV',$request->username)->first();
         $validated = $request->validate([
             'username' => 'bail|required',
-            'password' => 'required',
+            'password' => 'required|min:6',
         ],
         [
             'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
             'password.required' => "Vui lòng điển mật khẩu và đăng nhập.",
+            'password.min' => "Mật khẩu phải có 6 kí tự trở lên.",
         ]);
         if($exists){
             $credentials = [
@@ -65,7 +68,19 @@ class TaiKhoanController extends Controller
 
     public function listAccount(){
         $user = NhanVien::find(Auth::user()->MaNV);
-        return view('ListAccEmployee.listaccemployee',['user' => $user]);
+        $accounts = TaiKhoan::with('nhanvien')->get();
+        $memberCount = TaiKhoan::where('QuyenTruyCap','member')->count();
+        $admin1Count = TaiKhoan::where('QuyenTruyCap','admin1')->count();
+        $admin2Count = TaiKhoan::where('QuyenTruyCap','admin2')->count();
+        return view('ListAccEmployee.listaccemployee',
+            [
+                'user' => $user,
+                'accounts' => $accounts,
+                'memberCount' => $memberCount,
+                'admin1Count' => $admin1Count,
+                'admin2Count' => $admin2Count,
+            ]
+        );
     }
 
     public function create(){

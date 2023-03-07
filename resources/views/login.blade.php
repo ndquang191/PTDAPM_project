@@ -10,7 +10,6 @@
 <style>
     .error{
         color: red;
-        float: left;
     }
 </style>
 <body>
