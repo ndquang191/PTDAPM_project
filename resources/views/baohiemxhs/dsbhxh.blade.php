@@ -39,6 +39,7 @@
                               <th scope="col">Số điện thoại</th>
                               <th scope="col">Tiền được hưởng</th>
                               <th scope="col">Lịch sử đóng</th>
+                              <th>Chức năng</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -51,6 +52,10 @@
                               <td>0382899333</td>
                               <td>36000000</td>
                               <td>Không đóng</td>
+                              <td>
+                                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="infobhxh"><i class="fa-solid fa-eye"></i></a>
+                              </td>
                             </tr>
                           </tbody>
                     </table>

@@ -30,6 +30,10 @@
 }
 .table{
     font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.table a{
+    margin-right: 10px;
 }
 .title-extrainsurance input, select{
     font-size: 15px;
