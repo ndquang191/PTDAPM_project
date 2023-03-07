@@ -15,8 +15,8 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
      <link href="css/main.css" rel="stylesheet">
      {{-- <link rel="stylesheet" href="/css/hdld/hdld.css"> --}}
      <script
@@ -42,6 +42,7 @@
                      />
                    </a>
                    <div class="menu_sidebar">
+                     <i class="fa-solid fa-bars"></i>
                    </div>
                  </div>
                  <div class="navbar_info_user_header">
@@ -96,52 +97,40 @@
                  <ul class="dropdown_main_menu">
                    <li class="dropdown_main_menu_item">
                      <a href="index.html" class="link_dropdown_main_menu">
-                      <i class="bi bi-house-door"></i>
+                       <i class="fa-solid fa-house"></i>
                        <span>Trang chủ</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-people"></i>
-                       <span>Tài khoản</span>
+                       <i class="fa-regular fa-address-card"></i>
+                       <span>Thông tin cá nhân</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-person-lock"></i>
-                       <span>Nhân viên</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-files"></i>
+                      <i class="bi bi-file-earmark-fill"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-calendar-check"></i>
+                      <i class="bi bi-shield-fill-plus"></i>
+                       <span>Bảo hiểm xã hội</span>
+                     </a>
+                   </li>
+                   <li class="dropdown_main_menu_item">
+                     <a href="#" class="link_dropdown_main_menu">
+                      <i class="bi bi-calendar2-plus-fill"></i>
                        <span>Nghỉ phép</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-wallet"></i>
-                       <span>Tiền lương</span>
+                        <i class="bi bi-clipboard-data-fill"></i>
+                       <span>Đánh giá</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item dropdown_sub_menu">
-                    <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-shield-plus"></i>
-                      <span>Bảo hiểm</span>
-                    </a>
-                  </li>
-                  <li class="dropdown_main_menu_item dropdown_sub_menu">
-                    <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-clipboard2-data"></i>
-                      <span>Đánh giá nhân viên</span>
-                    </a>
-                  </li>
                  </ul>
                </div>
                <div class="main_content" >

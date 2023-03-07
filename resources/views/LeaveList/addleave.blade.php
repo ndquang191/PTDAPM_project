@@ -7,7 +7,7 @@
         <div class="container">
         <div style="height: 0.1rem"></div>
         <div class="add-function">
-                <a href="/leavelist" class="navigation">Danh Sách nghỉ phép</a>
+                <a href="{{route('showListLeave')}}" class="navigation">Danh Sách nghỉ phép</a>
                 <span>></span>
                 <p>Thêm nghỉ phép</p>
         </div>

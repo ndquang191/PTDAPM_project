@@ -19,14 +19,14 @@ class AuthenticationController extends Controller
     }
 
     public function login(Request $request){
-        // $validated = $request->validate([
-        //     'username' => 'bail|required',
-        //     'password' => 'required',
-        // ],
-        // [
-        //     'username.required' => "Tài khoản không được để trống !",
-        //     'password.required' => "Mật khẩu không được để trống !"
-        // ]);
+        $validated = $request->validate([
+            'username' => 'bail|required',
+            'password' => 'required',
+        ],
+        [
+            'username.required' => "Tài khoản không được để trống !",
+            'password.required' => "Mật khẩu không được để trống !"
+        ]);
         $credentials = [
             'MaNV' => $request->username,
             'password' => $request->password,

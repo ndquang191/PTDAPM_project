@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('NgayKi');
             $table->date('NgayBatDau');
             $table->date('NgayKetThuc');
-            $table->string('DiaDiemc');
+            $table->string('DiaDiem');
             $table->string('ChuyenMon');
             $table->string('PhapNhan');
             $table->decimal('LuongCoBan', 10, 2);

@@ -9,19 +9,19 @@
         <div class="statistical-list">
             <div class="statistical-item box-violet">
                 <p>Tổng</p>
-                <span>3</span>
+                <span>{{count($accounts)}}</span>
             </div>
             <div class="statistical-item box-gray">
                 <p>ADMIN 1</p>
-                <span>2</span>
+                <span>{{$admin1Count}}</span>
             </div>
             <div class="statistical-item box-white">
                 <p>ADMIN 2</p>
-                <span class="">1</span>
+                <span>{{$admin2Count}}</span>
             </div>
             <div class="statistical-item box-white">
                 <p>NHÂN VIÊN</p>
-                <span class="">1</span>
+                <span class="">{{$memberCount}}</span>
             </div>
         </div>
     </div>
@@ -54,51 +54,38 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">2051063756</th>
-                    <td>Ngô Thị Tâm</td>
-                    <td>2051063756</td>
-                    <td >
-                        <span class="employee-color">
-                            Nhân viên
-                        </span>
-                    </td>
-                    <td>26/2/2023</td>
-                    <td>
-                        <a href="">
-                            <i class="bi bi-pencil-square edit"></i>
-                        </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2051063756</th>
-                    <td>Ngô Thị Tâm</td>
-                    <td></td>
-                    <td >
-                        <span class="ADMIN1-color">
-                            ADMIN 1
-                        </span>
-                    </td>
-                    <td>26/2/2023</td>
-                    <td>
-                        <a href="">
-                            <i class="bi bi-pencil-square edit"></i></td>
-                        </a>
-                  </tr>
-                  <tr>
-                    <th scope="row">2051063756</th>
-                    <td>Ngô Thị Tâm</td>
-                    <td></td>
-                    <td >
-                        <span class="ADMIN2-color">
-                            ADMIN 2 
-                        </span>
-                    </td>
-                    <td>26/2/2023</td>
-                    <td ><a href="" class="">
-                        <i class="bi bi-pencil-square edit"></i></td>
-                    </a>
-                  </tr>
+                    @if (count($accounts) == 0)
+                        <h5>Không có bản ghi</h5>
+                    @else
+                        @foreach ($accounts as $account)
+                        <tr>
+                            <th scope="row">{{$account->MaNV}}</th>
+                            <td>{{$account->nhanvien->TenNV}}</td>
+                            <td>Không có dữ liệu</td>
+                            <td >
+                                <span class=
+                                @if ($account->QuyenTruyCap == 'member')
+                                "employee-color"
+                                @else
+                                    @if($account->QuyenTruyCap == 'admin1')
+                                        "ADMIN1-color"
+                                    @else
+                                        "ADMIN2-color"
+                                    @endif
+                                @endif
+                                >
+                                    {{$account->QuyenTruyCap}}
+                                </span>
+                            </td>
+                            <td>Không có dữ liệu</td>
+                            <td>
+                                <a href="">
+                                    <i class="bi bi-pencil-square edit"></i>
+                                </a>
+                            </td>
+                          </tr>
+                        @endforeach
+                    @endif
                 </tbody>
                 </table>
             </div>
@@ -107,7 +94,7 @@
 <div class="overlay hidden"></div>
 <div class="form-changepw hidden">
     <button class="btn-close-modal">x</button>
-    <form class=" flex-cl">
+    <form class="flex-cl">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label lb-pw">Mật khẩu mới</label>
           <input type="password" class="form-control ip-pw" id="exampleInputEmail1" aria-describedby="emailHelp">

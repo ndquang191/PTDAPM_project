@@ -52,16 +52,11 @@
     float: right;
     margin-bottom: 10px;
 }
-.search-bar button{
-    width: 28px;
-    height: 28px;
-    background-color: #5A5278;
-    color: #FFFFFF;
-    margin-left: 10px;
-}
-.search-bar input{
+.search-bar input, select{
     width: 279px;
     height: 31px;
+    padding: 5px;
+    margin-left: 10px;
 }
 .show{
     margin-right: 10px;

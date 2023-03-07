@@ -20,8 +20,23 @@ class NhanVienController extends Controller
         return view('dsnvs.addNv',['user' => $user]);
     }
     
-    public function store(){
+    public function store(Request $request){
+        // // Kiểm tra định dạng các trường
+        // $validated = $request->validate([
+        //     // 'username' => 'bail|required',
+        // ],
+        // [
+        //     // 'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
 
+        // ]);
+
+        // // Thêm nhân viên vào csdl
+        // NhanVien::create([
+
+        // ]);
+
+        // // Điều hướng về trang nhân viên
+        // return redirect()->route('listEmployee')->with(['message' => 'Thêm thành công']);
     }
 
     public function edit(){

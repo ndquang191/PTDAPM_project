@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\BangCap;
+use App\Models\TaiKhoan;
+
 
 
 class NhanVien extends Model
@@ -16,5 +18,9 @@ class NhanVien extends Model
     
     public function bangcap(){
         return $this->hasOne(BangCap::class,'MaNV');
+    }
+
+    public function taikhoan(){
+        return $this->hasOne(TaiKhoan::class,'MaNV');
     }
 }

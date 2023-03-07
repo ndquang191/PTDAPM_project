@@ -9,15 +9,16 @@
             <div><a class="tab-hosonv" href="">Hồ sơ nhân viên</a></div>
             <div><a class="tab-bangcap" href="">Bằng cấp nhân viên</a></div>
         </div>
-        <form class="body-content" method="post" action="">
+        <form class="body-content" method="post" action="{{route('storeEmployeePage')}}">
+            @csrf
             <div class="inf-user">
                 <div>
                     <img src="./image/photo_user.jpg" alt="">
                 </div>
                 <div>
                     <div>
-                        <label for="">Mã nhân viên</label>
-                        <input type="text">
+                        <label for="myfile">Chọn ảnh: </label>
+                        <input type="file" id="myfile" name="myfile">
                     </div>
                     <div>
                         <label for="">Ngày sinh</label>
@@ -176,10 +177,16 @@
             </div>
             <div class="btn-save-exit">
                 <div>
-                    <a href="dsnv"><button class="save">Lưu</button></a>
-                    <a href="{{route('listEmployee')}}"><button class="exit">Thoát</button></a>
+                    
+                    <a href="{{route('listEmployee')}}"><button class="save" type="button" id="btn" value="Show Alert" onclick="abc()">Lưu</button></a>
+                    <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                 </div>
             </div>
         </form>
     </div>
 @endsection
+<script>
+    function abc(){
+        confirm("Lưu hồ sơ nhân viên thành công")
+    }
+</script>

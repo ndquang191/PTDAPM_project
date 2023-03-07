@@ -2,7 +2,6 @@
 
 @section('linkcss')
     <link rel="stylesheet" href="./css/dsnv/dsNv.css">
-
 @endsection
 @section('content')
     <div class="fluid-container">
@@ -16,19 +15,26 @@
         </div>
         <div class="table-search-bar">
           <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm">
+            <select id="chooseSearch">
+              <option value="0">Mã nhân viên</option>
+              <option value="1">Họ tên</option>
+              <option value="2">Số điện thoại</option>
+              <option value="3">Phòng ban</option>
+              <option value="4">Chức vụ</option>
+              <option value="5">Trạng thái</option>
+          </select>
           </div>
-          <table class="table">
+          <table class="table" id="myTable">
             <thead>
               <tr>
-                <td>Mã nhân viên</td>
-                <td>Họ tên</td>
-                <td>Số điện thoại</td>
-                <td>Phòng ban</td>
-                <td>Chức vự</td>
-                <td>Trạng thái</td>
-                <td>Hành động</td>
+                <th>Mã nhân viên</th>
+                <th>Họ tên</th>
+                <th>Số điện thoại</th>
+                <th>Phòng ban</th>
+                <th>Chức vự</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
               </tr>
             </thead>
             <tbody>
@@ -50,4 +56,48 @@
           </table>
         </div>
     </div>
+<script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue, e, giatri, stt;
+    e = document.getElementById("chooseSearch");
+    giaTri = e.options[e.selectedIndex].text;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    if(giaTri == "Mã nhân viên"){
+      stt = 0;
+    }
+    if(giaTri == "Họ tên"){
+      stt = 1;
+    }
+    if(giaTri == "Số điện thoại"){
+      stt = 2;
+    }
+    if(giaTri == "Phòng ban"){
+      stt = 3;
+    }
+    if(giaTri == "Chức vụ"){
+      stt = 4;
+    }
+    if(giaTri == "Trạng thái"){
+      stt = 5;
+    }
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[stt];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+@endsection
+
+@section('linkjs')
+  <script src="./js/...."></script>
 @endsection
