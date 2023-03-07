@@ -61,8 +61,6 @@
 .container-emloyee{
     width: 75%;
     padding: 40px;
-    background-color: #F6F6F8;
-    margin-left: 10px;
 }
 .staffinformation{
     display: flex;
@@ -86,26 +84,13 @@
     width: 350px;
     padding: 5px;
 }
-.btn-save-exit div{
+.btn-exit button{
     float: right;
-}
-.btn-save-exit{
-    margin-top: 30px;
-}
-.save{
-    width: 85px;
-    height: 27px;
-    background-color: #5A5278;
-    color: #FFFFFF;
-    border: none;
-}
-.exit{
-    width: 70px;
-    height: 27px;
     background-color: #CEDD7A;
     color: #FFFFFF;
+    width: 70px;
+    height: 27px;
     border: none;
-    margin-left: 20px;
 }
 .employeecode,
 .status{
