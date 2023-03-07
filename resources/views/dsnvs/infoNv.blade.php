@@ -81,8 +81,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn-exit">
-                    <a href="{{route('listEmployee')}}"><button>Thoát</button></a>
+                <div class="btn-save-exit">
+                    <div>
+                        <a href="{{route('listEmployee')}}"><button class="save" type="button" id="btn" value="Show Alert" onclick="updateEmployee()">Cập nhật</button></a>
+                        <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -13,12 +13,13 @@
             @csrf
             <div class="inf-user">
                 <div>
-                    <img src="./image/photo_user.jpg" alt="">
+                    <img src="./image/photo_user.jpg" id="image" alt="">
                 </div>
                 <div>
                     <div>
-                        <label for="myfile">Chọn ảnh: </label>
-                        <input type="file" id="myfile" name="myfile">
+                        <label for="myImage" >Chọn ảnh: </label>
+                        <input onchange="chooseFile(this)" type="file" id="imageFile" name="" 
+                        accept="image/png, image/gif, image/jpeg" />
                     </div>
                     <div>
                         <label for="birthday">Ngày sinh</label>
@@ -85,24 +86,6 @@
                         <option value="Trình độ 4">Trình độ 4</option>
                     </select>
                 </div>
-                <div class="status">
-                    <label for="">Trạng thái</label>
-                    <select>
-                        <option value="0" hidden>Chọn</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
-                        <option value="5">Honda</option>
-                        <option value="6">Jaguar</option>
-                        <option value="7">Land Rover</option>
-                        <option value="8">Mercedes</option>
-                        <option value="9">Mini</option>
-                        <option value="10">Nissan</option>
-                        <option value="11">Toyota</option>
-                        <option value="12">Volvo</option>
-                    </select>
-                </div>
             </div>
             <div class="department-position-specialty">
                 <div>
@@ -139,7 +122,7 @@
             <div class="btn-save-exit">
                 <div>
                     
-                    <a href="{{route('listEmployee')}}"><button class="save" type="button" id="btn" value="Show Alert" onclick="abc()">Lưu</button></a>
+                    <a href="{{route('listEmployee')}}"><button class="save" type="button" id="btn" value="Show Alert">Lưu</button></a>
                     <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                 </div>
             </div>
@@ -147,7 +130,13 @@
     </div>
 @endsection
 <script>
-    function abc(){
-        confirm("Lưu hồ sơ nhân viên thành công")
+    function chooseFile(fileInput){
+        if(fileInput.files && fileInput.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#image').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0])
+        }
     }
 </script>
