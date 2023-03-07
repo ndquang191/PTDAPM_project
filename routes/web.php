@@ -71,5 +71,9 @@ Route::get('/addleave',[TestController::class,'addleave']);
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
-    return view('modal',['user' => $user]);
+    return view('user.detail',['user' => $user]);
+});
+
+Route::get('dsnv', function () {
+    return view('dsnvs.addNv');
 });

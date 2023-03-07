@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         DB::table('TaiKhoan')->insert(['MaNV' => 10001,'MatKhau' => Hash::make('admin2'),'TrangThai' => 1,'QuyenTruyCap' => 'admin2','NgayTao' => Carbon::now()]);
         
         // Thêm nhân viên
-        for($i = 0; $i <= 10; $i++){
+        for($i = 0; $i <= 50; $i++){
             DB::table('NhanVien')->insert(
                 [
                     'TenNV' => Str::random(5),
@@ -71,13 +71,35 @@ class DatabaseSeeder extends Seeder
                     'ChucVu' => Str::random(8),
                 ],
             );
+            $manv = NhanVien::orderBy('MaNV','desc')->first()->MaNV;
+            $SoBC = floor(rand(1,4));
             DB::table('TaiKhoan')->insert(
                 [
-                    'MaNV' => NhanVien::orderBy('MaNV','desc')->first()->MaNV,
+                    'MaNV' => $manv,
                     'MatKhau' => Hash::make('member'),
-                    'TrangThai' => 1,'QuyenTruyCap' => 'member',
+                    'TrangThai' => floor(rand(0,1)),
+                    'QuyenTruyCap' => 'member',
                     'NgayTao' => Carbon::now()
                 ]);
+            for($i=0;$i<$SoBC;$i++){
+                DB::table('BangCap')->insert([
+                    'MaNV' => $manv,
+                    'TenBC' => Str::random(20),
+                    'NgayCap' => Carbon::today()->subDays(rand(0, 365)),
+                ]);
+            }
+
+            $SoDG = floor(rand(0,3));
+            for($i=0;$i<$SoDG;$i++){
+                $giatri = floor(rand(-99999999,9999999));
+                DB::table('DanhGia')->insert([
+                    'MaNV' => $manv,
+                    'NgayQuyetDinh' => Carbon::today()->subDays(rand(0, 365)),
+                    'NoiDung' => Str::random(20),
+                    'GiaTri' => $giatri,
+                    'PhanLoai' => $giatri > 0 ? 1 : 0,
+                ]);
+            }
         }
     }
 }

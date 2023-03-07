@@ -8,8 +8,8 @@ use App\Models\NhanVien;
 
 class BangCap extends Model
 {
-
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'bangcap';
     protected $primaryKey = 'MaBC';
     protected $fillable = ['MaNV','TenBC','NgayCap'];

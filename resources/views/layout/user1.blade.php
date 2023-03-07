@@ -109,41 +109,27 @@
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-address-card"></i>
+                      <i class="bi bi-file-earmark-fill"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-id-badge"></i>
-                       <span>Bằng cấp</span>
+                      <i class="bi bi-shield-fill-plus"></i>
+                       <span>Bảo hiểm xã hội</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-calendar-xmark"></i>
+                      <i class="bi bi-calendar2-plus-fill"></i>
                        <span>Nghỉ phép</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu">
                      <a href="#" class="link_dropdown_main_menu">
-                       <i class="fa-solid fa-book-open"></i>
+                        <i class="bi bi-clipboard-data-fill"></i>
                        <span>Đánh giá</span>
                      </a>
-                     <ul class="sub_menu">
-                       <li class="sub_menu_item">
-                         <a href="#" class="link_sub_menu_item">
-                           <i class="fa-solid fa-user-plus"></i>
-                           <span>Khen thưởng</span>
-                         </a>
-                       </li>
-                       <li class="sub_menu_item">
-                         <a href="#" class="link_sub_menu_item">
-                           <i class="fa-solid fa-user-xmark"></i>
-                           <span>Kỷ luật</span>
-                         </a>
-                       </li>
-                     </ul>
                    </li>
                  </ul>
                </div>
