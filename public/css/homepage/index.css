@@ -1,56 +1,56 @@
-.main_page {
-    /* float: right; */
-    background-color: #dcdcdc;
-    height: 100vh;
-    flex: 1 1 auto;
-    position: relative;
+.main_content {
+    background: rgba(217, 217, 217, 0.5);
 }
 
 
 .container {
-    width: 106rem;
-    margin-left: 7rem;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+
 .container_item {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 2rem 0 0 0;
+    gap: 72px;
+    padding: 40px;
 }
 .container_list_item {
-    background-color: #39374e;
-    width: 28rem;
-    margin: 1rem 2rem;
-    width: calc(33.33% - 4rem);
+
+    width: 250px;
+    height: 180px;
+
+    background: #FFFFFF;
+    border: 2px solid #5A5278;
+    border-radius: 7px;
+    position: relative;
 }
 .container_list_item .link_list_item {
     color: #e8e9ec;
     font-size: 1.8rem;
     display: block;
     width: 100%;
-    height: 14rem;
-    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .container_list_item .link_list_item i {
     font-size: 7rem;
-    position: absolute;
-    left: 39%;
-    top: 18%;
     text-align: center;
     display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
 }
 .container_list_item .link_list_item span {
     display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     font-size: 1.8rem;
-    padding: 1rem 0;
-    display: block;
-    width: 100%;
-    text-align: center;
-    display: block;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+
 }

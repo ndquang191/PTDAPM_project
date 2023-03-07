@@ -15,8 +15,8 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
      <link href="css/main.css" rel="stylesheet">
      {{-- <link rel="stylesheet" href="/css/hdld/hdld.css"> --}}
      <script
@@ -97,52 +97,54 @@
                  <ul class="dropdown_main_menu">
                    <li class="dropdown_main_menu_item">
                      <a href="index.html" class="link_dropdown_main_menu">
-                      <i class="bi bi-house-door"></i>
+                       <i class="fa-solid fa-house"></i>
                        <span>Trang chủ</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-people"></i>
-                       <span>Tài khoản</span>
+                       <i class="fa-regular fa-address-card"></i>
+                       <span>Thông tin cá nhân</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-person-lock"></i>
-                       <span>Nhân viên</span>
-                     </a>
-                   </li>
-                   <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-files"></i>
+                       <i class="fa-solid fa-address-card"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-calendar-check"></i>
+                       <i class="fa-solid fa-id-badge"></i>
+                       <span>Bằng cấp</span>
+                     </a>
+                   </li>
+                   <li class="dropdown_main_menu_item">
+                     <a href="#" class="link_dropdown_main_menu">
+                       <i class="fa-solid fa-calendar-xmark"></i>
                        <span>Nghỉ phép</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu">
                      <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-wallet"></i>
-                       <span>Tiền lương</span>
+                       <i class="fa-solid fa-book-open"></i>
+                       <span>Đánh giá</span>
                      </a>
+                     <ul class="sub_menu">
+                       <li class="sub_menu_item">
+                         <a href="#" class="link_sub_menu_item">
+                           <i class="fa-solid fa-user-plus"></i>
+                           <span>Khen thưởng</span>
+                         </a>
+                       </li>
+                       <li class="sub_menu_item">
+                         <a href="#" class="link_sub_menu_item">
+                           <i class="fa-solid fa-user-xmark"></i>
+                           <span>Kỷ luật</span>
+                         </a>
+                       </li>
+                     </ul>
                    </li>
-                   <li class="dropdown_main_menu_item dropdown_sub_menu">
-                    <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-shield-plus"></i>
-                      <span>Bảo hiểm</span>
-                    </a>
-                  </li>
-                  <li class="dropdown_main_menu_item dropdown_sub_menu">
-                    <a href="#" class="link_dropdown_main_menu">
-                      <i class="bi bi-clipboard2-data"></i>
-                      <span>Đánh giá nhân viên</span>
-                    </a>
-                  </li>
                  </ul>
                </div>
                <div class="main_content" >
