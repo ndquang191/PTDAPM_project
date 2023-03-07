@@ -266,7 +266,7 @@ h6 {
 }
 
 .main_content {
-    width: calc(100% - 27rem);
+    width: calc(100% - 24rem);
     padding: 0px 1px;
     background-color: #dcdcdc !important;
 }
