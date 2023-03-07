@@ -81,6 +81,6 @@ Route::get('/test' , function(){
     return view('user.danhgia',['user' => $user]);
 });
 
-Route::get('dsnv', function () {
-    return view('dsnvs.addNv');
+Route::get('dsbhxh', function () {
+    return view('baohiemxhs.dsbhxh');
 });
