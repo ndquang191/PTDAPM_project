@@ -73,14 +73,14 @@ input, select{
 }
 .placeofbirth input,
 .permanentaddress input{
-    width: 465px;
+    width: 470px;
 }
 .email input{
     width: 470px;
 }
 .qualification select,
 .status select{
-    width: 213px;
+    width: 300px;
 }
 .btn-save-exit div{
     float: right;

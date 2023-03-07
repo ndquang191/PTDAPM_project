@@ -47,7 +47,7 @@ saveBtn.addEventListener("click", (e) => {
         inputPassword.value = "";
     }, 2000);
 });
-
+// -----------------------------------
 function myFunction() {
     var input, filter, table, tr, td, i, txtValue, e, giatri, stt;
     e = document.getElementById("chooseSearch");
@@ -85,4 +85,9 @@ function myFunction() {
         }
       }       
     }
+  }
+
+// --------------------------------------------
+  function saveEmployee(){
+    confirm("Bạn có muốn xóa nhân viên không?")
   }

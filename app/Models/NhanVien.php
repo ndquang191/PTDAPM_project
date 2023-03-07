@@ -12,6 +12,7 @@ use App\Models\TaiKhoan;
 class NhanVien extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'nhanvien';
     protected $primaryKey = 'MaNV';
     protected $fillable = ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiSinh','TonGiao','SDT','Email','ChuyenNganh','TrinhDoHocVan','PhongBan','ChucVu','TrangThai'];

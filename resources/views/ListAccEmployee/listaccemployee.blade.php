@@ -77,7 +77,7 @@
                                     {{$account->QuyenTruyCap}}
                                 </span>
                             </td>
-                            <td>Không có dữ liệu</td>
+                            <td>{{$account->NgayTao}}</td>
                             <td>
                                 <a href="">
                                     <i class="bi bi-pencil-square edit"></i>

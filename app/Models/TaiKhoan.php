@@ -8,9 +8,10 @@ use App\Models\NhanVien;
 class TaiKhoan extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'TaiKhoan';
     protected $primaryKey = 'MaNV';
-    protected $fillable = ['MatKhau','TrangThai','QuyenTruyCap'];
+    protected $fillable = ['MaNV','MatKhau','TrangThai','QuyenTruyCap','NgayTao'];
 
     public function nhanvien(){
         return $this->belongsTo(NhanVien::class,'MaNV');
