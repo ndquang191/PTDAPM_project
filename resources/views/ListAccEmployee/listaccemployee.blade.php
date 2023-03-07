@@ -12,12 +12,16 @@
                 <span>{{count($accounts)}}</span>
             </div>
             <div class="statistical-item box-gray">
-                <p>Đang hoạt động</p>
-                <span>{{$activeCount}}</span>
+                <p>ADMIN 1</p>
+                <span>{{$admin1Count}}</span>
             </div>
             <div class="statistical-item box-white">
-                <p>Dừng hoạt động</p>
-                <span class="flex-end-item">{{$stopActiveCount}}</span>
+                <p>ADMIN 2</p>
+                <span>{{$admin2Count}}</span>
+            </div>
+            <div class="statistical-item box-white">
+                <p>NHÂN VIÊN</p>
+                <span class="">{{$memberCount}}</span>
             </div>
         </div>
     </div>
@@ -45,7 +49,6 @@
                     <th scope="col">Tên nhân viên</th>
                     <th scope="col">Tài khoản</th>
                     <th scope="col">Quyền truy cập</th>
-                    <th scope="col">Trạng thái</th>
                     <th scope="col">Ngày tạo</th>
                     <th scope="col"></th>
                   </tr>
@@ -54,35 +57,29 @@
                     @if (count($accounts) == 0)
                         <h5>Không có bản ghi</h5>
                     @else
-                        @foreach ($accounts as $accounts)
+                        @foreach ($accounts as $account)
                         <tr>
-                            <th scope="row">{{$accounts->MaNV}}</th>
-                            <td>{{$accounts->nhanvien->TenNV}}</td>
-                            <td>Trống</td>
+                            <th scope="row">{{$account->MaNV}}</th>
+                            <td>{{$account->nhanvien->TenNV}}</td>
+                            <td>Không có dữ liệu</td>
                             <td >
-                                <span class="employee-color">
                                 <span class=
-                                @if ($accounts->QuyenTruyCap == 'member')
-                                    "employee-color"
+                                @if ($account->QuyenTruyCap == 'member')
+                                "employee-color"
                                 @else
-                                    @if($accounts->QuyenTruyCap == 'admin1')
+                                    @if($account->QuyenTruyCap == 'admin1')
                                         "ADMIN1-color"
                                     @else
                                         "ADMIN2-color"
                                     @endif
                                 @endif
                                 >
-                                    {{$accounts->QuyenTruyCap}}
+                                    {{$account->QuyenTruyCap}}
                                 </span>
                             </td>
-                            <td class={{$accounts->TrangThai == 0 ? "stop-active" : ""}}>
-                                <p>
-                                    {{$accounts->TrangThai == 1 ? "Hoạt động" : "Dừng hoạt động"}}
-                                <p>
-                            </td>
-                            <td>Trống</td>
+                            <td>Không có dữ liệu</td>
                             <td>
-                                <a href="/changepw">
+                                <a href="">
                                     <i class="bi bi-pencil-square edit"></i>
                                 </a>
                             </td>
@@ -94,5 +91,25 @@
             </div>
     </div>
 </div>
-
+<div class="overlay hidden"></div>
+<div class="form-changepw hidden">
+    <button class="btn-close-modal">x</button>
+    <form class="flex-cl">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label lb-pw">Mật khẩu cũ</label>
+          <input type="password" class="form-control ip-pw" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label lb-pw">Mật khẩu mới</label>
+          <input type="password" class="form-control ip-npw" id="exampleInputPassword1">
+        </div>
+            <button type="submit" class="btn btn-primary btn-save">Lưu</button>
+      </form>
+</div>
+<div class="form-noti hidden">
+    <p></p>
+</div>
+@endsection
+@section('linkjs')
+    <script src="/js/ListAccEmployee/index.js"></script>
 @endsection

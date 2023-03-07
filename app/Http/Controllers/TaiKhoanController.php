@@ -69,14 +69,16 @@ class TaiKhoanController extends Controller
     public function listAccount(){
         $user = NhanVien::find(Auth::user()->MaNV);
         $accounts = TaiKhoan::with('nhanvien')->get();
-        $activeCount = TaiKhoan::where('TrangThai',1)->count();
-        $stopActiveCount = TaiKhoan::where('TrangThai',0)->count();
+        $memberCount = TaiKhoan::where('QuyenTruyCap','member')->count();
+        $admin1Count = TaiKhoan::where('QuyenTruyCap','admin1')->count();
+        $admin2Count = TaiKhoan::where('QuyenTruyCap','admin2')->count();
         return view('ListAccEmployee.listaccemployee',
             [
                 'user' => $user,
                 'accounts' => $accounts,
-                'activeCount' => $activeCount,
-                'stopActiveCount' =>$stopActiveCount,
+                'memberCount' => $memberCount,
+                'admin1Count' => $admin1Count,
+                'admin2Count' => $admin2Count,
             ]
         );
     }
