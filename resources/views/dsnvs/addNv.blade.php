@@ -16,8 +16,8 @@
                 </div>
                 <div>
                     <div>
-                        <label for="">Mã nhân viên</label>
-                        <input type="text">
+                        <label for="myfile">Chọn ảnh: </label>
+                        <input type="file" id="myfile" name="myfile">
                     </div>
                     <div>
                         <label for="">Ngày sinh</label>
@@ -176,10 +176,16 @@
             </div>
             <div class="btn-save-exit">
                 <div>
-                    <a href="dsnv"><button class="save">Lưu</button></a>
-                    <a href="{{route('listEmployee')}}"><button class="exit">Thoát</button></a>
+                    
+                    <a href="{{route('listEmployee')}}"><button class="save" type="button" id="btn" value="Show Alert" onclick="abc()">Lưu</button></a>
+                    <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                 </div>
             </div>
         </form>
     </div>
 @endsection
+<script>
+    function abc(){
+        confirm("Lưu hồ sơ nhân viên thành công")
+    }
+</script>

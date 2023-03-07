@@ -55,6 +55,8 @@
 .search-bar input, select{
     width: 279px;
     height: 31px;
+    padding: 5px;
+    margin-left: 10px;
 }
 .show{
     margin-right: 10px;
