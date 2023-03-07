@@ -9,17 +9,17 @@
         <div class="add-function">
                 <a href="{{route('showListLeave')}}" class="navigation">Danh Sách nghỉ phép</a>
                 <span>></span>
-                <p>Thêm nghỉ phép</p>
+                <p>Sửa nghỉ phép</p>
         </div>
         <form class="form-fle" method="post" action="">
             <div class="grid">
             <div class="mb-3 ">
               <label class="form-label lb-add">Mã nhân viên</label>
-              <input type="text" class="form-control ip-add" required>
+              <input type="text" class="form-control ip-add" id="" name="">
             </div>
             <div class="mb-3">
               <label class="form-label lb-add">Tên Nhân viên</label>
-              <input type="text" class="form-control ip-add">
+              <input type="text" class="form-control ip-add" id="" name="">
             </div>
             <div class="mb-3 flex">
                 <label class="form-label lb-add">Ngày bắt đầu</label>

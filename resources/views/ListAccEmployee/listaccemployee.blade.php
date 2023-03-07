@@ -45,7 +45,7 @@
                 <table class="table table-striped">
                     <thead>
                   <tr>
-                    <th scope="col">Mã nhân viên</th>
+                    <tdhscope="col">Mã nhân viên</th>
                     <th scope="col">Tên nhân viên</th>
                     <th scope="col">Tài khoản</th>
                     <th scope="col">Quyền truy cập</th>
@@ -106,7 +106,7 @@
             <button type="submit" class="btn btn-primary btn-save">Lưu</button>
       </form>
 </div>
-<div class="form-noti">
+<div class="form-noti hidden">
     <p>Sửa thành công</p>
 </div>
 @endsection

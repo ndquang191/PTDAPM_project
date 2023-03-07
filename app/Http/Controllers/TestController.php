@@ -17,6 +17,11 @@ class TestController extends Controller{
     }
     public function addleave(){
         return view('LeaveList/addleave');
+    }    public function editleave(){
+        return view('LeaveList/editleave');
+    }
+    public function historyleave(){
+        return view('LeaveList/historyleave');
     }
     public function salary(){
         return view('Salary/salary');
