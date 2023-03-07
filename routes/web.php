@@ -73,3 +73,7 @@ Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
     return view('user.index',['user' => $user]);
 });
+
+Route::get('dsnv', function () {
+    return view('dsnvs.addNv');
+});
