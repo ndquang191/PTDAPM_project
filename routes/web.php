@@ -71,5 +71,5 @@ Route::get('/addleave',[TestController::class,'addleave']);
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
-    return view('ListAccEmployee.listaccemployee',['user' => $user]);
+    return view('user.index',['user' => $user]);
 });

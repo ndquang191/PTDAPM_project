@@ -1,3 +1,8 @@
-h1{
-     font-size: 60px;
+.user_homepage{
+     padding: 80px 40px;
 }
+
+.homepage-container{
+     background-color: white;
+}
+
