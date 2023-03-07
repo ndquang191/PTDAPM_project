@@ -4,5 +4,33 @@
 
 .homepage-container{
      background-color: white;
+     display: flex;
+     flex-wrap: wrap;
+     padding: 60px;
+     gap: 30px;
+     position: relative;
 }
+
+.user_box_item{
+     width: calc((100% - 160px) / 4);
+     min-width: 200px;
+     height: 173px;
+     background-color: #39374E;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+.user_box_item i{
+     font-size: 6.2rem;
+     color: #E8E9EC;
+}
+
+.user_box_item span{
+     font-weight: 400;
+     font-size: 20px;
+     color: #E8E9EC;
+}
+
 
