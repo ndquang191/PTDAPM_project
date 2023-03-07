@@ -56,9 +56,6 @@
 
 }
 
-.detail_info{
-     display: none;
-}
 
 
 .d-flex .title_input{
@@ -88,7 +85,7 @@
 
 .d-flex .input{
      margin-top: 4px;
-     height: 28px;
+     height: 36px;
      border: 1px solid rgba(0, 0, 0, 0.6);
      border-radius: 4px;
      display: flex;
