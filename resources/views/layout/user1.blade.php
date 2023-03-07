@@ -69,7 +69,7 @@
                            </a>
                          </li>
                          <li class="dropdown_user_item">
-                           <a href="{{route('showInfo')}}">
+                           <a href="{{route('showInfoUser')}}">
                              <i class="fa-regular fa-user"></i>
                              <span class="dropdown_user_title">Thông tin tài khoản</span>
                            </a>
@@ -102,13 +102,13 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="{{route('showInfo')}}" class="link_dropdown_main_menu">
+                     <a href="{{route('showInfoUser')}}" class="link_dropdown_main_menu">
                        <i class="fa-regular fa-address-card"></i>
                        <span>Thông tin cá nhân</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="" class="link_dropdown_main_menu">
                       <i class="bi bi-file-earmark-fill"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
@@ -126,7 +126,7 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu">
-                     <a href="{{route('showEvaluate')}}" class="link_dropdown_main_menu">
+                     <a href="{{route('showEvaluateUser')}}" class="link_dropdown_main_menu">
                         <i class="bi bi-clipboard-data-fill"></i>
                        <span>Đánh giá</span>
                      </a>

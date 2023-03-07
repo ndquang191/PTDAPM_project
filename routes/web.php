@@ -69,9 +69,12 @@ Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdm
 });
 
 Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
-    Route::get('/evaluate',[DanhGiaController::class,'showEvaluate'])->name('showEvaluate'); // Hiển thị danh sách đánh giá
-    Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfo'); // Hiển thị thông tin tài khoản
-    Route::get('/contract',[HDLDController::class,'test'])->name('showEvaluate'); // Hiển thị chi tiết HDLD
+    Route::get('/evaluate',[DanhGiaController::class,'showEvaluate'])->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
+    Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfoUser'); // Hiển thị thông tin tài khoản
+    // Route::get('/contract',[HDLDController::class,'showDetailUser'])->name('showContractUser'); // Hiển thị chi tiết HDLD
+    Route::get('/leave',[NghiPhepController::class,'userList'])->name('???'); // Hiển thị
+
+
 
 });
 
