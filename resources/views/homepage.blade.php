@@ -6,14 +6,13 @@
     <div class="fluid-container homepage-content">
       <div class="container_item">
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListAccount')}}" class="link_list_item">
               <i class="bi bi-people"></i>
-
               <span>Tài khoản</span>
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('listEmployee')}}" class="link_list_item">
               <i class="bi bi-person-lock"></i>
 
               <span>Nhân viên</span>
