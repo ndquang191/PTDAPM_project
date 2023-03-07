@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/LeaveList/addleave.css">
 @endsection
 @section('content')
-    <div class="main_page">
+    <div class="fluid-container main_page">
         <div class="container">
         <div style="height: 0.1rem"></div>
         <div class="add-function">
@@ -11,11 +11,11 @@
                 <span>></span>
                 <p>Thêm nghỉ phép</p>
         </div>
-        <form class="form-fle">
+        <form class="form-fle" method="post" action="">
             <div class="grid">
             <div class="mb-3 ">
               <label class="form-label lb-add">Mã nhân viên</label>
-              <input type="text" class="form-control ip-add">
+              <input type="text" class="form-control ip-add" required>
             </div>
             <div class="mb-3">
               <label class="form-label lb-add">Tên Nhân viên</label>
@@ -31,7 +31,7 @@
               </div>
               <div class="mb-3 content flex">
                 <label class="form-label lb-add">Nội dung</label>
-                    <textarea class="form-control" placeholder="Nội dung xin nghỉ..." id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control txarea" placeholder="Nội dung xin nghỉ..." id="floatingTextarea2" "></textarea>
               </div>
               <button type="submit" class="btn btn-primary save-btn">Lưu</button>
             </div>
