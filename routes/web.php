@@ -38,6 +38,7 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
     Route::post('/add','store')->name('storeEmployeePage'); // Lưu thông tin nhân viên thêm mới
     Route::get('/{id}','getEmployeeInfo')->name('getEmployeeInfo'); // Hiển thị chi tiết hồ sơ nhân viên
     Route::get('/{id}/edit','editEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
+    Route::get('/{id}/edit','editEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 
 });
 
@@ -71,5 +72,5 @@ Route::get('/addleave',[TestController::class,'addleave']);
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
-    return view('ListAccEmployee.listaccemployee',['user' => $user]);
+    return view('modal',['user' => $user]);
 });

@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         DB::table('TaiKhoan')->insert(['MaNV' => 10001,'MatKhau' => Hash::make('admin2'),'TrangThai' => 1,'QuyenTruyCap' => 'admin2','NgayTao' => Carbon::now()]);
         
         // Thêm nhân viên
-        for($i = 0; $i <= 100; $i++){
+        for($i = 0; $i <= 10; $i++){
             DB::table('NhanVien')->insert(
                 [
                     'TenNV' => Str::random(5),

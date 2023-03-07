@@ -2,10 +2,12 @@
 
 @section('linkcss')
     <link rel="stylesheet" href="./css/dsnv/dsNv.css">
-
 @endsection
 @section('content')
     <div class="fluid-container">
+      @if (session('add_success'))
+      {{-- modal --}}
+      @endif
         <div class="container-header">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Danh sách nhân viên</a></div>
@@ -42,7 +44,7 @@
                   <td>{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}</td>
                   <td>
                     <a class="show" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}"><i class="fa-solid fa-eye"></i></a>
-                    <a href=""><i class="fa-solid fa-trash"></i></a>
+                    <a href="{{route('changeStatus')}}"><i class="fa-solid fa-trash"></i></a>
                   </td>
                 </tr>
               @endforeach
