@@ -24,6 +24,8 @@
 .socialInsuranceInformation input{
     width: 400px;
     padding: 5px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .employeeCode-socialInsuranceCode,
 .startDate-endDate,
@@ -47,11 +49,12 @@
     color: #FFFFFF;
 }
 .btn-save button{
-    padding: 5px;
+    padding: 10px;
     background-color: #5A5278;
     color: #FFFFFF;
     border: none;
     margin-left: 10px;
+    border-radius: 5px;
 }
 .edit{
     background-color: #CEDD7A !important;

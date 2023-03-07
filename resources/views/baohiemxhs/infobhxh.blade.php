@@ -9,7 +9,7 @@
             <div class="socialInsuranceList-addSocialInsurance">
                 <div><a href="">Danh sách bảo hiểm xã hội</a></div>
                 <div> > </div>
-                <div><a href="">Thêm bảo hiểm xã hội</a></div>
+                <div><a href="">Thông tin hiểm xã hội</a></div>
             </div>
         </div>
         <form action="" class="form-information">

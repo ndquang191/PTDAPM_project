@@ -17,37 +17,37 @@
                 <div class="employeeCode-socialInsuranceCode">
                     <div>
                         <label for="">Mã nhân viên</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                     <div>
                         <label for="">Mã BHXH</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="startDate-endDate">
                     <div>
                         <label for="">Ngày bắt đầu</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                     <div>
                         <label for="">Ngày kết thúc</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="closingLevel-phoneNumber">
                     <div>
                         <label for="">Mức đóng</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                     <div>
                         <label for="">Số điện thoại</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="bonusMoney">
                     <div>
                         <label for="">Tiền được thưởng</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="btn-save">
