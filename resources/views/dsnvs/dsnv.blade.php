@@ -5,9 +5,6 @@
 @endsection
 @section('content')
     <div class="fluid-container">
-      @if (session('add_success'))
-      {{-- modal --}}
-      @endif
         <div class="container-header">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Danh sách nhân viên</a></div>
@@ -59,12 +56,14 @@
           </table>
         </div>
     </div>
-<script>
+<script type="text/javascript">
+  var data = 1;
+  console.log(data);
   function myFunction() {
     var input, filter, table, tr, td, i, txtValue, e, giatri, stt;
     e = document.getElementById("chooseSearch");
     giaTri = e.options[e.selectedIndex].text;
-    input = document.getElementById("myInput");
+    input = document.getElementById("myInput"); 
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
@@ -102,5 +101,5 @@
 @endsection
 
 @section('linkjs')
-  <script src="./js/...."></script>
+  
 @endsection
