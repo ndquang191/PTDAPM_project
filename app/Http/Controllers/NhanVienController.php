@@ -21,22 +21,22 @@ class NhanVienController extends Controller
     }
     
     public function store(Request $request){
-        // Kiểm tra định dạng các trường
-        $validated = $request->validate([
-            // 'username' => 'bail|required',
-        ],
-        [
-            // 'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
+        // // Kiểm tra định dạng các trường
+        // $validated = $request->validate([
+        //     // 'username' => 'bail|required',
+        // ],
+        // [
+        //     // 'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
 
-        ]);
+        // ]);
 
-        // Thêm nhân viên vào csdl
-        NhanVien::create([
+        // // Thêm nhân viên vào csdl
+        // NhanVien::create([
 
-        ]);
+        // ]);
 
-        // Điều hướng về trang nhân viên
-        return redirect()->route('listEmployee')->with(['message' => 'Thêm thành công']);
+        // // Điều hướng về trang nhân viên
+        // return redirect()->route('listEmployee')->with(['message' => 'Thêm thành công']);
     }
 
     public function edit(){

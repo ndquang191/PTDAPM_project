@@ -9,7 +9,8 @@
             <div><a class="tab-hosonv" href="">Hồ sơ nhân viên</a></div>
             <div><a class="tab-bangcap" href="">Bằng cấp nhân viên</a></div>
         </div>
-        <form class="body-content" method="post" action="">
+        <form class="body-content" method="post" action="{{route('storeEmployeePage')}}">
+            @csrf
             <div class="inf-user">
                 <div>
                     <img src="./image/photo_user.jpg" alt="">
@@ -176,8 +177,8 @@
             </div>
             <div class="btn-save-exit">
                 <div>
-                    <a href="dsnv"><button class="save">Lưu</button></a>
-                    <a href="{{route('listEmployee')}}"><button class="exit">Thoát</button></a>
+                    <button class="save" type="submit">Lưu</button>
+                    <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                 </div>
             </div>
         </form>

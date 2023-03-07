@@ -13,16 +13,24 @@ class TaiKhoanController extends Controller
 {
     public function showLoginPage(){
         if(Auth::check()){
-            return redirect('/homepage');
+            if(Auth::user()->QuyenTruyCap == 'member')
+                return redirect('/homepage');
+            else
+                return redirect('/admin');
         }
         else{
             return view('login');
         }
     }
 
-    public function showHomePage(){
+    public function showAdminPage(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         return view('homepage',['user' => $user]);
+    }
+
+    public function showHomePage(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('newhomepage',['user' => $user]);
     }
 
     public function login(Request $request){
@@ -43,7 +51,7 @@ class TaiKhoanController extends Controller
             ];
             if(Auth::attempt($credentials)){
                 if(Auth::user()->TrangThai == 1){
-                    return redirect('/homepage');
+                    return redirect('/');
                 }
                 else{
                     Auth::guard()->logout();
