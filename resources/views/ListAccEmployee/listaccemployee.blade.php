@@ -106,8 +106,8 @@
             <button type="submit" class="btn btn-primary btn-save">Lưu</button>
       </form>
 </div>
-<div class="form-noti hidden">
-    <p></p>
+<div class="form-noti">
+    <p>Sửa thành công</p>
 </div>
 @endsection
 @section('linkjs')
