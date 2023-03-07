@@ -5,6 +5,9 @@
 @endsection
 @section('content')
     <div class="fluid-container">
+      @if (session('add_success'))
+      {{-- modal --}}
+      @endif
         <div class="container-header">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Danh sách nhân viên</a></div>

@@ -21,83 +21,68 @@
                         <input type="file" id="myfile" name="myfile">
                     </div>
                     <div>
-                        <label for="">Ngày sinh</label>
-                        <input type="date">
+                        <label for="birthday">Ngày sinh</label>
+                        <input type="date" name="birthday" id="birthday">
                     </div>
                 </div>
                 <div>
                     <div>
-                        <label for="">Họ và tên nhân viên</label>
-                        <input type="text">
+                        <label for="name">Họ và tên nhân viên</label>
+                        <input type="text" id="name" name="name">
                     </div>
                     <div>
-                        <label for="">Số CMND/Thẻ căn cước</label>
-                        <input type="text">
+                        <label for="CCCD">Số CMND/Thẻ căn cước</label>
+                        <input type="text" name="CCCD" id="CCCD">
                     </div>
                 </div>
                 <div>
                     <div>  
-                        <label for="">Giới tính</label>
-                        <select>
-                            <option value="-1" hidden>Chọn</option>
-                            <option value="0">Nam</option>
-                            <option value="1">Nữ</option>
+                        <label for="gender">Giới tính</label>
+                        <select name="gender" id="gender">
+                            <option value="0" hidden>Chọn</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
                         </select>
                     </div>
                     <div>
-                        <label for="">Dân tộc</label>
-                        <input type="text">
+                        <label for="nation">Dân tộc</label>
+                        <input type="text" id="nation" name="nation">
                     </div>
                 </div>
             </div>
 
-
-
-
-
             <div class="religion-placeofbirth-permanentaddress">
                 <div class="religion">
-                    <label for="">Tôn giáo</label>
-                    <input type="text">
+                    <label for="religion">Tôn giáo</label>
+                    <input type="text" id="religion" name="religion">
                 </div>
                 <div class="placeofbirth">
-                    <label for="">Nơi sinh</label>
-                    <input type="text">
+                    <label for="placeofbirth">Nơi sinh</label>
+                    <input type="text" name="placeofbirth" id="placeofbirth">
                 </div>
                 <div class="permanentaddress">
-                    <label for="">Địa chỉ thường trú</label>
-                    <input type="text">
+                    <label for="address">Địa chỉ thường trú</label>
+                    <input type="text" name="address" id="address">
                 </div>
             </div>
 
-
-
-
             <div class="phonenumber-email-qualification-status">
                 <div class="phonenumber">
-                    <label for="">Số điện thoại</label>
-                    <input type="text">
+                    <label for="phonenumber">Số điện thoại</label>
+                    <input type="text" name="phonenumber" id="phonenumber">
                 </div>
                 <div class="email">
-                    <label for="">Email</label>
-                    <input type="text">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
                 </div>
                 <div class="qualification">
                     <label for="">Trình độ học vấn</label>
                     <select>
                         <option value="0" hidden>Chọn</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
-                        <option value="5">Honda</option>
-                        <option value="6">Jaguar</option>
-                        <option value="7">Land Rover</option>
-                        <option value="8">Mercedes</option>
-                        <option value="9">Mini</option>
-                        <option value="10">Nissan</option>
-                        <option value="11">Toyota</option>
-                        <option value="12">Volvo</option>
+                        <option value="Trình độ 1">Trình độ 1</option>
+                        <option value="Trình độ 2">Trình độ 2</option>
+                        <option value="Trình độ 3">Trình độ 3</option>
+                        <option value="Trình độ 4">Trình độ 4</option>
                     </select>
                 </div>
                 <div class="status">
@@ -124,54 +109,30 @@
                     <label for="">Phòng ban</label>
                     <select>
                         <option value="0" hidden>Chọn</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
-                        <option value="5">Honda</option>
-                        <option value="6">Jaguar</option>
-                        <option value="7">Land Rover</option>
-                        <option value="8">Mercedes</option>
-                        <option value="9">Mini</option>
-                        <option value="10">Nissan</option>
-                        <option value="11">Toyota</option>
-                        <option value="12">Volvo</option>
+                        <option value="Phòng ban 1">Phòng ban 1</option>
+                        <option value="Phòng ban 2">Phòng ban 2</option>
+                        <option value="Phòng ban 3">Phòng ban 3</option>
+                        <option value="Phòng ban 4">Phòng ban 4</option>
                     </select>
                 </div>
                 <div>
                     <label for="">Chức vụ</label>
                     <select>
                         <option value="0" hidden>Chọn</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
-                        <option value="5">Honda</option>
-                        <option value="6">Jaguar</option>
-                        <option value="7">Land Rover</option>
-                        <option value="8">Mercedes</option>
-                        <option value="9">Mini</option>
-                        <option value="10">Nissan</option>
-                        <option value="11">Toyota</option>
-                        <option value="12">Volvo</option>
+                        <option value="Chức vụ 1">Chức vụ 1</option>
+                        <option value="Chức vụ 2">Chức vụ 2</option>
+                        <option value="Chức vụ 3">Chức vụ 3</option>
+                        <option value="Chức vụ 4">Chức vụ 4</option>
                     </select>
                 </div>
                 <div>
                     <label for="">Chuyên ngành</label>
                     <select>
                         <option value="0" hidden >Chọn</option>
-                        <option value="1">Audi</option>
-                        <option value="2">BMW</option>
-                        <option value="3">Citroen</option>
-                        <option value="4">Ford</option>
-                        <option value="5">Honda</option>
-                        <option value="6">Jaguar</option>
-                        <option value="7">Land Rover</option>
-                        <option value="8">Mercedes</option>
-                        <option value="9">Mini</option>
-                        <option value="10">Nissan</option>
-                        <option value="11">Toyota</option>
-                        <option value="12">Volvo</option>
+                        <option value="Chuyên ngành 1">Chuyên ngành 1</option>
+                        <option value="Chuyên ngành 2">Chuyên ngành 2</option>
+                        <option value="Chuyên ngành 3">Chuyên ngành 3</option>
+                        <option value="Chuyên ngành 4">Chuyên ngành 4</option>
                     </select>
                 </div>
             </div>
