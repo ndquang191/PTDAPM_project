@@ -1,0 +1,51 @@
+.container-tilte-table{
+    padding: 10px;
+    margin: 10px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+}
+.socialInsuranceList-addSocialInsurance{
+    margin: 5px;
+    padding: 5px;
+    display: inline-flex;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.53);
+}
+.socialInsuranceList-addSocialInsurance a{
+    color: rgba(0, 0, 0, 0.53);
+}
+.socialInsuranceList-addSocialInsurance div{
+    margin-right: 10px;
+}
+.socialInsuranceInformation label, input{
+    display: block;
+    font-size: 20px;
+}
+.socialInsuranceInformation input{
+    width: 400px;
+    padding: 5px;
+}
+.employeeCode-socialInsuranceCode,
+.startDate-endDate,
+.closingLevel-phoneNumber{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.socialInsuranceInformation{
+    margin: 10px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    overflow: auto;
+}
+.btn-save{
+    float: right;
+    font-size: 20px;
+}
+.btn-save button{
+    padding: 5px;
+    background-color: #5A5278;
+    color: #FFFFFF;
+    border: none;
+}
