@@ -7,11 +7,8 @@ use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
-use App\Http\Controllers\TestController;
-
-
+use App\Http\Controllers\DanhGiaController;
 use App\Models\NhanVien;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +27,7 @@ Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
     Route::get('/logout','logout');
     Route::get('/homepage','showHomePage')->middleware('checkLogin'); // Trang người dùng
     Route::get('/admin','showAdminPage')->middleware(['checkLogin','checkAdmin']); // Trang admin
+    Route::get('/info','showInfo')->name('showInfo')->middleware('checkLogin');
 });
 
 Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
@@ -41,34 +39,32 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
 
 });
 
-Route::controller(BangCapController::class)->middleware(['auth','checkAdmin1'])->prefix('/employee')->group(function(){
+Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
     Route::get('/{id}/degree','showByMaNV'); // Hiển thị danh sách bằng cấp của nhân viên
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
-Route::controller(HDLDController::class)->middleware(['auth','checkAdmin1'])->prefix('/contract')->group(function(){
+Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/contract')->group(function(){
     Route::get('/','showListHDLD')->name('showListHDLD'); // Hiển thị danh sách hợp đồng
     Route::get('/add','createHDLD')->name('createHDLD'); // Hiển thị form thêm hợp đồng
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
-    Route::get('/{id}/showDetailHDLD','showDetailHDLD')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
+    Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
 });
 
-Route::controller(NghiPhepController::class)->middleware(['auth','checkAdmin1'])->prefix('/leave')->group(function(){
+Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/leave')->group(function(){
     Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
 });
 
-Route::controller(TaiKhoanController::class)->middleware(['auth','checkAdmin1'])->prefix('/account')->group(function(){
+Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
 });
 
-Route::get('/homepage',[TestController::class,'homePage']);
-Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
-Route::get('/changepw',[TestController::class,'changepw']);
-Route::get('/leavelist',[TestController::class,'leavelist']);
-Route::get('/addleave',[TestController::class,'addleave']);
-Route::get('/salary',[TestController::class,'salary']);
+Route::controller(DanhGiaController::class)->middleware(['checkLogin'])->prefix('/evaluate')->group(function(){
+    Route::get('/','showEvaluate')->name('showEvaluate'); // Hiển thị danh sách đánh giá
+});
+
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
@@ -76,8 +72,12 @@ Route::get('/test' , function(){
 });
 
 Route::get('/testSubmit' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
     return redirect('/test')->with(['message' => 'test']);
+});
+
+Route::get('/test2' , function(){
+    $user = NhanVien::find(Auth::user()->MaNV);
+    return view('user.index',['user' => $user]);
 });
 
 Route::get('dsnv', function () {

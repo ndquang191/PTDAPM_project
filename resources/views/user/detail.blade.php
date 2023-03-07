@@ -7,7 +7,7 @@
 
           <div class="user_detail img_container">
                <img src="./image/navbar/avatar_user.jpg" alt="">
-               <div class="user_name">Ngo Thi Tam</div>
+               <div class="user_name">{{$employeeInfo->TenNV}}</div>
           </div>
 
 
@@ -21,22 +21,22 @@
                     <div class="row_item">
 
                          <div class="title_input">Tên</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->TenNV}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Dân tộc</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->DanToc}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Tôn giáo</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->TonGiao}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Giới tính</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->GioiTinh == 0 ? "Nam" : "Nữ"}}</div>
                     </div>
                </div>
 
@@ -44,17 +44,17 @@
                     <div class="row_item">
 
                          <div class="title_input">Nơi sinh</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->NoiSinh}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Địa chỉ</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->DiaChi}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">CCCD</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->CCCD}}</div>
                     </div>
           
                </div>
@@ -63,17 +63,17 @@
                     <div class="row_item">
 
                          <div class="title_input">SĐT</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->SDT}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Email</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->Email}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Trình độ học vấn</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->TrinhDoHocVan}}</div>
                     </div>
           
                </div>
@@ -83,17 +83,17 @@
                     <div class="row_item">
 
                          <div class="title_input">Phòng ban</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->PhongBan}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Chức vụ</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->ChucVu}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Chuyên ngành</div>
-                         <div class="input">Quang</div>
+                         <div class="input">{{$employeeInfo->ChuyenNganh}}</div>
                     </div>
           
                </div>
