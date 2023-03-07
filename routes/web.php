@@ -21,13 +21,20 @@ use App\Models\NhanVien;
 |
 // */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('hdld/hdld_ds',[HDLDController::class,'ds_hdld']);
+Route::get('hdld/hdld_add',[HDLDController::class,'add_hdld']);
+Route::get('hdld/hdld_edit',[HDLDController::class,'edit_hdld']);
+Route::get('hdld/hdld_show',[HDLDController::class,'show_hdld']);
+
 Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
     Route::get('/','showLoginPage')->name('login');
     Route::post('/','login');
     Route::get('/logout','logout');
     Route::get('/homepage','showHomePage')->middleware('checkLogin'); // Trang người dùng
     Route::get('/admin','showAdminPage')->middleware(['checkLogin','checkAdmin']); // Trang admin
-    Route::get('/info','showInfo')->name('showInfo')->middleware('checkLogin');
 });
 
 Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
@@ -61,8 +68,11 @@ Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdm
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
 });
 
-Route::controller(DanhGiaController::class)->middleware(['checkLogin'])->prefix('/evaluate')->group(function(){
-    Route::get('/','showEvaluate')->name('showEvaluate'); // Hiển thị danh sách đánh giá
+Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
+    Route::get('/evaluate',[DanhGiaController::class,'showEvaluate'])->name('showEvaluate'); // Hiển thị danh sách đánh giá
+    Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfo'); // Hiển thị thông tin tài khoản
+    Route::get('/contract',[HDLDController::class,'test'])->name('showEvaluate'); // Hiển thị chi tiết HDLD
+
 });
 
 
@@ -80,6 +90,9 @@ Route::get('/test2' , function(){
     return view('user.index',['user' => $user]);
 });
 
-Route::get('dsnv', function () {
-    return view('dsnvs.addNv');
+Route::get('dsbhxh', function () {
+    return view('baohiemxhs.dsbhxh');
+});
+Route::get('infobhxh', function () {
+    return view('baohiemxhs.infobhxh');
 });

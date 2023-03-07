@@ -1,7 +1,7 @@
 @extends('layout.user1')
 
 @section('linkcss')
-     <link rel="stylesheet" href="./css/user/hdld.css">
+     <link rel="stylesheet" href="/css/user/hdld.css">
     
 @endsection
 

@@ -1,6 +1,6 @@
 @extends('layout.user1')
 @section('linkcss')
-     <link rel="stylesheet" href="./css/user/detail.css">
+     <link rel="stylesheet" href="/css/user/detail.css">
 @endsection
 @section('content')
      <div class="fluid-container user_detail_container">

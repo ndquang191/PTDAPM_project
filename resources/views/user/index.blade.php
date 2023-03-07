@@ -2,7 +2,7 @@
 
 
 @section('linkcss')
-     <link rel="stylesheet" href="./css/user/index.css">
+     <link rel="stylesheet" href="/css/user/index.css">
 @endsection
 @section('content')
 <div class="container-fluid user_homepage">

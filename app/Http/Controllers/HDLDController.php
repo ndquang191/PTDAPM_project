@@ -9,6 +9,19 @@ use Illuminate\Support\Facades\Session;
 
 class HDLDController extends Controller
 {
+    //
+    public function ds_hdld(){
+        return view('hdlds.hdld_ds');
+    }
+    public function add_hdld(){
+        return view('hdlds.hdld_add');
+    }
+    public function edit_hdld(){
+        return view('hdlds.hdld_edit');
+    }
+    public function show_hdld(){
+        return view('hdlds.hdld_show');
+    }
     public function showListHDLD(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         return view('hdlds.hdld_ds',['user' => $user]);
@@ -27,5 +40,10 @@ class HDLDController extends Controller
     public function showDetail(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         return view('hdlds.hdld_show',['user' => $user]);
+    }
+
+    public function test(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('user.hdld',['user' => $user]);
     }
 }
