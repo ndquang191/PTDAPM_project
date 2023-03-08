@@ -9,6 +9,7 @@ use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\DanhGiaController;
 use App\Http\Controllers\LuongController;
+use App\Http\Controllers\TestController;
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -106,3 +107,13 @@ Route::get('infobhxh', function () {
 Route::get('addbhxh', function () {
     return view('baohiemxhs.addbhxh');
 });
+Route::get('/homepage',[TestController::class,'homePage']);
+Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
+Route::get('/changepw',[TestController::class,'changepw']);
+Route::get('/leavelist',[TestController::class,'leavelist']);
+Route::get('/addleave',[TestController::class,'addleave']);
+Route::get('/editleave',[TestController::class,'editleave']);
+Route::get('/historyleave',[TestController::class,'historyleave']);
+Route::get('/salary',[TestController::class,'salary']);
+Route::get('/detailsalary',[TestController::class,'detailsalary']);
+Route::get('/pdfsalary',[TestController::class,'pdfsalary']);

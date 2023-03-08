@@ -15,11 +15,11 @@
             <div class="grid">
             <div class="mb-3 ">
               <label class="form-label lb-add">Mã nhân viên</label>
-              <input type="text" class="form-control ip-add" required>
+              <input type="text" class="form-control ip-add input-id" required>
             </div>
             <div class="mb-3">
               <label class="form-label lb-add">Tên Nhân viên</label>
-              <input type="text" class="form-control ip-add">
+              <input type="text" class="form-control ip-add input-name" readonly>
             </div>
             <div class="mb-3 flex">
                 <label class="form-label lb-add">Ngày bắt đầu</label>
@@ -38,4 +38,7 @@
           </form>
         </div>
     </div>
+@endsection
+@section('linkjs')
+<script src="/js/ListAccEmployee/fetchApi.js"></script>
 @endsection
