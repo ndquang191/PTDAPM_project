@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="/css/navbar.css">
      <link href="css/main.css" rel="stylesheet">
-     {{-- <link rel="stylesheet" href="/css/hdld/hdld.css"> --}}
+     <link rel="stylesheet" href="css/navbar.css">
      <script
      src="https://kit.fontawesome.com/975a2f75a4.js"
      crossorigin="anonymous"
@@ -29,7 +29,6 @@
 
 </head>
 <body>
-     
      <div class="" action="" method="post">
           <header id="header" class="header">
                <nav class="navbar_header">
@@ -53,7 +52,8 @@
                            alt="user"
                            class="user_img"
                          />
-                         <span class="name_user">1</span>
+                         <span class="name_user"></span>
+                         {{-- <span class="name_user">{{$user->TenNV}}</span> --}}
                          <i class="fa-solid fa-chevron-down"></i>
                        </a>
                        <ul class="dropdown_user_menu">

@@ -16,7 +16,7 @@ class NhanVienController extends Controller
     public function list(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employees = NhanVien::all();
-        return view('dsnvs.dsnv',['user' => $user,'employees' => $employees]);
+        return view('dsnvs.dsnv',['user' => $user,'employees' => $employees])->with(['status','success']);
     }
 
     public function create(){
@@ -56,11 +56,10 @@ class NhanVienController extends Controller
             'MaNV' => NhanVien::orderBy('MaNV','desc')->first()->MaNV,
             'MatKhau' => Hash::make('member'),
             'TrangThai' => 1,'QuyenTruyCap' => 'member',
-            'NgayTao' => Carbon::now()
+            'NgayTao' => Carbon::now(),
         ]);
-
         // Điều hướng về trang nhân viên
-        return redirect()->route('listEmployee')->with(['add_success' => 'Thêm thành công']);
+        return redirect()->route('listEmployee');
     }
 
     public function edit(){
