@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Session;
 
 class LuongController extends Controller
 {
-    public function index(){
+    public function showSalary(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        // $salerys = NghiPhep::with('nhanvien')->get();
         return view('Salary.salary',['user' => $user]);
     }
     

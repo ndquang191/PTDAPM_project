@@ -81,7 +81,10 @@ Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmi
 Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
     Route::post('/{id}/reset','resetPassword'); // Hiển thị danh sách tài khoản
+});
 
+Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/salary')->group(function(){
+    Route::get('/','showSalary')->name('showSalary');
 });
 
 Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
