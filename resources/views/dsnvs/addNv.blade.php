@@ -37,8 +37,6 @@
                         <label for="birthday">Ngày sinh</label>
                         <input type="date" name="birthday" id="birthday" value={{old('birthday')}}>
                     </div>
-                </div>
-                <div>
                     <div>
                         <label for="name">Họ và tên nhân viên</label>
                         <input type="text" id="name" name="name" value="{{old('name')}}">
@@ -136,18 +134,10 @@
                     <button class="save" type="submit" id="btn" value="Show Alert">Lưu</button>
                     <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 @endsection
-<script>
-    function chooseFile(fileInput){
-        if(fileInput.files && fileInput.files[0]){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#image').attr('src',e.target.result);
-            }
-            reader.readAsDataURL(fileInput.files[0])
-        }
-    }
-</script>
+@section('linkjs')
+    <script src="/js/ListAccEmployee/index.js"></script>
+@endsection

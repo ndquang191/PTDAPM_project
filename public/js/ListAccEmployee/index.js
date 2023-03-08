@@ -127,33 +127,43 @@ function myHiddenUpdate() {
   document.getElementById("employeeCode").readOnly = false;
   document.getElementById("nation").readOnly = false;
   document.getElementById("religion").readOnly = false;
-  document.getElementById("academicLevel").readOnly = false;
-  document.getElementById("Specialized").readOnly = false;
-  document.getElementById("status").readOnly = false;
+  document.getElementById("academicLevel").disabled = false;
+  document.getElementById("Specialized").disabled = false;
+  document.getElementById("status").disabled = false;
 
   document.getElementById("nameEmployee").readOnly = false;
   document.getElementById("citizenIdentification").readOnly = false;
   document.getElementById("placeOfBirth").readOnly = false;
   document.getElementById("permanentAddress").readOnly = false;
-  document.getElementById("position").readOnly = false;
-  document.getElementById("department").readOnly = false;
+  document.getElementById("position").disabled = false;
+  document.getElementById("department").disabled = false;
 }
 //-----------
-function validateForm() {
-  let employeeCode = document.forms["myForm"]["employeeCode"].value;
-  let nation = document.forms["myForm"]["nation"].value;
-  let religion = document.forms["myForm"]["religion"].value;
-  let academicLevel = document.forms["myForm"]["academicLevel"].value;
-  let Specialized = document.forms["myForm"]["Specialized"].value;
-  let status = document.forms["myForm"]["status"].value;
-  let nameEmployee = document.forms["myForm"]["nameEmployee"].value;
-  let citizenIdentification = document.forms["myForm"]["citizenIdentification"].value;
-  let placeOfBirth = document.forms["myForm"]["placeOfBirth"].value;
-  let permanentAddress = document.forms["myForm"]["permanentAddress"].value;
-  let position = document.forms["myForm"]["position"].value;
-  let department = document.forms["myForm"]["department"].value;
-  if (employeeCode == "" || nation == "" || religion == "" || academicLevel == "" || Specialized == "" || status == "" || nameEmployee == "" || citizenIdentification == "" || placeOfBirth == "" || permanentAddress == "" || position == "" || department == "") {
-    alert("Chưa điền đầy đủ thông tin!");
-    return false;
+// function validateForm() {
+//   let employeeCode = document.forms["myForm"]["employeeCode"].value;
+//   let nation = document.forms["myForm"]["nation"].value;
+//   let religion = document.forms["myForm"]["religion"].value;
+//   let academicLevel = document.forms["myForm"]["academicLevel"].value;
+//   let Specialized = document.forms["myForm"]["Specialized"].value;
+//   let status = document.forms["myForm"]["status"].value;
+//   let nameEmployee = document.forms["myForm"]["name"].value;
+//   let citizenIdentification = document.forms["myForm"]["citizenIdentification"].value;
+//   let placeOfBirth = document.forms["myForm"]["placeOfBirth"].value;
+//   let permanentAddress = document.forms["myForm"]["permanentAddress"].value;
+//   let position = document.forms["myForm"]["position"].value;
+//   let department = document.forms["myForm"]["department"].value;
+//   if (employeeCode == "" || nation == "" || religion == "" || academicLevel == "" || Specialized == "" || status == "" || nameEmployee == "" || citizenIdentification == "" || placeOfBirth == "" || permanentAddress == "" || position == "" || department == "") {
+//     alert("Chưa điền đầy đủ thông tin!");
+//     return false;
+//   }
+// }
+//------------------
+function chooseFile(fileInput){
+  if(fileInput.files && fileInput.files[0]){
+      var reader = new FileReader();
+      reader.onload = function(e){
+          $('#image').attr('src',e.target.result);
+      }
+      reader.readAsDataURL(fileInput.files[0])
   }
 }
