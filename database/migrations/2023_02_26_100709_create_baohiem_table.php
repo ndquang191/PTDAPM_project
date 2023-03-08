@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('baohiem', function (Blueprint $table) {
             $table->id('MaBHXH');
             $table->unsignedBigInteger('MaNV');
+            $table->string('TenCheDo');
+            $table->decimal('MucDong', 10, 2);
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });
     }

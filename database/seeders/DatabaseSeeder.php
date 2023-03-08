@@ -18,13 +18,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         // Thêm tk admin
         for($i = 0; $i < 2; $i++){
             DB::table('NhanVien')->insert(
@@ -51,7 +44,7 @@ class DatabaseSeeder extends Seeder
         DB::table('TaiKhoan')->insert(['MaNV' => 10001,'MatKhau' => Hash::make('admin2'),'TrangThai' => 1,'QuyenTruyCap' => 'admin2','NgayTao' => Carbon::now()]);
         
         // Thêm nhân viên
-        for($i = 0; $i <= 50; $i++){
+        for($i = 0; $i <= 10; $i++){
             DB::table('NhanVien')->insert(
                 [
                     'TenNV' => Str::random(5),
@@ -81,7 +74,7 @@ class DatabaseSeeder extends Seeder
                     'QuyenTruyCap' => 'member',
                     'NgayTao' => Carbon::now()
                 ]);
-            for($i=0;$i<$SoBC;$i++){
+            for($i = 0; $i < $SoBC; $i++){
                 DB::table('BangCap')->insert([
                     'MaNV' => $manv,
                     'TenBC' => Str::random(20),
@@ -100,6 +93,21 @@ class DatabaseSeeder extends Seeder
                     'PhanLoai' => $giatri > 0 ? 1 : 0,
                 ]);
             }
+
+            DB::table('hopdonglaodong')->insert(
+                [
+                    'MaNV' => $manv,
+                    'SoHD' => floor(rand(1000000,9999999)),
+                    'LoaiHopDong' => 'Loại '.floor(rand(1,3)),
+                    'NgayKi' => Carbon::today()->subDays(rand(0, 365)),
+                    'NgayBatDau' => Carbon::today()->subDays(rand(0, 365)),
+                    'NgayKetThuc' => Carbon::today()->subDays(rand(0, 365)),
+                    'DiaDiem' => Str::random(20),
+                    'ChuyenMon' => Str::random(20),
+                    'PhapNhan' => Str::random(20),
+                    'LuongCoBan' => floor(rand(10000000,99999999)),
+                    'HeSoLuong' => floor(rand(1,8)),
+                ]);
         }
     }
 }
