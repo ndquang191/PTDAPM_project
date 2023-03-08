@@ -41,4 +41,9 @@ class HDLDController extends Controller
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         return view('hdlds.hdld_show',['user' => $user]);
     }
+
+    public function test(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('user.hdld',['user' => $user]);
+    }
 }

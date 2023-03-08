@@ -18,4 +18,9 @@ class NghiPhepController extends Controller
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         return view('LeaveList.addleave',['user' => $user]);
     }
+
+    public function userList(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('user.nghiphep',['user' => $user]);
+    }
 }

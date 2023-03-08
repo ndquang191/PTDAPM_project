@@ -2,12 +2,12 @@
 
 
 @section('linkcss')
-     <link rel="stylesheet" href="./css/user/index.css">
+     <link rel="stylesheet" href="/css/user/index.css">
 @endsection
 @section('content')
 <div class="container-fluid user_homepage">
      <div class="homepage-container">
-          <a href="" class="user_box_item">
+          <a href="{{route('showInfo')}}" class="user_box_item">
                <i class="bi bi-person-vcard"></i>
                <span>Thông tin cá nhân</span>
           </a>
@@ -23,7 +23,7 @@
                <i class="bi bi-calendar2-plus"></i>
                <span>Nghỉ phép</span>
           </a>
-          <a href="" class="user_box_item">
+          <a href="{{route('showEvaluate')}}" class="user_box_item">
                <i class="bi bi-clipboard-data"></i>
                <span>Đánh giá</span>
 

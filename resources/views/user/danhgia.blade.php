@@ -1,7 +1,7 @@
 @extends('layout.user1')
 
 @section('linkcss')
-     <link rel="stylesheet" href="./css/user/danhgia.css">
+     <link rel="stylesheet" href="/css/user/danhgia.css">
 @endsection
 
 
@@ -21,11 +21,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
+                         @if (count($evaluates) == 0)
+                             <tr>
+                              <td>Không có bản ghi</td>
+                             </tr>
+                         @else 
+                             @foreach ($evaluates as $evaluate)
+                             <tr>
+                              <td>{{$evaluate->NoiDung}}</td>
+                              <td>{{$evaluate->NgayQuyetDinh}}</td>
+                              <td>{{$evaluate->Giatri}}</td>
+                            </tr>
+                             @endforeach
+                         @endif
                     </tbody>
                   </table>
           </div>
