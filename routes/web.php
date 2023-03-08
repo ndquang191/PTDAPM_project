@@ -69,14 +69,6 @@ Route::controller(TaiKhoanController::class)->middleware(['auth','checkAdmin1'])
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
 });
 
-Route::get('/homepage',[TestController::class,'homePage']);
-Route::get('/listaccemployee',[TestController::class,'listaccemployee']);
-Route::get('/changepw',[TestController::class,'changepw']);
-Route::get('/leavelist',[TestController::class,'leavelist']);
-Route::get('/addleave',[TestController::class,'addleave']);
-Route::get('/editleave',[TestController::class,'editleave']);
-Route::get('/historyleave',[TestController::class,'historyleave']);
-Route::get('/salary',[TestController::class,'salary']);
 
 Route::get('/test' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);

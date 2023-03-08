@@ -45,7 +45,7 @@
                 <table class="table table-striped">
                     <thead>
                   <tr>
-                    <tdhscope="col">Mã nhân viên</th>
+                    <th scope="col">Mã nhân viên</th>
                     <th scope="col">Tên nhân viên</th>
                     <th scope="col">Tài khoản</th>
                     <th scope="col">Quyền truy cập</th>
@@ -59,7 +59,7 @@
                     @else
                         @foreach ($accounts as $account)
                         <tr>
-                            <th scope="row">{{$account->MaNV}}</th>
+                            <td scope="row">{{$account->MaNV}}</td>
                             <td>{{$account->nhanvien->TenNV}}</td>
                             <td>Không có dữ liệu</td>
                             <td >

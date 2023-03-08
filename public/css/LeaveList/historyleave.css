@@ -55,7 +55,7 @@
     margin-top: 3rem;
 }
 .navigation {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 18px;
     line-height: 15px;
     /* identical to box height */
@@ -96,6 +96,9 @@
     gap: 3rem;
     align-items: center;
     padding-bottom: 2rem;
+}
+* {
+    font-family: "Roboto", sans-serif;
 }
 .img-box {
     width: 15rem;

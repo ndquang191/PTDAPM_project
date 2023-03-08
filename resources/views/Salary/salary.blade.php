@@ -11,7 +11,7 @@
         <div class="search">
             <div class="form-floating mb-3" style="margin:0!important">
                 <input type="text" class="form-control input-search" id="floatingInput" placeholder="Tìm kiếm...">
-                <label for="floatingInput">Tìm kiếm...</label>
+                <label for="floatingInput" class="floatInput">Tìm kiếm...</label>
             </div>
             <div class="search-btn">
                 <i class="bi bi-search"></i>
@@ -30,8 +30,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>01</td>
+              <tr class="infor-data">
+                <td><p class="padding">01</p></td>
                 <td class="Employee-custom-table">
                     <div class="">
                         <span>NT</span>
@@ -40,9 +40,16 @@
                         Ngô Thị Tâm
                 </p>
                 </td>
-                <td>Chuyên viên chính trị công tác</td>
-                <td>sinh viên</td>
-                <td></td>
+                <td> <p>Chuyên viên chính trị công tác</p> </td>
+                <td> <p>sinh viên</p> </td>
+                <td class="muti-btn">
+                    <a href="#">
+                        <i class="bi bi-pencil-square edit"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-eye-fill edit"></i>
+                    </a>
+                </td>
               </tr>
             </tbody>
           </table>

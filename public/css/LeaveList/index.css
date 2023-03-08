@@ -12,6 +12,12 @@
     flex-direction: column;
     padding: 2rem 0;
 }
+.add-function button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: #5a5278;
+}
 .container {
     min-width: 170rem;
     min-height: 70rem;
@@ -72,7 +78,6 @@
     font-weight: 500;
     font-size: 2rem;
     line-height: 15px;
-    padding: 1rem;
     color: black;
     justify-items: center;
     /* align-self: center; */
@@ -86,8 +91,10 @@ td {
     font-size: 1.8rem;
     line-height: 1.4rem;
     color: #000000;
+    text-align: center;
 }
 th {
+    text-align: center;
     font-weight: 600;
     font-size: 2rem;
     line-height: 1.6rem;
@@ -100,4 +107,5 @@ th {
 .muti-btn {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }

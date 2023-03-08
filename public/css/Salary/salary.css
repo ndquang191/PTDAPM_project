@@ -1,14 +1,21 @@
 .container {
-    /* width: 125rem; */
-    margin: 2rem 0.5rem 2rem 0.5rem;
-    min-height: 80%;
-    background: #ffffff;
+    min-width: 170rem;
+    height: 80vh;
+    background: #ffff;
     border-radius: 5px;
-    height: 70vh;
-    padding: 1rem;
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 25%);
+    justify-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+* {
+    font-family: "Roboto", sans-serif;
 }
 .fluid-container {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
 }
 .heading-section {
     display: flex;
@@ -22,8 +29,8 @@
     justify-self: center;
 }
 .search-btn {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 4rem;
+    height: 4rem;
     background-color: #5a5278;
     display: flex;
     justify-content: center;
@@ -32,9 +39,24 @@
     margin-right: 3rem;
 }
 .input-search {
-    width: 279px;
-    height: 31px;
+    width: 40rem;
+    height: 6rem;
     margin: 0;
+    padding: 0;
+    font-size: 2rem;
+}
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+}
+.form-floating > label {
+    top: -5px;
+}
+.floatInput {
+    color: #ccc;
+    font-size: 1.8rem;
+    justify-items: center;
+    align-self: center;
 }
 .search {
     display: flex;
@@ -43,15 +65,15 @@
     gap: 1rem;
 }
 .heading-primary {
-    font-weight: 100;
-    font-size: 20px;
-    line-height: 23px;
+    font-weight: 200;
+    font-size: 3rem;
+    line-height: 2.3rem;
     color: black;
     text-align: center;
 }
 th {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 2rem;
     line-height: 130%;
     /* identical to box height, or 16px */
     text-align: center;
@@ -59,15 +81,49 @@ th {
 }
 td {
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
     color: #000000;
+}
+
+td > p {
+    padding: 0.5rem !important;
 }
 .Employee-custom-table {
     display: flex;
     gap: 3rem;
-    /* justify-content: space-around; */
+    justify-content: center;
 }
-.Employee-custom-table div {
-    margin-left: 1rem;
+.Employee-custom-table p {
+    align-self: center;
+    padding: 0 !important;
+}
+.Employee-custom-table > div > span {
+    color: #5a5278;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 130%;
+    display: flex;
+    background: rgba(217, 217, 217, 0.67);
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    /* or 14px */
+    justify-content: center;
+    align-items: center;
+    color: #6952bf;
+}
+.edit {
+    font-size: 2rem;
+    color: #5a5278;
+    cursor: pointer;
+}
+.muti-btn {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem !important;
 }
