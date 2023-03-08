@@ -28,7 +28,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">2051063754</th>
+            <td scope="row">2051063754</th>
             <td>Nguyễn Như Minh</td>
             <td>07/07/2023</td>
             <td>08/07/2023</td>
@@ -43,7 +43,7 @@
             </td>
           </tr>
           <tr>
-            <th scope="row">2051060698</th>
+            <t scope="row">2051060698</th>
             <td>Nguyễn Hà Thái</td>
             <td>02/07/2023</td>
             <td>03/07/2023</td>
