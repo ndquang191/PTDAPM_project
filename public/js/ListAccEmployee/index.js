@@ -79,9 +79,9 @@ function myFunction() {
       if (td) {
         txtValue = td.textContent || td.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
+          table[i].style.display = "";
         } else {
-          tr[i].style.display = "none";
+          table[i].style.display = "none";
         }
       }       
     }

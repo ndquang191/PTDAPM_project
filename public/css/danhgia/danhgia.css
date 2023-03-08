@@ -1,0 +1,168 @@
+.danhgia_main_container{
+    position: absolute;
+    width: 105rem;
+    /* height: 41rem; */
+    left: 21%;
+    top: 15rem;
+    border-radius: 5px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.title_main{
+    margin-top: 1rem;
+}
+.title_danhgia{
+    color: #212529;
+    text-align: center;
+}
+.danhgia_title{
+    background-color: #dcdcdc;
+    width: 102rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+.danhgia_title h5{
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 500;
+}
+.danhgia_main_page{
+    top: 11rem;
+    background-color: rgba(237, 237, 237, 0.87);
+}
+
+.tilte_main{
+    /* float: left; */
+    text-align: center;
+    color: #000000B2;
+    font-size: 1.5rem;
+    margin-left: 8rem;
+    /* margin-top: 1rem; */
+
+}
+.table{
+    width: 103rem;
+    margin: 0 auto;
+}
+.icon_color{
+    color: #39374E;
+}
+td{
+    font-size: 1.4rem;
+    color: #000000B2;
+}
+th{
+    font-size: 1.4rem;
+    color: #212529;
+}
+.input_search{
+    float: right;
+    margin: 3px 2rem 1.5rem 0;
+    display: flex;
+}
+.form_input{
+    width: 20rem;
+    height: 3rem;
+    /* padding: 0 10px; */
+    border-radius: 3px ;
+    margin-right: 1rem;
+    border: 1px solid #39374E;
+}
+.search_btn{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #39374E;
+}
+
+.icon_color{
+    color: #39374E;
+}
+td{
+    font-size: 1.4rem;
+    color: #333;
+
+}
+th{
+    font-size: 1.4rem;
+    color: #333;
+}
+.form_input{
+    width: 28rem;
+    height: 3rem;
+    padding: 0 10px;
+    border-radius: 1px #39374E;
+}
+.search_btn{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #39374E;
+}
+
+/* form thêm đánh giá */
+.head_add_danhgia_main {
+    margin-left: 1rem;
+    margin-top: 2rem;
+    background-color: #dcdcdc;
+    width: 102rem;
+}
+.head_add_danhgia_main span{
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 1);
+}
+.title_danhgia_add{
+    font-size: 1.4rem;
+    color: #848484;
+}
+.title_add_danhgia{
+    font-size: 1.4rem;
+    display: inline-block;
+    color: rgba(0, 0, 0, 1);
+}
+.form_list_danhgia{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0 2rem;
+}
+
+.form_list_item_danhgia{
+    margin-top: 2rem;
+}
+.form_add_danhgia{
+    margin: 2rem 4rem 0 2rem;
+}
+.form_title_danhgia{
+    color: black;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+.form_input_add_danhgia{
+    width: 35rem;
+    font-size: 1.3rem;
+    background-color: #fff;
+    border: none;
+    height: 3rem;
+}
+.bottom_add_danhgia{
+    /* display: flex; */
+    float: right;
+    margin: 1rem 6rem;
+}
+
+.bottom_exit_danhgia .danhgia_submit{
+    color: #fff;
+    width: 70px;
+    height: 37px;
+    border: none;
+    text-align: center;
+    line-height: 37px;
+    background-color: #39374E;
+    font-size: 1.4rem;
+}
