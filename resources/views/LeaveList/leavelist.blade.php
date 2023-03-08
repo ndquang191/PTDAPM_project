@@ -27,36 +27,36 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td scope="row">2051063754</th>
-            <td>Nguyễn Như Minh</td>
-            <td>07/07/2023</td>
-            <td>08/07/2023</td>
-            <td>Có phép</td>
-            <td class="muti-btn">
-                <a href="#">
-                    <i class="bi bi-pencil-square edit"></i>
-                </a>
-                <a href="#">
-                    <i class="bi bi-eye-fill edit"></i>
-                </a>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">2051060698</td>
-            <td>Nguyễn Hà Thái</td>
-            <td>02/07/2023</td>
-            <td>03/07/2023</td>
-            <td>Có phép</td>
-            <td class="muti-btn">
-                <a href="#">
-                    <i class="bi bi-pencil-square edit"></i>
-                </a>
-                <a href="#">
-                    <i class="bi bi-eye-fill edit"></i>
-                </a>
-            </td>
-          </tr>
+            @if (count($leaves) == 0)
+            <script>
+                Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Không có bản ghi !',
+                showConfirmButton: true,
+                confirmButtonText: 'Đóng',
+                timer: 3000
+              })
+              </script>
+            @else
+                @foreach ($leaves as $leave)
+                <tr>
+                    <td scope="row">{{$leave->MaNV}}</th>
+                    <td>{{$leave->nhanvien->TenNV}}</td>
+                    <td>{{$leave->NgayBatDau}}</td>
+                    <td>{{$leave->NgayKetThuc}}</td>
+                    <td>Có phép</td>
+                    <td class="muti-btn">
+                        <a href="{{route('editLeave',['id'=>$leave->MaNP])}}">
+                            <i class="bi bi-pencil-square edit"></i>
+                        </a>
+                        <a href="#">
+                            <i class="bi bi-eye-fill edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                @endforeach
+            @endif
         </tbody>
         </table>
     </div>

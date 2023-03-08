@@ -8,6 +8,7 @@ use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\DanhGiaController;
+use App\Http\Controllers\LuongController;
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -61,6 +62,8 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin1'
 Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/leave')->group(function(){
     Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
+    Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
+
 });
 
 Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
@@ -74,7 +77,6 @@ Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfoUser'); // Hiển thị thông tin tài khoản
     // Route::get('/contract',[HDLDController::class,'showDetailUser'])->name('showContractUser'); // Hiển thị chi tiết HDLD
     Route::get('/leave',[NghiPhepController::class,'userList'])->name('???'); // Hiển thị
-
 });
 
 

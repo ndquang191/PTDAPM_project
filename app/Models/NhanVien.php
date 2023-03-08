@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\BangCap;
 use App\Models\TaiKhoan;
 use App\Models\DanhGia;
+use App\Models\NghiPhep;
+
 
 
 
@@ -30,6 +32,10 @@ class NhanVien extends Model
     }
 
     public function danhgia(){
-        return $this->hasMany(TaiKhoan::class,'MaNV');
+        return $this->hasMany(DanhGia::class,'MaNV');
+    }
+
+    public function nghiphep(){
+        return $this->hasMany(NghiPhep::class,'MaNV');
     }
 }
