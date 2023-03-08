@@ -1,15 +1,15 @@
 @extends('layout.app')
 
 @section('linkcss')
-    <link rel="stylesheet" href="./css/bhxh/infobhxh.css">
+    <link rel="stylesheet" href="/css/bhxh/infobhxh.css">
 @endsection
 @section('content')
     <div class="fluid-container">
         <div class="container-tilte-table">
             <div class="socialInsuranceList-addSocialInsurance">
-                <div><a href="">Danh sách bảo hiểm xã hội</a></div>
+                <div><a href="{{route('showListBHXH')}}">Danh sách bảo hiểm xã hội</a></div>
                 <div> > </div>
-                <div><a href="">Thêm bảo hiểm xã hội</a></div>
+                <div>Thêm bảo hiểm xã hội</div>
             </div>
         </div>
         <form action="" class="form-information">
@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <div class="btn-save">
-                    <button class="save"><a href="dsbhxh">Lưu</a></button>
-                    <button class="edit"><a href="dsbhxh">Thoát</a></button>
+                    <button class="save" type="submit">Lưu</button>
+                    <button class="edit"><a href="{{route('showListBHXH')}}">Thoát</a></button>
                 </div>
             </div>
         </form>

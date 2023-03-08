@@ -109,9 +109,9 @@
                         </div>
                         <div class="btn-update-exit">
                             <div>
-                                <a href=""><button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button></a>
+                                <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button>
                                 <a><button onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Cập nhật</button></a>
-                                <a href=""><button class="exit" type="button">Thoát</button></a>
+                                <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                             </div>
                         </div>
                     </form>

@@ -8,6 +8,7 @@ use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\DanhGiaController;
+use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\LuongController;
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
@@ -55,8 +56,10 @@ Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmi
 Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/contract')->group(function(){
     Route::get('/','showListHDLD')->name('showListHDLD'); // Hiển thị danh sách hợp đồng
     Route::get('/add','createHDLD')->name('createHDLD'); // Hiển thị form thêm hợp đồng
+    Route::post('/add','storeHDLD')->name('storeHDLD'); // Lưu HDLD
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
+
 });
 
 Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/leave')->group(function(){
@@ -66,6 +69,12 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
 });
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/evaluate')->group(function(){
+    Route::get('/','showListEvaluate')->name('showListEvaluate');
+});
+
+Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/insurance')->group(function(){
+    Route::get('/','showListBHXH')->name('showListBHXH');
+    Route::get('/add','createBHXH')->name('createBHXH');
 
 });
 
@@ -78,8 +87,6 @@ Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdm
 Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/evaluate',[DanhGiaController::class,'showEvaluate'])->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
     Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfoUser'); // Hiển thị thông tin tài khoản
-    // Route::get('/contract',[HDLDController::class,'showDetailUser'])->name('showContractUser'); // Hiển thị chi tiết HDLD
-    Route::get('/leave',[NghiPhepController::class,'userList'])->name('???'); // Hiển thị
 });
 
 
@@ -97,12 +104,3 @@ Route::get('/test2' , function(){
     return view('user.index',['user' => $user]);
 });
 
-Route::get('dsbhxh', function () {
-    return view('baohiemxhs.dsbhxh');
-});
-Route::get('infobhxh', function () {
-    return view('baohiemxhs.infobhxh');
-});
-Route::get('addbhxh', function () {
-    return view('baohiemxhs.addbhxh');
-});

@@ -38,13 +38,13 @@
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListBHXH')}}" class="link_list_item">
               <i class="bi bi-shield-plus"></i>
               <span>Bảo hiểm</span>
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListEvaluate')}}" class="link_list_item">
               <i class="bi bi-clipboard2-data"></i>
               <span>Đánh giá nhân viên</span>
             </a>

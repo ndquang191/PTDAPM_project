@@ -20,7 +20,7 @@ class DanhGiaController extends Controller
 
     public function showListEvaluate(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        // $evaluates = DanhGia::where('MaNV',Auth::user()->MaNV)->get();
+        $evaluates = DanhGia::orderBy('NgayQuyetDinh','asc')->get();
         return view('user.danhgia',['user' => $user,'evaluates' => $evaluates]);
     }
 }
