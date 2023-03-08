@@ -138,3 +138,22 @@ function myHiddenUpdate() {
   document.getElementById("position").readOnly = false;
   document.getElementById("department").readOnly = false;
 }
+//-----------
+function validateForm() {
+  let employeeCode = document.forms["myForm"]["employeeCode"].value;
+  let nation = document.forms["myForm"]["nation"].value;
+  let religion = document.forms["myForm"]["religion"].value;
+  let academicLevel = document.forms["myForm"]["academicLevel"].value;
+  let Specialized = document.forms["myForm"]["Specialized"].value;
+  let status = document.forms["myForm"]["status"].value;
+  let nameEmployee = document.forms["myForm"]["nameEmployee"].value;
+  let citizenIdentification = document.forms["myForm"]["citizenIdentification"].value;
+  let placeOfBirth = document.forms["myForm"]["placeOfBirth"].value;
+  let permanentAddress = document.forms["myForm"]["permanentAddress"].value;
+  let position = document.forms["myForm"]["position"].value;
+  let department = document.forms["myForm"]["department"].value;
+  if (employeeCode == "" || nation == "" || religion == "" || academicLevel == "" || Specialized == "" || status == "" || nameEmployee == "" || citizenIdentification == "" || placeOfBirth == "" || permanentAddress == "" || position == "" || department == "") {
+    alert("Chưa điền đầy đủ thông tin!");
+    return false;
+  }
+}
