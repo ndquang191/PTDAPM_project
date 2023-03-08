@@ -9,7 +9,7 @@
             <div class="socialInsuranceList-addSocialInsurance">
                 <div><a href="">Danh sách bảo hiểm xã hội</a></div>
                 <div> > </div>
-                <div><a href="">Thông tin hiểm xã hội</a></div>
+                <div><a href="">Thêm bảo hiểm xã hội</a></div>
             </div>
         </div>
         <form action="" class="form-information">
@@ -17,41 +17,42 @@
                 <div class="employeeCode-socialInsuranceCode">
                     <div>
                         <label for="">Mã nhân viên</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                     <div>
                         <label for="">Mã BHXH</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="startDate-endDate">
                     <div>
                         <label for="">Ngày bắt đầu</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                     <div>
                         <label for="">Ngày kết thúc</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="closingLevel-phoneNumber">
                     <div>
                         <label for="">Mức đóng</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                     <div>
                         <label for="">Số điện thoại</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="bonusMoney">
                     <div>
                         <label for="">Tiền được thưởng</label>
-                        <input type="text" readonly>
+                        <input type="text" >
                     </div>
                 </div>
                 <div class="btn-save">
-                    <button><a href="dsbhxh">Thoát</a></button>
+                    <button class="save"><a href="dsbhxh">Lưu</a></button>
+                    <button class="edit"><a href="dsbhxh">Thoát</a></button>
                 </div>
             </div>
         </form>
