@@ -131,7 +131,7 @@ function myHiddenUpdate() {
   document.getElementById("Specialized").disabled = false;
   document.getElementById("status").disabled = false;
 
-  document.getElementById("nameEmployee").readOnly = false;
+  document.getElementById("nameEmployee").readOnly = true;
   document.getElementById("citizenIdentification").readOnly = false;
   document.getElementById("placeOfBirth").readOnly = false;
   document.getElementById("permanentAddress").readOnly = false;

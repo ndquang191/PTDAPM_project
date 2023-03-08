@@ -13,11 +13,8 @@ class BangCapController extends Controller
     public function showByMaNV($id){
         $user = NhanVien::find(Auth::user()->MaNV);
         $employee = NhanVien::find($id);
-        // $employee = NhanVien::with('bangcap')->find($id);
-        // $employee = BangCap::where('MaNV',$id)->get();
         $degrees = BangCap::where('MaNV',$id)->get();
         return view('bangcaps.dsbc',['user' => $user,'degrees' => $degrees,'employee' => $employee]);
-        // return $employee;
     }
 
     public function create(){

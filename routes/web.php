@@ -8,7 +8,6 @@ use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\DanhGiaController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
-use App\Http\Controllers\DanhGiaController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\LuongController;
 use App\Models\NhanVien;
@@ -94,6 +93,8 @@ Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdm
 
 Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/salary')->group(function(){
     Route::get('/','showSalary')->name('showSalary');
+    Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
+
 });
 
 Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
