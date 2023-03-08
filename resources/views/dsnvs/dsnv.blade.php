@@ -5,8 +5,24 @@
 @endsection
 @section('content')
     <div class="fluid-container">
-      @if (session('add_success'))
-      {{-- modal --}}
+      @if (session('message'))
+      <script>
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+
+        Toast.fire({
+          icon: 'success',
+          html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+        })
+      </script>
       @endif
       <div class="container-head-body">
             <div class="container-header">

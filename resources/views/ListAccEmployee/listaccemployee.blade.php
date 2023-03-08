@@ -59,7 +59,7 @@
                     @else
                         @foreach ($accounts as $account)
                         <tr>
-                            <th scope="row">{{$account->MaNV}}</th>
+                            <td scope="row">{{$account->MaNV}}</td>
                             <td>{{$account->nhanvien->TenNV}}</td>
                             <td>Không có dữ liệu</td>
                             <td >
@@ -106,7 +106,7 @@
             <button type="submit" class="btn btn-primary btn-save">Lưu</button>
       </form>
 </div>
-<div class="form-noti">
+<div class="form-noti hidden">
     <p>Sửa thành công</p>
 </div>
 @endsection

@@ -5,6 +5,19 @@
 @endsection
 @section('content')
     <div class="fluid-container">
+        @if($errors->any())
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Vui lòng kiểm tra lại thông tin nhân viên',
+            showConfirmButton: true,
+            confirmButtonText: 'Đóng',
+            timer: 3000
+          })
+          </script>
+        {{-- {!! implode('', $errors->all('<div>:message</div>')) !!} --}}
+        @endif
         <div class="header-content">
             <div><a class="tab-hosonv" href="">Hồ sơ nhân viên</a></div>
             <div><a class="tab-bangcap" href="">Bằng cấp nhân viên</a></div>
@@ -118,9 +131,6 @@
                     </select>
                 </div>
             </div>
-            @if($errors->any())
-                {!! implode('', $errors->all('<div>:message</div>')) !!}
-            @endif
             <div class="btn-save-exit">
                 <div>
                     <button class="save" type="submit" id="btn" value="Show Alert">Lưu</button>

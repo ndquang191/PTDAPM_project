@@ -91,3 +91,69 @@ function myFunction() {
   function saveEmployee(){
     confirm("Bạn có muốn xóa nhân viên không?")
   }
+
+//---------------------------------------------
+function searchBhxh() {
+  var input, filter, table, tr, td, i, txtValue, e, giatri, stt;
+  e = document.getElementById("chooseSearch");
+  giaTri = e.options[e.selectedIndex].text;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  if(giaTri == "Mã nhân viên"){
+    stt = 0;
+  }
+  if(giaTri == "Mã BHXH"){
+    stt = 1;
+  }
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[stt];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+//---------------------------------------
+function myHiddenUpdate() {
+  document.getElementById("btn-save").style.display = "block";
+  document.getElementById("btn-update").style.display = "none";
+  
+  document.getElementById("employeeCode").readOnly = false;
+  document.getElementById("nation").readOnly = false;
+  document.getElementById("religion").readOnly = false;
+  document.getElementById("academicLevel").readOnly = false;
+  document.getElementById("Specialized").readOnly = false;
+  document.getElementById("status").readOnly = false;
+
+  document.getElementById("nameEmployee").readOnly = false;
+  document.getElementById("citizenIdentification").readOnly = false;
+  document.getElementById("placeOfBirth").readOnly = false;
+  document.getElementById("permanentAddress").readOnly = false;
+  document.getElementById("position").readOnly = false;
+  document.getElementById("department").readOnly = false;
+}
+//-----------
+function validateForm() {
+  let employeeCode = document.forms["myForm"]["employeeCode"].value;
+  let nation = document.forms["myForm"]["nation"].value;
+  let religion = document.forms["myForm"]["religion"].value;
+  let academicLevel = document.forms["myForm"]["academicLevel"].value;
+  let Specialized = document.forms["myForm"]["Specialized"].value;
+  let status = document.forms["myForm"]["status"].value;
+  let nameEmployee = document.forms["myForm"]["nameEmployee"].value;
+  let citizenIdentification = document.forms["myForm"]["citizenIdentification"].value;
+  let placeOfBirth = document.forms["myForm"]["placeOfBirth"].value;
+  let permanentAddress = document.forms["myForm"]["permanentAddress"].value;
+  let position = document.forms["myForm"]["position"].value;
+  let department = document.forms["myForm"]["department"].value;
+  if (employeeCode == "" || nation == "" || religion == "" || academicLevel == "" || Specialized == "" || status == "" || nameEmployee == "" || citizenIdentification == "" || placeOfBirth == "" || permanentAddress == "" || position == "" || department == "") {
+    alert("Chưa điền đầy đủ thông tin!");
+    return false;
+  }
+}

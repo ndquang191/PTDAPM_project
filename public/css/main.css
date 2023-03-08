@@ -7,3 +7,7 @@
 p {
     margin: 0;
 }
+
+.swal2-text {
+    font-size: 22px !important;
+}
