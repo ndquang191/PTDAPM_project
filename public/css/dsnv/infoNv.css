@@ -69,7 +69,7 @@
     border-radius: 5px;
 }
 .info-left label, input,
-.info-right label, input{
+.info-right label, input, select{
     display: block;
 }
 .info-left div,
@@ -78,6 +78,14 @@
 }
 .info-left input,
 .info-right input{
+    background: rgba(90, 82, 120, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 30px;
+    width: 350px;
+    padding: 5px;
+}
+.info-left select,
+.info-right select{
     background: rgba(90, 82, 120, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.1);
     height: 30px;
@@ -125,4 +133,7 @@
 .container-title-form{
     padding: 10px;
     margin: 10px;
+}
+.btn-update-exit button{
+    border-radius: 5px;
 }

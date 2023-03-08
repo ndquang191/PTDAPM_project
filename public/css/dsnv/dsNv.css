@@ -28,8 +28,8 @@
 }
 .btn-add button{
     float: right;
-    width: 75px;
-    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
     background-color: #5A5278;
     color: #FFFFFF;
     border: none;

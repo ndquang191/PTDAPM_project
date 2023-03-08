@@ -46,49 +46,72 @@
                                 </div>
                                 <div>
                                     <label for="">Trình độ học vấn</label>
-                                    <input type="text" id="academicLevel" name="academicLevel" value="{{$employee->TrinhDoHocVan}}" name="" id="" readonly>
+                                    <select id="academicLevel" disabled>
+                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 1</option>
+                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 2</option>
+                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 3</option>
+                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 4</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label for="">Chuyên ngành</label>
-                                    <input type="text" id="Specialized" name="Specialized" value="{{$employee->ChuyenNganh}}" name="" id="" readonly>
+                                    <select id="Specialized" disabled>
+                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 1</option>
+                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 2</option>
+                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 3</option>
+                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 4</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label for="">Trạng thái</label>
-                                    <input type="text" id="status" name="status" value="{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}" readonly>
+                                    <select id="status" disabled>
+                                        <option value="{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}">Đang làm việc</option>
+                                        <option value="{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}">Ngừng làm việc</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="info-right">
                                 <div>
                                     <label for="">Họ và tên nhân viên</label>
-                                    <input type="text" name="nameEmployee" id="nameEmployee" value="{{$employee->TenNV}}" readonly>
+                                    <input type="text" name="name" id="nameEmployee" value="{{$employee->TenNV}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Số CMND/Thẻ căn cước</label>
-                                    <input type="text" id="citizenIdentification" name="citizenIdentification" value="{{$employee->CCCD}}" readonly>
+                                    <input type="text" id="citizenIdentification" name="CCCD" value="{{$employee->CCCD}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Nơi sinh</label>
-                                    <input type="text" name="" id="placeOfBirth" name="placeOfBirth" value="{{$employee->NoiSinh}}" readonly>
+                                    <input type="text" name="" id="placeOfBirth" name="placeofbirth" value="{{$employee->NoiSinh}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Địa chỉ thường trú</label>
-                                    <input type="text" name="" id="permanentAddress" name="permanentAddress" value="{{$employee->DiaChi}}" readonly>
+                                    <input type="text" name="" id="permanentAddress" name="address" value="{{$employee->DiaChi}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Chức vụ</label>
-                                    <input type="text" name="" id="position" name="position" value="{{$employee->ChucVu}}" readonly>
+                                    <select id="position" disabled>
+                                        <option value="{{$employee->ChucVu}}">Chức vụ 1</option>
+                                        <option value="{{$employee->ChucVu}}">Chức vụ 2</option>
+                                        <option value="{{$employee->ChucVu}}">Chức vụ 3</option>
+                                        <option value="{{$employee->ChucVu}}">Chức vụ 4</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label for="">Phòng ban</label>
-                                    <input type="text" name="" id="department" name="department" value="{{$employee->PhongBan}}" readonly>
+                                    <select id="department" disabled>
+                                        <option value="{{$employee->PhongBan}}">Phòng ban 1</option>
+                                        <option value="{{$employee->PhongBan}}">Phòng ban 2</option>
+                                        <option value="{{$employee->PhongBan}}">Phòng ban 3</option>
+                                        <option value="{{$employee->PhongBan}}">Phòng ban 4</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="btn-update-exit">
                             <div>
-                                <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button>
-                                <button onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Cập nhật</button>
-                                <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
+                                <a href=""><button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button></a>
+                                <a><button onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Cập nhật</button></a>
+                                <a href=""><button class="exit" type="button">Thoát</button></a>
                             </div>
                         </div>
                     </form>
