@@ -37,8 +37,6 @@
                         <label for="birthday">Ngày sinh</label>
                         <input type="date" name="birthday" id="birthday" value={{old('birthday')}}>
                     </div>
-                </div>
-                <div>
                     <div>
                         <label for="name">Họ và tên nhân viên</label>
                         <input type="text" id="name" name="name" value="{{old('name')}}">

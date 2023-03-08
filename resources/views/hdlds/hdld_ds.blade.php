@@ -3,13 +3,32 @@
     <link rel="stylesheet" href="/css/hdld/hdld.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'success',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
     <div class="fluid-contaier">
         <div class="header_main">
             <div class="tilte_main">
                 Danh sách hợp đồng lao động
             </div>
             <div class="add_btn">
-                <a href="{{URL::to('hdld/hdld_add')}}" class="link_add_btn"> + Thêm</a>
+                <a href="{{route('createHDLD')}}" class="link_add_btn"> + Thêm</a>
             </div>
         </div>
         <div class="hdld_main_container">
@@ -38,63 +57,45 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2051063724</td>
-                        <td>1</td>
-                        <td>Xác định thời hạn</td>
-                        <td>18-2-2020</td>
-                        <td>18-2-2020</td>
-                        <td>20-2-2023</td>
-                        <td>ĐH Thủy Lợi cơ sở 1</td>
-                        <td>Toán cao cấp</td>
-                        <td>
-                            <a href="{{URL::to('hdld/hdld_show')}}">
-                                <i class="bi bi-eye-fill icon_color"></i>
-                            </a>
-                            <a href="#">
-                                <i class="bi bi-trash icon_color"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2051063728</td>
-                        <td>2</td>
-                        <td>Xác định thời hạn</td>
-                        <td>18-2-2021</td>
-                        <td>18-2-2021</td>
-                        <td>20-2-2023</td>
-                        <td>ĐH Thủy Lợi cơ sở 2</td>
-                        <td>Toán cao cấp</td>
-                        <td>
-                            <a href="#">
-                                <i class="bi bi-eye-fill icon_color"></i>
-                            </a>
-                            <a href="#">
-                                <i class="bi bi-trash icon_color"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>2051063762</td>
-                        <td>3</td>
-                        <td>Xác định thời hạn</td>
-                        <td>18-2-2020</td>
-                        <td>18-2-2020</td>
-                        <td>20-2-2023</td>
-                        <td>ĐH Thủy Lợi cơ sở 1</td>
-                        <td>Toán cao cấp</td>
-                        <td>
-                            <a href="#">
-                                <i class="bi bi-eye-fill icon_color"></i>
-                            </a>
-                            <a href="#">
-                                <i class="bi bi-trash icon_color"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    @if (count($contracts) == 0)
+                    <script>
+                        Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: 'Không có bản ghi !',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Đóng',
+                        timer: 3000
+                      })
+                      </script>
+                    @else 
+                      <?php $count = 0 ?>
+                        @foreach ($contracts as $contract)
+                      <?php $count ++ ?>
+                        <tr>
+                            <td scope="row">{{$count}}</td>
+                            <td>{{$contract->MaNV}}</td>
+                            <td>{{$contract->SoHD}}</td>
+                            <td>{{$contract->LoaiHopDong}}</td>
+                            <td>{{$contract->NgayKi}}</td>
+                            <td>{{$contract->NgayBatDau}}</td>
+                            <td>{{$contract->NgayKetThuc}}</td>
+                            <td>{{$contract->DiaDiem}}</td>
+                            <td>{{$contract->ChuyenMon}}</td>
+                            <td>
+                                <a href="{{URL::to('hdld/hdld_show')}}">
+                                    <i class="bi bi-eye-fill icon_color"></i>
+                                </a>
+                                <a href="{{URL::to('hdld/hdld_edit')}}">
+                                    <i class="bi bi-pencil-square icon_color"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="bi bi-trash icon_color"></i>
+                                </a>
+                            </td>
+                        <tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>

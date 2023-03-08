@@ -102,25 +102,25 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showListAccount')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-people"></i>
                        <span>Tài khoản</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('listEmployee')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-person-lock"></i>
                        <span>Nhân viên</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showListHDLD')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-files"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showListLeave')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-calendar-check"></i>
                        <span>Nghỉ phép</span>
                      </a>
@@ -132,13 +132,13 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu">
-                    <a href="#" class="link_dropdown_main_menu">
+                    <a href="{{route('showListBHXH')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-shield-plus"></i>
                       <span>Bảo hiểm</span>
                     </a>
                   </li>
                   <li class="dropdown_main_menu_item dropdown_sub_menu">
-                    <a href="#" class="link_dropdown_main_menu">
+                    <a href="{{route('showListEvaluate')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-clipboard2-data"></i>
                       <span>Đánh giá nhân viên</span>
                     </a>

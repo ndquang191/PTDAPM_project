@@ -19,13 +19,13 @@
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListHDLD')}}" class="link_list_item">
               <i class="bi bi-files"></i>
               <span>Hợp đồng lao động</span>
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListLeave')}}" class="link_list_item">
               <i class="bi bi-calendar-check"></i>
               <span>Nghỉ phép</span>
             </a>
@@ -38,13 +38,13 @@
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListBHXH')}}" class="link_list_item">
               <i class="bi bi-shield-plus"></i>
               <span>Bảo hiểm</span>
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListEvaluate')}}" class="link_list_item">
               <i class="bi bi-clipboard2-data"></i>
               <span>Đánh giá nhân viên</span>
             </a>

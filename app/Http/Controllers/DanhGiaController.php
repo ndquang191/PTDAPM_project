@@ -17,14 +17,10 @@ class DanhGiaController extends Controller
         $evaluates = DanhGia::where('MaNV',Auth::user()->MaNV)->get();
         return view('user.danhgia',['user' => $user,'evaluates' => $evaluates]);
     }
-    //
-    public function list_danhgia(){
-        return view('danhgia.danhgia_ds');
-    }
-    public function add_danhgia(){
-        return view('danhgia.danhgia_add');
-    }
-    public function edit_danhgia(){
-        return view('danhgia.danhgia_edit');
+
+    public function showListEvaluate(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $evaluates = DanhGia::orderBy('NgayQuyetDinh','asc')->get();
+        return view('user.danhgia',['user' => $user,'evaluates' => $evaluates]);
     }
 }
