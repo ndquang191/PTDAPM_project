@@ -134,8 +134,8 @@
                     <button class="save" type="submit" id="btn" value="Show Alert">Lưu</button>
                     <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 @endsection
 @section('linkjs')

@@ -87,24 +87,26 @@ input, select{
     margin-bottom: 10px;
 }
 .btn-save-exit{
-    margin-top: 60px;
+    margin-top: 50px;
+    padding-bottom: 20px;
 }
 .save{
-    width: 54.34px;
-    height: 27px;
+    padding: 10px;
     background-color: #5A5278;
     color: #FFFFFF;
     border: none;
+    border-radius: 5px;
 }
 .exit{
-    width: 70px;
-    height: 27px;
+    padding: 10px;
     background-color: #CEDD7A;
     color: #FFFFFF;
     border: none;
     margin-left: 20px;
+    border-radius: 5px;
 }
 .container-title-body{
+    overflow: auto;
     padding: 10px;
     margin: 10px;
 }

@@ -33,28 +33,28 @@
         </div>
         <div class="hdld_main_container">
             <div class="input_search">
-                <form action="">
-                    <input type="text" name="search" id="" placeholder="Tìm kiếm ..." class="form_input">
-                </form>
-                <a href="#" class="search_btn">
+                {{-- <form action=""> --}}
+                <input type="text" name="search" id="myInput" placeholder="Tìm kiếm ..." class="form_input" onkeyup="myFunction()">
+                {{-- </form> --}}
+                <a href="#" class="search_btn" onclick="myFunction()">
                     <i class="bi bi-search icon_color_search"></i>
                 </a>
             </div>
-            <table class="table">
+            <table class="table" id="myTable">
                 <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Mã nhân viên</th>
-                    <th scope="col">Số hợp đồng</th>
-                    <th scope="col">Loại hợp đồng</th>
-                    <th scope="col">Ngày ký</th>
-                    <th scope="col">Ngày bắt đầu</th>
-                    <th scope="col">Ngày kết thúc</th>
-                    <th scope="col">Địa điểm làm việc</th>
-                    <th scope="col">Chuyên môn</th>
-                    <th scope="col"></th>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Mã nhân viên</th>
+                        <th scope="col">Số hợp đồng</th>
+                        <th scope="col">Loại hợp đồng</th>
+                        <th scope="col">Ngày ký</th>
+                        <th scope="col">Ngày bắt đầu</th>
+                        <th scope="col">Ngày kết thúc</th>
+                        <th scope="col">Địa điểm làm việc</th>
+                        <th scope="col">Chuyên môn</th>
+                        <th scope="col"></th>
     
-                  </tr>
+                    </tr>
                 </thead>
                 <tbody>
                     @if (count($contracts) == 0)
@@ -100,4 +100,7 @@
             </table>
         </div>
     </div>
+@endsection
+@section('linkjs')
+    <script src="/js/hdld/hdld.js"></script>
 @endsection
