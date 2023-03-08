@@ -119,3 +119,22 @@ function searchBhxh() {
     }       
   }
 }
+//---------------------------------------
+function myHiddenUpdate() {
+  document.getElementById("btn-save").style.display = "block";
+  document.getElementById("btn-update").style.display = "none";
+  
+  document.getElementById("employeeCode").readOnly = false;
+  document.getElementById("nation").readOnly = false;
+  document.getElementById("religion").readOnly = false;
+  document.getElementById("academicLevel").readOnly = false;
+  document.getElementById("Specialized").readOnly = false;
+  document.getElementById("status").readOnly = false;
+
+  document.getElementById("nameEmployee").readOnly = false;
+  document.getElementById("citizenIdentification").readOnly = false;
+  document.getElementById("placeOfBirth").readOnly = false;
+  document.getElementById("permanentAddress").readOnly = false;
+  document.getElementById("position").readOnly = false;
+  document.getElementById("department").readOnly = false;
+}

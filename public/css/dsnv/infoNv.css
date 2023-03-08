@@ -96,3 +96,33 @@
 .status{
     margin-left: 10px;
 }
+.btn-update-exit{
+    overflow: auto;
+}
+.btn-update-exit div{
+    float: right;
+    display: flex;
+}
+.save,
+.update{
+    background-color: #5A5278;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+.save{
+    display: none;
+}
+.exit{
+    background-color: #CEDD7A;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+}
+.container-title-form{
+    padding: 10px;
+    margin: 10px;
+}
