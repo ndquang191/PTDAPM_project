@@ -19,7 +19,7 @@
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showListHDLD')}}" class="link_list_item">
               <i class="bi bi-files"></i>
               <span>Hợp đồng lao động</span>
             </a>

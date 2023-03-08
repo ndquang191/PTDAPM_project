@@ -17,4 +17,10 @@ class DanhGiaController extends Controller
         $evaluates = DanhGia::where('MaNV',Auth::user()->MaNV)->get();
         return view('user.danhgia',['user' => $user,'evaluates' => $evaluates]);
     }
+
+    public function showListEvaluate(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        // $evaluates = DanhGia::where('MaNV',Auth::user()->MaNV)->get();
+        return view('user.danhgia',['user' => $user,'evaluates' => $evaluates]);
+    }
 }
