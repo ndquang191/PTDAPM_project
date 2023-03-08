@@ -42,8 +42,7 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
     Route::get('/add','create')->name('addEmployeePage'); // Hiển thị form thêm nhân viên
     Route::post('/add','store')->name('storeEmployee'); // Lưu thông tin nhân viên thêm mới
     Route::get('/{id}','getEmployeeInfo')->name('getEmployeeInfo'); // Hiển thị chi tiết hồ sơ nhân viên
-    Route::get('/{id}/edit','editEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
-
+    Route::post('/{id}','store')->name('updateEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 });
 
 Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){

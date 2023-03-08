@@ -28,7 +28,8 @@
                     <label for=""><i class="fa-solid fa-venus-mars"></i>{{$employee->GioiTinh == 0 ? "Nam" : "Nữ"}}</label>
                 </div>
                 <div class="container-emloyee">
-                    <form action="" name="myForm" onsubmit="return validateForm()">
+                    <form action="{{route('updateEmployeeInfo',['id' => $employee->MaNV])}}" name="myForm" method="POST">
+                        @csrf
                         <div class="Employeeinformationchange">
                             <div class="info-left">
                                 <div class="info-employeecode">
@@ -85,8 +86,8 @@
                         </div>
                         <div class="btn-update-exit">
                             <div>
-                                <a href="{{route('listEmployee')}}"><button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button></a>
-                                <a><button onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Cập nhật</button></a>
+                                <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button>
+                                <button onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Cập nhật</button>
                                 <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                             </div>
                         </div>
