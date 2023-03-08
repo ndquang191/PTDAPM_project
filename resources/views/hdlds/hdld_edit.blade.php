@@ -58,7 +58,7 @@
                 </div>
                 <div class="bottom_add_hdld">
                     <div class="bottom_exit_add_hdld">
-                        <a href="{{URL::to('hdld/hdld_ds')}}" class="link_exit">Thoát</a>
+                        <a href="{{URL::to('hdld/hdld_show')}}" class="link_exit">Thoát</a>
                     </div>
                     <div class="bottom_save_add_hdld">
                         <button type="submit" class="hdld_submit" id="hdld_submit">Lưu</button>
