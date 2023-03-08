@@ -65,6 +65,8 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
 
 Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
+    Route::post('/{id}/reset','resetPassword'); // Hiển thị danh sách tài khoản
+
 });
 
 Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
@@ -72,8 +74,6 @@ Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfoUser'); // Hiển thị thông tin tài khoản
     // Route::get('/contract',[HDLDController::class,'showDetailUser'])->name('showContractUser'); // Hiển thị chi tiết HDLD
     Route::get('/leave',[NghiPhepController::class,'userList'])->name('???'); // Hiển thị
-
-
 
 });
 

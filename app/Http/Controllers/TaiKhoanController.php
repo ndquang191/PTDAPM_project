@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 use App\Models\NhanVien;
 use App\Models\TaiKhoan;
 
@@ -100,6 +101,14 @@ class TaiKhoanController extends Controller
                 'admin2Count' => $admin2Count,
             ]
         );
+    }
+
+    public function resetPassword($id){
+        $account = TaiKhoan::where('ID',$id)->first();
+        $account->update([
+            'MatKhau' => Hash::make('00000000'),
+        ]);
+        return redirect()->route('showListAccount')->with('message','Reset thành công!');
     }
 
     public function create(){

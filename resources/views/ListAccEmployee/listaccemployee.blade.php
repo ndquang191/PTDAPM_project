@@ -3,6 +3,25 @@
     <link rel="stylesheet" href="/css/ListAccEmployee/index.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'success',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
 <div class="fluid-container main_page">
     <div class="title">
         <h1>Danh sách tài khoản</h1>
@@ -79,19 +98,18 @@
                             </td>
                             <td>{{$account->NgayTao}}</td>
                             <td>
-                                <a href="">
-                                    <i class="bi bi-pencil-square edit"></i>
-                                </a>
+                                <button class="reset-password-btn" data-id = '{{$account->ID}}'><i class="bi bi-pencil-square edit"></i></button>
                             </td>
                           </tr>
                         @endforeach
                     @endif
                 </tbody>
                 </table>
+                <form action="" method="post" id="reset-form">@csrf</form>
             </div>
     </div>
 </div>
-<div class="overlay hidden"></div>
+{{-- <div class="overlay hidden"></div>
 <div class="form-changepw hidden">
     <button class="btn-close-modal">x</button>
     <form class="flex-cl">
@@ -105,10 +123,26 @@
         </div>
             <button type="submit" class="btn btn-primary btn-save">Lưu</button>
       </form>
-</div>
-<div class="form-noti hidden">
-    <p>Sửa thành công</p>
-</div>
+</div> --}}
+<script>
+    // ---- Alert khi nhấn nút reset mật khẩu
+    const resetBTN = document.querySelectorAll('.reset-password-btn');
+    const resetForm = document.getElementById('reset-form')
+    resetBTN.forEach(btn => {
+        btn.addEventListener('click', ()=>{
+            Swal.fire({
+            title: 'Reset mật khẩu tài khoản ' + btn.getAttribute('data-id') + ' ?',
+            showCancelButton: true,
+            confirmButtonText: 'Reset',
+            }).then((result) => {
+            if (result.isConfirmed) {
+                resetForm.setAttribute('action','/account/'+btn.getAttribute('data-id')+'/reset')
+                resetForm.submit();
+            }
+        })
+        })
+    });
+</script>
 @endsection
 @section('linkjs')
     <script src="/js/ListAccEmployee/index.js"></script>
