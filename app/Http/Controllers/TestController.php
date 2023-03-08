@@ -25,6 +25,8 @@ class TestController extends Controller{
     }
     public function salary(){
         return view('Salary/salary');
+    } public function detailsalary(){
+        return view('Salary/detailsalary');
     }
     public function addhdld(){
         return view('hdlds/hdld_add');

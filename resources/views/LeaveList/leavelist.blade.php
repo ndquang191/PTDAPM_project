@@ -43,7 +43,7 @@
             </td>
           </tr>
           <tr>
-            <t scope="row">2051060698</th>
+            <td scope="row">2051060698</td>
             <td>Nguyễn Hà Thái</td>
             <td>02/07/2023</td>
             <td>03/07/2023</td>
