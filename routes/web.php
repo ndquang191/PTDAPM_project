@@ -40,7 +40,7 @@ Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
 Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
     Route::get('/','list')->name('listEmployee'); // Hiển thị danh sách nhân viên
     Route::get('/add','create')->name('addEmployeePage'); // Hiển thị form thêm nhân viên
-    Route::post('/add','store')->name('storeEmployeePage'); // Lưu thông tin nhân viên thêm mới
+    Route::post('/add','store')->name('storeEmployee'); // Lưu thông tin nhân viên thêm mới
     Route::get('/{id}','getEmployeeInfo')->name('getEmployeeInfo'); // Hiển thị chi tiết hồ sơ nhân viên
     Route::get('/{id}/edit','editEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 

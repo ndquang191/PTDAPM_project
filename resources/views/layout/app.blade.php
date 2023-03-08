@@ -69,7 +69,7 @@
                            </a>
                          </li>
                          <li class="dropdown_user_item">
-                           <a href="">
+                           <a href="{{route('showInfoUser')}}">
                              <i class="fa-regular fa-user"></i>
                              <span class="dropdown_user_title">Thông tin tài khoản</span>
                            </a>
@@ -96,7 +96,7 @@
                <div class="main_navbar">
                  <ul class="dropdown_main_menu">
                    <li class="dropdown_main_menu_item">
-                     <a href="index.html" class="link_dropdown_main_menu">
+                     <a href="/admin" class="link_dropdown_main_menu">
                       <i class="bi bi-house-door"></i>
                        <span>Trang chủ</span>
                      </a>

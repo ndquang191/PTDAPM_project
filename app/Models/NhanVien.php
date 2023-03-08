@@ -17,7 +17,9 @@ class NhanVien extends Model
     public $timestamps = false;
     protected $table = 'nhanvien';
     protected $primaryKey = 'MaNV';
-    protected $fillable = ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiSinh','TonGiao','SDT','Email','ChuyenNganh','TrinhDoHocVan','PhongBan','ChucVu','TrangThai'];
+    protected $fillable = 
+    ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiSinh','TonGiao','SDT','Email','ChuyenNganh','TrinhDoHocVan'
+    ,'DanToc','PhongBan','ChucVu','TrangThai'];
     
     public function bangcap(){
         return $this->hasMany(BangCap::class,'MaNV');

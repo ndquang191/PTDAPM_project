@@ -4,6 +4,7 @@ p {
 .fluid-container {
     display: flex;
     flex-direction: column;
+    padding: 50px;
 }
 
 .main_page {
@@ -15,14 +16,15 @@ p {
     /* top: 5rem; */
 }
 .title > h1 {
-    font-weight: 100;
-    font-size: 1.5rem;
+    font-weight: 500;
+    font-size: 2.5rem;
     line-height: 1.8rem;
     color: rgba(0, 0, 0, 0.7);
     margin-bottom: 1.7rem;
 }
 .title {
-    padding: 1.7rem 3rem;
+    /* padding: 1.7rem 3rem; */
+    margin-bottom: 30px;
 }
 .statistical-list {
     display: flex;
@@ -68,9 +70,10 @@ p {
     align-self: flex-end !important;
     margin-right: 1rem;
 }
-.container {
-    /* box-sizing: none; */
-    min-width: 170rem;
+.table-stat-container {
+    width: 100%;
+    padding: 12px;
+    border : 0.5px solid black;
     min-height: 40rem;
     background: #ffffff;
     border-radius: 5px;
@@ -177,7 +180,7 @@ td span {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     z-index: 100;
     transition: all 1s;
 }
@@ -248,4 +251,10 @@ td span {
 .form-noti p {
     font-size: 1.6rem;
     color: #fd0303;
+}
+
+
+.table-acc-list tr{
+    height: 44px;
+    
 }
