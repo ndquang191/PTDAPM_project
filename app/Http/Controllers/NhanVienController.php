@@ -87,6 +87,33 @@ class NhanVienController extends Controller
     public function update(Request $request, $id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employee = NhanVien::where('MaNV',$id)->get();
+        $validator = $request->validate([
+            'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',
+            'CCCD' => 'bail|required|numeric',
+            'gender' => 'bail|required|in:Nam,Nữ',
+            'nation' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
+            'religion' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
+            'placeofbirth' => 'bail|required',
+            'address' => 'bail|required',
+            'phonenumber' => 'bail|required|numeric',
+            'trinhdo' => 'bail|required|in:Trình độ 1,Trình độ 2,Trình độ 3,Trình độ 4',
+            'chuyennganh' => 'bail|required|in:Chuyên ngành 1,Chuyên ngành 2,Chuyên ngành 3,Chuyên ngành 4',
+            'phongban' => 'bail|required|in:Phòng ban 1,Phòng ban 2,Phòng ban 3,Phòng ban 4',
+            'chucvu' => 'bail|required|in:Chức vụ 1,Chức vụ 2,Chức vụ 3,Chức vụ 4',
+        ]);
+        $employee->update([
+            'TenNV' => $request->name,
+            'CCCD' => $request->CCCD,
+            'DiaChi' => $request->address,
+            'NoiSinh' => $request->placeofbirth,
+            'TonGiao' => $request->religion,
+            'DanToc' => $request->nation,
+            'ChuyenNganh' => $request->chuyennganh,
+            'TrinhDoHocVan' => $request->trinhdo,
+            'PhongBan' => $request->phongban,
+            'ChucVu' => $request->chucvu,
+            'TrangThai' => 1,
+        ]);
         return $employee;
     }
 

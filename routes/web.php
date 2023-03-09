@@ -7,7 +7,6 @@ use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
-use App\Http\Controllers\DanhGiaController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\LuongController;
 use App\Http\Controllers\TestController;
@@ -90,6 +89,11 @@ Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmi
 Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
     Route::post('/{id}/reset','resetPassword'); // Hiển thị danh sách tài khoản
+});
+
+Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/salary')->group(function(){
+    Route::get('/','showSalary')->name('showSalary');
+    Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
 
 });
 

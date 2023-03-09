@@ -6,7 +6,7 @@
 <div class="fluid-container">
     <div class="heading-section">
         <div class="heading-primary">
-            <p>Bảng lương nhân viên : Ngô Thị Tâm</p>
+            <p>Bảng lương nhân viên : {{$employee->TenNV}}</p>
         </div>
     </div>
     <div class="container">
@@ -17,13 +17,13 @@
                         <img src="image/detailsalary/NgoThiTam.png" alt="">
                     </div>
                     <div class="infor">
-                        <P>Mã nhân viên : 2051063756</P>
-                        <p>Ngô Thị Tâm</p>
+                        <P>Mã nhân viên: {{$employee->MaNV}}</P>
+                        <p>{{$employee->TenNV}}</p>
                     </div>
                 </div>
             </div>
             <div class="date">
-                <p>15/02/2023</p>
+                <p>15/03/2023</p>
             </div>
         </div>
         <div class="detail-salary">
@@ -31,7 +31,7 @@
             <div class="salary-base">
                 <span>01</span>
                 <p class="name">Lương cơ bản</p>
-                <p class="salary-1">50.000.00VND</p>
+                <p class="salary-1">{{$luongcoban}} VND</p>
                 <p class="salary-2">-</p>
                 <div class="eye-hide hidden">
                     <i class="bi bi-eye-fill"></i>
@@ -40,7 +40,7 @@
             <div class="salary-base box-gray">
                 <span>02</span>
                 <p class="name">Hệ số lương</p>
-                <p class="salary-1"></p>
+                <p class="salary-1">{{$hesoluong}}</p>
                 <p class="salary-2"></p>
                 <div class="eye-hide">
                     <i class="bi bi-eye-fill hidden"></i>
@@ -58,7 +58,7 @@
             <div class="salary-base box-gray">
                 <span>04</span>
                 <p class="name">Khen thưởng</p>
-                <p class="salary-1">50.000.00VND</p>
+                <p class="salary-1">{{$khenthuong}} VND</p>
                 <p class="salary-2"></p>
                 <div class="eye-hide">
                     <i class="bi bi-eye-fill hidden"></i>
@@ -68,7 +68,7 @@
                 <span>05</span>
                 <p class="name">Kỷ luật</p>
                 <p class="salary-1"></p>
-                <p class="salary-2">20.000.000VND</p>
+                <p class="salary-2">{{$kiluat}} VND</p>
                 <div class="eye-hide">
                     <i class="bi bi-eye-fill hidden"></i>
                 </div>
@@ -76,7 +76,7 @@
             <div class="salary-base summary" style="background-color: #eee">
                 <span></span>
                 <p class="name">Tổng</p>
-                <p class="salary-1"></p>
+                <p class="salary-1">{{$luongcoban * $hesoluong + $khenthuong + $kiluat}} VND</p>
                 <p class="salary-2"></p>
                 <div class="eye-hide">
                     <i class="bi bi-eye-fill hidden"></i>

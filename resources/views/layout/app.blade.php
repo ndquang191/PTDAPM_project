@@ -126,7 +126,7 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showSalary')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-wallet"></i>
                        <span>Tiền lương</span>
                      </a>

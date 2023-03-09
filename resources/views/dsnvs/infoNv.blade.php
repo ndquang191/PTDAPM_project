@@ -5,6 +5,19 @@
 
 @endsection
 @section('content')
+@if($errors->any())
+<script>
+    Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Vui lòng kiểm tra lại thông tin nhân viên',
+    showConfirmButton: true,
+    confirmButtonText: 'Đóng',
+    timer: 3000
+  })
+  </script>
+{{-- {!! implode('', $errors->all('<div>:message</div>')) !!} --}}
+@endif
     <div class="fluid-container">
         <div class="container-title-form">
             <div class="header-content">

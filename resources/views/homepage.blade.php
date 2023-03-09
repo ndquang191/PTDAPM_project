@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class="container_list_item">
-            <a href="#" class="link_list_item">
+            <a href="{{route('showSalary')}}" class="link_list_item">
               <i class="bi bi-wallet"></i>
 
               <span>Tiền lương</span>
