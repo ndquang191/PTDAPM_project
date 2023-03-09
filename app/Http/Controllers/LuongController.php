@@ -25,10 +25,12 @@ class LuongController extends Controller
         $luongcoban = $hopdong->LuongCoBan;
         $hesoluong = $hopdong->HeSoLuong;
         $currentMonth = Carbon::now()->month;
+        // $dayInMonth = Carbon::now()->month($currentMonth)->daysInMonth;
         $danhgias = DanhGia::where('MaNV',$id)->whereMonth('NgayQuyetDinh',$currentMonth)->get();
         $khenthuong = 0;
         $kiluat = 0;
         $nghipheps = NghiPhep::where('MaNV',$id)->whereMonth('NgayBatDau',$currentMonth)->get();
+        $leaveDayCount = 0;
         // return $nghipheps;
         foreach($danhgias as $danhgia){
             if($danhgia->PhanLoai == 1){
@@ -38,19 +40,24 @@ class LuongController extends Controller
                 $kiluat += $danhgia->Giatri;
             }
         };
-        // foreach($nghipheps as $nghiphep){
-        //     if($nghiphep->LiDo == null){ 
-        //         return $nghiphep->NgayBatDau;
-        //         $S_Month = date('m', strtotime($nghiphep->NgayBatDau));
-        //         $E_Month = date('m', strtotime($nghiphep->NgayKetThuc));
-        //         if ($S_Month != $E_Month){
-        //         }
-        //         // return round((strtotime($nghiphep->NgayBatDau) - strtotime($nghiphep->NgayKetThuc))/ (60 * 60 * 24));
-        //         // if(date('M', $nghiphep->NgayBatDau) != date('M', $nghiphep->NgayKetThuc)){
-        //         //     return $nghiphep->NgayBatDau;
-        //         // };
-        //         }
-        // };
+        foreach($nghipheps as $nghiphep){
+            if($nghiphep->LiDo == null){ 
+                    $start = Carbon::parse($nghiphep->NgayBatDau);
+                    $end = Carbon::parse($nghiphep->NgayKetThuc);
+                    if($start->month != $currentMonth){ // Tháng đang chọn khác tháng bắt đầu
+                        $dayInMonth = $end->day;
+                        $leaveDay = $end->day;
+                    }
+                    else if($end->month != $currentMonth){
+                        $dayInMonth = $start->daysInMonth;
+                        $leaveDay = $dayInMonth - $start->day;
+                    }
+                    else{
+                        $leaveDay = $end->day - $start->day;
+                    }
+                    $leaveDayCount += $leaveDay;
+                }
+        };
 
         return view('Salary.detailsalary',
         [
@@ -60,6 +67,8 @@ class LuongController extends Controller
             'hesoluong' => $hesoluong,
             'khenthuong' => $khenthuong,
             'kiluat' => $kiluat,
+            'leaveDayCount' => $leaveDayCount,
+            'dayInMonth' => Carbon::now()->month($currentMonth)->daysInMonth,
         ]);
     }
     

@@ -10,7 +10,7 @@ use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\LuongController;
-use App\Models\NhanVien;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -97,9 +97,12 @@ Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin1
 
 });
 
-Route::middleware(['checkLogin'])->prefix('/user')->group(function(){
-    Route::get('/evaluate',[DanhGiaController::class,'showEvaluate'])->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
-    Route::get('/info',[TaiKhoanController::class,'showInfo'])->name('showInfoUser'); // Hiển thị thông tin tài khoản
+Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){
+    Route::get('/evaluate','showEvaluate')->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
+    Route::get('/info','showInfo')->name('showInfoUser'); // Hiển thị thông tin tài khoản
+    Route::get('/contract','showContract')->name('showContractUser');
+    Route::get('/insurance','showInsurance')->name('showInsuranceUser');
+
 });
 
 
