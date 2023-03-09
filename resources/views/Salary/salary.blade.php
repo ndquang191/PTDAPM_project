@@ -44,7 +44,7 @@
                 <td> <p>sinh viên</p> </td>
                 <td class="muti-btn">
                     <a href="#">
-                        <i class="bi bi-pencil-square edit"></i>
+                        <i class="bi bi-pencil-square edit hidden"></i>
                     </a>
                     <a href="#">
                         <i class="bi bi-eye-fill edit"></i>

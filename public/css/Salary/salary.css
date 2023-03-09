@@ -1,5 +1,5 @@
 .container {
-    min-width: 170rem;
+    min-width: 160rem;
     height: 80vh;
     background: #ffff;
     border-radius: 5px;
@@ -8,6 +8,10 @@
     align-self: center;
     display: flex;
     flex-direction: column;
+}
+.hidden {
+    visibility: none;
+    opacity: 0;
 }
 * {
     font-family: "Roboto", sans-serif;

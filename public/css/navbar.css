@@ -163,9 +163,6 @@ h6 {
     padding: 0.5rem 1rem;
     text-align: center;
     border-radius: 2rem;
-
-
-
 }
 .dropdown_user_item-1 .update::after {
     content: "";
@@ -242,7 +239,7 @@ h6 {
 .dropdown_main_menu_item .link_dropdown_main_menu > span {
     margin-left: 1rem;
 
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -277,7 +274,7 @@ h6 {
     padding: 0 1rem;
 }
 
-.main_content{
+.main_content {
     width: calc(100% - 27rem);
     padding: 0px 1px;
     background-color: #dcdcdc !important;

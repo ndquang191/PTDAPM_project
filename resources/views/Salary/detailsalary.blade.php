@@ -61,7 +61,7 @@
                 <p class="salary-1">{{number_format($khenthuong)}} VND</p>
                 <p class="salary-2"></p>
                 <div class="eye-hide">
-                    <i class="bi bi-eye-fill"></i>
+                    <i class="bi bi-eye-fill hidden"></i>
                 </div>
             </div>
             <div class="salary-base">
@@ -70,7 +70,7 @@
                 <p class="salary-1"></p>
                 <p class="salary-2">{{number_format($kiluat)}} VND</p>
                 <div class="eye-hide">
-                    <i class="bi bi-eye-fill"></i>
+                    <i class="bi bi-eye-fill hidden"></i>
                 </div>
             </div>
             <div class="salary-base summary" style="background-color: #eee">
@@ -98,4 +98,9 @@
         </div>
     </div>
 </div>
+<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+@endsection
+@section('linkjs')
+ <script src="js/salary/pdfsalary.js"></script>
 @endsection

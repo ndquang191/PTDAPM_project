@@ -5,7 +5,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\BangCapController;
-use App\Http\Controllers\DanhGiaController;
 use App\Http\Controllers\HDLDController;
 use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\BaoHiemController;
