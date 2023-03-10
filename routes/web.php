@@ -23,21 +23,6 @@ use Illuminate\Support\Facades\Auth;
 |
 // */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-//hdld
-Route::get('hdld/hdld_ds',[HDLDController::class,'ds_hdld']);
-Route::get('hdld/hdld_add',[HDLDController::class,'add_hdld']);
-Route::get('hdld/hdld_edit',[HDLDController::class,'edit_hdld']);
-Route::get('hdld/hdld_show',[HDLDController::class,'show_hdld']);
-
-//danh gia
-Route::get('danhgia/danhgia_ds',[DanhGiaController::class,'list_danhgia']);
-Route::get('danhgia/danhgia_add',[DanhGiaController::class,'add_danhgia']);
-Route::get('danhgia/danhgia_edit',[DanhGiaController::class,'edit_danhgia']);
-
 
 Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
     Route::get('/','showLoginPage')->name('login');
