@@ -51,6 +51,7 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin1'
     Route::get('/add','createHDLD')->name('createHDLD'); // Hiển thị form thêm hợp đồng
     Route::post('/add','storeHDLD')->name('storeHDLD'); // Lưu HDLD
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
+    Route::post('/{id}/edit','updateHDLD')->name('updateHDLD');
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
 
 });

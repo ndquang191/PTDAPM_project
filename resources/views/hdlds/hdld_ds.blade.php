@@ -17,7 +17,7 @@
   })
 
   Toast.fire({
-    icon: 'success',
+    icon: '{{session('type')}}',
     html: '<span style="font-size: 20px">{{ session('message') }}</span>'
   })
 </script>
@@ -83,15 +83,15 @@
                             <td>{{$contract->DiaDiem}}</td>
                             <td>{{$contract->ChuyenMon}}</td>
                             <td>
-                                <a href="{{route('showDetailHDLD',['id' => 1])}}">
+                                <a href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
                                     <i class="bi bi-eye-fill icon_color"></i>
                                 </a>
                                 <a href="{{route('editHDLD',['id' => 1])}}">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a>
-                                <a href="#">
+                                {{-- <a href="#">
                                     <i class="bi bi-trash icon_color"></i>
-                                </a>
+                                </a> --}}
                             </td>
                         <tr>
                         @endforeach
