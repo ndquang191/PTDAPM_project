@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('linkcss')
-    <link rel="stylesheet" href="./css/dsnv/addbcNv.css">
+    <link rel="stylesheet" href="/css/dsnv/addbcNv.css">
 
 @endsection
 @section('content')

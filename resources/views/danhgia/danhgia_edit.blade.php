@@ -7,7 +7,7 @@
     <div class="fluid-container">
         <div class="danhgia_main_container danhgia_main_page">
             <div class="head_add_danhgia_main">
-                <a href="{{URL::to('danhgia/danhgia_ds')}}" class="title_danhgia_add">Danh sách đánh giá</a>
+                <a href="{{route('showListEvaluate')}}" class="title_danhgia_add">Danh sách đánh giá</a>
                 <span>></span>
                 <h5 class="title_add_danhgia">Cập nhật đánh giá</h5>
             </div>

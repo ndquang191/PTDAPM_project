@@ -83,10 +83,10 @@
                             <td>{{$contract->DiaDiem}}</td>
                             <td>{{$contract->ChuyenMon}}</td>
                             <td>
-                                <a href="{{URL::to('hdld/hdld_show')}}">
+                                <a href="{{route('showDetailHDLD',['id' => 1])}}">
                                     <i class="bi bi-eye-fill icon_color"></i>
                                 </a>
-                                <a href="{{URL::to('hdld/hdld_edit')}}">
+                                <a href="{{route('editHDLD',['id' => 1])}}">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a>
                                 <a href="#">

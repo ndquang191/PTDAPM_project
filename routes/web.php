@@ -41,7 +41,7 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
 });
 
 Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
-    Route::get('/{id}/degree','showByMaNV'); // Hiển thị danh sách bằng cấp của nhân viên
+    Route::get('/{id}/degree','showByMaNV')->name('showDegree'); // Hiển thị danh sách bằng cấp của nhân viên
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
@@ -63,11 +63,15 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/evaluate')->group(function(){
     Route::get('/','showListEvaluate')->name('showListEvaluate');
+    Route::get('/add','addEvaluate')->name('addEvaluate');
+    Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
+
 });
 
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');
     Route::get('/add','createBHXH')->name('createBHXH');
+    Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
 
 });
 

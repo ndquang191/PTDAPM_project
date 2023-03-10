@@ -22,7 +22,7 @@
         <div class="container-title-form">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Hồ sơ nhân viên</a></div>
-                <div><a class="tab-bangcap" href="">Bằng cấp nhân viên</a></div>
+                <div><a class="tab-bangcap" href="{{route('showDegree',['id' => $employee->MaNV])}}">Bằng cấp nhân viên</a></div>
             </div>
             <div class="staffinformation">
                 <div class="avatar">

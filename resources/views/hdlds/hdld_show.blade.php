@@ -59,10 +59,10 @@
                 </div>
                 <div class="bottom_add_hdld">
                     <div class="bottom_update_show">
-                        <a href="{{URL::to('hdld/hdld_edit')}}" class="link_exit">Cập nhật</a>
+                        <a href="{{route('editHDLD',['id' => 1])}}" class="link_exit">Cập nhật</a>
                     </div>
                     <div class="bottom_exit_show">
-                        <a href="{{URL::to('hdld/hdld_ds')}}" class="link_exit">Thoát</a>
+                        <a href="{{route('showListHDLD')}}" class="link_exit">Thoát</a>
                     </div>
                 </div>
             </form>

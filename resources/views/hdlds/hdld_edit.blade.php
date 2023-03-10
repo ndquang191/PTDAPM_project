@@ -9,7 +9,8 @@
             <h1 class="title_add_htld">Hợp đồng lao động</h1>
         </div>
         <div class="hdld_main_container hdld_main_page">
-            <form action="" class="">
+            <form action="" class="" method="POST">
+                @csrf
                 <div class="form_list_hdld">
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
@@ -58,7 +59,7 @@
                 </div>
                 <div class="bottom_add_hdld">
                     <div class="bottom_exit_add_hdld">
-                        <a href="{{URL::to('hdld/hdld_show')}}" class="link_exit">Thoát</a>
+                        <a href="{{route('showListHDLD')}}" class="link_exit">Thoát</a>
                     </div>
                     <div class="bottom_save_add_hdld">
                         <button type="submit" class="hdld_submit" id="hdld_submit">Lưu</button>

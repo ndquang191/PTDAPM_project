@@ -1,13 +1,13 @@
 @extends('layout.app')
 
 @section('linkcss')
-    <link rel="stylesheet" href="./css/bhxh/infobhxh.css">
+    <link rel="stylesheet" href="/css/bhxh/infobhxh.css">
 @endsection
 @section('content')
     <div class="fluid-container">
         <div class="container-tilte-table">
             <div class="socialInsuranceList-addSocialInsurance">
-                <div><a href="">Danh sách bảo hiểm xã hội</a></div>
+                <div><a href="{{route('showListBHXH')}}">Danh sách bảo hiểm xã hội</a></div>
                 <div> > </div>
                 <div><a href="">Thông tin hiểm xã hội</a></div>
             </div>

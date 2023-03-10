@@ -35,6 +35,7 @@ class UserController extends Controller
     public function showInsurance(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $contracts = BaoHiem::where("MaNV",Auth::user()->MaNV)->get();
-        return view('user.',['user' => $user,'contracts' => $contracts]);
+        // return view('user.',['user' => $user,'contracts' => $contracts]);
+        return dd('Chưa có giao diện');
     }
 }
