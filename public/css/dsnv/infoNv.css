@@ -5,6 +5,9 @@
     font-size: 15px;
     line-height: 18px;
 }
+#form-update{
+    display: none;
+}
 .header-content{
     display: flex;
     padding-top: 10px;
