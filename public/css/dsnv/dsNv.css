@@ -29,9 +29,9 @@
     float: right;
     border-radius: 5px;
     padding: 10px;
-    background-color: #5A5278;
     color: #FFFFFF;
     border: none;
+    font-size: 18px;
 }
 .container{
     background: rgba(217, 217, 217, 0.5);
@@ -42,20 +42,14 @@
     border-radius: 5px;
     overflow: auto;
     padding: 20px;
-    color: #000000 !important;
 }
 .show{
     margin-right: 10px;
 }
 .search-bar{
-    float: right;
+    display: flex;
     margin-bottom: 10px;
-}
-.search-bar input, select{
-    width: 279px;
-    height: 31px;
-    padding: 5px;
-    margin-left: 10px;
+    float: right;
 }
 .show{
     margin-right: 10px;
@@ -63,4 +57,14 @@
 .container-head-body{
     margin: 10px;
     padding: 10px;
+}
+.form-select,
+.form-control{
+    font-size: 18px;
+}
+.input-find{
+    margin-left: 30px;
+}
+.form-select{
+    margin-right: 20px;
 }
