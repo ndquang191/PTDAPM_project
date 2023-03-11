@@ -17,12 +17,12 @@
         <div class="login_page--left">
             <form id="login_form" action="{{route('login')}}" method="post">
                 {{-- <label for="">Username</label> --}}
-                <input type="text" name="username" id="">
+                <input type="text" name="username" id="" placeholder="TÊN ĐĂNG NHẬP">
                 @if($errors->has('username'))
                     <div class="error">{{ $errors->first('username') }}</div>
                 @endif
                 {{-- <label for="">Password</label> --}}
-                <input type="password" name="password" id="">
+                <input type="password" name="password" id="" placeholder="MẬT KHẨU">
                 @if($errors->has('password'))
                     <div class="error">{{ $errors->first('password') }}</div>
                 @endif

@@ -43,10 +43,10 @@
                 <td> <p>Chuyên viên chính trị công tác</p> </td>
                 <td> <p>sinh viên</p> </td>
                 <td class="muti-btn">
-                    <a href="#">
+                    <a href="{{route('showSalaryDetail',['id' => 100000])}}">
                         <i class="bi bi-pencil-square edit hidden"></i>
                     </a>
-                    <a href="#">
+                    <a  href="{{route('showSalaryDetail',['id' => 10000])}}">
                         <i class="bi bi-eye-fill edit"></i>
                     </a>
                 </td>
