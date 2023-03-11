@@ -96,7 +96,7 @@ h6 {
 .dropdown_user_menu {
     display: none;
     position: absolute;
-    left: -2.2rem;
+    left: 2.2rem;
 }
 .dropdown_user_menu::after {
     content: "";
@@ -133,6 +133,7 @@ h6 {
     position: absolute;
     right: 0;
     z-index: 1000;
+    left: -140px;
     /* min-width: 17rem; */
     background-color: #fff;
     border: 1px solid #c6cfda;
@@ -278,4 +279,10 @@ h6 {
     width: calc(100% - 27rem);
     padding: 0px 1px;
     background-color: #dcdcdc !important;
+}
+
+.dropdown_user_menu{
+    min-width: 250px;
+
+    padding: 0;
 }

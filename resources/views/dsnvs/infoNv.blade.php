@@ -10,7 +10,7 @@
     Swal.fire({
     position: 'center',
     icon: 'error',
-    title: 'Vui lòng kiểm tra lại thông tin nhân viên',
+    title: '{{$errors->first()}}',
     showConfirmButton: true,
     confirmButtonText: 'Đóng',
     timer: 3000

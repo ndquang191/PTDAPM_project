@@ -84,7 +84,7 @@
             </div>
             <div class="muti-btn">
                 <button class="">
-                    <a href="" class="print-btn">
+                    <a href="" class="print-btn" >
                         <i class="bi bi-printer-fill"></i>
                         <p>Xuất</p>
                     </a>
@@ -102,5 +102,5 @@
 <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 @endsection
 @section('linkjs')
- <script src="js/salary/pdfsalary.js"></script>
+ <script src="/js/salary/pdfsalary.js"></script>
 @endsection
