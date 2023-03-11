@@ -168,3 +168,7 @@ function chooseFile(fileInput) {
     }
 }
 //--------------------------------------------
+function formShow() {
+    document.getElementById("form-update").style.display = "block";
+    document.getElementById("container-title-form").style.display = "none";
+}
