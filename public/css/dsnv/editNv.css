@@ -1,6 +1,10 @@
 *{
     font-size: 17px;
 }
+
+.fluid-container{
+    padding: 40px;
+}
 input, select{
     font-size: 17px !important;
     background: rgba(90, 82, 120, 0.1) !important;

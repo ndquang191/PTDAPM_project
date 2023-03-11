@@ -6,6 +6,7 @@
     line-height: 18px;
 }
 .header-content{
+    margin-top: 8px;
     display: flex;
     justify-content: space-between;
 }
@@ -14,10 +15,8 @@
     margin-bottom: 10px;
 }
 .header-content a{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 26px;
     line-height: 18px;
     color: #000000;
     margin-right: 18px;

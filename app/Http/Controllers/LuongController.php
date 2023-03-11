@@ -21,23 +21,23 @@ class LuongController extends Controller
     public function showSalaryDetail($id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employee = NhanVien::where('MaNV',$id)->first();
-        $hopdong = HDLD::where('MaNV' ,$id)->first();
-        $luongcoban = $hopdong->LuongCoBan;
-        $hesoluong = $hopdong->HeSoLuong;
-        $currentMonth = Carbon::now()->month;
-        $danhgias = DanhGia::where('MaNV',$id)->whereMonth('NgayQuyetDinh',$currentMonth)->get();
-        $khenthuong = 0;
-        $kiluat = 0;
-        $nghipheps = NghiPhep::where('MaNV',$id)->whereMonth('NgayBatDau',$currentMonth)->get();
-        // return $nghipheps;
-        foreach($danhgias as $danhgia){
-            if($danhgia->PhanLoai == 1){
-                $khenthuong = $khenthuong + $danhgia->Giatri;
-            }
-            else{
-                $kiluat += $danhgia->Giatri;
-            }
-        };
+        // $hopdong = HDLD::where('MaNV' ,$id)->first();
+        // $luongcoban = $hopdong->LuongCoBan;
+        // $hesoluong = $hopdong->HeSoLuong;
+        // $currentMonth = Carbon::now()->month;
+        // $danhgias = DanhGia::where('MaNV',$id)->whereMonth('NgayQuyetDinh',$currentMonth)->get();
+        // $khenthuong = 0;
+        // $kiluat = 0;
+        // $nghipheps = NghiPhep::where('MaNV',$id)->whereMonth('NgayBatDau',$currentMonth)->get();
+        // // return $nghipheps;
+        // foreach($danhgias as $danhgia){
+        //     if($danhgia->PhanLoai == 1){
+        //         $khenthuong = $khenthuong + $danhgia->Giatri;
+        //     }
+        //     else{
+        //         $kiluat += $danhgia->Giatri;
+        //     }
+        // };
         // foreach($nghipheps as $nghiphep){
         //     if($nghiphep->LiDo == null){ 
         //         return $nghiphep->NgayBatDau;
@@ -56,10 +56,10 @@ class LuongController extends Controller
         [
             'user' => $user,
             'employee' => $employee,
-            'luongcoban' => $luongcoban,
-            'hesoluong' => $hesoluong,
-            'khenthuong' => $khenthuong,
-            'kiluat' => $kiluat,
+            'luongcoban' => 10000000,
+            'hesoluong' => 3.2,
+            'khenthuong' => 0,
+            'kiluat' => 0,
         ]);
     }
     
