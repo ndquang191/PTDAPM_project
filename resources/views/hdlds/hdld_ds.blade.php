@@ -86,9 +86,9 @@
                                 <a href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
                                     <i class="bi bi-eye-fill icon_color"></i>
                                 </a>
-                                <a href="{{route('editHDLD',['id' => 1])}}">
+                                {{-- <a href="{{route('editHDLD',['id' => 1])}}">
                                     <i class="bi bi-pencil-square icon_color"></i>
-                                </a>
+                                </a> --}}
                                 {{-- <a href="#">
                                     <i class="bi bi-trash icon_color"></i>
                                 </a> --}}
