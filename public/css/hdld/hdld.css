@@ -1,12 +1,13 @@
 .hdld_main_container{
     position: absolute;
-    width: 105rem;
-    /* height: 41rem; */
+    /* width: 105rem; */
+    min-height: 80rem;
     left: 21%;
     top: 12rem;
     border-radius: 5px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow-y: scroll;
 }
 .hdld_main_page{
     top: 12.3rem;
@@ -17,8 +18,10 @@
 .tilte_main{
     float: left;
     color: #000000B2;
+    /* font-weight: 500; */
     font-size: 1.5rem;
     margin-left: 1.5rem;
+
     /* margin-top: 1rem; */
 
 }

@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\NhanVien;
 use App\Models\TaiKhoan;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 use Str;
-use Hash;
 
 class NhanVienController extends Controller
 {
@@ -27,7 +27,7 @@ class NhanVienController extends Controller
     public function store(Request $request){
         // Kiểm tra định dạng các trường
             $validator = $request->validate([
-                'image' => 'bail|required',
+                // 'image' => 'bail|required',
                 'birthday' => 'bail|required',
                 'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',
                 'CCCD' => 'bail|required|numeric',
@@ -50,9 +50,11 @@ class NhanVienController extends Controller
                 // 'CCCD.required' => 'Chưa nhập số căn cước công dân',
                 // 'CCCD.numberic' => 'Căn cước công dân không hợp lệ',
             ]);
+            // return $request;
             NhanVien::create([
                 'TenNV' => $request->name,
-                'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                // 'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                'HinhAnh' => null,
                 'NgaySinh' => $request->birthday,
                 'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
                 'CCCD' => $request->CCCD,

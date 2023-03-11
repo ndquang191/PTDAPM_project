@@ -16,7 +16,7 @@
                <span>Hợp đồng lao động</span>
           </a>
           <a href="" class="user_box_item">
-               <i class="bi bi-file-earmark"></i>
+               <i class="bi bi-shield-plus"></i>               
                <span>Bảo hiểm xã hội</span>
           </a>
           <a href="" class="user_box_item">

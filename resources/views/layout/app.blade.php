@@ -80,8 +80,8 @@
                              <span class="dropdown_user_title">Đổi mật khẩu</span>
                            </a>
                          </li>
-                         <li class="dropdown_user_item">
-                           <a href="/logout">
+                         <li class="dropdown_user_item" id="logout-btn" onclick="logoutMain()">
+                           <a href=""> 
                              <i class="fa-solid fa-power-off"></i>
                              <span class="dropdown_user_title">Đóng phiên làm việc</span>
                            </a>
@@ -153,6 +153,25 @@
           </div>
      </div>
 </body>
+
+<script>
+
+    const exitBTN = document.getElementById('logout-btn')
+        exitBTN.addEventListener('click',()=>{
+            Swal.fire({
+                title: 'Bạn có muốn đăng xuất ?',
+                showCancelButton: true,
+                confirmButtonText: 'Có',
+                cancelButtonText: 'Không',
+                icon: 'question',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'http://127.0.0.1:8000/logout';
+                }
+            })
+        })
+
+</script>
 @yield('linkjs')
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

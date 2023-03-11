@@ -68,7 +68,7 @@
                     <td>{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}</td>
                     <td>
                       <a class="show" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}"><i class="fa-solid fa-eye"></i></a>
-                      <a href="" type="button" id="btn" value="Show Alert" onclick="saveEmployee()"><i class="fa-solid fa-trash"></i></a>
+                      {{-- <a href="" type="button" id="btn" value="Show Alert" onclick="saveEmployee()"><i class="fa-solid fa-trash"></i></a> --}}
                     </td>
                   </tr>
                 @endforeach
