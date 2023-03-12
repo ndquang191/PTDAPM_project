@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('nhanvien', function (Blueprint $table) {
             $table->id('MaNV')->from(10000);
             $table->string('TenNV', 50);
-            $table->binary('HinhAnh');
+            $table->binary('HinhAnh')->nullable();
             $table->date('NgaySinh');
             $table->boolean('GioiTinh');
             $table->string('CCCD', 20);
@@ -29,11 +29,13 @@ return new class extends Migration
             // $table->string('ChuyenNganh');
             $table->unsignedBigInteger('MaTDHV');
             $table->unsignedBigInteger('MaPB');
-            $table->unsignedBigInteger('ChucVu');
+            $table->string('ChucVu');
             $table->boolean('TrangThai')->default(1);
             $table->boolean('TrangThaiHonNhan')->default(0);
             $table->boolean('GhiChu')->nullable()->default(null);
-            $table->foreign('MaPB')->references('MaPB')->on('PhongBan')->onDelete('cascade');
+            $table->foreign('MaPB')->references('MaPB')->on('phongban')->onDelete('cascade');
+            $table->foreign('MaTDHV')->references('MaTDHV')->on('trinhdohocvan')->onDelete('cascade');
+
         });
     }
 
