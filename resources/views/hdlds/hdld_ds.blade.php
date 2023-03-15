@@ -86,9 +86,9 @@
                                 <a href="{{URL::to('hdld/hdld_show')}}">
                                     <i class="bi bi-eye-fill icon_color"></i>
                                 </a>
-                                <a href="{{URL::to('hdld/hdld_edit')}}">
+                                {{-- <a href="{{URL::to('hdld/hdld_edit')}}">
                                     <i class="bi bi-pencil-square icon_color"></i>
-                                </a>
+                                </a> --}}
                                 <a href="#">
                                     <i class="bi bi-trash icon_color"></i>
                                 </a>
