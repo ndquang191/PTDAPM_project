@@ -45,7 +45,6 @@
                     <tr>
                         <th scope="col">STT</th>
                         <th scope="col">Mã nhân viên</th>
-                        <th scope="col">Số hợp đồng</th>
                         <th scope="col">Loại hợp đồng</th>
                         <th scope="col">Ngày ký</th>
                         <th scope="col">Ngày bắt đầu</th>
@@ -75,7 +74,6 @@
                         <tr>
                             <td scope="row">{{$count}}</td>
                             <td>{{$contract->MaNV}}</td>
-                            <td>{{$contract->SoHD}}</td>
                             <td>{{$contract->LoaiHopDong}}</td>
                             <td>{{$contract->NgayKi}}</td>
                             <td>{{$contract->NgayBatDau}}</td>
@@ -89,9 +87,9 @@
                                 {{-- <a href="{{route('editHDLD',['id' => 1])}}">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a> --}}
-                                {{-- <a href="#">
+                                <a href="#">
                                     <i class="bi bi-trash icon_color"></i>
-                                </a> --}}
+                                </a>
                             </td>
                         <tr>
                         @endforeach

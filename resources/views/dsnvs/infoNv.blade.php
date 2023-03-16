@@ -53,7 +53,7 @@
                     <label class="employeecode" for="">{{$employee->MaNV}}</label>
                     <label class="status" for="">{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}</label>
                     <label for=""><i class="fa-solid fa-user"></i> {{$employee->TenNV}}</label>
-                    <label for=""><i class="fa-brands fa-steam-symbol"></i></i>{{$employee->PhongBan == null ? "Trống" : $employee->PhongBan}}</label>
+                    <label for=""><i class="fa-brands fa-steam-symbol"></i></i>{{$employee->PhongBan == null ? "Trống" : $employee->PhongBan->TenPhongBan}}</label>
                     <label for=""><i class="fa-solid fa-envelope"></i>{{$employee->Email == null ? "Trống" : $employee->Email}}</label>
                     <label for=""><i class="fa-solid fa-phone"></i>{{$employee->SDT == null ? "Trống" : $employee->SDT}}1</label>
                     <label for=""><i class="fa-solid fa-calendar-days"></i>{{$employee->NgaySinh == null ? "Trống" : $employee->NgaySinh}}</label>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div>
                                     <label for="">Trình độ học vấn</label>
-                                    <input type="text" name="" id="academicLevel" value="{{$employee->TrinhDoHocVan}}" readonly>    
+                                    <input type="text" name="" id="academicLevel" value="{{$employee->TrinhDoHocVan->TenHeDaoTao}}" readonly>    
                                 </div>
                                 <div>
                                     <label for="">Chuyên ngành</label>
@@ -86,7 +86,7 @@
                                 </div>
                                 <div>
                                     <label for="">Trạng thái</label>
-                                    <input type="text" name="" id="status" value="{{$employee->TrangThai}}" readonly>
+                                    <input type="text" name="" id="status" value="{{$employee->TrangThai == 1 ? 'Đang làm việc' : "Đã nghỉ việc"}}" readonly>
                                 </div>
                             </div>
                             <div class="info-right">
@@ -108,11 +108,11 @@
                                 </div>
                                 <div>
                                     <label for="">Chức vụ</label>
-                                    <input type="text" name="" id="position" value="{{$employee->ChucVu}}" readonly>
+                                    <input type="text" name="" id="position" value="{{$employee->ChucVu->TenCV}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Phòng ban</label>
-                                    <input type="text" name="" id="department" value="{{$employee->PhongBan}}" readonly>
+                                    <input type="text" name="" id="department" value="{{$employee->PhongBan->TenPhongBan}}" readonly>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,6 @@
                                     <select class="col-md-12" name="gender" id="gender">
                                         <option value="0" {{ $employee->GioiTinh == 0 ? 'selected' : '' }}>Nam</option>
                                         <option value="1" {{ $employee->GioiTinh == 1 ? 'selected' : '' }}>Nữ</option>
-
                                     </select>
                                 </div>
                             </div>

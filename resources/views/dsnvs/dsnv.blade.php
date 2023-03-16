@@ -63,11 +63,11 @@
                     <td>{{$employee->MaNV}}</td>
                     <td>{{$employee->TenNV}}</td>
                     <td>{{$employee->SDT != null ? $employee->SDT : "Trống"}}</td>
-                    <td>{{$employee->PhongBan != null ? $employee->PhongBan : "Trống"}}</td>
-                    <td>{{$employee->ChucVu != null ? $employee->ChucVu : "Trống"}}</td>
+                    <td>{{$employee->PhongBan != null ? $employee->phongban->TenPhongBan : "Trống"}}</td>
+                    <td>{{$employee->ChucVu != null ? $employee->chucvu->TenCV : "Trống"}}</td>
                     <td>{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}</td>
                     <td>
-                      <a class="show" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}"><i class="fa-solid fa-eye"></i></a>
+                      <a class="show" href="{{route('getEmployeeInfo',['id' => Crypt::encrypt($employee->MaNV)])}}"><i class="fa-solid fa-eye"></i></a>
                       {{-- <a href="" type="button" id="btn" value="Show Alert" onclick="saveEmployee()"><i class="fa-solid fa-trash"></i></a> --}}
                     </td>
                   </tr>

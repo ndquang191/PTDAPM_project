@@ -21,8 +21,8 @@ class NhanVien extends Model
     protected $table = 'nhanvien';
     protected $primaryKey = 'MaNV';
     protected $fillable = 
-    ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiCap','NgayCap','NoiSinh','TonGiao','SDT','Email','MaTDHV'
-    ,'MaPB','ChucVu','TrangThai','TinhTrangHonNhan','GhiChu'];
+    ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiCap','NgayCap','DanToc','NoiSinh','TonGiao','SDT','Email','MaTDHV'
+    ,'MaPB','MaCV','TrangThai','TinhTrangHonNhan','GhiChu'];
     
     public function bangcap(){
         return $this->hasMany(BangCap::class,'MaNV');
@@ -49,10 +49,14 @@ class NhanVien extends Model
     }
 
     public function phongban(){
-        return $this->hasMany(PhongBan::class,'MaPB');
+        return $this->hasOne(PhongBan::class,'MaPB','MaPB');
     }
 
     public function trinhdohocvan(){
-        return $this->hasOne(TrinhDoHocVan::class,'MaPB');
+        return $this->hasOne(TrinhDoHocVan::class,'MaTDHV','MaTDHV');
+    }
+
+    public function chucvu(){
+        return $this->hasOne(ChucVu::class,'MaCV','MaCV');
     }
 }

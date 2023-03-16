@@ -29,12 +29,13 @@ return new class extends Migration
             // $table->string('ChuyenNganh');
             $table->unsignedBigInteger('MaTDHV');
             $table->unsignedBigInteger('MaPB');
-            $table->string('ChucVu');
+            $table->unsignedBigInteger('MaCV');
             $table->boolean('TrangThai')->default(1);
             $table->boolean('TrangThaiHonNhan')->default(0);
             $table->boolean('GhiChu')->nullable()->default(null);
             $table->foreign('MaPB')->references('MaPB')->on('phongban')->onDelete('cascade');
             $table->foreign('MaTDHV')->references('MaTDHV')->on('trinhdohocvan')->onDelete('cascade');
+            $table->foreign('MaCV')->references('MaCV')->on('chucvu')->onDelete('cascade');
 
         });
     }

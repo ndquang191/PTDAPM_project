@@ -41,8 +41,6 @@ class HDLDController extends Controller
             'required' => "Nhập thiếu thông tin",
             'MaNV.numeric' => 'Mã nhân viên sai định dạng',
             'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
-            'Luong.numeric' => 'Lương sai định dạng',
-            'HeSoLuong.numeric' => 'Hệ số lương sai định dạng',
 
         ]);
         if(NhanVien::where('MaNV',$request->MaNV)->first() == null){
@@ -50,15 +48,12 @@ class HDLDController extends Controller
         }
         HDLD::create([
             'MaNV' => $request->MaNV,
-            'SoHD' => floor(rand(10000,99999)),
             'LoaiHopDong' => $request->LoaiHD,
             'NgayKi' => $request->NgayKi,
             'NgayBatDau' => $request->NgayBatDau,
             'NgayKetThuc' => $request->NgayKetThuc,
             'DiaDiem' => $request->DiaDiem,
             'PhapNhan' => $request->PhapNhan,
-            'LuongCoBan' => $request->Luong,
-            'HeSoLuong' => $request->HeSoLuong,
             'ChuyenMon' => $request->ChuyenMon,
         ]);
         return redirect()->route('showListHDLD')->with(['message' => 'Thêm hợp đồng thành công', 'type' => 'success']);
@@ -86,13 +81,10 @@ class HDLDController extends Controller
             'DiaDiem' => 'required',
             'ChuyenMon' => 'required',
             'PhapNhan' => 'required',
-            'Luong' => 'required|numeric',
-            'HeSoLuong' => 'required|numeric|max:8',
         ],[
             'required' => "Nhập thiếu thông tin",
             'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
-            'Luong.numeric' => 'Lương sai định dạng',
-            'HeSoLuong.numeric' => 'Hệ số lương sai định dạng',
+
         ]);
         $contract = HDLD::where('MaHDLD',$id)->first();
         $contract->update([
@@ -102,8 +94,6 @@ class HDLDController extends Controller
             'NgayKetThuc' => $request->NgayKetThuc,
             'DiaDiem' => $request->DiaDiem,
             'PhapNhan' => $request->PhapNhan,
-            'LuongCoBan' => $request->Luong,
-            'HeSoLuong' => $request->HeSoLuong,
             'ChuyenMon' => $request->ChuyenMon,
         ]);
         return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật thông tin thành công', 'type' => 'success']);
