@@ -14,21 +14,21 @@
                     <div><p>Danh sách bảo hiểm xã hội</p></div>
                     <div class="search-slect-btn">
                         <div>
-                            <select id="chooseSearch">
+                            <select class="form-select" id="chooseSearch">
                                 <option value="0">Mã nhân viên</option>
                                 <option value="1">Mã BHXH</option>
                             </select>
                         </div>
                         <div>
-                            <input type="text" id="myInput" onkeyup="searchBhxh()" placeholder="Nhập thông tin">
+                            <input class="form-control" type="text" id="myInput" onkeyup="searchBhxh()" placeholder="Nhập thông tin">
                         </div>
                         <div>
-                            <button><a href="{{route('createBHXH')}}">+ Thêm</a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{route('createBHXH')}}">+ Thêm</a></button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <table class="table" id="myTable">
+                    <table class="table table-hover" id="myTable">
                         <thead>
                             <tr>
                               <th scope="col">Mã nhân viên</th>
