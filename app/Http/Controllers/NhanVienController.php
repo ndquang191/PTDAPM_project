@@ -27,7 +27,7 @@ class NhanVienController extends Controller
     public function store(Request $request){
         // Kiểm tra định dạng các trường
             $validator = $request->validate([
-                // 'image' => 'bail|required',
+                'image' => 'bail|required',
                 'birthday' => 'bail|required',
                 'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',
                 'CCCD' => 'bail|required|numeric',
@@ -50,10 +50,9 @@ class NhanVienController extends Controller
                 // 'CCCD.required' => 'Chưa nhập số căn cước công dân',
                 // 'CCCD.numberic' => 'Căn cước công dân không hợp lệ',
             ]);
-            // return $request;
             NhanVien::create([
                 'TenNV' => $request->name,
-                // 'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
                 'HinhAnh' => null,
                 'NgaySinh' => $request->birthday,
                 'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
@@ -88,12 +87,13 @@ class NhanVienController extends Controller
 
     public function update(Request $request, $id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $employee = NhanVien::where('MaNV',$id)->get();
         $validator = $request->validate([
+            'birthday' => 'bail|required',
             'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',
             'CCCD' => 'bail|required|numeric',
-            'gender' => 'bail|required|in:Nam,Nữ',
+            'gender' => 'bail|required|in:0,1',
             'nation' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
+            'email' => 'bail|required|email',
             'religion' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
             'placeofbirth' => 'bail|required',
             'address' => 'bail|required',
@@ -103,20 +103,31 @@ class NhanVienController extends Controller
             'phongban' => 'bail|required|in:Phòng ban 1,Phòng ban 2,Phòng ban 3,Phòng ban 4',
             'chucvu' => 'bail|required|in:Chức vụ 1,Chức vụ 2,Chức vụ 3,Chức vụ 4',
         ]);
+        $employee = NhanVien::where('MaNV',$id)->first();
         $employee->update([
             'TenNV' => $request->name,
+            'NgaySinh' => $request->birthday,
+            'GioiTinh' => $request->gender,
             'CCCD' => $request->CCCD,
             'DiaChi' => $request->address,
             'NoiSinh' => $request->placeofbirth,
             'TonGiao' => $request->religion,
             'DanToc' => $request->nation,
+            'SDT' => $request->phonenumber,
+            'Email' => $request->email,
             'ChuyenNganh' => $request->chuyennganh,
             'TrinhDoHocVan' => $request->trinhdo,
             'PhongBan' => $request->phongban,
             'ChucVu' => $request->chucvu,
             'TrangThai' => 1,
         ]);
-        return $employee;
+
+        if ($request->file('image') != null){
+            $employee->update([
+                'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+            ]);
+        }
+        return redirect()->route('getEmployeeInfo',['id' => $id])->with(['message' => 'Cập nhật thành công']);
     }
 
     public function destroy(){

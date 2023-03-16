@@ -5,12 +5,31 @@
     <link rel="stylesheet" href="/css/dsnv/editNv.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'success',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
 @if($errors->any())
 <script>
     Swal.fire({
     position: 'center',
     icon: 'error',
-    title: 'Vui lòng kiểm tra lại thông tin nhân viên',
+    title: 'Vui lòng kiểm tra lại thông tin',
     showConfirmButton: true,
     confirmButtonText: 'Đóng',
     timer: 3000
@@ -22,7 +41,7 @@
         <div class="container-title-form" id="container-title-form">
             <div class="header-content">
                 <div><a class="tab-hosonv" href="">Hồ sơ nhân viên</a></div>
-                <div><a class="tab-bangcap" href="">Bằng cấp nhân viên</a></div>
+                <div><a class="tab-bangcap" href="{{route('showDegree',['id' => $employee->MaNV])}}">Bằng cấp nhân viên</a></div>
             </div>
             <div class="staffinformation">
                 <div class="avatar">
@@ -59,28 +78,15 @@
                                 </div>
                                 <div>
                                     <label for="">Trình độ học vấn</label>
-                                    <select id="academicLevel" disabled>
-                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 1</option>
-                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 2</option>
-                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 3</option>
-                                        <option value="{{$employee->TrinhDoHocVan}}">Trình độ 4</option>
-                                    </select>
+                                    <input type="text" name="" id="academicLevel" value="{{$employee->TrinhDoHocVan}}" readonly>    
                                 </div>
                                 <div>
                                     <label for="">Chuyên ngành</label>
-                                    <select id="Specialized" disabled>
-                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 1</option>
-                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 2</option>
-                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 3</option>
-                                        <option value="{{$employee->ChuyenNganh}}">Chuyên ngành 4</option>
-                                    </select>
+                                    <input type="text" name="" id="Specialized" value="{{$employee->ChuyenNganh}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Trạng thái</label>
-                                    <select id="status" disabled>
-                                        <option value="{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}">Đang làm việc</option>
-                                        <option value="{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}">Ngừng làm việc</option>
-                                    </select>
+                                    <input type="text" name="" id="status" value="{{$employee->TrangThai}}" readonly>
                                 </div>
                             </div>
                             <div class="info-right">
@@ -102,28 +108,18 @@
                                 </div>
                                 <div>
                                     <label for="">Chức vụ</label>
-                                    <select id="position" disabled>
-                                        <option value="{{$employee->ChucVu}}">Chức vụ 1</option>
-                                        <option value="{{$employee->ChucVu}}">Chức vụ 2</option>
-                                        <option value="{{$employee->ChucVu}}">Chức vụ 3</option>
-                                        <option value="{{$employee->ChucVu}}">Chức vụ 4</option>
-                                    </select>
+                                    <input type="text" name="" id="position" value="{{$employee->ChucVu}}" readonly>
                                 </div>
                                 <div>
                                     <label for="">Phòng ban</label>
-                                    <select id="department" disabled>
-                                        <option value="{{$employee->PhongBan}}">Phòng ban 1</option>
-                                        <option value="{{$employee->PhongBan}}">Phòng ban 2</option>
-                                        <option value="{{$employee->PhongBan}}">Phòng ban 3</option>
-                                        <option value="{{$employee->PhongBan}}">Phòng ban 4</option>
-                                    </select>
+                                    <input type="text" name="" id="department" value="{{$employee->PhongBan}}" readonly>
                                 </div>
                             </div>
                         </div>
                         <div class="btn-update-exit">
                             <div>
-                                <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button>
-                                <a><button onclick="formShow()" onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Cập nhật</button></a>
+                                {{-- <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button> --}}
+                                <a><button onclick="formShow()" onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Sửa</button></a>
                                 <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
                             </div>
                         </div>
@@ -132,11 +128,15 @@
             </div>
         </div>
         <div class="container" id="form-update">
-            <form method="post" action="{{route('storeEmployee')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('updateEmployeeInfo',['id' => $employee->MaNV])}}" enctype="multipart/form-data">
                 @csrf
                 <div class="row align-items-start" id="container-form">
                     <div class="col-6 col-md-3">
-                        <img src="./image/photo_user.jpg" id="image" alt="">
+                        @if ($employee->HinhAnh == null)
+                        <img src="/image/avatar_user.jpg" alt="">  
+                    @else
+                        <img src="data:image/jpeg;base64,{{ base64_encode($employee->HinhAnh) }}" alt="Image">
+                    @endif
                     </div>
                     <div class="col-6 col-md-9">
                         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
@@ -147,15 +147,15 @@
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="name">Họ và tên nhân viên</label>
-                                <input class="form-control" type="text" id="name" name="name" value="{{old('name')}}">
+                                <input class="form-control" type="text" id="name" name="name" value="{{$employee->TenNV}}">
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="gender">Giới tính</label>
                                 <div>
                                     <select class="col-md-12" name="gender" id="gender">
-                                        <option value="0" hidden>Chọn</option>
-                                        <option value="Nam" {{ old('gender') == 'Nam' ? 'selected' : '' }}>Nam</option>
-                                        <option value="Nữ" {{ old('gender') == 'Nữ' ? 'selected' : '' }}>Nữ</option>
+                                        <option value="0" {{ $employee->GioiTinh == 0 ? 'selected' : '' }}>Nam</option>
+                                        <option value="1" {{ $employee->GioiTinh == 1 ? 'selected' : '' }}>Nữ</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -165,15 +165,15 @@
                         <div class="row align-items-start">
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="birthday">Ngày sinh</label>
-                                <input class="form-control" type="date" name="birthday" id="birthday" value={{old('birthday')}}>
+                                <input class="form-control" type="date" name="birthday" id="birthday" value={{$employee->NgaySinh}}>
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="CCCD">Số CMND/Thẻ căn cước</label>
-                                <input class="form-control" type="text" name="CCCD" id="CCCD" value={{old('CCCD')}}>
+                                <input class="form-control" type="text" name="CCCD" id="CCCD" value={{$employee->CCCD}}>
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="nation">Dân tộc</label>
-                                <input class="form-control" type="text" id="nation" name="nation" value={{old('nation')}}>
+                                <input class="form-control" type="text" id="nation" name="nation" value={{$employee->DanToc}}>
                             </div>
                         </div>
                     </div>
@@ -183,15 +183,15 @@
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="religion">Tôn giáo</label>
-                        <input class="form-control" type="text" id="religion" name="religion" value={{old('religion')}}>
+                        <input class="form-control" type="text" id="religion" name="religion" value={{$employee->TonGiao}}>
                     </div>
                     <div class="col-6 col-md-5">
                         <label class="form-label" for="placeofbirth">Nơi sinh</label>
-                        <input class="form-control" type="text" name="placeofbirth" id="placeofbirth" value={{old('placeofbirth')}}>
+                        <input class="form-control" type="text" name="placeofbirth" id="placeofbirth" value={{$employee->NoiSinh}}>
                     </div>
                     <div class="col-6 col-md-4">
                         <label class="form-label" for="address">Địa chỉ thường trú</label>
-                        <input class="form-control" type="text" name="address" id="address" value={{old('address')}}>
+                        <input class="form-control" type="text" name="address" id="address" value={{$employee->DiaChi}}>
                     </div>
                 </div>
                 
@@ -199,21 +199,21 @@
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="phonenumber">Số điện thoại</label>
-                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value={{old('phonenumber')}}>
+                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value={{$employee->SDT}}>
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" type="text" name="email" id="email" value={{old('email')}}>
+                        <input class="form-control" type="text" name="email" id="email" value={{$employee->Email}}>
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="">Trình độ học vấn</label>
                         <div>
                             <select class="col-md-12" name="trinhdo">
                                 <option value="0" hidden>Chọn</option>
-                                <option value="Trình độ 1" {{ old('trinhdo') == 'Trình độ 1' ? 'selected' : '' }}>Trình độ 1</option>
-                                <option value="Trình độ 2" {{ old('trinhdo') == 'Trình độ 2' ? 'selected' : '' }}>Trình độ 2</option>
-                                <option value="Trình độ 3" {{ old('trinhdo') == 'Trình độ 3' ? 'selected' : '' }}>Trình độ 3</option>
-                                <option value="Trình độ 4" {{ old('trinhdo') == 'Trình độ 4' ? 'selected' : '' }}>Trình độ 4</option>
+                                <option value="Trình độ 1" {{ $employee->TrinhDoHocVan == 'Trình độ 1' ? 'selected' : '' }}>Trình độ 1</option>
+                                <option value="Trình độ 2" {{ $employee->TrinhDoHocVan == 'Trình độ 2' ? 'selected' : '' }}>Trình độ 2</option>
+                                <option value="Trình độ 3" {{ $employee->TrinhDoHocVan == 'Trình độ 3' ? 'selected' : '' }}>Trình độ 3</option>
+                                <option value="Trình độ 4" {{ $employee->TrinhDoHocVan == 'Trình độ 4' ? 'selected' : '' }}>Trình độ 4</option>
                             </select>
                         </div>
                     </div>
@@ -221,10 +221,8 @@
                         <label for="exampleFormControlInput1" class="form-label">Trạng thái</label>
                         <div>
                             <select class="col-md-12" aria-label="Default select example">
-                                <option selected>Chọn</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="1" {{$employee->TrangThai == 1 ? 'selected' : ''}}>Đang làm việc</option>
+                                <option value="0" {{$employee->TrangThai == 0 ? 'selected' : ''}}>Đã nghỉ việc</option>
                             </select>
                         </div>
                     </div>
@@ -236,10 +234,10 @@
                         <div>
                             <select class="col-md-12" name="phongban">
                                 <option value="0" hidden>Chọn</option>
-                                <option value="Phòng ban 1" {{ old('phongban') == 'Phòng ban 1' ? 'selected' : '' }}>Phòng ban 1</option>
-                                <option value="Phòng ban 2" {{ old('phongban') == 'Phòng ban 2' ? 'selected' : '' }}>Phòng ban 2</option>
-                                <option value="Phòng ban 3" {{ old('phongban') == 'Phòng ban 3' ? 'selected' : '' }}>Phòng ban 3</option>
-                                <option value="Phòng ban 4" {{ old('phongban') == 'Phòng ban 4' ? 'selected' : '' }}>Phòng ban 4</option>
+                                <option value="Phòng ban 1" {{ $employee->PhongBan == 'Phòng ban 1' ? 'selected' : '' }}>Phòng ban 1</option>
+                                <option value="Phòng ban 2" {{ $employee->PhongBan == 'Phòng ban 2' ? 'selected' : '' }}>Phòng ban 2</option>
+                                <option value="Phòng ban 3" {{ $employee->PhongBan == 'Phòng ban 3' ? 'selected' : '' }}>Phòng ban 3</option>
+                                <option value="Phòng ban 4" {{ $employee->PhongBan == 'Phòng ban 4' ? 'selected' : '' }}>Phòng ban 4</option>
                             </select>
                         </div>
                     </div>
@@ -248,10 +246,10 @@
                         <div>
                             <select class="col-md-12" name="chucvu">
                                 <option value="0" hidden>Chọn</option>
-                                <option value="Chức vụ 1" {{ old('chucvu') == 'Chức vụ 1' ? 'selected' : '' }}>Chức vụ 1</option>
-                                <option value="Chức vụ 2" {{ old('chucvu') == 'Chức vụ 2' ? 'selected' : '' }}>Chức vụ 2</option>
-                                <option value="Chức vụ 3" {{ old('chucvu') == 'Chức vụ 3' ? 'selected' : '' }}>Chức vụ 3</option>
-                                <option value="Chức vụ 4" {{ old('chucvu') == 'Chức vụ 4' ? 'selected' : '' }}>Chức vụ 4</option>
+                                <option value="Chức vụ 1" {{ $employee->ChucVu == 'Chức vụ 1' ? 'selected' : '' }}>Chức vụ 1</option>
+                                <option value="Chức vụ 2" {{ $employee->ChucVu == 'Chức vụ 2' ? 'selected' : '' }}>Chức vụ 2</option>
+                                <option value="Chức vụ 3" {{ $employee->ChucVu == 'Chức vụ 3' ? 'selected' : '' }}>Chức vụ 3</option>
+                                <option value="Chức vụ 4" {{ $employee->ChucVu == 'Chức vụ 4' ? 'selected' : '' }}>Chức vụ 4</option>
                             </select>
                         </div>
                     </div>
@@ -260,16 +258,16 @@
                         <div>
                             <select class="col-md-12" name="chuyennganh">
                                 <option value="0" hidden >Chọn</option>
-                                <option value="Chuyên ngành 1" {{ old('chuyennganh') == 'Chuyên ngành 1' ? 'selected' : '' }}>Chuyên ngành 1</option>
-                                <option value="Chuyên ngành 2" {{ old('chuyennganh') == 'Chuyên ngành 2' ? 'selected' : '' }}>Chuyên ngành 2</option>
-                                <option value="Chuyên ngành 3" {{ old('chuyennganh') == 'Chuyên ngành 3' ? 'selected' : '' }}>Chuyên ngành 3</option>
-                                <option value="Chuyên ngành 4" {{ old('chuyennganh') == 'Chuyên ngành 4' ? 'selected' : '' }}>Chuyên ngành 4</option>
+                                <option value="Chuyên ngành 1" {{ $employee->ChuyenNganh == 'Chuyên ngành 1' ? 'selected' : '' }}>Chuyên ngành 1</option>
+                                <option value="Chuyên ngành 2" {{ $employee->ChuyenNganh == 'Chuyên ngành 2' ? 'selected' : '' }}>Chuyên ngành 2</option>
+                                <option value="Chuyên ngành 3" {{ $employee->ChuyenNganh == 'Chuyên ngành 3' ? 'selected' : '' }}>Chuyên ngành 3</option>
+                                <option value="Chuyên ngành 4" {{ $employee->ChuyenNganh == 'Chuyên ngành 4' ? 'selected' : '' }}>Chuyên ngành 4</option>
                             </select>
                         </div>
                     </div>
                 </div> 
                 <div class="update-exit">
-                    <button class="btn btn-primary" type="submit" id="btn" value="Show Alert">Lưu</button>
+                    <button class="btn btn-primary" type="submit" id="btn" value="Show Alert">Cập nhật</button>
                     <a href="{{route('listEmployee')}}"><button class="btn btn-success" type="button">Thoát</button></a>
                 </div>
             </form>

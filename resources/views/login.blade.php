@@ -35,7 +35,7 @@
                 @csrf
             </form>
         </div>
-        <div class="login_page--right" ">
+        <div class="login_page--right">
             {{-- <img src="/image/login_right.jpg" alt=""> --}}
         </div>
     </div>

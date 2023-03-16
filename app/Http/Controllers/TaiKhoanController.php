@@ -34,11 +34,6 @@ class TaiKhoanController extends Controller
         return view('user.index',['user' => $user]);
     }
 
-    public function showInfo(){
-        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $employeeInfo = NhanVien::where("MaNV",Auth::user()->MaNV)->first();
-        return view('user.detail',['user' => $user,'employeeInfo' => $employeeInfo]);
-    }
 
     public function login(Request $request){
         $exists = DB::table('taikhoan')->where('MaNV',$request->username)->first();

@@ -54,7 +54,7 @@
                               <td>Không đóng</td>
                               <td>
                                 <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="infobhxh"><i class="fa-solid fa-eye"></i></a>
+                                <a href="{{route('getInfoBHXH',['id' => 1])}}"><i class="fa-solid fa-eye"></i></a>
                               </td>
                             </tr>
                           </tbody>

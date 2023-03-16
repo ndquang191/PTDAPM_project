@@ -21,4 +21,9 @@ class BaoHiemController extends Controller
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         return view('baohiemxhs.addbhxh',['user' => $user]);
     }
+
+    public function getInfoBHXH($id){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('baohiemxhs.infobhxh',['user' => $user]);
+    }
 }

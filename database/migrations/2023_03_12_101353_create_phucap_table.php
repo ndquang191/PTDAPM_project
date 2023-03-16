@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('baohiem', function (Blueprint $table) {
-            $table->id('MaBHXH');
+        Schema::create('phucap', function (Blueprint $table) {
+            $table->id('MaPhuCap');
             $table->unsignedBigInteger('MaNV');
-            $table->string('TenCheDo');
-            $table->decimal('MucDong', 10, 2);
+            $table->string('TenPC');
+            $table->string('NoiDung');
+            $table->date('NgayQuyetDinh');
+            $table->decimal('GiaTri', 10, 2);
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
+
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('baohiem');
+        Schema::dropIfExists('phucap');
     }
 };

@@ -25,7 +25,7 @@ class BangCapController extends Controller
     public function edit($id,$degreeID){
         $user = NhanVien::find(Auth::user()->MaNV);
         $degree = BangCap::find($degreeID);
-        return view('bangcaps.addbc',['user' => $user,'degree' => $degree]);
+        return view('bangcaps.editbc',['user' => $user,'degree' => $degree]);
     }
     
 }

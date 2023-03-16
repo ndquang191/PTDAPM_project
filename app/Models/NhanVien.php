@@ -10,6 +10,8 @@ use App\Models\DanhGia;
 use App\Models\NghiPhep;
 use App\Models\HDLD;
 use App\Models\BaoHiem;
+use App\Models\PhongBan;
+use App\Models\TrinhDoHocVan;
 
 
 class NhanVien extends Model
@@ -19,8 +21,8 @@ class NhanVien extends Model
     protected $table = 'nhanvien';
     protected $primaryKey = 'MaNV';
     protected $fillable = 
-    ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiSinh','TonGiao','SDT','Email','ChuyenNganh','TrinhDoHocVan'
-    ,'DanToc','PhongBan','ChucVu','TrangThai'];
+    ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiCap','NgayCap','NoiSinh','TonGiao','SDT','Email','MaTDHV'
+    ,'MaPB','ChucVu','TrangThai','TinhTrangHonNhan','GhiChu'];
     
     public function bangcap(){
         return $this->hasMany(BangCap::class,'MaNV');
@@ -44,5 +46,13 @@ class NhanVien extends Model
 
     public function baohiem(){
         return $this->hasMany(BaoHiem::class,'MaNV');
+    }
+
+    public function phongban(){
+        return $this->hasMany(PhongBan::class,'MaPB');
+    }
+
+    public function trinhdohocvan(){
+        return $this->hasOne(TrinhDoHocVan::class,'MaPB');
     }
 }

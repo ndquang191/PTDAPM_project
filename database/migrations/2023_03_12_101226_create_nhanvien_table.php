@@ -17,18 +17,25 @@ return new class extends Migration
             $table->binary('HinhAnh')->nullable();
             $table->date('NgaySinh');
             $table->boolean('GioiTinh');
-            $table->string('CCCD', 20)->nullable();
-            $table->string('DiaChi')->nullable();
-            $table->string('NoiSinh')->nullable();
-            $table->string('TonGiao')->nullable();
-            $table->string('DanToc')->nullable();
+            $table->string('CCCD', 20);
+            $table->date('NgayCap');
+            $table->string('NoiCap');
+            $table->string('DiaChi');
+            $table->string('NoiSinh');
+            $table->string('TonGiao');
+            $table->string('DanToc');
             $table->string('SDT',12);
             $table->string('Email',100);
-            $table->string('ChuyenNganh')->nullable();
-            $table->string('TrinhDoHocVan')->nullable();
-            $table->string('PhongBan')->nullable();
-            $table->string('ChucVu')->nullable();
+            // $table->string('ChuyenNganh');
+            $table->unsignedBigInteger('MaTDHV');
+            $table->unsignedBigInteger('MaPB');
+            $table->string('ChucVu');
             $table->boolean('TrangThai')->default(1);
+            $table->boolean('TrangThaiHonNhan')->default(0);
+            $table->boolean('GhiChu')->nullable()->default(null);
+            $table->foreign('MaPB')->references('MaPB')->on('phongban')->onDelete('cascade');
+            $table->foreign('MaTDHV')->references('MaTDHV')->on('trinhdohocvan')->onDelete('cascade');
+
         });
     }
 
