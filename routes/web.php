@@ -118,4 +118,10 @@ Route::get('/test2' , function(){
     $user = NhanVien::find(Auth::user()->MaNV);
     return view('user.index',['user' => $user]);
 });
+Route::get('/showbhxh', function () {
+    return view('baohiemxhs.infobhxh');
+});
+Route::get('/editbhxh', function () {
+    return view('baohiemxhs.editbhxh');
+});
 
