@@ -23,9 +23,14 @@
 </script>
 @endif
     <div class="fluid-contaier">
-        <div class="header_main">
-            <div class="tilte_main">
-                Danh sách hợp đồng lao động
+        <div class="hdld_ds">
+            <div class="header_main">
+                <div class="tilte_main">
+                    Danh sách hợp đồng lao động
+                </div>
+                <div class="add_btn">
+                    <a href="{{route('createHDLD')}}" class="link_add_btn"> + Thêm</a>
+                </div>
             </div>
             <div class="add_btn">
                 <a href="{{route('createHDLD')}}" class="link_add_btn"> + Thêm</a>
