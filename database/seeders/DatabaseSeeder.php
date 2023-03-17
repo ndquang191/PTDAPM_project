@@ -11,6 +11,7 @@ use Str;
 use App\Models\NhanVien;
 use App\Models\PhongBan;
 use App\Models\TrinhDoHocVan;
+use App\Models\ChucVu;
 use App\Models\TaiKhoan;
 
 
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
     {
         $phongbans = ['Phòng ban 1', 'Phòng ban 2', 'Phòng ban 3'];
         $trinhdos = ['Trình độ 1', 'Trình độ 2', 'Trình độ 3'];
+        $chucvus = ['Chức vụ 1', 'Chức vụ 2', 'Chức vụ 3'];
+
 
         foreach($phongbans as $phongban){
             $randomStr = Str::random(10);
@@ -45,6 +48,13 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        foreach($chucvus as $chucvu){
+            $randomStr = Str::random(10);
+            ChucVu::create([
+                'TenCV' => $chucvu,
+            ]);
+        }
+
         for($i = 0;$i < 3;$i++){
             NhanVien::create([
                 'TenNV' => Str::random(10),
@@ -62,7 +72,7 @@ class DatabaseSeeder extends Seeder
                 'Email' => Str::random(10).'@gmail.com',
                 'MaTDHV' => 1,
                 'MaPB' => 1,
-                'ChucVu' => Str::random(10),
+                'MaCV' => 1,
                 'TrangThai' => 1,
                 'TrangThaiHonNhan' => 0,
                 'GhiChu' => null,	
