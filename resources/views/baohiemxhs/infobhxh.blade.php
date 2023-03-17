@@ -1,59 +1,81 @@
 @extends('layout.app')
 
 @section('linkcss')
-    <link rel="stylesheet" href="./css/bhxh/infobhxh.css">
+    <link rel="stylesheet" href="/css/bhxh/infobhxh.css">
 @endsection
 @section('content')
     <div class="fluid-container">
         <div class="container-tilte-table">
             <div class="socialInsuranceList-addSocialInsurance">
-                <div><a href="">Danh sách bảo hiểm xã hội</a></div>
+                <div><a href="{{route('showListBHXH')}}">Danh sách bảo hiểm xã hội</a></div>
                 <div> > </div>
-                <div><a href="">Thông tin hiểm xã hội</a></div>
+                <div>Xem thông tin bảo hiểm xã hội</div>
             </div>
         </div>
-        <form action="" class="form-information">
-            <div class="socialInsuranceInformation">
-                <div class="employeeCode-socialInsuranceCode">
-                    <div>
-                        <label for="">Mã nhân viên</label>
-                        <input type="text" readonly>
+        <div class="form">
+            <form action="">
+                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">ID</label>
+                            <input class="form-control" type="number" readonly>
+                        </div>
                     </div>
-                    <div>
-                        <label for="">Mã BHXH</label>
-                        <input type="text" readonly>
-                    </div>
-                </div>
-                <div class="startDate-endDate">
-                    <div>
-                        <label for="">Ngày bắt đầu</label>
-                        <input type="text" readonly>
-                    </div>
-                    <div>
-                        <label for="">Ngày kết thúc</label>
-                        <input type="text" readonly>
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">Ngày bắt đầu</label>
+                            <input class="form-control" type="date" readonly>
+                        </div>
                     </div>
                 </div>
-                <div class="closingLevel-phoneNumber">
-                    <div>
-                        <label for="">Mức đóng</label>
-                        <input type="text" readonly>
+                
+                <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">Mức đóng QDTS</label>
+                            <input class="form-control" type="number" readonly>
+                        </div>
                     </div>
-                    <div>
-                        <label for="">Số điện thoại</label>
-                        <input type="text" readonly>
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">Mức đóng TNLD</label>
+                            <input class="form-control" type="number" readonly>
+                        </div>
                     </div>
                 </div>
-                <div class="bonusMoney">
-                    <div>
-                        <label for="">Tiền được thưởng</label>
-                        <input type="text" readonly>
+                
+                <!-- Columns are always 50% wide, on mobile and desktop -->
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">Mức đóng HT</label>
+                            <input class="form-control" type="number" readonly>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">Mức đóng BHTN</label>
+                            <input class="form-control" type="number" readonly>
+                        </div>
                     </div>
                 </div>
-                <div class="btn-save">
-                    <button><a href="dsbhxh">Thoát</a></button>
+    
+                <div class="row">
+                    <div class="col-6 col-md-6">
+                        <div>
+                            <label class="form-label" for="">Tháng</label>
+                            <input class="form-control" type="number" readonly>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <button class="btn btn-danger"><a href="{{route('showListBHXH')}}">Thoát</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 @endsection

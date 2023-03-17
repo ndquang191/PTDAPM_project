@@ -14,47 +14,50 @@
                     <div><p>Danh sách bảo hiểm xã hội</p></div>
                     <div class="search-slect-btn">
                         <div>
-                            <select id="chooseSearch">
-                                <option value="0">Mã nhân viên</option>
-                                <option value="1">Mã BHXH</option>
+                            <select class="form-select" id="chooseSearch">
+                                <option value="0">ID</option>
+                                <option value="1">Ngày bắt đầu</option>
+                                <option value="2">Mức đóng QDTS</option>
+                                <option value="3">Mức đóng TNLD</option>
+                                <option value="4">Mức đóng HT</option>
+                                <option value="5">Mức đóng BHTN</option>
+                                <option value="6">Tháng</option>
                             </select>
                         </div>
                         <div>
-                            <input type="text" id="myInput" onkeyup="searchBhxh()" placeholder="Nhập thông tin">
+                            <input class="form-control" type="text" id="myInput" onkeyup="searchBhxh()" placeholder="Nhập thông tin">
                         </div>
                         <div>
-                            <button><a href="{{route('createBHXH')}}">+ Thêm</a></button>
+                            <button type="button" class="btn btn-primary"><a href="{{route('createBHXH')}}">+ Thêm</a></button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <table class="table" id="myTable">
+                    <table class="table table-hover" id="myTable">
                         <thead>
                             <tr>
-                              <th scope="col">Mã nhân viên</th>
-                              <th scope="col">Mã BHXH</th>
+                              <th scope="col">ID</th>
                               <th scope="col">Ngày bắt đầu</th>
-                              <th scope="col">Ngày kết thúc</th>
-                              <th scope="col">Mức đóng</th>
-                              <th scope="col">Số điện thoại</th>
-                              <th scope="col">Tiền được hưởng</th>
-                              <th scope="col">Lịch sử đóng</th>
+                              <th scope="col">Mức đóng QDTS</th>
+                              <th scope="col">Mức đóng TNLD</th>
+                              <th scope="col">Mức đóng HT</th>
+                              <th scope="col">Mức đóng BHTN</th>
+                              <th scope="col">Tháng</th>
                               <th>Chức năng</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td>2051063710</td>
-                              <td>0129722530</td>
+                              <td>1</td>
                               <td>27/02/2002</td>
-                              <td>28/02/2002</td>
+                              <td>20000</td>
                               <td>15000000</td>
-                              <td>0382899333</td>
+                              <td>15000000</td>
                               <td>36000000</td>
-                              <td>Không đóng</td>
+                              <td>1</td>
                               <td>
-                                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="infobhxh"><i class="fa-solid fa-eye"></i></a>
+                                <a href="/editbhxh"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="/showbhxh"><i class="fa-solid fa-eye"></i></a>
                               </td>
                             </tr>
                           </tbody>

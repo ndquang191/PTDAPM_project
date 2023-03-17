@@ -3,14 +3,15 @@
     padding: 20px 15px;
 }
 .hdld_main_container{
-    width: 100%;
+    position: absolute;
+    width: 105rem;
     /* height: 41rem; */
-    overflow: auto;
-    padding: 15px;
-    margin: 0;
+    left: 21%;
+    top: 12rem;
     border-radius: 5px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow-y: scroll;
 }
 .header_main{
     margin: 10px 2.5px 7px 0;
@@ -19,7 +20,11 @@
 }
 .tilte_main{
     color: #000000B2;
+    /* font-weight: 500; */
     font-size: 1.5rem;
+    margin-left: 1.5rem;
+    /* margin-top: 1rem; */
+
 }
 .link_add_btn{
     color: #c6cfda;

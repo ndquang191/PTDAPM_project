@@ -1,112 +1,44 @@
 *{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 17px;
 }
-#body-content{
-    display: none;
-}
-.body-content{
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 40px;
+
+.fluid-container{
+    padding: 10px;
 }
 input, select{
+    font-size: 17px !important;
     background: rgba(90, 82, 120, 0.1) !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
-    color: rgba(0, 0, 0, 0.3);
-    padding: 5px;
 }
-.header-content{
-    display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 19px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+select{
+    padding: 4px;
+    border: none;
+}
+button{
+    font-size: 17px !important;
+    margin-left: 10px;
 }
 .container{
-    background-color: #EBEBEB;
-    padding-bottom: 10px;
-    padding-left: 1px;
-    padding-right: 5px;
+    padding: 20px;
 }
-.header-content a{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    font-size: 15px;
-    line-height: 18px;
-    color: #000000;
-    margin-right: 18px;
-    text-decoration: none;
-}
-.body-content img{
-    width: 130px;
-    height: 150px;
-}
-.inf-user,
-.religion-placeofbirth-permanentaddress,
-.phonenumber-email-qualification-status,
-.department-position-specialty{
+#container-form{
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
 }
-.inf-user label, input, select{
-    display: block;
-    margin-bottom: 10px;
+.col-6{
+    margin-bottom: 15px;
 }
-.inf-user input, select{
-    width: 300px;
-    height: 30px;
-}
-.religion-placeofbirth-permanentaddress input,
-.phonenumber-email-qualification-status input{
-    height: 30px;
-}
-.religion input,
-.phonenumber input{
-    width: 130px;
-}
-.placeofbirth input,
-.permanentaddress input{
-    width: 470px;
-}
-.email input{
-    width: 470px;
-}
-.qualification select,
-.status select{
-    width: 300px;
-}
-.btn-save-exit div{
-    float: right;
-    margin-bottom: 10px;
-}
-.btn-save-exit{
-    margin-top: 50px;
-    padding-bottom: 20px;
-}
-.save{
-    padding: 10px;
-    background-color: #5A5278;
-    color: #FFFFFF;
-    border: none;
+form{
+    overflow-x: hidden !important;
+    background-color: #FFFFFF;
+    padding: 20px;
     border-radius: 5px;
 }
-.exit{
-    padding: 10px;
-    background-color: #CEDD7A;
-    color: #FFFFFF;
-    border: none;
-    margin-left: 20px;
-    border-radius: 5px;
+.container{
+    background-color: #EBEBEB;padding: 30px;
 }
-.container-title-body{
-    overflow: auto;
-    padding: 10px;
-    margin: 10px;
+img{
+    width: 130px;height: 150px;
+}
+.update-exit{
+    float: right;margin-top: 20px;
 }

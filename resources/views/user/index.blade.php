@@ -11,11 +11,11 @@
                <i class="bi bi-person-vcard"></i>
                <span>Thông tin cá nhân</span>
           </a>
-          <a href="" class="user_box_item">
+          <a href="{{route('showContractUser')}}" class="user_box_item">
                <i class="bi bi-file-earmark"></i>
                <span>Hợp đồng lao động</span>
           </a>
-          <a href="" class="user_box_item">
+          <a href="{{route('showInsuranceUser')}}" class="user_box_item">
                <i class="bi bi-file-earmark"></i>
                <span>Bảo hiểm xã hội</span>
           </a>
