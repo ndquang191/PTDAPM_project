@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.alter{
+    width: 400px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px  0px 5px #0ebaec;
+    position: absolute;
+    top: 20px;
+    right: -500px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+.process{
+    height: 70px;
+    border-left: 5px solid aqua;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.2s;
+}
+.alter ion-icon {
+    padding: 0px 10px;
+    font-size: 20px;
+    color: #0ebaec;
+}
