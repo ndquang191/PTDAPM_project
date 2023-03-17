@@ -5,6 +5,11 @@
 .hdld_main_container{
     width: 105rem;
     padding: 20px 10px;
+    width: 100%;
+    /* height: 41rem; */
+    overflow: auto;
+    padding: 15px;
+    margin: 0;
     border-radius: 5px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -21,7 +26,6 @@
     font-size: 1.5rem;
     margin-left: 3px;
     /* margin-top: 1rem; */
-
 }
 .link_add_btn{
     color: #c6cfda;
