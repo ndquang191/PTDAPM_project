@@ -164,6 +164,10 @@ function searchAccount() {
         }
     }
 }
+function formShow() {
+    document.getElementById("form-update").style.display = "block";
+    document.getElementById("container-title-form").style.display = "none";
+}
 // const searchBtn = document.querySelector(".search-btn");
 // searchBtn.addEventListener("click", (e) => {
 //     searchAccount();
