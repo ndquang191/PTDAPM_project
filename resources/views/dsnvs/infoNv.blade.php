@@ -277,3 +277,5 @@
 @section('linkjs')
     <script src="/js/ListAccEmployee/index.js"></script>
 @endsection
+
+<?php ?>
