@@ -121,7 +121,7 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showLeaveUser')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-calendar2-plus-fill"></i>
                        <span>Nghỉ phép</span>
                      </a>

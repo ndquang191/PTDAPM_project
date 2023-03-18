@@ -9,8 +9,7 @@ use App\Models\NhanVien;
 use App\Models\DanhGia;
 use App\Models\HDLD;
 use App\Models\BaoHiem;
-
-
+use App\Models\NghiPhep;
 
 class UserController extends Controller
 {
@@ -36,5 +35,12 @@ class UserController extends Controller
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $contract = BaoHiem::where("MaBH",Auth::user()->MaBH)->first();
         return view('user.baohiem',['user' => $user,'contract' => $contract]);
+    }
+
+
+    public function showLeave(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $nghiphep = NghiPhep::where("MaNp",Auth::user()->MaBH)->first();
+        return view('user.nghiphep',['user' => $user,'nghiphep' => $nghiphep]);
     }
 }
