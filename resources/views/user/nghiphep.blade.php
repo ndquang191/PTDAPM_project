@@ -19,8 +19,17 @@
                </div>
 
 
+
+
+
                <div class="fullrow info-row">
                     <div class="info-remainday">Số ngày nghỉ có phép còn lại trong năm : <span>10</span></div>
+                    <button type="button" class="btn btn-primary send-req" onclick="showLeaveForm()">
+                         {{-- <a href="{{route('createLeave')}}" class="add-btn ">
+                             <p>Thêm</p>
+                         </a> --}}
+                         Gửi yêu cầu
+                     </button>
                </div>
 
 
@@ -52,5 +61,5 @@
 
 
 @section('linkjs')
-     <script src="./js/user/nghiphep.js"></script>
+     <script src="/js/user/nghiphep.js"></script>
 @endsection

@@ -11,6 +11,9 @@ use App\Models\HDLD;
 use App\Models\BaoHiem;
 use App\Models\NghiPhep;
 
+
+
+
 class UserController extends Controller
 {
     public function showEvaluate(){
@@ -37,10 +40,9 @@ class UserController extends Controller
         return view('user.baohiem',['user' => $user,'contract' => $contract]);
     }
 
-
     public function showLeave(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $nghiphep = NghiPhep::where("MaNp",Auth::user()->MaBH)->first();
-        return view('user.nghiphep',['user' => $user,'nghiphep' => $nghiphep]);
+        $leaves = NghiPhep::where("MaNV",Auth::user()->MaNV)->get();
+        return view('user.nghiphep',['user' => $user,'leave' => $leaves]);
     }
 }

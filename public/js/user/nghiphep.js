@@ -26,3 +26,14 @@ nextBtn.addEventListener('click' , () => {
 })
 
 updateStr()
+
+console.log("NGHI PHEP");
+
+
+function showLeaveForm(){
+     Swal.fire(
+     'Good job!',
+     'You clicked the button!',
+     'success'
+     )
+}

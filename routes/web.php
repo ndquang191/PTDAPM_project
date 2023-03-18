@@ -96,7 +96,6 @@ Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/u
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
     Route::get('/leave','showLeave')->name('showLeaveUser');
 
-
 });
 
 
