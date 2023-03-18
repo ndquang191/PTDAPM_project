@@ -117,7 +117,7 @@ class NhanVienController extends Controller
         ]);
         $employee = NhanVien::where('MaNV',$id)->first();
         
-        DB::transaction(function () {
+        DB::transaction(function () use($employee , $request) {
             $employee->update([
                 'TenNV' => $request->name,
                 'NgaySinh' => $request->birthday,
