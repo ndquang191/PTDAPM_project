@@ -108,6 +108,10 @@
 
 
 @section('linkjs')
+<<<<<<< HEAD
      <script src="/js/user/nghiphep.js"></script> 
      <script src="/js/Leave/fetchApi.js"></script>
+=======
+     <script src="/js/user/nghiphep.js"></script>
+>>>>>>> origin/tien
 @endsection

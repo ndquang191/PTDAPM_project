@@ -13,7 +13,7 @@ use App\Models\TrinhDoHocVan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Str;
-use Crypt;
+use Illuminate\Support\Facades\Crypt;
 
 class NhanVienController extends Controller
 {
