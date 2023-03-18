@@ -147,7 +147,8 @@
 
   
 const exitBTN = document.getElementById('logout-btn')
-        exitBTN.addEventListener('click',()=>{
+        exitBTN.addEventListener('click',(e)=>{
+          e.preventDefault();
             Swal.fire({
                 title: 'Bạn có muốn đăng xuất ?',
                 showCancelButton: true,

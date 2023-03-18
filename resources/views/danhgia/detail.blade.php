@@ -107,7 +107,4 @@
 
 @endsection
 
-@section('linkjs')
-     <script src="/js/user/detail.js"></script>
-    
-@endsection
+@
