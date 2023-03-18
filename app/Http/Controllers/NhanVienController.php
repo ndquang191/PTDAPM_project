@@ -58,7 +58,7 @@ class NhanVienController extends Controller
                 'birthday.before' => "Ngày sinh không hợp lệ"
             ]);
 
-            DB::transaction(function () {
+            DB::transaction(function () use($request) {
                 NhanVien::create([
                     'TenNV' => $request->name,
                     'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
@@ -77,9 +77,8 @@ class NhanVienController extends Controller
                     'MaTDHV' => $request->trinhdo,
                     'MaPB' => $request->phongban,
                     'MaCV' => $request->chucvu,
+                    'MaBH' => null,
                     'TrangThai' => 1,
-                    'TrangThaiHonNhan' => 0,
-                    'GhiChu' => null,
                 ]);
     
                 TaiKhoan::create([
