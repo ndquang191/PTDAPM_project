@@ -35,7 +35,7 @@
             <div class="hdld_main_container">
                 <div class="input_search">
                     {{-- <form action=""> --}}
-                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm ..." class="form_input" onkeyup="myFunction()">
+                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm" class="form_input" onkeyup="myFunction()">
                     {{-- </form> --}}
                     <a href="#" class="search_btn" onclick="myFunction()">
                         <i class="bi bi-search icon_color_search"></i>
@@ -46,12 +46,14 @@
                         <tr>
                             <th scope="col">STT</th>
                             <th scope="col">Mã nhân viên</th>
+                            <th scope="col">Mã HD</th>
                             <th scope="col">Loại hợp đồng</th>
                             <th scope="col">Ngày ký</th>
                             <th scope="col">Ngày bắt đầu</th>
                             <th scope="col">Ngày kết thúc</th>
                             <th scope="col">Địa điểm làm việc</th>
                             <th scope="col">Chuyên môn</th>
+                            <th scope="col">Trạng thái</th>
                             <th scope="col"></th>
         
                         </tr>
