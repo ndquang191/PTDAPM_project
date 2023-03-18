@@ -13,7 +13,7 @@
     padding: 2rem 0;
 }
 .container {
-    min-width: 170rem;
+    width: 100%;
     min-height: 85vh;
     background: #ffffff;
     border-radius: 5px;
