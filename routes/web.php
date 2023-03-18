@@ -94,6 +94,7 @@ Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/u
     Route::get('/info','showInfo')->name('showInfoUser'); // Hiển thị thông tin tài khoản
     Route::get('/contract','showContract')->name('showContractUser');
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
+    Route::get('/leave','showLeave')->name('showLeaveUser');
 
 });
 
