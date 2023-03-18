@@ -1,5 +1,4 @@
 .container {
-    min-width: 160rem;
     height: 80vh;
     background: #ffff;
     border-radius: 5px;
@@ -57,7 +56,7 @@
     top: -5px;
 }
 .floatInput {
-    color: #ccc;
+    color: #bbb;
     font-size: 1.8rem;
     justify-items: center;
     align-self: center;
@@ -130,4 +129,9 @@ td > p {
     justify-content: center;
     align-items: center;
     padding: 1rem !important;
+}
+.form-select {
+    width: 20rem;
+    height: 4rem;
+    margin: 0;
 }

@@ -73,7 +73,7 @@ p {
 .table-stat-container {
     width: 100%;
     padding: 12px;
-    border : 0.5px solid black;
+    border: 0.5px solid black;
     min-height: 40rem;
     background: #ffffff;
     border-radius: 5px;
@@ -113,8 +113,8 @@ p {
     justify-self: center;
 }
 .search-btn {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 4rem;
+    height: 4rem;
     background-color: #5a5278;
     display: flex;
     justify-content: center;
@@ -124,6 +124,11 @@ p {
 .input-search {
     width: 279px;
     height: 31px;
+    margin: 0;
+}
+.form-select {
+    width: 20rem;
+    height: 4rem;
     margin: 0;
 }
 .search {
@@ -253,8 +258,6 @@ td span {
     color: #fd0303;
 }
 
-
-.table-acc-list tr{
+.table-acc-list tr {
     height: 44px;
-    
 }
