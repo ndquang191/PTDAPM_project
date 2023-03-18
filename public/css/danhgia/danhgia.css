@@ -12,14 +12,29 @@
 }
 .danhgia_title{
     margin-top: 2rem;
+    display: flex;
+    line-height: 27px;
+    background-color: #dcdcdc;
+    align-items: center;
+    justify-content: space-between;
+}
+.danhgia_add_btn{
+    background-color: #39374E;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #c6cfda;
 }
 .title_danhgia{
     color: #212529;
+    font-size: 3rem;
     text-align: center;
 }
-.danhgia_title{
-    background-color: #dcdcdc;
-}
+
 .danhgia_title h5{
     font-size: 1.4rem;
     color: rgba(0, 0, 0, 1);
@@ -32,10 +47,8 @@
 .tilte_main{
     text-align: center;
     color: #000000B2;
-    font-size: 1.5rem;
-    margin-left: 8rem;
-
 }
+
 .table{
     width: 103rem;
     margin: 0 auto;
@@ -53,10 +66,10 @@ th{
     font-weight: 300;
 }
 .input_search{
-    float: right;
-    margin-top: 3px;
-    margin-bottom: 1rem;
     display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    margin-bottom: 1rem;
     gap: 1rem;
 }
 .form_input{
@@ -104,11 +117,13 @@ th{
 }
 
 /* form thêm đánh giá */
+.danhgia_add{
+    padding: 15px;
+}
 .head_add_danhgia_main {
     margin-left: 1rem;
     margin-top: 2rem;
     background-color: #dcdcdc;
-    width: 102rem;
 }
 .head_add_danhgia_main span{
     font-size: 1.8rem;

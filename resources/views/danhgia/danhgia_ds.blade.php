@@ -8,11 +8,12 @@
         <div class="danhgia_main_container">
             <div class="header_main">
                 <div class="title_main">
-                    <h2 class="title_danhgia">ĐÁNH GIÁ NHÂN VIÊN</h2>
+                    <h1 class="title_danhgia">ĐÁNH GIÁ NHÂN VIÊN</h1>
                 </div>
             </div>
             <div class="danhgia_title">
-                <h5>Danh sách đánh giá</h5>
+                <h4>Danh sách đánh giá</h4>
+                <a href="{{route('addEvaluate')}}" class="danhgia_add_btn">+ Thêm</a>
             </div>
             <div class="input_search">
                 <form action="">
