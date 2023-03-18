@@ -16,6 +16,7 @@
             <div class="mb-3 ">
               <label class="form-label lb-add">Mã nhân viên</label>
               <input type="text" class="form-control ip-add input-id" required>
+              <p class="error hidden">Vui lòng nhập đúng mã nhân viên</p>
             </div>
             <div class="mb-3">
               <label class="form-label lb-add">Tên Nhân viên</label>
@@ -40,5 +41,5 @@
     </div>
 @endsection
 @section('linkjs')
-<script src="/js/ListAccEmployee/fetchApi.js"></script>
+<script src="/js/Leave/fetchApi.js"></script>
 @endsection

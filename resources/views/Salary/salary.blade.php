@@ -13,13 +13,18 @@
                 <input type="text" class="form-control input-search" id="floatingInput" placeholder="Tìm kiếm...">
                 <label for="floatingInput" class="floatInput">Tìm kiếm...</label>
             </div>
-            <div class="search-btn">
+            <select class="form-select" id="chooseSearch" aria-label="Default select example">
+                <option value="1">Tên nhân viên</option>
+                <option value="2">Chức vụ</option>
+                <option value="3">Phòng ban</option>
+              </select>
+            <div class="search-btn " onclick="searchSalary()">
                 <i class="bi bi-search"></i>
             </div>
         </div>
     </div>
     <div class="container">
-        <table class="table">
+        <table class="table" id="myTable">
             <thead>
               <tr>
                 <th scope="col">STT</th>
@@ -55,4 +60,7 @@
           </table>
     </div>
 </div>
+@endsection
+@section('linkjs')
+ <script src="js/salary/salary.js"></script>
 @endsection

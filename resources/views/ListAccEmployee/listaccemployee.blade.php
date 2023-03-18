@@ -52,16 +52,21 @@
                 </div>
                 <div class="search">
                     <div class="form-floating mb-3" style="margin:0!important">
-                        <input type="text" class="form-control input-search" id="floatingInput" placeholder="Tìm kiếm...">
+                        <input type="text" class="form-control input-search" id="floatingInput myInput" placeholder="Tìm kiếm...">
                         <label for="floatingInput">Tìm kiếm...</label>
                     </div>
-                    <div class="search-btn">
+                    <select class="form-select" id="chooseSearch" aria-label="Default select example">
+                        <option value="1">Mã nhân viên</option>
+                        <option value="2">Tên nhân viên</option>
+                        <option value="3">Quyền truy cập</option>
+                      </select>
+                    <div class="search-btn" onclick="searchAccount()">
                         <i class="bi bi-search"></i>
                     </div>
                 </div>
             </div>
             <div class="table-acc-list">
-                <table class="table table-striped">
+                <table class="table table-striped" id="myTable">
                     <thead>
                   <tr>
                     <th scope="col">Mã nhân viên</th>
