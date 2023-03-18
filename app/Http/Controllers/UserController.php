@@ -9,6 +9,7 @@ use App\Models\NhanVien;
 use App\Models\DanhGia;
 use App\Models\HDLD;
 use App\Models\BaoHiem;
+use App\Models\NghiPhep;
 
 
 
@@ -37,5 +38,11 @@ class UserController extends Controller
         $contracts = BaoHiem::where("MaNV",Auth::user()->MaNV)->get();
         // return view('user.',['user' => $user,'contracts' => $contracts]);
         return dd('Chưa có giao diện');
+    }
+
+    public function showLeave(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $leaves = NghiPhep::where("MaNV",Auth::user()->MaNV)->get();
+        return view('user.nghiphep',['user' => $user,'leave' => $leaves]);
     }
 }
