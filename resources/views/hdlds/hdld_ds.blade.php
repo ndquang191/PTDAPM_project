@@ -54,7 +54,7 @@
                             <th scope="col">Địa điểm làm việc</th>
                             <th scope="col">Chuyên môn</th>
                             <th scope="col">Trạng thái</th>
-                            <th scope="col"></th>
+                            <th scope="col">Hành động</th>
         
                         </tr>
                     </thead>
@@ -77,20 +77,22 @@
                             <tr>
                                 <td scope="row">{{$count}}</td>
                                 <td>{{$contract->MaNV}}</td>
+                                <td>{{$contract->MaHDLD}}</td>
                                 <td>{{$contract->LoaiHopDong}}</td>
                                 <td>{{$contract->NgayKi}}</td>
                                 <td>{{$contract->NgayBatDau}}</td>
                                 <td>{{$contract->NgayKetThuc}}</td>
                                 <td>{{$contract->DiaDiem}}</td>
                                 <td>{{$contract->ChuyenMon}}</td>
+                                <td></td>
                                 <td>
-                                    <a href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
+                                    <a class="link_icon" href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
                                         <i class="bi bi-eye-fill icon_color"></i>
                                     </a>
                                     {{-- <a href="{{route('editHDLD',['id' => 1])}}">
                                         <i class="bi bi-pencil-square icon_color"></i>
                                     </a> --}}
-                                    <a href="#">
+                                    <a href="#" class="link_icon">
                                         <i class="bi bi-trash icon_color"></i>
                                     </a>
                                 </td>
