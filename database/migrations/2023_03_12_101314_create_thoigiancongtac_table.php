@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('baohiem', function (Blueprint $table) {
-            $table->id('MaBHXH');
+        Schema::create('thoigiancongtac', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('MaNV');
-            $table->date('NgayBatDau');
-            $table->decimal('MucDongQDTS', 10, 2);
-            $table->decimal('MucDongTNLD', 10, 2);
-            $table->decimal('MucDongHT', 10, 2);
-            $table->decimal('MucDongBHTN', 10, 2);
-            $table->smallInteger('Thang');
+            $table->unsignedBigInteger('MaCV');
+            $table->date('NgayNhamChuc');
+            $table->foreign('MaCV')->references('MaCV')->on('chucvu')->onDelete('cascade');
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('baohiem');
+        Schema::dropIfExists('thoigiancongtac');
     }
 };

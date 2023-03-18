@@ -4,7 +4,17 @@
 @section('linkcss')
      <link rel="stylesheet" href="/css/user/index.css">
 @endsection
+
 @section('content')
+     @if (session('message'))
+     <script>
+          Swal.fire({
+               icon: 'error',
+               title: '{{session('message')}}',
+               timer: 2000,
+          })
+     </script>
+     @endif
 <div class="container-fluid user_homepage">
      <div class="homepage-container">
           <a href="{{route('showInfoUser')}}" class="user_box_item">

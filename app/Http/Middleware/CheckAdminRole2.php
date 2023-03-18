@@ -16,12 +16,11 @@ class CheckAdminRole2
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->QuyenTruyCap == 'admin2'){
-            return $next($request);
-        }
-        else{
-            // return redirect()->back()->withErrors(['msg' => 'Bạn không có quyền truy cập']);
-            return dd('Không có quyền truy cập');
-        }
+        if(Auth::user()->QuyenTruyCap == 'member'){
+            return redirect()->route('getHomepage')->with('message', 'Bạn không có quyền truy cập !');
+          }
+          else{
+              return redirect()->route('getAdminPage')->with('message', 'Bạn không có quyền truy cập !');
+          }
     }
 }

@@ -20,8 +20,7 @@ class CheckAdmin
             return $next($request);
         }
         else{
-            // return redirect()->back()->withErrors(['msg' => 'Bạn không có quyền truy cập']);
-            return dd('Không có quyền truy cập');
+            return redirect()->route('getHomepage')->with('message', 'Bạn không có quyền truy cập !');
         }
     }
 }
