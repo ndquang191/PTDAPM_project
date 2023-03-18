@@ -83,13 +83,13 @@
                             <td>{{$contract->DiaDiem}}</td>
                             <td>{{$contract->ChuyenMon}}</td>
                             <td>
-                                <a href="{{URL::to('hdld/hdld_show')}}">
+                                <a href="{{route('editHDLD',['id' => $contract->MaHDLD])}}">
                                     <i class="bi bi-eye-fill icon_color"></i>
                                 </a>
                                 {{-- <a href="{{URL::to('hdld/hdld_edit')}}">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a> --}}
-                                <a href="#">
+                                <a href="#" class="delete-btn" data-id = {{$contract->MaHDLD}}>
                                     <i class="bi bi-trash icon_color"></i>
                                 </a>
                             </td>
@@ -100,6 +100,29 @@
             </table>
         </div>
     </div>
+    <form action="" id="delete-form" method="post" style="display: none">
+        @csrf
+    </form>
+    <script>
+        // ---- Alert khi nhấn nút reset mật khẩu
+        const deleteBTN = document.querySelectorAll('.delete-btn');
+        const deleteForm = document.getElementById('delete-form')
+        deleteBTN.forEach(btn => {
+            btn.addEventListener('click', (e)=>{
+                e.preventDefault()
+                Swal.fire({
+                title: 'Xác nhận xóa hợp đồng ?',
+                showCancelButton: true,
+                confirmButtonText: 'Xóa',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteForm.setAttribute('action',`/contract/${btn.getAttribute('data-id')}/delete`)
+                    deleteForm.submit();
+                }
+            })
+            })
+        });
+    </script>
 @endsection
 @section('linkjs')
     <script src="/js/hdld/hdld.js"></script>
