@@ -44,10 +44,4 @@ class UserController extends Controller
         $leaves = NghiPhep::where("MaNV",Auth::user()->MaNV)->get();
         return view('user.nghiphep',['user' => $user,'leave' => $leaves]);
     }
-
-    public function showLeave(){
-        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $leaves = NghiPhep::where("MaNV",Auth::user()->MaNV)->get();
-        return view('user.nghiphep',['user' => $user,'leave' => $leaves]);
-    }
 }
