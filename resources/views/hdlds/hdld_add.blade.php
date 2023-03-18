@@ -63,7 +63,12 @@
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Địa điểm làm việc</label> <br>
-                            <input type="text" name="DiaDiem" id="dia_diem" class="form_input_add_htld" value={{old('DiaDiem')}}>
+                            <input type="text" name="DiaDiem" id="" class="form_input_add_htld" value={{old('DiaDiem')}}>
+                            {{-- <select name="DiaDiem" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
+                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 1</option>
+                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 2</option>
+                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 3</option>
+                            </select> --}}
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Chuyên môn</label> <br>

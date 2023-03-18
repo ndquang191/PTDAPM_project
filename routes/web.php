@@ -11,6 +11,7 @@ use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\LuongController;
 use App\Http\Controllers\UserController;
+use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------

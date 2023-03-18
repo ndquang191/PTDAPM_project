@@ -45,11 +45,18 @@
                             <label for="" class="form_title_htld">Ngày kết thúc</label> <br>
                             <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form_input_add_htld" value="{{$contract->NgayKetThuc}}">
                         </div>
+                        <div class="form_add_hdld">
+                            <label for="" class="form_title_htld">Trạng thái</label> <br>
+                            <input type="date" name="trangthai" id="trangthai" class="form_input_add_htld" value="{{$contract->NgayKetThuc}}">
+                        </div>
                     </div>
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
-                            <label for="" class="form_title_htld">Địa điểm làm việc</label> <br>
-                            <input type="text" name="DiaDiem" id="dia_diem" class="form_input_add_htld" value="{{$contract->DiaDiem}}">
+                            <select name="" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
+                                <option value="">Đại học Thủy Lợi cơ sở 1</option>
+                                <option value="">Đại học Thủy Lợi cơ sở 2</option>
+                                <option value="">Đại học Thủy Lợi cơ sở 3</option>
+                            </select>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Chuyên môn</label> <br>
