@@ -1,0 +1,132 @@
+.main{
+    position: absolute;
+    width: 106rem;
+    height: 36rem;
+    left: 260px;
+    top: 58px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header_container{
+    font-family: Roboto;
+    /* margin-top: 10rem; */
+    background-color: #DCDCDC;
+}
+.tilte_container{
+    position: absolute;
+    float: left;
+    top: 3rem;
+    left: 25rem;
+    color: #000000B2;
+    font-size: 1.5rem;
+    margin-left: 25px;
+
+}
+.link_add_btn{
+    color: #c6cfda;
+}
+.add_btn{
+    float: right;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    background-color: #39374E;
+    width: 73px;
+    height: 24px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.icon_color{
+    color: #39374E;
+}
+td{
+    font-size: 1.4rem;
+}
+th{
+    font-size: 1.4rem;
+    color: #000000B2;
+}
+.input_search{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.2rem 0 1.2rem;
+}
+.form_input{
+    width: 20rem;
+    height: 3rem;
+    padding: 0 10px;
+    border-radius: 3px;
+}
+.search_btn{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #39374E;
+}.header_container{
+    font-family: Roboto;
+    /* margin-top: 10rem; */
+    background-color: #DCDCDC;
+}
+.tilte_container{
+    position: absolute;
+    float: left;
+    top: 3rem;
+    left: 25rem;
+    color: #000000B2;
+    font-size: 1.5rem;
+    margin-left: 25px;
+
+}
+.link_add_btn{
+    color: #c6cfda;
+}
+.add_btn{
+    float: right;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    background-color: #39374E;
+    width: 73px;
+    height: 24px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.icon_color{
+    color: #39374E;
+}
+td{
+    font-size: 1.4rem;
+}
+th{
+    font-size: 1.4rem;
+    color: #000000B2;
+}
+.input_search{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.2rem 0 1.2rem;
+}
+.form_input{
+    width: 20rem;
+    height: 3rem;
+    padding: 0 10px;
+    border-radius: 3px;
+}
+.search_btn{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #39374E;
+}

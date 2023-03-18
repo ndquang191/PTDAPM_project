@@ -80,8 +80,8 @@
                              <span class="dropdown_user_title">Đổi mật khẩu</span>
                            </a>
                          </li>
-                         <li class="dropdown_user_item">
-                           <a href="/logout">
+                         <li id="logout-btn" class="dropdown_user_item">
+                           <a href="">
                              <i class="fa-solid fa-power-off"></i>
                              <span class="dropdown_user_title">Đóng phiên làm việc</span>
                            </a>
@@ -96,7 +96,7 @@
                <div class="main_navbar">
                  <ul class="dropdown_main_menu">
                    <li class="dropdown_main_menu_item">
-                     <a href="index.html" class="link_dropdown_main_menu">
+                     <a href="/" class="link_dropdown_main_menu">
                        <i class="fa-solid fa-house"></i>
                        <span>Trang chủ</span>
                      </a>
@@ -141,6 +141,26 @@
           </div>
      </div>
 </body>
+
+<script>
+
+  
+const exitBTN = document.getElementById('logout-btn')
+        exitBTN.addEventListener('click',()=>{
+            Swal.fire({
+                title: 'Bạn có muốn đăng xuất ?',
+                showCancelButton: true,
+                confirmButtonText: 'Có',
+                cancelButtonText: 'Không',
+                icon: 'question',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'http://127.0.0.1:8000/logout';
+                }
+            })
+        })
+
+</script>
 @yield('linkjs')
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

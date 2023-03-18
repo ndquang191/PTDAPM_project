@@ -61,8 +61,8 @@ var props = {
             },
         ],
         table: [
-            ["01", "Luong Co Ban", "50.000.000VND"],
-            ["02", "He So Luong", ""],
+            ["01", "Luong Co Ban", "{{$luongcoban}}"],
+            ["02", "He So Luong", "3.2"],
             ["03", "Ngay Nghi Qua Han", ""],
             ["04", "Khen Thuong", "50.000.000VND"],
             ["05", "Ky Luat", "20.000.000VND"],

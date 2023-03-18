@@ -52,11 +52,26 @@ function searchBhxh() {
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
-    if (giaTri == "Mã nhân viên") {
+    if (giaTri == "ID") {
         stt = 0;
     }
-    if (giaTri == "Mã BHXH") {
+    if (giaTri == "Ngày bắt đầu") {
         stt = 1;
+    }
+    if (giaTri == "Mức đóng QDTS") {
+        stt = 2;
+    }
+    if (giaTri == "Mức đóng TNLD") {
+        stt = 3;
+    }
+    if (giaTri == "Mức đóng HT") {
+        stt = 4;
+    }
+    if (giaTri == "Mức đóng BHTN") {
+        stt = 5;
+    }
+    if (giaTri == "Tháng") {
+        stt = 6;
     }
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[stt];
@@ -119,6 +134,7 @@ function chooseFile(fileInput) {
     }
 }
 //--------------------------------------------
+<<<<<<< HEAD
 function searchAccount() {
     var input, filter, table, tr, td, i, txtValue, e, giaTri, stt;
     e = document.getElementById("chooseSearch");
@@ -154,3 +170,9 @@ function searchAccount() {
 //     searchAccount();
 // });
 //-------------------------------------------------------------------------------
+=======
+function formShow() {
+    document.getElementById("form-update").style.display = "block";
+    document.getElementById("container-title-form").style.display = "none";
+}
+>>>>>>> 7c6de16963509b086c8ea81d22eddaa5cde2e31d

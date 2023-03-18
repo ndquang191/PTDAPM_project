@@ -16,13 +16,26 @@
     })
     </script>
     {{-- {!! implode('', $errors->all('<div>:message</div>')) !!} --}}
+    @else 
+        @if(session('error'))
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: '{{session('error')}}',
+            showConfirmButton: true,
+            confirmButtonText: 'Đóng',
+            timer: 3000
+        })
+        </script>
+        @endif
     @endif
     <div class="add_hdld_main">
         <div class="head_add_hdld_main">
             <h1 class="title_add_htld">Hợp đồng lao động</h1>
         </div>
         <div class="hdld_main_container hdld_main_page">
-            <form action="{{route('storeHDLD')}}" class="" method="POST">
+            <form action="{{route('storeHDLD')}}" id="add_contract_form" method="POST">
                 @csrf
                 <div class="form_list_hdld">
                     <div class="form_list_item_htld">
@@ -75,7 +88,7 @@
                         <div class="link_exit">Thoát</div>
                     </div>
                     <div class="bottom_save_add_hdld">
-                        <button type="submit" class="hdld_submit" id="hdld_submit">Lưu</button>
+                        <button class="hdld_submit" id="hdld_submit">Lưu</button>
                     </div>
                 </div>
             </form>
@@ -93,6 +106,24 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = 'http://127.0.0.1:8000/contract';
+                }
+            })
+        })
+
+        // Xác nhận khi lưu
+        const SubmitForm = document.getElementById('add_contract_form')
+        const SubmitBTN = document.getElementById('hdld_submit')
+        SubmitBTN.addEventListener('click',(e) => {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Xác nhận thêm hợp đồng ?',
+                showCancelButton: true,
+                confirmButtonText: 'Thêm',
+                cancelButtonText: 'Hủy',
+                icon: 'question',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    SubmitForm.submit();
                 }
             })
         })

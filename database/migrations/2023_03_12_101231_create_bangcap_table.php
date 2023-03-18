@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('MaBC');
             $table->unsignedBigInteger('MaNV');
             $table->string('TenBC', 100);
+            $table->string('LoaiBC');
             $table->date('NgayCap');
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });

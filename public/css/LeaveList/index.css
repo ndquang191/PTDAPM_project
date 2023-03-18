@@ -19,7 +19,11 @@
     background-color: #5a5278;
 }
 .container {
+<<<<<<< HEAD
     width: 100%;
+=======
+    /* min-width: 170rem; */
+>>>>>>> 7c6de16963509b086c8ea81d22eddaa5cde2e31d
     min-height: 70rem;
     background: #ffffff;
     border-radius: 5px;

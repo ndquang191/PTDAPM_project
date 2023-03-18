@@ -9,6 +9,12 @@ use Carbon\Carbon;
 use Hash;
 use Str;
 use App\Models\NhanVien;
+use App\Models\PhongBan;
+use App\Models\TrinhDoHocVan;
+use App\Models\ChucVu;
+use App\Models\TaiKhoan;
+
+
 
 
 class DatabaseSeeder extends Seeder
@@ -18,96 +24,64 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Thêm tk admin
-        for($i = 0; $i < 2; $i++){
-            DB::table('NhanVien')->insert(
-                [
-                    'TenNV' => Str::random(5),
-                    'HinhAnh' => null,
-                    'NgaySinh' => Carbon::today()->subDays(rand(0, 365)),
-                    'GioiTinh' => floor(rand(0,1)),
-                    'CCCD' => '0'.strval(rand(10000000000,99999999999)),
-                    'DiaChi' => Str::random(20),
-                    'NoiSinh' => Str::random(8),
-                    'TonGiao' => Str::random(8),
-                    'DanToc' => Str::random(8),
-                    'SDT' => '0'.strval(rand(100000000,999999999)),
-                    'Email' => Str::random(5).'@gmail.com',
-                    'ChuyenNganh' => Str::random(8),
-                    'TrinhDoHocVan' => Str::random(8),
-                    'PhongBan' => Str::random(8),
-                    'ChucVu' => Str::random(8),
-                ],
-            );
-        }
-        DB::table('TaiKhoan')->insert(['MaNV' => 10000,'MatKhau' => Hash::make('admin1'),'TrangThai' => 1,'QuyenTruyCap' => 'admin1','NgayTao' => Carbon::now()]);
-        DB::table('TaiKhoan')->insert(['MaNV' => 10001,'MatKhau' => Hash::make('admin2'),'TrangThai' => 1,'QuyenTruyCap' => 'admin2','NgayTao' => Carbon::now()]);
-        
-        // Thêm nhân viên
-        for($i = 0; $i <= 10; $i++){
-            DB::table('NhanVien')->insert(
-                [
-                    'TenNV' => Str::random(5),
-                    'HinhAnh' => null,
-                    'NgaySinh' => Carbon::today()->subDays(rand(0, 365)),
-                    'GioiTinh' => floor(rand(0,1)),
-                    'CCCD' => '0'.strval(rand(10000000000,99999999999)),
-                    'DiaChi' => Str::random(20),
-                    'NoiSinh' => Str::random(8),
-                    'TonGiao' => Str::random(8),
-                    'DanToc' => Str::random(8),
-                    'SDT' => '0'.strval(rand(100000000,999999999)),
-                    'Email' => Str::random(5).'@gmail.com',
-                    'ChuyenNganh' => Str::random(8),
-                    'TrinhDoHocVan' => Str::random(8),
-                    'PhongBan' => Str::random(8),
-                    'ChucVu' => Str::random(8),
-                ],
-            );
-            $manv = NhanVien::orderBy('MaNV','desc')->first()->MaNV;
-            $SoBC = floor(rand(1,4));
-            DB::table('TaiKhoan')->insert(
-                [
-                    'MaNV' => $manv,
-                    'MatKhau' => Hash::make('member'),
-                    'TrangThai' => floor(rand(0,1)),
-                    'QuyenTruyCap' => 'member',
-                    'NgayTao' => Carbon::now()
-                ]);
-            for($i = 0; $i < $SoBC; $i++){
-                DB::table('BangCap')->insert([
-                    'MaNV' => $manv,
-                    'TenBC' => Str::random(20),
-                    'NgayCap' => Carbon::today()->subDays(rand(0, 365)),
-                ]);
-            }
+        $phongbans = ['Phòng ban 1', 'Phòng ban 2', 'Phòng ban 3'];
+        $trinhdos = ['Trình độ 1', 'Trình độ 2', 'Trình độ 3'];
+        $chucvus = ['Chức vụ 1', 'Chức vụ 2', 'Chức vụ 3'];
 
-            $SoDG = floor(rand(0,3));
-            for($i=0;$i<$SoDG;$i++){
-                $giatri = floor(rand(-99999999,9999999));
-                DB::table('DanhGia')->insert([
-                    'MaNV' => $manv,
-                    'NgayQuyetDinh' => Carbon::today()->subDays(rand(0, 365)),
-                    'NoiDung' => Str::random(20),
-                    'GiaTri' => $giatri,
-                    'PhanLoai' => $giatri > 0 ? 1 : 0,
-                ]);
-            }
 
-            DB::table('hopdonglaodong')->insert(
-                [
-                    'MaNV' => $manv,
-                    'SoHD' => floor(rand(1000000,9999999)),
-                    'LoaiHopDong' => 'Loại '.floor(rand(1,3)),
-                    'NgayKi' => Carbon::today()->subDays(rand(0, 365)),
-                    'NgayBatDau' => Carbon::today()->subDays(rand(0, 365)),
-                    'NgayKetThuc' => Carbon::today()->subDays(rand(0, 365)),
-                    'DiaDiem' => Str::random(20),
-                    'ChuyenMon' => Str::random(20),
-                    'PhapNhan' => Str::random(20),
-                    'LuongCoBan' => floor(rand(10000000,99999999)),
-                    'HeSoLuong' => floor(rand(1,8)),
-                ]);
+        foreach($phongbans as $phongban){
+            $randomStr = Str::random(10);
+            PhongBan::create([
+                'TenPhongBan' => $phongban,
+                'DiaChi' => $randomStr,
+                'Email' => $randomStr.'@gmail.com',
+                'SDT' => '0'.floor(rand(100000000,999999999)),
+            ]);
         }
+
+        foreach($trinhdos as $trinhdo){
+            $randomStr = Str::random(10);
+            TrinhDoHocVan::create([
+                'TenHeDaoTao' => $trinhdo,
+                'TrinhDoChuyenMon' => $randomStr,
+                'XepLoai' => 'Xếp loại '.$randomStr,
+            ]);
+        }
+
+        foreach($chucvus as $chucvu){
+            $randomStr = Str::random(10);
+            ChucVu::create([
+                'TenCV' => $chucvu,
+            ]);
+        }
+
+        for($i = 0;$i < 3;$i++){
+            NhanVien::create([
+                'TenNV' => Str::random(10),
+                'HinhAnh' => null,
+                'NgaySinh' => Carbon::now(),
+                'GioiTinh' => floor(rand(0,1)),
+                'CCCD' => '0000000000000',
+                'NgayCap' => Carbon::now(),
+                'NoiCap' => Str::random(10),
+                'DiaChi' => Str::random(10),
+                'NoiSinh' => Str::random(10),
+                'TonGiao' => Str::random(10),
+                'DanToc' => Str::random(10),
+                'SDT' => '0000000000',
+                'Email' => Str::random(10).'@gmail.com',
+                'MaTDHV' => 1,
+                'MaPB' => 1,
+                'MaCV' => 1,
+                'TrangThai' => 1,
+                'TrangThaiHonNhan' => 0,
+                'GhiChu' => null,	
+            ]);   
+        }
+
+        TaiKhoan::create(['MaNV' => 10000,'MatKhau' => Hash::make('admin1'),'NgayTao' => Carbon::now(),'QuyenTruyCap'=>'admin1', 'TrangThai' => 1]);
+        TaiKhoan::create(['MaNV' => 10001,'MatKhau' => Hash::make('admin2'),'NgayTao' => Carbon::now(),'QuyenTruyCap'=>'admin2', 'TrangThai' => 1]);
+        TaiKhoan::create(['MaNV' => 10002,'MatKhau' => Hash::make('member'),'NgayTao' => Carbon::now(),'QuyenTruyCap'=>'member', 'TrangThai' => 1]);
+
     }
 }

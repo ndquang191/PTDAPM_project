@@ -36,44 +36,33 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2051063754</td>
-                    <td>Nguyễn Như Minh</td>
-                    <td>07/07/2023</td>
-                    <td>Khen thưởng</td>
-                    <td>Giá trị</td>
-                    <td>
-                        <a href="{{URL::to('danhgia/danhgia_add')}}">
-                            <i class="bi bi-plus-square icon_color"></i>
-                        </a>
-                        <a href="{{URL::to('danhgia/danhgia_edit')}}">
-                            <i class="bi bi-pencil-square icon_color"></i>
-                        </a>
-                        {{-- <a href="#">
-                            <i class="bi bi-trash icon_color"></i>
-                        </a> --}}
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2051060698</td>
-                    <td>Nguyễn Hà Thái</td>
-                    <td>07/03/2023</td>
-                    <td>Khen thưởng</td>
-                    <td>Giá trị</td>
-                    <td>
-                        <a href="#">
-                            <i class="bi bi-plus-square icon_color"></i>
-                        </a>
-                        <a href="#">
-                            <i class="bi bi-pencil-square icon_color"></i>
-                        </a>
-                        {{-- <a href="#">
-                            <i class="bi bi-trash icon_color"></i>
-                        </a> --}}
-                    </td>
-                </tr>
+                @if (count($evaluates) == 0)
+                    
+                @else
+                    <?php $count = 0 ?>
+                    @foreach ($evaluates as $evaluate)
+                    <?php $count += 1 ?>
+                    <tr>
+                        <td>{{$count}}</td>
+                        <td>{{$evaluate->nhanvien->MaNV}}</td>
+                        <td>{{$evaluate->nhanvien->TenNV}}</td>
+                        <td>{{$evaluate->NgayQuyetDinh}}</td>
+                        <td>{{$evaluate->Giatri >= 0 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
+                        <td>{{number_format(intval($evaluate->Giatri))}}</td>
+                        <td>
+                            <a href="{{route('addEvaluate')}}">
+                                <i class="bi bi-plus-square icon_color"></i>
+                            </a>
+                            <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}">
+                                <i class="bi bi-pencil-square icon_color"></i>
+                            </a>
+                            {{-- <a href="#">
+                                <i class="bi bi-trash icon_color"></i>
+                            </a> --}}
+                        </td>
+                    </tr>
+                    @endforeach
+                @endif
             </tbody>
         </table>
     </div>
