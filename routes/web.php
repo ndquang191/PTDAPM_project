@@ -29,11 +29,11 @@ Route::controller(TaiKhoanController::class)->prefix('/')->group(function(){
     Route::get('/','showLoginPage')->name('login');
     Route::post('/','login');
     Route::get('/logout','logout');
-    Route::get('/homepage','showHomePage')->middleware('checkLogin'); // Trang người dùng
-    Route::get('/admin','showAdminPage')->middleware(['checkLogin','checkAdmin']); // Trang admin
+    Route::get('/homepage','showHomePage')->name('getHomepage')->middleware('checkLogin'); // Trang người dùng
+    Route::get('/admin','showAdminPage')->name('getAdminPage')->middleware(['checkLogin','checkAdmin']); // Trang admin
 });
 
-Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
+Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/employee')->group(function(){
     Route::get('/','list')->name('listEmployee'); // Hiển thị danh sách nhân viên
     Route::get('/add','create')->name('addEmployeePage'); // Hiển thị form thêm nhân viên
     Route::post('/add','store')->name('storeEmployee'); // Lưu thông tin nhân viên thêm mới
@@ -41,51 +41,51 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
     Route::post('/{id}','update')->name('updateEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 });
 
-Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/employee')->group(function(){
+Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/employee')->group(function(){
     Route::get('/{id}/degree','showByMaNV')->name('showDegree'); // Hiển thị danh sách bằng cấp của nhân viên
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
-Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/contract')->group(function(){
+Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/contract')->group(function(){
     Route::get('/','showListHDLD')->name('showListHDLD'); // Hiển thị danh sách hợp đồng
     Route::get('/add','createHDLD')->name('createHDLD'); // Hiển thị form thêm hợp đồng
     Route::post('/add','storeHDLD')->name('storeHDLD'); // Lưu HDLD
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
     Route::post('/{id}/edit','updateHDLD')->name('updateHDLD');
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
+    Route::post('/{id]/delete','detroy')->name('deleteHDLD');
 
 });
 
-Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/leave')->group(function(){
+Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/leave')->group(function(){
     Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
     Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
 });
 
-Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/evaluate')->group(function(){
+Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/evaluate')->group(function(){
     Route::get('/','showListEvaluate')->name('showListEvaluate');
     Route::get('/add','addEvaluate')->name('addEvaluate');
     Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
 
 });
 
-Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/insurance')->group(function(){
+Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');
     Route::get('/add','createBHXH')->name('createBHXH');
     Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
 
 });
 
-Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/account')->group(function(){
+Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/account')->group(function(){
     Route::get('/','listAccount')->name('showListAccount'); // Hiển thị danh sách tài khoản
     Route::post('/{id}/reset','resetPassword'); // Hiển thị danh sách tài khoản
 });
 
-Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin1'])->prefix('/salary')->group(function(){
+Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/salary')->group(function(){
     Route::get('/','showSalary')->name('showSalary');
     Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
-
 });
 
 Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){

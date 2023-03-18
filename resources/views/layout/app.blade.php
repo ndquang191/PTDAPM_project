@@ -53,8 +53,8 @@
                            alt="user"
                            class="user_img"
                          />
-                         <span class="name_user"></span>
-                         {{-- <span class="name_user">{{$user->TenNV}}</span> --}}
+                         {{-- <span class="name_user"></span> --}}
+                         <span class="name_user">{{$user->TenNV}}</span>
                          <i class="fa-solid fa-chevron-down"></i>
                        </a>
                        <ul class="dropdown_user_menu">
@@ -101,43 +101,43 @@
                        <span>Trang chủ</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item">
+                   <li class="dropdown_main_menu_item" {{Auth::user()->QuyenTruyCap == 'admin1' ? '' : 'style=display:none;'}}>
                      <a href="{{route('showListAccount')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-people"></i>
                        <span>Tài khoản</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item">
+                   <li class="dropdown_main_menu_item" {{Auth::user()->QuyenTruyCap == 'admin1' ? '' : 'style=display:none;'}}>
                      <a href="{{route('listEmployee')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-person-lock"></i>
                        <span>Nhân viên</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item">
+                   <li class="dropdown_main_menu_item" {{Auth::user()->QuyenTruyCap == 'admin1' ? '' : 'style=display:none;'}}>
                      <a href="{{route('showListHDLD')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-files"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item">
+                   <li class="dropdown_main_menu_item" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
                      <a href="{{route('showListLeave')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-calendar-check"></i>
                        <span>Nghỉ phép</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item dropdown_sub_menu">
+                   <li class="dropdown_main_menu_item dropdown_sub_menu" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
                      <a href="{{route('showSalary')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-wallet"></i>
                        <span>Tiền lương</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item dropdown_sub_menu">
+                   <li class="dropdown_main_menu_item dropdown_sub_menu" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
                     <a href="{{route('showListBHXH')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-shield-plus"></i>
                       <span>Bảo hiểm</span>
                     </a>
                   </li>
-                  <li class="dropdown_main_menu_item dropdown_sub_menu">
+                  <li class="dropdown_main_menu_item dropdown_sub_menu" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
                     <a href="{{route('showListEvaluate')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-clipboard2-data"></i>
                       <span>Đánh giá nhân viên</span>

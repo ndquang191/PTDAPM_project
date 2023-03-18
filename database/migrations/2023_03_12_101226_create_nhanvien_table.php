@@ -25,17 +25,16 @@ return new class extends Migration
             $table->string('TonGiao');
             $table->string('DanToc');
             $table->string('SDT',12);
-            $table->string('Email',100);
-            // $table->string('ChuyenNganh');
+            $table->string('Email',50);
             $table->unsignedBigInteger('MaTDHV');
             $table->unsignedBigInteger('MaPB');
             $table->unsignedBigInteger('MaCV');
+            $table->unsignedBigInteger('MaBH')->nullable();
             $table->boolean('TrangThai')->default(1);
-            $table->boolean('TrangThaiHonNhan')->default(0);
-            $table->boolean('GhiChu')->nullable()->default(null);
             $table->foreign('MaPB')->references('MaPB')->on('phongban')->onDelete('cascade');
             $table->foreign('MaTDHV')->references('MaTDHV')->on('trinhdohocvan')->onDelete('cascade');
             $table->foreign('MaCV')->references('MaCV')->on('chucvu')->onDelete('cascade');
+            $table->foreign('MaBH')->references('MaBH')->on('baohiem')->onDelete('cascade');
 
         });
     }

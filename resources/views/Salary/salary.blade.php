@@ -35,27 +35,31 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="infor-data">
-                <td><p class="padding">01</p></td>
-                <td class="Employee-custom-table">
-                    <div class="">
-                        <span>NT</span>
-                    </div>
-                <p>
-                        Ngô Thị Tâm
-                </p>
-                </td>
-                <td> <p>Chuyên viên chính trị công tác</p> </td>
-                <td> <p>sinh viên</p> </td>
-                <td class="muti-btn">
-                    <a href="{{route('showSalaryDetail',['id' => 100000])}}">
-                        <i class="bi bi-pencil-square edit hidden"></i>
-                    </a>
-                    <a  href="{{route('showSalaryDetail',['id' => 10000])}}">
-                        <i class="bi bi-eye-fill edit"></i>
-                    </a>
-                </td>
-              </tr>
+                <?php $count = 0 ?>
+                @foreach ($users as $user)
+                <?php $count++ ?>
+                <tr class="infor-data">
+                    <td><p class="padding">{{$count}}</p></td>
+                    <td class="Employee-custom-table">
+                        {{-- <div class="">
+                            <span>?</span>
+                        </div> --}}
+                    <p>
+                            {{$user->TenNV}}
+                    </p>
+                    </td>
+                    <td> <p> {{$user->chucvu->TenCV}}</p> </td>
+                    <td> <p>{{$user->phongban->TenPhongBan}}</p> </td>
+                    <td class="muti-btn">
+                        <a href="{{route('showSalaryDetail',['id' => $user->MaNV])}}">
+                            <i class="bi bi-pencil-square edit hidden"></i>
+                        </a>
+                        <a  href="{{route('showSalaryDetail',['id' => $user->MaNV])}}">
+                            <i class="bi bi-eye-fill edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                @endforeach
             </tbody>
           </table>
     </div>

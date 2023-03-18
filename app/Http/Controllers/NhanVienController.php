@@ -48,11 +48,7 @@ class NhanVienController extends Controller
                 'phonenumber' => 'bail|required|numeric|unique:App\Models\Nhanvien,SDT|digits:10',
             ],[
                 'required' => "Chưa nhập đầy đủ thông tin",
-                // 'image.required' => 'Chưa chọn hình ảnh.',
-                // 'birthday.required' => 'Chưa chọn ngày sinh.',
-                // 'name.required' => 'Chưa nhập tên nhân viên.',
                 'name.regex' => 'Tên nhân viên chứa kí tự không hợp lệ.',
-                // 'CCCD.required' => 'Chưa nhập số căn cước công dân',
                 'CCCD.numberic' => 'Căn cước công dân không hợp lệ',
                 'CCCD.unique' => 'Căn cước công dân đã tồn tại',
                 'CCCD.digits' => 'Căn cước công dân phải có 12 số',
@@ -60,39 +56,38 @@ class NhanVienController extends Controller
                 'phonenumber.digits' => "Số điện thoại phải có 10 số",
                 'phonenumber.numeric' => "Số điện thoại chỉ chưa số",
                 'birthday.before' => "Ngày sinh không hợp lệ"
-
             ]);
 
-            return dd('Thêm thành công');
-            NhanVien::create([
-                'TenNV' => $request->name,
-                'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
-                'HinhAnh' => null,
-                'NgaySinh' => $request->birthday,
-                'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
-                'CCCD' => $request->CCCD,
-                'NgayCap' => $request->ngaycap,
-                'NoiCap' => $request->noicap,
-                'DiaChi' => $request->address,
-                'NoiSinh' => $request->placeofbirth,
-                'TonGiao' => $request->religion,
-                'SDT' => $request->phonenumber,
-                'DanToc' => $request->nation,
-                'Email' => $request->email,
-                'MaTDHV' => $request->trinhdo,
-                'MaPB' => $request->phongban,
-                'MaCV' => $request->chucvu,
-                'TrangThai' => 1,
-                'TrangThaiHonNhan' => 0,
-                'GhiChu' => null,
-            ]);
+            DB::transaction(function () use($request) {
+                NhanVien::create([
+                    'TenNV' => $request->name,
+                    'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                    'NgaySinh' => $request->birthday,
+                    'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
+                    'CCCD' => $request->CCCD,
+                    'NgayCap' => $request->ngaycap,
+                    'NoiCap' => $request->noicap,
+                    'DiaChi' => $request->address,
+                    'NoiSinh' => $request->placeofbirth,
+                    'TonGiao' => $request->religion,
+                    'SDT' => $request->phonenumber,
+                    'DanToc' => $request->nation,
+                    'Email' => $request->email,
+                    'MaTDHV' => $request->trinhdo,
+                    'MaPB' => $request->phongban,
+                    'MaCV' => $request->chucvu,
+                    'MaBH' => null,
+                    'TrangThai' => 1,
+                ]);
+    
+                TaiKhoan::create([
+                    'MaNV' => NhanVien::orderBy('MaNV','desc')->first()->MaNV,
+                    'MatKhau' => Hash::make('00000000'),
+                    'TrangThai' => 1,'QuyenTruyCap' => 'member',
+                    'NgayTao' => Carbon::now(),
+                ]);
+            });
 
-            TaiKhoan::create([
-                'MaNV' => NhanVien::orderBy('MaNV','desc')->first()->MaNV,
-                'MatKhau' => Hash::make('00000000'),
-                'TrangThai' => 1,'QuyenTruyCap' => 'member',
-                'NgayTao' => Carbon::now(),
-            ]);
 
         return redirect()->route('listEmployee')->with(['message' => "Thêm nhân viên thành công"]);
     }
@@ -121,29 +116,32 @@ class NhanVienController extends Controller
             'chucvu' => 'bail|required',
         ]);
         $employee = NhanVien::where('MaNV',$id)->first();
-        $employee->update([
-            'TenNV' => $request->name,
-            'NgaySinh' => $request->birthday,
-            'GioiTinh' => $request->gender,
-            'CCCD' => $request->CCCD,
-            'DiaChi' => $request->address,
-            'NoiSinh' => $request->placeofbirth,
-            'TonGiao' => $request->religion,
-            'DanToc' => $request->nation,
-            'SDT' => $request->phonenumber,
-            'Email' => $request->email,
-            'ChuyenNganh' => $request->chuyennganh,
-            'TrinhDoHocVan' => $request->trinhdo,
-            'PhongBan' => $request->phongban,
-            'ChucVu' => $request->chucvu,
-            'TrangThai' => 1,
-        ]);
-
-        if ($request->file('image') != null){
+        
+        DB::transaction(function () {
             $employee->update([
-                'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                'TenNV' => $request->name,
+                'NgaySinh' => $request->birthday,
+                'GioiTinh' => $request->gender,
+                'CCCD' => $request->CCCD,
+                'DiaChi' => $request->address,
+                'NoiSinh' => $request->placeofbirth,
+                'TonGiao' => $request->religion,
+                'DanToc' => $request->nation,
+                'SDT' => $request->phonenumber,
+                'Email' => $request->email,
+                'ChuyenNganh' => $request->chuyennganh,
+                'TrinhDoHocVan' => $request->trinhdo,
+                'PhongBan' => $request->phongban,
+                'ChucVu' => $request->chucvu,
+                'TrangThai' => 1,
             ]);
-        }
+    
+            if ($request->file('image') != null){
+                $employee->update([
+                    'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                ]);
+            }
+        });
         return redirect()->route('getEmployeeInfo',['id' => $id])->with(['message' => 'Cập nhật thành công']);
     }
 

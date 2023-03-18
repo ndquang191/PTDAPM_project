@@ -12,6 +12,7 @@
                 <p>Thêm nghỉ phép</p>
         </div>
         <form class="form-fle" method="post" action="">
+            @csrf
             <div class="grid">
             <div class="mb-3 ">
               <label class="form-label lb-add">Mã nhân viên</label>
