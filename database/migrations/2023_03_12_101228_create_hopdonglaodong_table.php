@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('DiaDiem');
             $table->string('ChuyenMon');
             $table->string('PhapNhan');
+            $table->decimal('LuongCoBan', 10, 2);
+            $table->decimal('HeSoLuong', 3, 2);
+            $table->boolean('TrangThai')->default(1);
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });
     }

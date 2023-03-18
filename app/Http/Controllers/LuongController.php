@@ -14,8 +14,8 @@ use Carbon\Carbon;
 class LuongController extends Controller
 {
     public function showSalary(){
-        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        return view('Salary.salary',['user' => $user]);
+        $users = NhanVien::with('chucvu')->with('phongban')->get();
+        return view('Salary.salary',['users' => $users]);
     }
 
     public function showSalaryDetail($id){

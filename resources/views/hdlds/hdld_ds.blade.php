@@ -104,6 +104,29 @@
             </div>
         </div>
     </div>
+    <form action="" id="delete-form" method="post" style="display: none">
+        @csrf
+    </form>
+    <script>
+        // ---- Alert khi nhấn nút reset mật khẩu
+        const deleteBTN = document.querySelectorAll('.delete-btn');
+        const deleteForm = document.getElementById('delete-form')
+        deleteBTN.forEach(btn => {
+            btn.addEventListener('click', (e)=>{
+                e.preventDefault()
+                Swal.fire({
+                title: 'Xác nhận xóa hợp đồng ?',
+                showCancelButton: true,
+                confirmButtonText: 'Xóa',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteForm.setAttribute('action',`/contract/${btn.getAttribute('data-id')}/delete`)
+                    deleteForm.submit();
+                }
+            })
+            })
+        });
+    </script>
 @endsection
 @section('linkjs')
     <script src="/js/hdld/hdld.js"></script>

@@ -54,6 +54,7 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin',
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
     Route::post('/{id}/edit','updateHDLD')->name('updateHDLD');
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
+    Route::post('/{id]/delete','detroy')->name('deleteHDLD');
 
 });
 
@@ -85,7 +86,6 @@ Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdm
 Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/salary')->group(function(){
     Route::get('/','showSalary')->name('showSalary');
     Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
-
 });
 
 Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){
