@@ -4,6 +4,18 @@
     <link rel="stylesheet" href="/css/bhxh/infobhxh.css">
 @endsection
 @section('content')
+@if (session('message'))
+    <script>
+            Swal.fire({
+                position: 'center',
+                icon: '{{session('type')}}',
+                title: '{{session('message')}}',
+                showConfirmButton: true,
+                confirmButtonText: 'Đóng',
+                timer: 3000
+            })
+    </script>
+@endif
     <div class="fluid-container">
         <div class="container-tilte-table">
             <div class="socialInsuranceList-addSocialInsurance">
@@ -13,19 +25,20 @@
             </div>
         </div>
         <div class="form">
-            <form action="">
+            <form action="{{route('storeBHXH')}}" method="POST">
+                @csrf
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">ID</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="ID">ID</label>
+                            <input class="form-control" type="number" min="1" id="ID" name="ID">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Ngày bắt đầu</label>
-                            <input class="form-control" type="date" >
+                            <label class="form-label" for="startDate">Ngày bắt đầu</label>
+                            <input class="form-control" type="date" name="startDate" id="startDate">
                         </div>
                     </div>
                 </div>
@@ -34,14 +47,14 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng QDTS</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="QDTS">Mức đóng QDTS</label>
+                            <input class="form-control" type="number" id="QDTS" name="QDTS">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng TNLD</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="TNLD">Mức đóng TNLD</label>
+                            <input class="form-control" type="number" id="TNLD" name="TNLD">
                         </div>
                     </div>
                 </div>
@@ -50,14 +63,14 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng HT</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="HT">Mức đóng HT</label>
+                            <input class="form-control" type="number" id="HT" name="HT">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng BHTN</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="BHTN">Mức đóng BHTN</label>
+                            <input class="form-control" type="number" id="BHTN" name="BHTN">
                         </div>
                     </div>
                 </div>
@@ -65,8 +78,8 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Tháng</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="month">Tháng</label>
+                            <input class="form-control" type="number" id="month" name="month">
                         </div>
                     </div>
                 </div>

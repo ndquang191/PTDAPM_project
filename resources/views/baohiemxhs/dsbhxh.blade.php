@@ -47,19 +47,21 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach ($insurances as $insurance)
                             <tr>
-                              <td>1</td>
-                              <td>27/02/2002</td>
-                              <td>20000</td>
-                              <td>15000000</td>
-                              <td>15000000</td>
-                              <td>36000000</td>
-                              <td>1</td>
-                              <td>
-                                <a href="/editbhxh"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="/showbhxh"><i class="fa-solid fa-eye"></i></a>
-                              </td>
-                            </tr>
+                                <td>{{$insurance->MaBH}}</td>
+                                <td>{{$insurance->NgayBatDau}}</td>
+                                <td>{{$insurance->MucDongQDTS}}</td>
+                                <td>{{$insurance->MucDongTLND}}</td>
+                                <td>{{$insurance->MucDongHT}}</td>
+                                <td>{{$insurance->MucDongHDTN}}</td>
+                                <td>{{$insurance->Thang}}</td>  
+                                <td>
+                                  <a href="/editbhxh"><i class="fa-solid fa-pen-to-square"></i></a>
+                                  <a href="/showbhxh"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                              </tr>
+                            @endforeach
                           </tbody>
                     </table>
                 </div>

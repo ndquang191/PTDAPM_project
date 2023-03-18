@@ -36,25 +36,25 @@
             </thead>
             <tbody>
                 <?php $count = 0 ?>
-                @foreach ($users as $user)
+                @foreach ($employees as $employee)
                 <?php $count++ ?>
                 <tr class="infor-data">
                     <td><p class="padding">{{$count}}</p></td>
                     <td class="Employee-custom-table">
-                        {{-- <div class="">
-                            <span>?</span>
-                        </div> --}}
+                        <div class="">
+                            <span>NA</span>
+                        </div>
                     <p>
-                            {{$user->TenNV}}
+                            {{$employee->TenNV}}
                     </p>
                     </td>
-                    <td> <p> {{$user->chucvu->TenCV}}</p> </td>
-                    <td> <p>{{$user->phongban->TenPhongBan}}</p> </td>
+                    <td> <p> {{$employee->chucvu->TenCV}}</p> </td>
+                    <td> <p>{{$employee->phongban->TenPhongBan}}</p> </td>
                     <td class="muti-btn">
-                        <a href="{{route('showSalaryDetail',['id' => $user->MaNV])}}">
+                        <a href="{{route('showSalaryDetail',['id' => $employee->MaNV])}}">
                             <i class="bi bi-pencil-square edit hidden"></i>
                         </a>
-                        <a  href="{{route('showSalaryDetail',['id' => $user->MaNV])}}">
+                        <a  href="{{route('showSalaryDetail',['id' => $employee->MaNV])}}">
                             <i class="bi bi-eye-fill edit"></i>
                         </a>
                     </td>

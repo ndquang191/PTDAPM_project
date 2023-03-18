@@ -73,6 +73,7 @@ Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmi
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');
     Route::get('/add','createBHXH')->name('createBHXH');
+    Route::post('/add','storeBHXH')->name('storeBHXH');
     Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
 
 });
