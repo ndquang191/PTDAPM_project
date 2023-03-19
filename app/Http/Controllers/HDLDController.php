@@ -104,6 +104,16 @@ class HDLDController extends Controller
             'PhapNhan' => $request->PhapNhan,
             'ChuyenMon' => $request->ChuyenMon,
         ]);
+        if($contract->TrangThai != $request->TrangThai){
+            if ($request->TrangThai == 1){
+                HDLD::where('MaNV',$contract->MaNV)->where('TrangThai',1)->update([
+                    'TrangThai' => 0,
+                ]);
+                $contract->update([
+                    'TrangThai' => $request->TrangThai,
+                ]);
+            }
+        }
         return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật hợp đồng thành công', 'type' => 'success']);
     }
 
