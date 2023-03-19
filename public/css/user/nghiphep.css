@@ -50,7 +50,7 @@
 
 
 .info-row{
-     justify-content: flex-start;
+     justify-content: space-between;
 }
 .info-remainday{
      font-size : 20px;
@@ -63,3 +63,27 @@
 
 }
 
+.send-req{
+     font-size : 20px;
+     font-weight: 400;
+     padding: 4px 8px;
+     /* color: black;  */
+}
+
+.modal-body{
+     font-size: 16px !important;
+}
+
+
+.modal-body input,option,select,form-select{
+     font-size: 16px;
+}
+
+.modal-body select,button{
+
+     font-size: 16px !important;
+}
+
+.modal-body button{
+     font-size: 16px !important;
+}

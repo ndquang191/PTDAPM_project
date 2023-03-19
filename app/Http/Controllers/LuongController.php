@@ -14,14 +14,18 @@ use Carbon\Carbon;
 class LuongController extends Controller
 {
     public function showSalary(){
-        $users = NhanVien::with('chucvu')->with('phongban')->get();
-        return view('Salary.salary',['users' => $users]);
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $employees = NhanVien::with('chucvu')->with('phongban')->get();
+        return view('Salary.salary',['employees' => $employees, 'user' => $user]);
     }
 
     public function showSalaryDetail($id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employee = NhanVien::where('MaNV',$id)->first();
         $hopdong = HDLD::where('MaNV' ,$id)->first();
+        if ($hopdong == null){
+            return redirect()->route('showListHDLD')->with(['message','Nhân viên không có hợp đồng lao động !']);
+        }
         $luongcoban = $hopdong->LuongCoBan;
         $hesoluong = $hopdong->HeSoLuong;
         $currentMonth = Carbon::now()->month;

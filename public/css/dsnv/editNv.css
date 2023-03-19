@@ -1,7 +1,6 @@
 *{
     font-size: 17px;
 }
-
 .fluid-container{
     padding: 10px;
 }
@@ -34,7 +33,7 @@ form{
     border-radius: 5px;
 }
 .container{
-    background-color: #EBEBEB;padding: 30px;
+    background-color: #EBEBEB;
 }
 img{
     width: 130px;height: 150px;

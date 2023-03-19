@@ -109,19 +109,19 @@
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="" class="link_dropdown_main_menu">
+                     <a href="{{route('showContractUser')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-file-earmark-fill"></i>
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showInsuranceUser')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-shield-fill-plus"></i>
                        <span>Bảo hiểm xã hội</span>
                      </a>
                    </li>
                    <li class="dropdown_main_menu_item">
-                     <a href="#" class="link_dropdown_main_menu">
+                     <a href="{{route('showLeaveUser')}}" class="link_dropdown_main_menu">
                       <i class="bi bi-calendar2-plus-fill"></i>
                        <span>Nghỉ phép</span>
                      </a>

@@ -8,12 +8,7 @@
         <h1 class="heading">Danh sách nghỉ phép</h1>
         <div class="add-function">
             <p class="navigation">Danh Sách nghỉ phép</p>
-            <button>
-                <a href="{{route('createLeave')}}" class="add-btn">
-                    <i class="bi bi-plus"></i>
-                    <p>Thêm</p>
-                </a>
-            </button>
+           
         </div>
         <table class="table table-striped">
             <thead>

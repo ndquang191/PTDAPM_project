@@ -134,7 +134,6 @@ function chooseFile(fileInput) {
     }
 }
 //--------------------------------------------
-<<<<<<< HEAD
 function searchAccount() {
     var input, filter, table, tr, td, i, txtValue, e, giaTri, stt;
     e = document.getElementById("chooseSearch");
@@ -165,14 +164,12 @@ function searchAccount() {
         }
     }
 }
+function formShow() {
+    document.getElementById("form-update").style.display = "block";
+    document.getElementById("container-title-form").style.display = "none";
+}
 // const searchBtn = document.querySelector(".search-btn");
 // searchBtn.addEventListener("click", (e) => {
 //     searchAccount();
 // });
 //-------------------------------------------------------------------------------
-=======
-function formShow() {
-    document.getElementById("form-update").style.display = "block";
-    document.getElementById("container-title-form").style.display = "none";
-}
->>>>>>> 7c6de16963509b086c8ea81d22eddaa5cde2e31d
