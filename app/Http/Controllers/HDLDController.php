@@ -113,6 +113,11 @@ class HDLDController extends Controller
                     'TrangThai' => $request->TrangThai,
                 ]);
             }
+            else{
+                $contract->update([
+                    'TrangThai' => $request->TrangThai,
+                ]);
+            }
         }
         return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật hợp đồng thành công', 'type' => 'success']);
     }
