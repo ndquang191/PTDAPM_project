@@ -46,8 +46,8 @@
                             <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form_input_add_htld" value="{{$contract->NgayKetThuc}}">
                         </div>
                         <div class="form_add_hdld">
-                            <label for="trangthai" class="form_title_htld">Trạng thái</label><br>
-                            <select name="trangthai" id="trangthai" class="form-control" style="font-size: 16px">
+                            <label for="TrangThai" class="form_title_htld">Trạng thái</label><br>
+                            <select name="TrangThai" id="TrangThai" class="form-control" style="font-size: 16px">
                                 <option value="0" {{$contract->TrangThai == 0 ? 'selected' : ''}}>Hết hiệu lực</option>
                                 <option value="1" {{$contract->TrangThai == 1 ? 'selected' : ''}}>Đang áp dụng</option>
                             </select>

@@ -52,6 +52,7 @@ class UserController extends Controller
             'NgayKetThuc' => $request->endDate,
             'NoiDung' => $request->reason,
             'PheDuyet' => 0,
+            'CoPhep' => 1,
         ]);
         return redirect()->route('showLeaveUser')->with(['message' => "Gửi yêu cầu thành công !", 'type' => 'success']);
     }

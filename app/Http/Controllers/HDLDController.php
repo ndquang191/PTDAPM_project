@@ -94,7 +94,7 @@ class HDLDController extends Controller
             'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
 
         ]);
-        $contract = HDLD::where('MaHDLD',$id)->first();
+        $contract = HDLD::where('MaHDLD',$id)->with('nhanvien')->first();
         $contract->update([
             'LoaiHopDong' => $request->LoaiHD,
             'NgayKi' => $request->NgayKi,
@@ -103,22 +103,14 @@ class HDLDController extends Controller
             'DiaDiem' => $request->DiaDiem,
             'PhapNhan' => $request->PhapNhan,
             'ChuyenMon' => $request->ChuyenMon,
+            'TrangThai' => $request->TrangThai,
         ]);
-        if($contract->TrangThai != $request->TrangThai){
-            if ($request->TrangThai == 1){
-                HDLD::where('MaNV',$contract->MaNV)->where('TrangThai',1)->update([
-                    'TrangThai' => 0,
-                ]);
-                $contract->update([
-                    'TrangThai' => $request->TrangThai,
-                ]);
-            }
-            else{
-                $contract->update([
-                    'TrangThai' => $request->TrangThai,
-                ]);
-            }
+        if($request->TrangThai == 1){
+            HDLD::where('MaNV',$contract->MaNV)->where('MaHDLD','!=',$id)->update([
+                'TrangThai' => 0,
+            ]);
         }
+
         return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật hợp đồng thành công', 'type' => 'success']);
     }
 

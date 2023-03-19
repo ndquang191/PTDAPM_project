@@ -92,6 +92,7 @@ Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin'
     Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
 });
 
+
 Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/evaluate','showEvaluate')->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
     Route::get('/info','showInfo')->name('showInfoUser'); // Hiển thị thông tin tài khoản

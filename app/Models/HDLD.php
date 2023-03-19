@@ -12,7 +12,7 @@ class HDLD extends Model
     protected $table = 'hopdonglaodong';
     protected $primaryKey = 'MaHDLD';
     protected $fillable = ['MaNV','SoHD','LoaiHopDong','NgayKi','NgayBatDau','NgayKetThuc','DiaDiem','ChuyenMon', 'PhapNhan'
-    ,'LuongCoBan','HeSoLuong'];
+    ,'LuongCoBan','HeSoLuong','TrangThai'];
 
     public function nhanvien(){
         return $this->belongsTo(NhanVien::class,'MaNV');

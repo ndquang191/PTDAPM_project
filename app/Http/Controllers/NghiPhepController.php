@@ -13,7 +13,7 @@ class NghiPhepController extends Controller
 {
     public function list(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $leaves = NghiPhep::with('nhanvien')->get();
+        $leaves = NghiPhep::with('nhanvien')->where('PheDuyet',0)->get();
         return view('LeaveList.leavelist',['user' => $user,'leaves' => $leaves]);
     }
 
