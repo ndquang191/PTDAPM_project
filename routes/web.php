@@ -76,6 +76,9 @@ Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/add','createBHXH')->name('createBHXH');
     Route::post('/add','storeBHXH')->name('storeBHXH');
     Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
+    Route::get('/edit/{id}','editBHXH')->name('editBHXH');
+    Route::post('/edit/{id}','updateBHXH')->name('updateBHXH');
+
 
 });
 
@@ -95,27 +98,5 @@ Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/u
     Route::get('/contract','showContract')->name('showContractUser');
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
     Route::get('/leave','showLeave')->name('showLeaveUser');
-
+    Route::post('/leave','storeLeaveRequest')->name('storeLeaveRequest');
 });
-
-
-Route::get('/test' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
-    return view('test',['user' => $user]);
-});
-
-Route::get('/testSubmit' , function(){
-    return redirect('/test')->with(['message' => 'test']);
-});
-
-Route::get('/test2' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
-    return view('user.index',['user' => $user]);
-});
-Route::get('/showbhxh', function () {
-    return view('baohiemxhs.infobhxh');
-});
-Route::get('/editbhxh', function () {
-    return view('baohiemxhs.editbhxh');
-});
-

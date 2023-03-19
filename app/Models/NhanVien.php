@@ -22,7 +22,7 @@ class NhanVien extends Model
     protected $primaryKey = 'MaNV';
     protected $fillable = 
     ['TenNV','HinhAnh','NgaySinh','GioiTinh','CCCD','DiaChi','NoiCap','NgayCap','DanToc','NoiSinh','TonGiao','SDT','Email','MaTDHV'
-    ,'MaPB','MaCV','TrangThai','TinhTrangHonNhan','GhiChu'];
+    ,'MaPB','MaCV','MaBH','TrangThai'];
     
     public function bangcap(){
         return $this->hasMany(BangCap::class,'MaNV');

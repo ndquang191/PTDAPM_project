@@ -6,7 +6,25 @@
 
 
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 
+  Toast.fire({
+    icon: '{{session('type')}}',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
      <div class="fluid-container nghiphep_container">
           <div class="nghiphep_main_container">
                <div class="h5">Thông tin nghỉ phép</div>
@@ -39,12 +57,12 @@
                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                              </div>
                              <div class="modal-body">
-                                   <form class="form-fle" method="post" action="">
+                                   <form class="form-fle" method="post" action="{{route('storeLeaveRequest')}}">
                                         @csrf
                                         <div class="grid">
                                         <div class="mb-3 ">
                                           <label class="form-label lb-add">Mã nhân viên</label>
-                                          <input type="text" class="form-control ip-add input-id" value='{{$user->MaNV}}' readonly>
+                                          <input type="text" class="form-control ip-add input-id" value='{{$user->MaNV}}' name="MaNV" readonly>
                                           {{-- <p class="error hidden"><?php echo $user->tenNV?></p> --}}
                                         </div>
                                         <div class="mb-3">
@@ -53,19 +71,19 @@
                                         </div>
                                         <div class="mb-3 flex">
                                             <label class="form-label lb-add">Ngày bắt đầu</label>
-                                            <input type="date" id="date" class="ip-add">
+                                            <input type="date" id="date" class="ip-add" name="startDate">
                                           </div>
                                           <div class="mb-3 flex">
                                             <label class="form-label lb-add">Ngày kết thúc</label>
-                                            <input type="date" id="date" class="ip-add">
+                                            <input type="date" id="date" class="ip-add" name="endDate">
                                           </div>
                                           <div class="mb-3 content flex mb-4">
                                              <label class="form-label lb-add"  for="floatingTextarea2">Lý do</label>
 
-                                                <select class="form-select ip-add" id="floatingTextarea2">
-                                                  <option value="1" selected>One</option>
-                                                  <option value="2">Two</option>
-                                                  <option value="3">Three</option>
+                                                <select class="form-select ip-add" id="floatingTextarea2" name="reason">
+                                                  <option value="Lý do 1" selected>Lý do 1</option>
+                                                  <option value="Lý do 2">Lý do 2</option>
+                                                  <option value="Lý do 3">Lý do 3</option>
                                                 </select>
                                           </div>
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
@@ -108,10 +126,6 @@
 
 
 @section('linkjs')
-<<<<<<< HEAD
      <script src="/js/user/nghiphep.js"></script> 
      <script src="/js/Leave/fetchApi.js"></script>
-=======
-     <script src="/js/user/nghiphep.js"></script>
->>>>>>> origin/tien
 @endsection
