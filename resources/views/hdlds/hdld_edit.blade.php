@@ -47,7 +47,7 @@
                         </div>
                         <div class="form_add_hdld">
                             <label for="TrangThai" class="form_title_htld">Trạng thái</label><br>
-                            <select name="TrangThai" id="TrangThai" class="form-control" style="font-size: 16px">
+                            <select name="TrangThai" id="TrangThai" class="form_input_add_htld" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.1)">
                                 <option value="0" {{$contract->TrangThai == 0 ? 'selected' : ''}}>Hết hiệu lực</option>
                                 <option value="1" {{$contract->TrangThai == 1 ? 'selected' : ''}}>Đang áp dụng</option>
                             </select>
