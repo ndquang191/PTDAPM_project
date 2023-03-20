@@ -16,6 +16,7 @@ class CheckAdminRole2
      */
     public function handle(Request $request, Closure $next): Response
     {
+
         if(Auth::user()->QuyenTruyCap == 'member'){
             return redirect()->route('getHomepage')->with('message', 'Bạn không có quyền truy cập !');
           }
