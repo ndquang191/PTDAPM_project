@@ -41,23 +41,23 @@
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Mã nhân viên</label> <br>
-                            <input type="text" name="MaNV" id="id" class="form_input_add_htld" value={{old('MaNV')}}>
+                            <input type="text" name="MaNV" id="id" class="form-control form_input_add_htld" value={{old('MaNV')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Loại hợp đồng</label> <br>
-                            <input type="text" name="LoaiHD" id="loai_hd" class="form_input_add_htld" value={{old('LoaiHD')}}>
+                            <input type="text" name="LoaiHD" id="loai_hd" class="form-control form_input_add_htld" value={{old('LoaiHD')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Ngày ký</label> <br>
-                            <input type="date" name="NgayKi" id="ngay_ky" class="form_input_add_htld" value={{old('NgayKi')}}>
+                            <input type="date" name="NgayKi" id="ngay_ky" class="form-control form_input_add_htld" value={{old('NgayKi')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Ngày bắt đầu</label> <br>
-                            <input type="date" name="NgayBatDau" id="ngay_bat_dau" class="form_input_add_htld" value={{old('NgayBatDau')}}>
+                            <input type="date" name="NgayBatDau" id="ngay_bat_dau" class="form-control form_input_add_htld" value={{old('NgayBatDau')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Ngày kết thúc</label> <br>
-                            <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form_input_add_htld" value={{old('NgayKetThuc')}}>
+                            <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form-control form_input_add_htld" value={{old('NgayKetThuc')}}>
                         </div>
                     </div>
                     <div class="form_list_item_htld">
@@ -72,28 +72,28 @@
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Chuyên môn</label> <br>
-                            <input type="text" name="ChuyenMon" id="chuyen_mon" class="form_input_add_htld" value={{old('ChuyenMon')}}>
+                            <input type="text" name="ChuyenMon" id="chuyen_mon" class="form-control form_input_add_htld" value={{old('ChuyenMon')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Pháp nhân</label> <br>
-                            <input type="text" name="PhapNhan" id="phap_nhan" class="form_input_add_htld" value={{old('PhapNhan')}}>
+                            <input type="text" name="PhapNhan" id="phap_nhan" class="form-control form_input_add_htld" value={{old('PhapNhan')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Lương cơ bản</label> <br>
-                            <input type="text" name="Luong" id="luong" class="form_input_add_htld" value={{old('Luong')}}>
+                            <input type="text" name="Luong" id="luong" class="form-control form_input_add_htld" value={{old('Luong')}}>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Hệ số lương</label> <br>
-                            <input type="text" name="HeSoLuong" id="heso" class="form_input_add_htld" value={{old('HeSoLuong')}}>
+                            <input type="text" name="HeSoLuong" id="heso" class="form-control form_input_add_htld" value={{old('HeSoLuong')}}>
                         </div>
                     </div>
                 </div>
-                <div class="bottom_add_danhgia">
-                    <div class="bottom_exit_danhgia">
+                <div class="bottom_add_hdld">
+                    <div class="bottom_exit_add_hdld">
                         <div class="link_exit">Thoát</div>
                     </div>
                     <div class="bottom_save_add_hdld">
-                        <button class="danhgia_submit" id="hdld_submit">Lưu</button>
+                        <button class="hdld_submit" id="hdld_submit">Lưu</button>
                     </div>
                 </div>
             </form>
