@@ -119,9 +119,13 @@ th{
     padding-left: 5px;
     border-radius: 3.75px;
     font-size: 1.8rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    border: none;
+    background: rgba(90, 82, 120, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* border: none; */
     height: 3.3rem;
+}
+.form-control{
+    background: rgba(90, 82, 120, 0.1) !important;
 }
 .bottom_add_hdld{
     display: flex;
@@ -129,12 +133,13 @@ th{
 }
 .bottom_exit_add_hdld{
     background-color: #CEDD7A;
-    width: 73px;
-    height: 37px;
+    /* width: 73px;
+    height: 37px; */
+    padding: 7px 15px;
     margin: 0 2rem;
-    display: inline-block;
+    /* display: inline-block; */
     text-align: center;
-    line-height: 37px;
+    /* line-height: 37px; */
 }
 .bottom_exit_add_hdld .link_exit{
     font-size: 1.8rem;
@@ -145,18 +150,13 @@ th{
 .hdld_submit{
     color: #fff;
     background-color: #39374E;
-    width: 73px;
     border: none;
-    height: 37px;
     text-align: center;
-    line-height: 37px;
     font-size: 1.8rem;
 }
 
 .bottom_exit_show{
     background-color: #39374E;
-    width: 73px;
-    height: 37px;
     text-align: center;
     line-height: 37px;
 }
@@ -167,18 +167,19 @@ th{
 
 .bottom_save_add_hdld{
     background-color: #39374E;
-    width: 73px;
-    height: 37px;
+    padding: 7px 23px;
 }
 .bottom_update_show{
     background-color: #CEDD7A;
-    width: 73px;
-    height: 37px;
     margin: 0 2rem;
+    /* padding: 7px 23px; */
     text-align: center;
-    line-height: 37px;
 }
 .bottom_update_show .link_exit{
     color: #fff;
     font-size: 1.8rem;
+}
+.bottom_exit_add_hdld:hover, 
+.bottom_save_add_hdld:hover{
+    opacity: 0.875;
 }

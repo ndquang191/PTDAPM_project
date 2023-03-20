@@ -23,7 +23,7 @@
                     <i class="bi bi-search icon_color_search"></i>
                 </a>
             </div>
-            <table class="table" id="myTable">
+            <table class="table table-hover" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">Phân loại</th>

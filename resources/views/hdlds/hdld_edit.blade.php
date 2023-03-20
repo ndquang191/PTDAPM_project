@@ -27,27 +27,27 @@
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Mã nhân viên</label> <br>
-                            <input type="text" name="MaNV" id="id" class="form_input_add_htld" value="{{$contract->MaNV}}" readonly>
+                            <input type="text" name="MaNV" id="id" class="form-control form_input_add_htld" value="{{$contract->MaNV}}" readonly>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Loại hợp đồng</label> <br>
-                            <input type="text" name="LoaiHD" id="loai_hd" class="form_input_add_htld" value="{{$contract->LoaiHopDong}}">
+                            <input type="text" name="LoaiHD" id="loai_hd" class="form-control form_input_add_htld" value="{{$contract->LoaiHopDong}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Ngày ký</label> <br>
-                            <input type="date" name="NgayKi" id="ngay_ky" class="form_input_add_htld" value="{{$contract->NgayKi}}">
+                            <input type="date" name="NgayKi" id="ngay_ky" class="form-control form_input_add_htld" value="{{$contract->NgayKi}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Ngày bắt đầu</label> <br>
-                            <input type="date" name="NgayBatDau" id="ngay_bat_dau" class="form_input_add_htld" value="{{$contract->NgayBatDau}}">
+                            <input type="date" name="NgayBatDau" id="ngay_bat_dau" class="form-control form_input_add_htld" value="{{$contract->NgayBatDau}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Ngày kết thúc</label> <br>
-                            <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form_input_add_htld" value="{{$contract->NgayKetThuc}}">
+                            <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form-control form_input_add_htld" value="{{$contract->NgayKetThuc}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="TrangThai" class="form_title_htld">Trạng thái</label><br>
-                            <select name="TrangThai" id="TrangThai" class="form_input_add_htld" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.1)">
+                            <select name="TrangThai" id="TrangThai" class="form-select form_input_add_htld" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.1)">
                                 <option value="0" {{$contract->TrangThai == 0 ? 'selected' : ''}}>Hết hiệu lực</option>
                                 <option value="1" {{$contract->TrangThai == 1 ? 'selected' : ''}}>Đang áp dụng</option>
                             </select>
@@ -56,8 +56,8 @@
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Địa điểm làm việc</label> <br>
-                            <input type="text" name="DiaDiem" id="" class="form_input_add_htld" value="{{$contract->DiaDiem}}">
-                            {{-- <select name="DiaDiem" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
+                            <input type="text" name="DiaDiem" id="" class="form-control form_input_add_htld" value="{{$contract->DiaDiem}}">
+                            {{-- <select name="DiaDiem" id="dia_diem" class="form-control form_input_add_htld" style="font-size:14px">
                                 <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 1</option>
                                 <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 2</option>
                                 <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 3</option>
@@ -65,25 +65,25 @@
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Chuyên môn</label> <br>
-                            <input type="text" name="ChuyenMon" id="chuyen_mon" class="form_input_add_htld" value="{{$contract->ChuyenMon}}">
+                            <input type="text" name="ChuyenMon" id="chuyen_mon" class="form-control form_input_add_htld" value="{{$contract->ChuyenMon}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Pháp nhân</label> <br>
-                            <input type="text" name="PhapNhan" id="phap_nhan" class="form_input_add_htld" value="{{$contract->PhapNhan}}">
+                            <input type="text" name="PhapNhan" id="phap_nhan" class="form-control form_input_add_htld" value="{{$contract->PhapNhan}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Lương cơ bản</label> <br>
-                            <input type="text" name="Luong" id="luong" class="form_input_add_htld" value="{{$contract->LuongCoBan}}">
+                            <input type="text" name="Luong" id="luong" class="form-control form_input_add_htld" value="{{$contract->LuongCoBan}}">
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Hệ số lương</label> <br>
-                            <input type="text" name="HeSoLuong" id="heso" class="form_input_add_htld" value="{{$contract->HeSoLuong}}">
+                            <input type="text" name="HeSoLuong" id="heso" class="form-control form_input_add_htld" value="{{$contract->HeSoLuong}}">
                         </div>
                     </div>
                 </div>
                 <div class="bottom_add_hdld">
                     <div class="bottom_exit_add_hdld">
-                        <a href="" class="link_exit">Thoát</a>
+                        <div class="link_exit">Thoát</div>
                     </div>
                     <div class="bottom_save_add_hdld">
                         <button type="submit" class="hdld_submit" id="hdld_submit">Lưu</button>
