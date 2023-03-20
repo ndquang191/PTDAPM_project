@@ -33,7 +33,7 @@
                   </div>
               </div>
             </div>
-          <div class="table-search-bar">
+          <div class="table-search-bar ">
             <div class="search-bar">
               <div>
                 <select class="form-select" id="chooseSearch">
