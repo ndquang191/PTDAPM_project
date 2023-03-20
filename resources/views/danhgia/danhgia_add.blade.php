@@ -17,7 +17,8 @@
                     <div class="form_list_item_danhgia">
                         <div class="form_add_danhgia">
                             <label for="" class="form_title_danhgia">Mã nhân viên</label> <br>
-                            <input type="text" name="" id="id" class="form_input_add_danhgia">
+                            <input type="text" name="" id="id" class="form_input_add_danhgia input-id">
+                            <p class="error hidden">Vui lòng nhập đúng mã nhân viên</p>
                         </div>
                         <div class="form_add_danhgia">
                             <label for="" class="form_title_danhgia">Phân loại</label> <br>
@@ -35,7 +36,7 @@
                     <div class="form_list_item_danhgia">
                         <div class="form_add_danhgia">
                             <label for="" class="form_title_danhgia">Tên nhân viên</label> <br>
-                            <input type="text" name="" id="ten_nv" class="form_input_add_danhgia">
+                            <input type="text" name="" id="ten_nv" class="form_input_add_danhgia input-name" readonly>
                         </div>
                         <div class="form_add_danhgia">
                             <label for="" class="form_title_danhgia">Ngày quyết định</label> <br>
@@ -58,4 +59,7 @@
             </form>
         </div>
     </div>
+@endsection
+@section('linkjs')
+<script src="/js/danhgia/danhgia.js"></script>
 @endsection

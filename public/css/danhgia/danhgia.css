@@ -188,3 +188,12 @@ th{
     font-size: 1.4rem;
     margin:0 2rem;
 }
+.error {
+    color: red;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.hidden {
+    visibility: none;
+    opacity: 0;
+}
