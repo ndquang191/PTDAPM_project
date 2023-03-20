@@ -101,3 +101,7 @@ Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/u
     Route::get('/leave','showLeave')->name('showLeaveUser');
     Route::post('/leave','storeLeaveRequest')->name('storeLeaveRequest');
 });
+
+Route::get('/bhember', function () {
+    return view('user.baohiem');
+});
