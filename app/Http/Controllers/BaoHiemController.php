@@ -49,7 +49,8 @@ class BaoHiemController extends Controller
 
     public function getInfoBHXH($id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        return view('baohiemxhs.infobhxh',['user' => $user]);
+        $contract = BaoHiem::where('MaBH',$id)->first();
+        return view('baohiemxhs.infobhxh',['user' => $user,'contract' => $contract]);
     }
 
     public function editBHXH($id){

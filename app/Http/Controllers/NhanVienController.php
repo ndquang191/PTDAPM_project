@@ -96,7 +96,7 @@ class NhanVienController extends Controller
     public function update(Request $request, $id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $validator = $request->validate([
-            'birthday' => 'bail|required|before:1998-12-31',
+            'birthday' => 'bail|required|before:2006-1-1',
             'ngaycap' => 'bail|required',
             'noicap' => 'bail|required',
             'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',

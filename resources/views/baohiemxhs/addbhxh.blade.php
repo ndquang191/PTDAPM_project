@@ -79,7 +79,7 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="month">Tháng</label>
-                            <input class="form-control" type="number" id="month" name="month" min="1">
+                            <input class="form-control" type="number" id="month" name="month" min="1" max="12">
                         </div>
                     </div>
                 </div>
