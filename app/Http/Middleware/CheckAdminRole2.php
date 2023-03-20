@@ -24,7 +24,7 @@ class CheckAdminRole2
               return redirect()->route('getHomepage')->with('message', 'Bạn không có quyền truy cập !');
             }
             else{
-                return redirect()->route('getAdminPage')->with('message', 'Bạn không có quyền truy cập !');
+                return redirect()->route('getAdminPage')->with('message', 'Bạn không có quyền truy cập 2!');
             }
         }
     }

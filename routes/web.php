@@ -41,7 +41,7 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
     Route::post('/{id}','update')->name('updateEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 });
 
-Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/employee')->group(function(){
+Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/employee')->group(function(){
     Route::get('/{id}/degree','showByMaNV')->name('showDegree'); // Hiển thị danh sách bằng cấp của nhân viên
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
@@ -76,6 +76,9 @@ Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/add','createBHXH')->name('createBHXH');
     Route::post('/add','storeBHXH')->name('storeBHXH');
     Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
+    Route::get('/edit/{id}','editBHXH')->name('editBHXH');
+    Route::post('/edit/{id}','updateBHXH')->name('updateBHXH');
+
 
 });
 
@@ -89,33 +92,12 @@ Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin'
     Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
 });
 
+
 Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/evaluate','showEvaluate')->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
     Route::get('/info','showInfo')->name('showInfoUser'); // Hiển thị thông tin tài khoản
     Route::get('/contract','showContract')->name('showContractUser');
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
     Route::get('/leave','showLeave')->name('showLeaveUser');
-
+    Route::post('/leave','storeLeaveRequest')->name('storeLeaveRequest');
 });
-
-
-Route::get('/test' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
-    return view('test',['user' => $user]);
-});
-
-Route::get('/testSubmit' , function(){
-    return redirect('/test')->with(['message' => 'test']);
-});
-
-Route::get('/test2' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
-    return view('user.index',['user' => $user]);
-});
-Route::get('/showbhxh', function () {
-    return view('baohiemxhs.infobhxh');
-});
-Route::get('/editbhxh', function () {
-    return view('baohiemxhs.editbhxh');
-});
-

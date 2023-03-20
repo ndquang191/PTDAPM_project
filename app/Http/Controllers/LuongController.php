@@ -23,9 +23,11 @@ class LuongController extends Controller
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employee = NhanVien::where('MaNV',$id)->first();
         $hopdong = HDLD::where('MaNV' ,$id)->first();
+
         if ($hopdong == null){
-            return redirect()->route('showListHDLD')->with(['message','Nhân viên không có hợp đồng lao động !']);
+            return redirect()->route('showSalary')->with(['message' => 'Nhân viên không có hợp đồng lao động !','type' => 'error']);
         }
+
         $luongcoban = $hopdong->LuongCoBan;
         $hesoluong = $hopdong->HeSoLuong;
         $currentMonth = Carbon::now()->month;

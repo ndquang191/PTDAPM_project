@@ -84,7 +84,7 @@
                                 <td>{{$contract->NgayKetThuc}}</td>
                                 <td>{{$contract->DiaDiem}}</td>
                                 <td>{{$contract->ChuyenMon}}</td>
-                                <td></td>
+                                <td>{{$contract->TrangThai == 1 ? 'Còn hiệu lực' : 'Hết hiệu lực'}}</td>
                                 <td>
                                     <a class="link_icon" href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
                                         <i class="bi bi-eye-fill icon_color"></i>

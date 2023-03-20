@@ -13,7 +13,7 @@ class NghiPhep extends Model
     public $timestamps = false;
     protected $table = 'nghiphep';
     protected $primaryKey = 'MaNP';
-    protected $fillable = ['MaNV','NgayBatDau','NgayKetThuc','LiDo'];
+    protected $fillable = ['MaNV','NgayBatDau','NgayKetThuc','NoiDung','PheDuyet','CoPhep'];
 
     public function nhanvien(){
         return $this->belongsTo(NhanVien::class,'MaNV');

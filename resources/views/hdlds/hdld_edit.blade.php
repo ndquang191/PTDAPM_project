@@ -46,8 +46,11 @@
                             <input type="date" name="NgayKetThuc" id="ngay_ket_thuc" class="form_input_add_htld" value="{{$contract->NgayKetThuc}}">
                         </div>
                         <div class="form_add_hdld">
-                            <label for="" class="form_title_htld">Trạng thái</label> <br>
-                            <input type="text" name="trangthai" id="trangthai" class="form_input_add_htld" value="">
+                            <label for="TrangThai" class="form_title_htld">Trạng thái</label><br>
+                            <select name="TrangThai" id="TrangThai" class="form-control" style="font-size: 16px">
+                                <option value="0" {{$contract->TrangThai == 0 ? 'selected' : ''}}>Hết hiệu lực</option>
+                                <option value="1" {{$contract->TrangThai == 1 ? 'selected' : ''}}>Đang áp dụng</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form_list_item_htld">
@@ -94,7 +97,7 @@
         exitBTN.addEventListener('click',(e)=>{
             e.preventDefault();
             Swal.fire({
-                title: 'Bạn có muốn thoát ở đây ?',
+                title: 'Bạn có muốn thoát ?',
                 showCancelButton: true,
                 confirmButtonText: 'Có',
                 cancelButtonText: 'Không',
