@@ -63,9 +63,6 @@
                     <td> <p> {{$employee->chucvu->TenCV}}</p> </td>
                     <td> <p>{{$employee->phongban->TenPhongBan}}</p> </td>
                     <td class="muti-btn">
-                        <a href="{{route('showSalaryDetail',['id' => $employee->MaNV])}}">
-                            <i class="bi bi-pencil-square edit hidden"></i>
-                        </a>
                         <a  href="{{route('showSalaryDetail',['id' => $employee->MaNV])}}">
                             <i class="bi bi-eye-fill edit"></i>
                         </a>
