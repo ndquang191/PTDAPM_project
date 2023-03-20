@@ -48,13 +48,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="QDTS">Mức đóng QDTS</label>
-                            <input class="form-control" type="number" id="QDTS" name="QDTS">
+                            <input class="form-control" type="number" id="QDTS" name="QDTS" min="1">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="TNLD">Mức đóng TNLD</label>
-                            <input class="form-control" type="number" id="TNLD" name="TNLD">
+                            <input class="form-control" type="number" id="TNLD" name="TNLD" min="1">
                         </div>
                     </div>
                 </div>
@@ -64,13 +64,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="HT">Mức đóng HT</label>
-                            <input class="form-control" type="number" id="HT" name="HT">
+                            <input class="form-control" type="number" id="HT" name="HT" min="1">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="BHTN">Mức đóng BHTN</label>
-                            <input class="form-control" type="number" id="BHTN" name="BHTN">
+                            <input class="form-control" type="number" id="BHTN" name="BHTN" min="1">
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="month">Tháng</label>
-                            <input class="form-control" type="number" id="month" name="month">
+                            <input class="form-control" type="number" id="month" name="month" min="1">
                         </div>
                     </div>
                 </div>

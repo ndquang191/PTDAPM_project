@@ -41,7 +41,7 @@ class NhanVienController extends Controller
                 'CCCD' => 'bail|required|numeric|unique:App\Models\Nhanvien,CCCD|digits:12',
                 'gender' => 'bail|required|in:Nam,Nữ',
                 'nation' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
-                'email' => 'bail|required|email',
+                'email' => 'bail|required|email|unique:App\Models\Nhanvien,Email',
                 'religion' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
                 'placeofbirth' => 'bail|required',
                 'address' => 'bail|required',
@@ -55,7 +55,8 @@ class NhanVienController extends Controller
                 'phonenumber.unique' => "Số điện thoại đã tồn tại",
                 'phonenumber.digits' => "Số điện thoại phải có 10 số",
                 'phonenumber.numeric' => "Số điện thoại chỉ chưa số",
-                'birthday.before' => "Ngày sinh không hợp lệ"
+                'birthday.before' => "Ngày sinh không hợp lệ",
+                'email.unique' => 'Email đã tồn tại',
             ]);
 
             DB::transaction(function () use($request) {
