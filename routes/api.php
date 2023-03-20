@@ -21,3 +21,4 @@ use App\Http\Controllers\APIController;
 // });
 
 Route::get('/getEmployeeInfo/{id}',[APIController::class,'getEmployeeInfo']);
+Route::get('/getEmployeeLeave/{id}',[APIController::class,'getEmployeeInfo']);

@@ -63,12 +63,12 @@
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Địa điểm làm việc</label> <br>
-                            <input type="text" name="DiaDiem" id="" class="form_input_add_htld" value={{old('DiaDiem')}}>
-                            {{-- <select name="DiaDiem" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
-                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 1</option>
-                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 2</option>
-                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 3</option>
-                            </select> --}}
+                            {{-- <input type="text" name="DiaDiem" id="" class="form_input_add_htld" value={{old('DiaDiem')}}> --}}
+                            <select name="DiaDiem" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
+                                <option value="Đại học Thủy Lợi cơ sở 1">Đại học Thủy Lợi cơ sở 1</option>
+                                <option value="Đại học Thủy Lợi cơ sở 2">Đại học Thủy Lợi cơ sở 2</option>
+                                <option value="Đại học Thủy Lợi cơ sở 3">Đại học Thủy Lợi cơ sở 3</option>
+                            </select>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Chuyên môn</label> <br>
@@ -88,12 +88,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="bottom_add_hdld">
-                    <div class="bottom_exit_add_hdld">
+                <div class="bottom_add_danhgia">
+                    <div class="bottom_exit_danhgia">
                         <div class="link_exit">Thoát</div>
                     </div>
                     <div class="bottom_save_add_hdld">
-                        <button class="hdld_submit" id="hdld_submit">Lưu</button>
+                        <button class="danhgia_submit" id="hdld_submit">Lưu</button>
                     </div>
                 </div>
             </form>

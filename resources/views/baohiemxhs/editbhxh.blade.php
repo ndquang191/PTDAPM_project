@@ -13,19 +13,20 @@
             </div>
         </div>
         <div class="form">
-            <form action="">
+            <form action="{{route('updateBHXH',['id' => $contract->MaBH])}}" method="POST">
+                @csrf
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">ID</label>
-                            <input class="form-control" type="number" >
+                            <input class="form-control" type="number" value="{{$contract->MaBH}}"  readonly>
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Ngày bắt đầu</label>
-                            <input class="form-control" type="date" >
+                            <label class="form-label" for="startDate">Ngày bắt đầu</label>
+                            <input class="form-control" type="date" id="startDate" name="startDate" value="{{$contract->NgayBatDau}}">
                         </div>
                     </div>
                 </div>
@@ -34,14 +35,14 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng QDTS</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="QDTS">Mức đóng QDTS</label>
+                            <input class="form-control" type="number" id="QDTS" name="QDTS" value="{{$contract->MucDongQDTS}}">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng TNLD</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="TNLD">Mức đóng TNLD</label>
+                            <input class="form-control" type="number" id="TNLD" name="TNLD" value="{{$contract->MucDongTNLD}}">
                         </div>
                     </div>
                 </div>
@@ -50,23 +51,23 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng HT</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="HT">Mức đóng HT</label>
+                            <input class="form-control" type="number" id="HT" name="HT" value="{{$contract->MucDongHT}}">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Mức đóng BHTN</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="BHTN">Mức đóng BHTN</label>
+                            <input class="form-control" type="number" id="BHTN" name="BHTN" value="{{$contract->MucDongBHTN}}">
                         </div>
                     </div>
                 </div>
     
-                <div class="row">
+                <div class="row">wd
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">Tháng</label>
-                            <input class="form-control" type="number" >
+                            <label class="form-label" for="month">Tháng</label>
+                            <input class="form-control" type="number" name="month" id="month" value="{{$contract->Thang}}">
                         </div>
                     </div>
                 </div>

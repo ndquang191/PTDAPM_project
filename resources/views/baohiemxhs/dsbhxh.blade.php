@@ -4,6 +4,25 @@
     <link rel="stylesheet" href="./css/bhxh/dsbhxh.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: '{{ session('type') }}',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
     <div class="fluid-container">
         <div>
             <div class="container-tilte-table">
@@ -52,13 +71,13 @@
                                 <td>{{$insurance->MaBH}}</td>
                                 <td>{{$insurance->NgayBatDau}}</td>
                                 <td>{{$insurance->MucDongQDTS}}</td>
-                                <td>{{$insurance->MucDongTLND}}</td>
+                                <td>{{$insurance->MucDongTNLD}}</td>
                                 <td>{{$insurance->MucDongHT}}</td>
-                                <td>{{$insurance->MucDongHDTN}}</td>
+                                <td>{{$insurance->MucDongBHTN}}</td>
                                 <td>{{$insurance->Thang}}</td>  
                                 <td>
-                                  <a href="/editbhxh"><i class="fa-solid fa-pen-to-square"></i></a>
-                                  <a href="/showbhxh"><i class="fa-solid fa-eye"></i></a>
+                                  <a href="{{route('editBHXH',['id' => $insurance->MaBH])}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                  <a href="{{route('getInfoBHXH',['id' => $insurance->MaBH])}}"><i class="fa-solid fa-eye"></i></a>
                                 </td>
                               </tr>
                             @endforeach

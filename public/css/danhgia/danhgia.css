@@ -13,19 +13,17 @@
 .danhgia_title{
     margin-top: 2rem;
     display: flex;
-    line-height: 27px;
     background-color: #dcdcdc;
     align-items: center;
+    padding-left: 10px;
+    padding-top: 5px;
     justify-content: space-between;
 }
 .danhgia_add_btn{
     background-color: #39374E;
-    width: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 27px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin-top: -5px;
+    padding: 5px 8px;
     text-align: center;
     color: #c6cfda;
 }
@@ -35,8 +33,8 @@
     text-align: center;
 }
 
-.danhgia_title h5{
-    font-size: 1.4rem;
+.danhgia_title h4{
+    font-size: 2rem;
     color: rgba(0, 0, 0, 1);
     font-weight: 500;
 }
@@ -50,26 +48,25 @@
 }
 
 .table{
-    width: 103rem;
-    margin: 0 auto;
+    width: 100%;
 }
 .icon_color{
     color: #39374E;
 }
 td{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: #000000B2;
 }
 th{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: #212529;
     font-weight: 300;
 }
 .input_search{
     display: flex;
     justify-content: flex-end;
-    margin-top: 8px;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 1.5rem;
     gap: 1rem;
 }
 .form_input{
@@ -91,28 +88,25 @@ th{
 .icon_color{
     color: #39374E;
 }
-td{
-    font-size: 1.4rem;
-    color: #333;
 
-}
-th{
-    font-size: 1.4rem;
-    color: #333;
-}
 .form_input{
-    width: 28rem;
-    height: 3rem;
-    padding: 0 10px;
-    border-radius: 1px #39374E;
+    width: 30rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+    border-radius: 3px ;
+    padding: 1rem;
+    border: 1px solid #39374E;
 }
 .search_btn{
     display: flex;
     color: #fff;
+    border-radius: 3px ;
+    font-size: 14px;
     align-items: center;
     justify-content: center;
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 1rem;
     background-color: #39374E;
 }
 
@@ -130,11 +124,11 @@ th{
     color: rgba(0, 0, 0, 1);
 }
 .title_danhgia_add{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: #848484;
 }
 .title_add_danhgia{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: inline-block;
     color: rgba(0, 0, 0, 1);
 }
@@ -153,22 +147,25 @@ th{
 .form_title_danhgia{
     color: black;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .form_input_add_danhgia{
     width: 35rem;
-    font-size: 1.3rem;
+    padding-left: 5px;
+    border-radius: 3.75px;
+    font-size: 1.6rem;
     background-color: #fff;
     border: none;
-    height: 3rem;
+    height: 3.3rem;
 }
 .bottom_add_danhgia{
-    /* display: flex; */
-    float: right;
-    margin: 1rem 6rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.5rem;
+    margin-right: 5rem;
 }
 
-.bottom_exit_danhgia .danhgia_submit{
+.bottom_save_danhgia .danhgia_submit{
     color: #fff;
     width: 70px;
     height: 37px;
@@ -177,4 +174,17 @@ th{
     line-height: 37px;
     background-color: #39374E;
     font-size: 1.4rem;
+}
+
+.bottom_exit_danhgia{
+    color: #fff;
+    width: 70px;
+    height: 37px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    line-height: 37px;
+    background-color: red;
+    font-size: 1.4rem;
+    margin:0 2rem;
 }

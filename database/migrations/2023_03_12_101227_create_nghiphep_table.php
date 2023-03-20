@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('NgayBatDau');
             $table->date('NgayKetThuc');
             $table->string('NoiDung')->nullable();
+            $table->boolean('CoPhep');
             $table->boolean('PheDuyet');
             $table->foreign('MaNV')->references('MaNV')->on('nhanvien')->onDelete('cascade');
         });

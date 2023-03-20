@@ -3,6 +3,18 @@
     <link rel="stylesheet" href="/css/Salary/salary.css">
 @endsection
 @section('content')
+@if (session('message'))
+    <script>
+        Swal.fire({
+        position: 'center',
+        icon: '{{session('type')}}',
+        title: '{{session('message')}}',
+        showConfirmButton: true,
+        confirmButtonText: 'Đóng',
+        timer: 3000
+    })
+    </script>
+@endif
 <div class="fluid-container">
     <div class="heading-section">
         <div class="heading-primary">
