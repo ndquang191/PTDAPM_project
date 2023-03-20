@@ -90,11 +90,11 @@ class HDLDController extends Controller
             'ChuyenMon' => 'required',
             'PhapNhan' => 'required',
         ],[
-            'required' => "Nhập thiếu thông tin",
+            // 'required' => "Nhập thiếu thông tin",
             'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
 
         ]);
-        $contract = HDLD::where('MaHDLD',$id)->with('nhanvien')->first();
+        $contract = HDLD::where('MaHDLD',$id)->with('nhanvien')->first();   
         $contract->update([
             'LoaiHopDong' => $request->LoaiHD,
             'NgayKi' => $request->NgayKi,
@@ -104,6 +104,8 @@ class HDLDController extends Controller
             'PhapNhan' => $request->PhapNhan,
             'ChuyenMon' => $request->ChuyenMon,
             'TrangThai' => $request->TrangThai,
+            'LuongCoBan' => $request->Luong,
+            'HeSoLuong' => $request->HeSoLuong,
         ]);
         if($request->TrangThai == 1){
             HDLD::where('MaNV',$contract->MaNV)->where('MaHDLD','!=',$id)->update([
@@ -114,8 +116,10 @@ class HDLDController extends Controller
         return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật hợp đồng thành công', 'type' => 'success']);
     }
 
-    public function detroy($id){
+    public function destroy($id){
         HDLD::where('MaHDLD', $id)->delete();
-        return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Xóa hợp đồng thành công', 'type' => 'success']);
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $contract = HDLD::where('MaHDLD',$id)->first();
+        return redirect()->route('showListHDLD')->with(['message' => 'Xóa hợp đồng thành công', 'type' => 'success']);
     }
 }

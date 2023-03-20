@@ -35,7 +35,7 @@
             <div class="hdld_main_container">
                 <div class="input_search">
                     {{-- <form action=""> --}}
-                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm" class="form_input" onkeyup="myFunction()">
+                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm theo MNV, trạng thái" class="form_input" onkeyup="myFunction()">
                     {{-- </form> --}}
                     <a href="#" class="search_btn" onclick="myFunction()">
                         <i class="bi bi-search icon_color_search"></i>
@@ -48,13 +48,8 @@
                             <th scope="col">Mã nhân viên</th>
                             <th scope="col">Mã HD</th>
                             <th scope="col">Loại hợp đồng</th>
-                            <th scope="col">Ngày ký</th>
-                            <th scope="col">Ngày bắt đầu</th>
-                            <th scope="col">Ngày kết thúc</th>
-                            <th scope="col">Địa điểm làm việc</th>
-                            <th scope="col">Chuyên môn</th>
                             <th scope="col">Trạng thái</th>
-                            <th scope="col">Hành động</th>
+                            <th scope="col">Chức năng</th>
         
                         </tr>
                     </thead>
@@ -79,11 +74,12 @@
                                 <td>{{$contract->MaNV}}</td>
                                 <td>{{$contract->MaHDLD}}</td>
                                 <td>{{$contract->LoaiHopDong}}</td>
+                                {{-- <td></td>
                                 <td>{{$contract->NgayKi}}</td>
                                 <td>{{$contract->NgayBatDau}}</td>
                                 <td>{{$contract->NgayKetThuc}}</td>
                                 <td>{{$contract->DiaDiem}}</td>
-                                <td>{{$contract->ChuyenMon}}</td>
+                                <td>{{$contract->ChuyenMon}}</td> --}}
                                 <td>{{$contract->TrangThai == 1 ? 'Còn hiệu lực' : 'Hết hiệu lực'}}</td>
                                 <td>
                                     <a class="link_icon" href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
@@ -92,7 +88,7 @@
                                     {{-- <a href="{{route('editHDLD',['id' => 1])}}">
                                         <i class="bi bi-pencil-square icon_color"></i>
                                     </a> --}}
-                                    <a href="#" class="link_icon">
+                                    <a href="" class="link_icon delete-btn"  data-id={{$contract->MaHDLD}}>
                                         <i class="bi bi-trash icon_color"></i>
                                     </a>
                                 </td>
@@ -108,7 +104,6 @@
         @csrf
     </form>
     <script>
-        // ---- Alert khi nhấn nút reset mật khẩu
         const deleteBTN = document.querySelectorAll('.delete-btn');
         const deleteForm = document.getElementById('delete-form')
         deleteBTN.forEach(btn => {
@@ -126,6 +121,9 @@
             })
             })
         });
+
+
+
     </script>
 @endsection
 @section('linkjs')

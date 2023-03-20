@@ -88,12 +88,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="bottom_add_hdld">
-                    <div class="bottom_exit_add_hdld">
+                <div class="bottom_add_danhgia">
+                    <div class="bottom_exit_danhgia">
                         <div class="link_exit">Thoát</div>
                     </div>
                     <div class="bottom_save_add_hdld">
-                        <button class="hdld_submit" id="hdld_submit">Lưu</button>
+                        <button class="danhgia_submit" id="hdld_submit">Lưu</button>
                     </div>
                 </div>
             </form>
