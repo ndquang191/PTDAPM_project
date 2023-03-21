@@ -32,12 +32,12 @@
         <table class="table table-striped">
             <thead>
           <tr>
-            <th scope="col">Mã Nghỉ phép</th>
+            {{-- <th scope="col">Mã Nghỉ phép</th> --}}
             <th scope="col">Mã nhân viên</th>
             <th scope="col">Tên nhân viên</th>
-            <th scope="col">Ngày bắt đầu</th>
-            <th scope="col">Ngày kết thúc</th>
-            <th scope="col">Nội dung</th>
+            {{-- <th scope="col">Ngày bắt đầu</th> --}}
+            {{-- <th scope="col">Ngày kết thúc</th> --}}
+            {{-- <th scope="col">Nội dung</th> --}}
             <th scope="col">Loại</th>
             <th scope="col">Trạng thái</th>
           </tr>
@@ -59,12 +59,12 @@
                 @foreach ($leaves as $leave)
                 <a href="{{route('editLeave',['id'=>$leave->MaNP])}}">
                 <tr >
-                    <td scope="row">{{$leave->MaNP}}</th>
+                    {{-- <td scope="row">{{$leave->MaNP}}</th> --}}
                     <td scope="row">{{$leave->MaNV}}</th>
                     <td>{{$leave->nhanvien->TenNV}}</td>
-                    <td>{{$leave->NgayBatDau}}</td>
-                    <td>{{$leave->NgayKetThuc}}</td>
-                    <td>{{$leave->NoiDung}}</td>
+                    {{-- <td>{{$leave->NgayBatDau}}</td> --}}
+                    {{-- <td>{{$leave->NgayKetThuc}}</td> --}}
+                    {{-- <td>{{$leave->NoiDung}}</td> --}}
                     <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
                     <td><a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}">Chờ duyệt</a></td>
                     {{-- chờ duyệt sang form duyệt đơn  --}}

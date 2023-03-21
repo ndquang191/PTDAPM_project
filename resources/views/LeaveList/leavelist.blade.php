@@ -48,11 +48,11 @@
                     <td>{{$leave->NoiDung}}</td>
                     <td>{{$leave->CoPhep}}</td>
                     <td class="muti-btn">
-                        <a href="{{route('showHistory',['id' => $leave->MaNP])}}">
+                        {{-- <a href="{{route('showHistory',['id' => $leave->MaNP])}}">
                           <i class="bi bi-person-lines-fill edit"></i>
-                        </a>
+                        </a> --}}
                         {{-- sang lịch sử nghỉ phép --}}
-                        <a  href="{{route('showDetail',['id' => $leave->MaNP])}}">
+                        <a  href="{{route('showDetailLeave',['id' => $leave->MaNP])}}">
                             <i class="bi bi-eye-fill edit"></i>
                         </a>
                          {{-- sang xem đơn nghỉ phép --}}

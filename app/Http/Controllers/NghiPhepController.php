@@ -128,7 +128,8 @@ class NghiPhepController extends Controller
 
     public function showDetail($id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        return view('LeaveList.XemDonNghiPhep',['user' => $user]);
+        $leave = NghiPhep::where('MaNP',$id)->with('nhanvien')->first();
+        return view('LeaveList.XemDonNghiPhep',['user' => $user,'leave' => $leave]);
     }
 
     public function showHistory($id){

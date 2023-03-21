@@ -44,6 +44,7 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
 Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/employee')->group(function(){
     Route::get('/{id}/degree','showByMaNV')->name('showDegree'); // Hiển thị danh sách bằng cấp của nhân viên
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
+    Route::post('/{id}/degree/add','store')->name('storeDegree'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
 });
 
@@ -66,7 +67,7 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
     Route::post('/request/detail/{requestID}','approveLeaveRequest')->name('approveLeaveRequest');
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
     Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
-    Route::get('/detail/{id}','showDetail')->name('showDetail');
+    Route::get('/detail/{id}','showDetail')->name('showDetailLeave');
     Route::get('/history/{id}','showHistory')->name('showHistory');
 
     //* SỬA ADDLEAVE.BLADE = XEMNGHIPHEP.BLADE*/
