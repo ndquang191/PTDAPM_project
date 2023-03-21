@@ -28,6 +28,10 @@
                                 <label for="ngaycap" class="col-form-label">Ngày cấp</label>
                                 <input type="date" class="form-control" id="ngaycap">
                             </div>
+                            <div class="mb-3">
+                                <label for="loaibang" class="col-form-label">Loại bằng</label>
+                                <input type="text" class="form-control" id="loaibang">
+                            </div>
                           </form>
                         </div>
                         <div class="modal-footer">
