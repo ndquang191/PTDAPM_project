@@ -24,15 +24,29 @@
                               <label for="tenBC" class="col-form-label">Tên bằng cấp</label>
                               <textarea class="form-control" id="tenBC"></textarea>
                             </div>
-                            <div class="mb-3">
-                                <label for="ngaycap" class="col-form-label">Ngày cấp</label>
-                                <input type="date" class="form-control" id="ngaycap">
+                            <div class="mb-3 bottom-info">
+                                <div class="left info">
+
+                                    <label for="ngaycap" class="col-form-label">Ngày cấp</label>
+                                    <input type="date" class="form-control" id="ngaycap">
+                                </div>
+
+                                <div class="right info">
+
+                                        <label class="col-form-label" for="inputGroupSelect01">Loại bằng cấp</label>
+                                        <select class="form-select" id="inputGroupSelect01">
+                                          <option value="1" selected>Bằng cấp 1</option>
+                                          <option value="2">Băng cấp 2</option>
+                                          <option value="3">Băng cấp 3</option>
+                                        </select>
+                                      
+                                </div>
                             </div>
                           </form>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
-                          <button type="button" class="btn btn-primary">Lưu</button>
+                          <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Thoát</button>
+                          <button type="button" class="btn btn-primary btn-lg">Lưu</button>
                         </div>
                       </div>
                     </div>
