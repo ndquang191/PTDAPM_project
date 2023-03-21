@@ -1,6 +1,6 @@
-@extends('layout.app')
+@extends('layout.user1')
 @section('linkcss')
-<link rel="stylesheet" href="/css/Salary/detailsalary.css">
+<link rel="stylesheet" href="/css/Salary/LuongNhanVien.css">
 @endsection
 @section('content')
 <div class="fluid-container">
@@ -20,7 +20,13 @@
                         <P>Mã nhân viên: {{$employee->MaNV}}</P>
                         <p>{{$employee->TenNV}}</p>
                     </div>
+
                 </div>
+            </div>
+            <div class="date">
+                <span class="previous-month"><</span>
+                <p>03/2023</p>
+                <span class="next-month">></span>
             </div>
         </div>
         <div class="detail-salary">
@@ -55,7 +61,7 @@
             <div class="salary-base box-gray">
                 <span>04</span>
                 <p class="name">Khen thưởng</p>
-                <p class="salary-1">{{number_format($khenthuong)}} VND</p>
+                <p class="salary-1"> {{number_format($khenthuong)}} VND</p>
                 <p class="salary-2"></p>
                 <div class="eye-hide">
                     {{-- <i class="bi bi-eye-fill hidden"></i> --}}
@@ -73,24 +79,11 @@
             <div class="salary-base summary" style="background-color: #eee">
                 <span></span>
                 <p class="name">Tổng</p>
-                <p class="salary-1">{{number_format(intval($luongcoban * $hesoluong + $khenthuong + $kiluat - $leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}} VND</p>
+                <p class="salary-1"> {{number_format(intval($luongcoban * $hesoluong + $khenthuong + $kiluat - $leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}} VND</p>
                 <p class="salary-2"></p>
                 <div class="eye-hide">
                     {{-- <i class="bi bi-eye-fill hidden"></i> --}}
                 </div>
-            </div>
-            <div class="muti-btn">
-                <button class="">
-                    <a href="" class="print-btn" >
-                        <i class="bi bi-printer-fill"></i>
-                        <p>Xuất</p>
-                    </a>
-                </button>
-                <button class="">
-                    <a href="{{route('showSalary')}}" class="exit-btn">
-                        <p>Thoát</p>
-                    </a>
-                </button>
             </div>
         </div>
     </div>

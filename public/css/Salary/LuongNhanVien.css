@@ -59,12 +59,24 @@
 .date {
     width: 14rem;
     height: 4rem;
-    background-color: #39374e;
-    color: white;
+    background-color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-self: end;
     justify-items: end;
+    align-items: center;
+    gap: 2rem;
+}
+.previous-month,
+.next-month {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+    /* justify-self: center; */
+    align-self: center;
+    cursor: pointer;
 }
 .date p {
     font-size: 2rem;

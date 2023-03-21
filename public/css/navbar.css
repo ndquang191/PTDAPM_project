@@ -299,4 +299,5 @@ h6 {
     visibility: none;
     opacity: 0;
     height: 0;
+    display: none;
 }
