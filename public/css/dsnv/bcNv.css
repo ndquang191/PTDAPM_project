@@ -5,12 +5,12 @@
     font-size: 15px;
     line-height: 18px;
 }
+
+.fluid-container{
+    padding: 40px;
+}
 .header-content{
     display: flex;
-}
-.container-header{
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 .header-content a{
     color: #000000;
@@ -20,10 +20,16 @@
 .container-header{
     overflow: auto;
 }
-.btn-add button{
+
+
+.btn-add{
+    width: 100%;
+
+}
+.btn.btn-lg{
     float: right;
     width: 75px;
-    height: 25px;
+    height: 35px;
     background-color: #5A5278;
     color: #FFFFFF;
     border: none;
@@ -39,4 +45,61 @@
 }
 .show{
     margin-right: 10px;
+}
+
+.tab-hosonv , .tab-bangcap{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px;
+}
+
+.tab-hosonv.active , .tab-bangcap.active{
+    background-color: yellow;
+
+}
+.table{
+    margin-top: 20px;
+}
+.header-content{
+    padding: 14px 19px;
+}
+    
+.table thead tr td {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.table thead tr{
+    padding: 20px 20px !important;
+}
+
+
+/* FORM */
+
+.modal-dialog{
+    width: 620px;
+}
+.modal-body label{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
+
+
+.modal-body textarea{
+    height: 137px;
+    
+    background: rgba(90, 82, 120, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-body input[type='date']{
+    width: 50%;
+}
+
+.modal-footer button{
+    margin-right: 10px !important;
 }

@@ -2,18 +2,46 @@
 
 @section('linkcss')
     <link rel="stylesheet" href="/css/dsnv/bcNv.css">
-    <link rel="stylesheet" href="/css/dsnv/editNv.css">
+    {{-- <link rel="stylesheet" href="/css/dsnv/editNv.css"> --}}
 @endsection
 @section('content')
     <div class="fluid-container">
         <div class="container-header">
             <div class="header-content">
-                <div><a class="tab-hosonv" onclick="myFunction()">Hồ sơ nhân viên</a></div>
-                <div><a class="tab-bangcap" id="tab-bangcap">Bằng cấp nhân viên</a></div>
+                <div><a class="tab-hosonv" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}">Hồ sơ nhân viên</a></div>
+                <div><a class="tab-bangcap active" href="{{route('showDegree',['id' => $employee->MaNV])}}">Bằng cấp nhân viên</a></div>
             </div>
+                {{-- <a href="{{route('addDegreeForm',['id' => $employee->MaNV])}}"><button>+ Thêm</button></a> --}}
             <div class="btn-add">
-                <a href="{{route('addDegreeForm',['id' => $employee->MaNV])}}"><button>+ Thêm</button></a>
+                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Thêm</button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-3">
+                              <label for="tenBC" class="col-form-label">Tên bằng cấp</label>
+                              <textarea class="form-control" id="tenBC"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ngaycap" class="col-form-label">Ngày cấp</label>
+                                <input type="date" class="form-control" id="ngaycap">
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+                          <button type="button" class="btn btn-primary">Lưu</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
             </div>
+
+
+                  
         </div>
         <table id="table-infor" class="table">
             <thead>
@@ -21,7 +49,6 @@
                 <td>Họ và tên</td>
                 <td>Tên bằng cấp</td>
                 <td>Ngày cấp</td>
-                <td>Thời hạn</td>
                 <td>Hành động</td>
               </tr>
             </thead>
@@ -34,7 +61,6 @@
                     <td>{{$employee->TenNV}}</td>
                     <td>{{$degree->TenBC}}</td>
                     <td>{{$degree->NgayCap}}</td>
-                    <td></td>
                     <td>
                         <a class="show" href="{{route('editDegreeForm',['id' => $employee->MaNV,'degreeID' => $degree->MaBC])}}"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href=""><i class="fa-solid fa-trash"></i></a>
@@ -48,7 +74,7 @@
 
 
         <div id="body-content" class="body-content">
-            <form action="">
+            {{-- <form action="">
                 <div class="inf-user">
                     <div>
                         <img src="./image/avatar_user.jpg" alt="">
@@ -229,7 +255,7 @@
                         <button class="exit" onclick="myFunction2()">Thoát</button>
                     </div>
                 </div>
-            </form>
+            </form> --}}
         </div>
     </div>
     <script>

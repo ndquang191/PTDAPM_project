@@ -31,7 +31,7 @@ class TestController extends Controller{
     public function salary(){
         return view('Salary/salary');
     } public function detailsalary(){
-        return view('Salary/detailsalary');
+        return view('Salary/LuongNhanVien');
     }
     public function addhdld(){
         return view('hdlds/hdld_add');

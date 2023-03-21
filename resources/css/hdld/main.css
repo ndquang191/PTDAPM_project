@@ -30,14 +30,14 @@
     position: absolute;
     top: 3rem;
     right: 3rem;
-    background-color: #39374E;
+    background-color: #5A5278;
     width: 73px;
     height: 24px;
     font-size: 1.5rem;
     text-align: center;
 }
 .icon_color{
-    color: #39374E;
+    color: #5A5278;
 }
 td{
     font-size: 1.4rem;
@@ -67,7 +67,7 @@ th{
     justify-content: center;
     width: 2.8rem;
     height: 2.8rem;
-    background-color: #39374E;
+    background-color: #5A5278;
 }.header_container{
     font-family: Roboto;
     /* margin-top: 10rem; */
@@ -91,14 +91,14 @@ th{
     position: absolute;
     top: 3rem;
     right: 3rem;
-    background-color: #39374E;
+    background-color: #5A5278;
     width: 73px;
     height: 24px;
     font-size: 1.5rem;
     text-align: center;
 }
 .icon_color{
-    color: #39374E;
+    color: #5A5278;
 }
 td{
     font-size: 1.4rem;
@@ -128,5 +128,5 @@ th{
     justify-content: center;
     width: 2.8rem;
     height: 2.8rem;
-    background-color: #39374E;
+    background-color: #5A5278;
 }
