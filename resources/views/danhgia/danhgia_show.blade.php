@@ -21,7 +21,7 @@
                         @if ($evaluate->nhanvien->HinhAnh == null)
                             <img src="/image/photo_user.jpg" alt="" style="width: 150px; height: 180px;">      
                         @else 
-                            <img src="data:image/jpeg;base64,{{ base64_encode($evaluate->nhanvien->HinhAnh) }}" alt="Image"> 
+                            <img src="data:image/jpeg;base64,{{ base64_encode($evaluate->nhanvien->HinhAnh) }}" alt="Image">
                         @endif
                     </div>
                     <div class="danhgia_ls_para">
