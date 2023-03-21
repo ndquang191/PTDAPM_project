@@ -54,8 +54,7 @@
 }
 
 .tab-hosonv.active , .tab-bangcap.active{
-    background-color: yellow;
-
+    border-bottom: 1px solid #5A5278;
 }
 .table{
     margin-top: 20px;
@@ -97,9 +96,21 @@
 }
 
 .modal-body input[type='date']{
-    width: 50%;
+    width: 100%;
 }
 
 .modal-footer button{
     margin-right: 10px !important;
+}
+
+.modal-body .bottom-info{
+    display: flex;
+    gap: 20px    
+}
+.modal-body .bottom-info .info{
+    width: 100%;
+}
+
+.modal-body .bottom-info input,select,option, button{
+    font-size: 16px !important;
 }

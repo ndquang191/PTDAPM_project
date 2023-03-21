@@ -39,7 +39,7 @@
             {{-- <th scope="col">Ngày kết thúc</th> --}}
             {{-- <th scope="col">Nội dung</th> --}}
             <th scope="col">Loại</th>
-            <th scope="col">Trạng thái</th>
+            <th scope="col">Hành đông</th>
           </tr>
         </thead>
         <tbody>
@@ -66,7 +66,10 @@
                     {{-- <td>{{$leave->NgayKetThuc}}</td> --}}
                     {{-- <td>{{$leave->NoiDung}}</td> --}}
                     <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
-                    <td><a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}">Chờ duyệt</a></td>
+                    <td>
+                      <a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}">Chờ duyệt</a>
+                    
+                    </td>
                     {{-- chờ duyệt sang form duyệt đơn  --}}
                   </tr>
                 </a>

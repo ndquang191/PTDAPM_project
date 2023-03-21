@@ -17,11 +17,11 @@
 
 
           <div class="user_detail tab_holder">
-               <span class="tab_1">Thông tin cá nhân</span>
+               <span class="tab_1 active">Thông tin cá nhân</span>
                <span class="tab_2">Bằng cấp</span>
           </div>
 
-          <div class="detail_info user_detail_tab">
+          <div class="detail_info user_detail_tab show">
                <div class="d-flex justify-content-between row_4">
                     <div class="row_item">
 
