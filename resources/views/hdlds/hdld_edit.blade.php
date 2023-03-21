@@ -55,13 +55,13 @@
                     </div>
                     <div class="form_list_item_htld">
                         <div class="form_add_hdld">
-                            <label for="" class="form_title_htld">Địa điểm làm việc</label> <br>
-                            <input type="text" name="DiaDiem" id="" class="form_input_add_htld" value="{{$contract->DiaDiem}}">
-                            {{-- <select name="DiaDiem" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
-                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 1</option>
-                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 2</option>
-                                <option value="{{old('DiaDiem')}}">Đại học Thủy Lợi cơ sở 3</option>
-                            </select> --}}
+                            <label for="dia_diem" class="form_title_htld">Địa điểm làm việc</label> <br>
+                            {{-- <input type="text" name="DiaDiem" id="" class="form_input_add_htld" value="{{$contract->DiaDiem}}"> --}}
+                            <select name="DiaDiem" id="dia_diem" class="form_input_add_htld" style="font-size:14px">
+                                <option value="Đại học Thủy Lợi cơ sở 1" {{$contract->DiaDiem == 'Đại học Thủy Lợi cơ sở 1' ? 'selected' : ''}}>Đại học Thủy Lợi cơ sở 1</option>
+                                <option value="Đại học Thủy Lợi cơ sở 2" {{$contract->DiaDiem == 'Đại học Thủy Lợi cơ sở 2' ? 'selected' : ''}}>Đại học Thủy Lợi cơ sở 2</option>
+                                <option value="Đại học Thủy Lợi cơ sở 3" {{$contract->DiaDiem == 'Đại học Thủy Lợi cơ sở 3' ? 'selected' : ''}}>Đại học Thủy Lợi cơ sở 3</option>
+                            </select>
                         </div>
                         <div class="form_add_hdld">
                             <label for="" class="form_title_htld">Chuyên môn</label> <br>

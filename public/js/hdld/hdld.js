@@ -5,7 +5,7 @@ function myFunction() {
     table = document.getElementById('myTable');
     tr = table.getElementsByTagName('tr');
     for (let i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1] && tr[i].getElementsByTagName("td")[4];
+        td = tr[i].getElementsByTagName("td")[1];
         if(td){
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {

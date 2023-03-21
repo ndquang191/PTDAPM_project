@@ -88,7 +88,7 @@
                                     {{-- <a href="{{route('editHDLD',['id' => 1])}}">
                                         <i class="bi bi-pencil-square icon_color"></i>
                                     </a> --}}
-                                    <a href="#" class="link_icon">
+                                    <a href="" class="link_icon delete-btn"  data-id={{$contract->MaHDLD}}>
                                         <i class="bi bi-trash icon_color"></i>
                                     </a>
                                 </td>
@@ -104,7 +104,6 @@
         @csrf
     </form>
     <script>
-        // ---- Alert khi nhấn nút reset mật khẩu
         const deleteBTN = document.querySelectorAll('.delete-btn');
         const deleteForm = document.getElementById('delete-form')
         deleteBTN.forEach(btn => {
@@ -122,6 +121,9 @@
             })
             })
         });
+
+
+
     </script>
 @endsection
 @section('linkjs')

@@ -44,8 +44,7 @@
                         @foreach ($evaluates as $evaluate)
                         <?php $count += 1 ?>
                         <tr>
-                            <td></td>
-                            {{-- <td>{{$count}}</td> --}}
+                            <td>{{$evaluate->PhanLoai == 1 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{$evaluate->nhanvien->MaNV}}</td>
                             <td>{{$evaluate->nhanvien->TenNV}}</td>
                             <td>{{$evaluate->NgayQuyetDinh}}</td>

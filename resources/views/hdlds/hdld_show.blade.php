@@ -53,10 +53,11 @@
                         </div>
                         <div class="form_add_hdld">
                             <label for="TrangThai" class="form_title_htld">Trạng thái</label><br>
-                            <select name="TrangThai" id="TrangThai" class="form-control" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.1)">
+                            <input type="text" class="form_input_add_htld" name="TrangThai" id="TrangThai" value="{{$contract->TrangThai == 0 ? 'Hết hiệu lực' : 'Còn hiệu lực'}}">
+                            {{-- <select name="TrangThai" id="TrangThai" class="form-control" style="font-size: 16px; background-color: rgba(0, 0, 0, 0.1)">
                                 <option value="0" {{$contract->TrangThai == 0 ? 'selected' : ''}}>Hết hiệu lực</option>
                                 <option value="1" {{$contract->TrangThai == 1 ? 'selected' : ''}}>Đang áp dụng</option>
-                            </select>
+                            </select> --}}
                         </div>
                     </div>
                     <div class="form_list_item_htld">

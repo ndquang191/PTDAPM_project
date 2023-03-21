@@ -41,7 +41,7 @@ class NhanVienController extends Controller
                 'CCCD' => 'bail|required|numeric|unique:App\Models\Nhanvien,CCCD|digits:12',
                 'gender' => 'bail|required|in:Nam,Nữ',
                 'nation' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
-                'email' => 'bail|required|email',
+                'email' => 'bail|required|email|unique:App\Models\Nhanvien,Email',
                 'religion' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
                 'placeofbirth' => 'bail|required',
                 'address' => 'bail|required',
@@ -55,7 +55,8 @@ class NhanVienController extends Controller
                 'phonenumber.unique' => "Số điện thoại đã tồn tại",
                 'phonenumber.digits' => "Số điện thoại phải có 10 số",
                 'phonenumber.numeric' => "Số điện thoại chỉ chưa số",
-                'birthday.before' => "Ngày sinh không hợp lệ"
+                'birthday.before' => "Ngày sinh không hợp lệ",
+                'email.unique' => 'Email đã tồn tại',
             ]);
 
             DB::transaction(function () use($request) {
@@ -92,28 +93,30 @@ class NhanVienController extends Controller
         return redirect()->route('listEmployee')->with(['message' => "Thêm nhân viên thành công"]);
     }
 
-    public function edit(){
-        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $phongbans = PhongBan::all();
-        $TDHVs = TrinhDoHocVan::all();
-        $chucvus = ChucVu::all();
-        return view('dsnvs.editNv',['user' => $user,'phongbans' => $phongbans, 'TDHVs' => $TDHVs,'chucvus' => $chucvus]);
-    }
-
     public function update(Request $request, $id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $validator = $request->validate([
-            'birthday' => 'bail|required',
+            'birthday' => 'bail|required|before:2006-1-1',
+            'ngaycap' => 'bail|required',
+            'noicap' => 'bail|required',
             'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',
-            'CCCD' => 'bail|required|numeric|unique:App\Models\Nhanvien,CCCD|digits:12',
-            'gender' => 'bail|required|in:0,1',
+            'CCCD' => 'bail|required|numeric|unique:App\Models\Nhanvien,CCCD,'.$id.'|digits:12',
+            'gender' => 'bail|required',
             'nation' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
-            'email' => 'bail|required|email',
+            'email' => 'bail|required|email|unique:App\Models\Nhanvien,Email,'.$id,
             'religion' => 'bail|required|regex:/^[\p{L}\p{M}]+$/u',
             'placeofbirth' => 'bail|required',
             'address' => 'bail|required',
-            'phonenumber' => 'bail|required|numeric|unique:App\Models\Nhanvien,SDT|digits:10',
-            'chucvu' => 'bail|required',
+            'phonenumber' => 'bail|required|numeric|unique:App\Models\Nhanvien,SDT,'.$id.'|digits:10',
+        ],
+        [
+            'required' => "Chưa nhập đầy đủ thông tin",
+            'name.regex' => 'Tên nhân viên chứa kí tự không hợp lệ.',
+            'CCCD.numeric' => 'Căn cước công dân không hợp lệ',
+            'CCCD.digits' => 'Căn cước công dân phải có 12 số',
+            'phonenumber.digits' => "Số điện thoại phải có 10 số",
+            'phonenumber.numeric' => "Số điện thoại chỉ chưa số",
+            'birthday.before' => "Ngày sinh không hợp lệ",
         ]);
         $employee = NhanVien::where('MaNV',$id)->first();
         
@@ -129,11 +132,10 @@ class NhanVienController extends Controller
                 'DanToc' => $request->nation,
                 'SDT' => $request->phonenumber,
                 'Email' => $request->email,
-                'ChuyenNganh' => $request->chuyennganh,
-                'TrinhDoHocVan' => $request->trinhdo,
-                'PhongBan' => $request->phongban,
-                'ChucVu' => $request->chucvu,
-                'TrangThai' => 1,
+                'MaTDHV' => $request->trinhdo,
+                'MaPB' => $request->phongban,
+                'MaCV' => $request->chucvu,
+                'TrangThai' => $request->TrangThai,
             ]);
     
             if ($request->file('image') != null){
@@ -151,8 +153,10 @@ class NhanVienController extends Controller
 
     public function getEmployeeInfo($id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $id = Crypt::decrypt($id);
         $employee = NhanVien::find($id);
-        return view('dsnvs.infoNv',['employee' => $employee,'user' => $user]);
+        $phongbans = PhongBan::all();
+        $TDHVs = TrinhDoHocVan::all();
+        $chucvus = ChucVu::all();
+        return view('dsnvs.infoNv',['employee' => $employee,'user' => $user,'phongbans' => $phongbans, 'TDHVs' => $TDHVs,'chucvus' => $chucvus]);
     }
 }

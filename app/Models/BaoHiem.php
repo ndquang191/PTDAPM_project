@@ -12,7 +12,7 @@ class BaoHiem extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'baohiem';
-    protected $primaryKey = 'MaBHXH';
+    protected $primaryKey = 'MaBH';
     protected $fillable = 
     ['NgayBatDau','MucDongQDTS','MucDongTNLD','MucDongHT','MucDongBHTN','Thang'];
 
