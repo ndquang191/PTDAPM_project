@@ -34,7 +34,7 @@
         <div class="danhgia_chucnang">
             <div class="danhgia_main_container danhgia_main_page">
                 <div class="head_add_danhgia_main">
-                    <a href="{{route('showListEvaluate')}}" class="title_danhgia_add">Danh sách đánh giá</a>
+                    <a href="{{route('showListEvaluate')}}" id="add_contract_form" class="title_danhgia_add">Danh sách đánh giá</a>
                     <span>></span>
                     <h5 class="title_add_danhgia">Thêm đánh giá</h5>
                 </div>
@@ -86,7 +86,21 @@
             </div>
         </div>
     </div>
+    <script>
+           const exitBTN = document.querySelector('.bottom_exit_danhgia')
+            exitBTN.addEventListener('click',()=>{
+                Swal.fire({
+                    title: 'Bạn có muốn thoát ở đây ?',
+                    showCancelButton: true,
+                    confirmButtonText: 'Có',
+                    cancelButtonText: 'Không',
+                    icon: 'question',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'http://127.0.0.1:8000/evaluate';
+                    }
+                })
+            })
+    </script>
 @endsection
-@section('linkjs')
-<script src="/js/danhgia/danhgia.js"></script>
-@endsection
+

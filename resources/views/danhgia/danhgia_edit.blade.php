@@ -83,9 +83,9 @@
                         </div>
                     </div>
                     <div class="bottom_add_danhgia">
-                        <a class="bottom_exit_danhgia" href="{{route('showListEvaluate')}}">
-                            <div class="link_exit">Thoát</div>
-                        </a>
+                        <div class="bottom_exit_danhgia">
+                            <div class="link-exit">Thoát</div>
+                        </div>
                         <div class="bottom_save_danhgia">
                             <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
                         </div>
@@ -94,4 +94,20 @@
             </div>
         </div>
     </div>
+    <script>
+        const exitBTN = document.querySelector('.bottom_exit_danhgia')
+         exitBTN.addEventListener('click',()=>{
+             Swal.fire({
+                 title: 'Bạn có muốn thoát ở đây ?',
+                 showCancelButton: true,
+                 confirmButtonText: 'Có',
+                 cancelButtonText: 'Không',
+                 icon: 'question',
+             }).then((result) => {
+                 if (result.isConfirmed) {
+                     window.location.href = 'http://127.0.0.1:8000/evaluate';
+                 }
+             })
+         })
+ </script>
 @endsection
