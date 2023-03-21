@@ -67,8 +67,7 @@
                     <td>{{$leave->NoiDung}}</td>
                     <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
                     <td>
-                      <a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}"><i class="bi bi-check-square"></i></a>
-                      <a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}"><i class="bi bi-trash3"></i></a>
+                      <a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}">Chờ duyệt</a>
                     
                     </td>
                     {{-- chờ duyệt sang form duyệt đơn  --}}
