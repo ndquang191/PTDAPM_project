@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;  
 use App\Models\NghiPhep;
+use App\Models\NhanVien;
+
 
 
 class NghiPhepController extends Controller
@@ -134,6 +136,18 @@ class NghiPhepController extends Controller
 
     public function showHistory($id){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        return view('LeaveList.historyleave',['user' => $user]);
+        $leaves = NghiPhep::where('MaNV',$id)->get();
+        $employee = NhanVien::where('MaNV',$id)->first();
+        $cophep = 0;
+        $khongphep = 0;
+        foreach($leaves as $leave){
+            if($leave->CoPhep == 0){
+                $khongphep += (Carbon::parse($leave->NgayBatDau)->diffInDays(Carbon::parse($leave->NgayKetThuc)));
+            }
+            else{
+                $cophep += (Carbon::parse($leave->NgayBatDau)->diffInDays(Carbon::parse($leave->NgayKetThuc)));
+            }
+        }
+        return view('LeaveList.historyleave',['user' => $user,'leaves' => $leaves,'employee' => $employee,'cophep' => $cophep,'khongphep' => $khongphep]);
     }
 }

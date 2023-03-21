@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use App\Models\NhanVien;
 use App\Models\DanhGia;
 use App\Models\HDLD;
@@ -46,13 +47,18 @@ class UserController extends Controller
     }
 
     public function storeLeaveRequest(Request $request){
+        $leaves = NghiPhep::where('PheDuyet',1)->where('MaNV',Auth::user()->MaNV)->get();
+        $count = 0;
+        foreach($leaves as $leave){
+            $count = $count + (Carbon::parse($leave->NgayBatDau)->diffInDays(Carbon::parse($leave->NgayKetThuc)));
+        }
         NghiPhep::create([
             'MaNV' => Auth::user()->MaNV,
             'NgayBatDau' => $request->startDate,
             'NgayKetThuc' => $request->endDate,
             'NoiDung' => $request->reason,
             'PheDuyet' => 0,
-            'CoPhep' => 1,
+            'CoPhep' => $count >= 20 ? 0 : 1,
         ]);
         return redirect()->route('showLeaveUser')->with(['message' => "Gửi yêu cầu thành công !", 'type' => 'success']);
     }

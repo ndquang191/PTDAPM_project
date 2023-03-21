@@ -25,14 +25,14 @@
               <div class="img-box">
               </div>
               <div class="infor">
-                <P>Mã nhân viên : 2051060698</P>
-                <p>Nguyễn Hà Thái</p>
+                <P>Mã nhân viên : {{$employee->MaNV}}</P>
+                <p>{{$employee->Ten}}</p>
               </div>
             </div>
           </div>
           <div class="infor-leave">
-            <span class="leave-legal">Số ngày nghỉ phép/Tổng trong năm : 2/XXX</span>
-            <span class="leave-unlegal">Số ngày nghỉ không phép : XXX</span>
+            <span class="leave-legal">Số ngày nghỉ phép/Tổng trong năm : {{$cophep >= 20 ? "20" : $cophep}}/20</span>
+            <span class="leave-unlegal">Số ngày nghỉ không phép : {{$khongphep}}</span>
           </div>
           </div>
             <table class="table">
@@ -47,30 +47,22 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $count = 0?>
+                  @foreach ($leaves as $leave)
+                  <?php $count++ ?>
                   <tr>
-                    <td scope="row">01</td>
-                    <td>02/07/2023</td>
-                    <td>03/07/2023</td>
-                    <td>Có phép</td>
+                    <td scope="row">{{$count}}</td>
+                    <td>{{$leave->NgayBatDau}}</td>
+                    <td>{{$leave->NgayKetThuc}}</td>
+                    <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
                     <td class="muti-btn">
-                      <a  href="">
+                      <a href="{{route('showDetailLeave',['id' => $leave->MaNP])}}">
                           <i class="bi bi-eye-fill edit"></i>
                           {{-- sang xem đơn nghỉ phép --}}
                       </a>
-                  </td>
+                    </td>
                   </tr>
-                  <tr>
-                    <td scope="row">01</td>
-                    <td>07/06/2023</td>
-                    <td>08/06/2023</td>
-                    <td>Có phép</td>
-                    <td class="muti-btn">
-                      <a  href="">
-                          <i class="bi bi-eye-fill edit"></i>
-                          {{-- sang xem đơn nghỉ phép --}}
-                      </a>
-                  </td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>
         </div>

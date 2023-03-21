@@ -20,7 +20,7 @@
             <th scope="col">Ngày bắt đầu</th>
             <th scope="col">Ngày kết thúc</th>
             <th scope="col">Nội dung</th>
-            <th scope="col">Có phép</th>
+            <th scope="col">Loại</th>
             <th scope="col">Chức năng</th>
           </tr>
         </thead>
@@ -46,11 +46,11 @@
                     <td>{{$leave->NgayBatDau}}</td>
                     <td>{{$leave->NgayKetThuc}}</td>
                     <td>{{$leave->NoiDung}}</td>
-                    <td>{{$leave->CoPhep}}</td>
+                    <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
                     <td class="muti-btn">
-                        {{-- <a href="{{route('showHistory',['id' => $leave->MaNP])}}">
+                        <a href="{{route('showHistory',['id' => $leave->MaNV])}}">
                           <i class="bi bi-person-lines-fill edit"></i>
-                        </a> --}}
+                        </a>
                         {{-- sang lịch sử nghỉ phép --}}
                         <a  href="{{route('showDetailLeave',['id' => $leave->MaNP])}}">
                             <i class="bi bi-eye-fill edit"></i>
