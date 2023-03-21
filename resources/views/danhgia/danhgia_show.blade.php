@@ -36,7 +36,7 @@
                     </div>
                     <div class="full-row">
                         <div class="title">Nội dung:</div>
-                        <div class="value">{{$evaluate->NoiDung}}</div>
+                        <div class="value" style="min-height: 60px;">{{$evaluate->NoiDung}}</div>
                     </div>
                     <div class="full-row">
                         <div class="title">Ngày quyết định:</div>

@@ -36,9 +36,9 @@
             </div>
             <div class="input_search">
                 <form action="">
-                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm ..." class="form_input" >
+                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm ..." class="form_input" onkeyup="danhgia_Timkiem()" >
                 </form>
-                <a href="#" class="search_btn" onclick="myFunction()">
+                <a href="#" class="search_btn" onclick="danhgia_Timkiem()">
                     <i class="bi bi-search icon_color_search"></i>
                 </a>
             </div>
@@ -89,5 +89,5 @@
 </div>
 @endsection
 @section('linkjs')
-    <script src="/js/hdld/hdld.js"></script>
+    <script src="/js/danhgia/danhgia.js"></script>
 @endsection
