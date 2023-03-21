@@ -11,11 +11,9 @@
                 <div><a class="tab-hosonv" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}">Hồ sơ nhân viên</a></div>
                 <div><a class="tab-bangcap active" href="{{route('showDegree',['id' => $employee->MaNV])}}">Bằng cấp nhân viên</a></div>
             </div>
+                {{-- <a href="{{route('addDegreeForm',['id' => $employee->MaNV])}}"><button>+ Thêm</button></a> --}}
             <div class="btn-add">
-                <a href="{{route('addDegreeForm',['id' => $employee->MaNV])}}"><button>+ Thêm</button></a>
-
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Thêm</button>
-
+                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Thêm</button>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -40,8 +38,10 @@
                     </div>
                   </div>
                   
-                  
             </div>
+
+
+                  
         </div>
         <table id="table-infor" class="table">
             <thead>

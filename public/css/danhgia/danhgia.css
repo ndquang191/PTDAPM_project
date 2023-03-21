@@ -20,7 +20,7 @@
     justify-content: space-between;
 }
 .danhgia_add_btn{
-    background-color: #39374E;
+    background-color: #5A5278;
     font-size: 1.8rem;
     margin-top: -5px;
     padding: 5px 8px;
@@ -52,7 +52,7 @@
 }
 
 .icon_color{
-    color: #39374E;
+    color: #5A5278;
 }
 .link-icon{
     display: inline-block;
@@ -80,7 +80,7 @@ th{
     width: 20rem;
     height: 3rem;
     border-radius: 3px ;
-    border: 1px solid #39374E;
+    border: 1px solid #5A5278;
 }
 .search_btn{
     display: flex;
@@ -89,11 +89,11 @@ th{
     justify-content: center;
     width: 2.8rem;
     height: 2.8rem;
-    background-color: #39374E;
+    background-color: #5A5278;
 }
 
 .icon_color{
-    color: #39374E;
+    color: #5A5278;
 }
 
 .form_input{
@@ -102,7 +102,7 @@ th{
     font-size: 1.4rem;
     border-radius: 3px ;
     padding: 1rem;
-    border: 1px solid #39374E;
+    border: 1px solid #5A5278;
 }
 .search_btn{
     display: flex;
@@ -114,7 +114,7 @@ th{
     width: 3.5rem;
     height: 3.5rem;
     padding: 1rem;
-    background-color: #39374E;
+    background-color: #5A5278;
 }
 
 .search_btn:hover{
@@ -184,7 +184,7 @@ th{
     line-height: 45px;
     border: none;
     text-align: center;
-    background-color: #39374E;
+    background-color: #5A5278;
     font-size: 1.8rem;
 }
 
@@ -225,7 +225,7 @@ th{
     color: #c6cfda;
 }
 .danhgia_ls_btn{
-    background-color: #39374E;
+    background-color: #5A5278;
     font-size: 1.8rem;
     /* margin-top: -4px; */
     padding: 4px 8px;

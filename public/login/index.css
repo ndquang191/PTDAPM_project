@@ -13,7 +13,7 @@
 
 .login_page--left{
     width: 30%;
-    background-color: #39374E;
+    background-color: #5A5278;
     position: relative;
 }
 
@@ -47,7 +47,7 @@
     background-color: #FFFFFF !important;
     padding: 0px 10px;
     border: 2px solid #FFFFFF;
-    border-bottom: 1px solid #39374E;
+    border-bottom: 1px solid #5A5278;
 
     border-radius: 2px;
 
@@ -58,7 +58,7 @@
 .login-btn{
     width: 178px;
     height: 47px;
-    background-color: #39374E;
+    background-color: #5A5278;
     border-radius: 8px;
 
     font-style: normal;
