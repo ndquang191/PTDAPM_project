@@ -3,6 +3,25 @@
     <link rel="stylesheet" href="/css/danhgia/danhgia.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: '{{session('type')}}',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
 <div class="fluid-contaier">
     <div class="danhgia_ds">
         <div class="danhgia_main_container">
@@ -51,12 +70,12 @@
                             <td>{{$evaluate->Giatri >= 0 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{number_format(intval($evaluate->Giatri))}}</td>
                             <td>
-                                <a href="" class="link-icon">
+                                <a href="{{route('showDetail',['id' => 1])}}" class="link-icon">
                                     <i class="bi bi-eye icon-color"></i>
                                 </a>
-                                <a href="#" class="link-icon">
+                                {{-- <a href="{{route('showHistory',['id' => 1])}}" class="link-icon">
                                     <i class="bi bi-person-video3 icon-color"></i>
-                                </a>
+                                </a> --}}
                                 <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}" class="link-icon">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a>

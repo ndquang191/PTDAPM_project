@@ -68,7 +68,9 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/evaluate')->group(function(){
     Route::get('/','showListEvaluate')->name('showListEvaluate');
+    Route::get('/detail/{id}','showDetail')->name('showDetail');
     Route::get('/add','addEvaluate')->name('addEvaluate');
+    Route::post('/add','storeEvaluate')->name('storeEvaluate');
     Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
 });
 
