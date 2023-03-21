@@ -35,7 +35,7 @@ class LuongController extends Controller
         $danhgias = DanhGia::where('MaNV',$id)->whereMonth('NgayQuyetDinh',$currentMonth)->get();
         $khenthuong = 0;
         $kiluat = 0;
-        $nghipheps = NghiPhep::where('MaNV',$id)->whereMonth('NgayBatDau',$currentMonth)->get();
+        $nghipheps = NghiPhep::where('MaNV',$id)->whereMonth('NgayBatDau',$currentMonth)->where('PheDuyet',1)->get();
         $leaveDayCount = 0;
         // return $nghipheps;
         foreach($danhgias as $danhgia){

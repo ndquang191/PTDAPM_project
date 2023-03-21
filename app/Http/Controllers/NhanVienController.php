@@ -115,8 +115,9 @@ class NhanVienController extends Controller
             'CCCD.numeric' => 'Căn cước công dân không hợp lệ',
             'CCCD.digits' => 'Căn cước công dân phải có 12 số',
             'phonenumber.digits' => "Số điện thoại phải có 10 số",
-            'phonenumber.numeric' => "Số điện thoại chỉ chưa số",
+            'phonenumber.numeric' => "Số điện thoại chỉ chứa số",
             'birthday.before' => "Ngày sinh không hợp lệ",
+            'email.email' => "Email không hợp lệ",
         ]);
         $employee = NhanVien::where('MaNV',$id)->first();
         

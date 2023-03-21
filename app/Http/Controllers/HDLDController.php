@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 use App\Models\HDLD;
 use App\Models\NhanVien;
 
@@ -45,6 +46,9 @@ class HDLDController extends Controller
         ]);
         if(NhanVien::where('MaNV',$request->MaNV)->first() == null){
             return redirect()->back()->withInput()->with(['error' => 'Mã nhân viên không tồn tại']);
+        }
+        if(Carbon::parse($request->NgayBatDau)->gt(Carbon::parse($request->NgayKetThuc))){
+            return redirect()->back()->withInput()->with(['error' => 'Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc']);
         }
         DB::transaction(function () use($request){
             HDLD::where('MaNV',$request->MaNV)->update([

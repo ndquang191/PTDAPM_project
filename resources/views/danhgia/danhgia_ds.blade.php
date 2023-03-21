@@ -49,8 +49,6 @@
                         <th scope="col">Mã nhân viên</th>
                         <th scope="col">Tên nhân viên</th>
                         <th scope="col">Ngày quyết định</th>
-                        <th scope="col">Nội dung</th>
-                        <th scope="col">Giá trị</th>
                         <th scope="col">Chức năng</th>
     
                     </tr>
@@ -66,9 +64,7 @@
                             <td>{{$evaluate->PhanLoai == 1 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{$evaluate->nhanvien->MaNV}}</td>
                             <td>{{$evaluate->nhanvien->TenNV}}</td>
-                            <td>{{$evaluate->NgayQuyetDinh}}</td>
-                            <td>{{$evaluate->Giatri >= 0 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
-                            <td>{{number_format(intval($evaluate->Giatri))}}</td>
+                            <td>{{$evaluate->NgayQuyetDinh}}</td> 
                             <td>
                                 <a href="{{route('showDetail',['id' => 1])}}" class="link-icon">
                                     <i class="bi bi-eye icon_color"></i>

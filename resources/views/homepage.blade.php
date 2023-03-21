@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="container_list_item" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
-            <a href="{{route('showListLeave')}}" class="link_list_item">
+            <a href="{{route('showListApproveLeave')}}" class="link_list_item">
               <i class="bi bi-calendar-check"></i>
               <span>Nghỉ phép</span>
             </a>

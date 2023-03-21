@@ -6,7 +6,12 @@
      <div class="fluid-container user_detail_container">
 
           <div class="user_detail img_container">
-               <img src="./image/navbar/avatar_user.jpg" alt="">
+               @if ($employeeInfo->HinhAnh == null)
+                    <img src="./image/navbar/avatar_user.jpg" alt="">  
+               @else
+                    <img src="data:image/jpeg;base64,{{ base64_encode($employee->HinhAnh) }}" alt="Image">    
+               @endif
+               
                <div class="user_name">{{$employeeInfo->TenNV}}</div>
           </div>
 

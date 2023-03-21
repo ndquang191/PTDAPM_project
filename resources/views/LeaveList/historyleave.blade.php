@@ -9,12 +9,12 @@
         <h1 class="heading">Danh sách nghỉ phép</h1>
         <div class="add-function">
         <div class="flex-row">
-            <a href="{{route('showListLeave')}}" class="navigation">Danh sách đã xét duyệt</a>
+            <a href="{{route('showListApproveLeave')}}" class="navigation">Danh sách đã xét duyệt</a>
             <span>></span>
             <p>Lịch sử nghỉ phép</p>
         </div>
             <button>
-                <a href="{{route('showListLeave')}}" class="add-btn">
+                <a href="{{route('showListApproveLeave')}}" class="add-btn">
                     <p>Quay lại</p>
                 </a>
             </button>
