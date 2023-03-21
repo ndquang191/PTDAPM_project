@@ -34,14 +34,18 @@
             </div>
             <div class="hdld_main_container">
                 <div class="input_search">
-                    {{-- <form action=""> --}}
-                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm theo MNV, trạng thái" class="form_input" onkeyup="myFunction()">
-                    {{-- </form> --}}
+                    <div>
+                        <select class="form-select" id="chooseSearch" style="height: 3.5rem; width: 16rem; font-size: 1.8rem;">
+                            <option value="1">Mã nhân viên</option>
+                            <option value="4">Trạng thái</option>
+                        </select>
+                    </div>
+                    <input type="text" name="search" id="myInput" placeholder="Tìm kiếm theo MNV, trạng thái" class="form_input form-input" onkeyup="myFunction()">
                     <a href="#" class="search_btn" onclick="myFunction()">
                         <i class="bi bi-search icon_color_search"></i>
                     </a>
                 </div>
-                <table class="table" id="myTable">
+                <table class="table table-hover" id="myTable">
                     <thead>
                         <tr>
                             <th scope="col">STT</th>
@@ -74,20 +78,11 @@
                                 <td>{{$contract->MaNV}}</td>
                                 <td>{{$contract->MaHDLD}}</td>
                                 <td>{{$contract->LoaiHopDong}}</td>
-                                {{-- <td></td>
-                                <td>{{$contract->NgayKi}}</td>
-                                <td>{{$contract->NgayBatDau}}</td>
-                                <td>{{$contract->NgayKetThuc}}</td>
-                                <td>{{$contract->DiaDiem}}</td>
-                                <td>{{$contract->ChuyenMon}}</td> --}}
                                 <td>{{$contract->TrangThai == 1 ? 'Còn hiệu lực' : 'Hết hiệu lực'}}</td>
                                 <td>
                                     <a class="link_icon" href="{{route('showDetailHDLD', ['id' => $contract->MaHDLD ])}}">
                                         <i class="bi bi-eye-fill icon_color"></i>
                                     </a>
-                                    {{-- <a href="{{route('editHDLD',['id' => 1])}}">
-                                        <i class="bi bi-pencil-square icon_color"></i>
-                                    </a> --}}
                                     <a href="" class="link_icon delete-btn"  data-id={{$contract->MaHDLD}}>
                                         <i class="bi bi-trash icon_color"></i>
                                     </a>

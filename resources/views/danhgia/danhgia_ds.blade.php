@@ -3,6 +3,25 @@
     <link rel="stylesheet" href="/css/danhgia/danhgia.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: '{{session('type')}}',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
 <div class="fluid-contaier">
     <div class="danhgia_ds">
         <div class="danhgia_main_container">
@@ -23,7 +42,7 @@
                     <i class="bi bi-search icon_color_search"></i>
                 </a>
             </div>
-            <table class="table" id="myTable">
+            <table class="table table-hover" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">Phân loại</th>
@@ -51,13 +70,13 @@
                             <td>{{$evaluate->Giatri >= 0 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{number_format(intval($evaluate->Giatri))}}</td>
                             <td>
-                                <a href="">
-                                    <i class="fa-thin fa-eye"></i>
+                                <a href="{{route('showDetail',['id' => 1])}}" class="link-icon">
+                                    <i class="bi bi-eye icon_color"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="bi bi-plus-square icon_color"></i>
-                                </a>
-                                <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}">
+                                {{-- <a href="{{route('showHistory',['id' => 1])}}" class="link-icon">
+                                    <i class="bi bi-person-video3 icon-color"></i>
+                                </a> --}}
+                                <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}" class="link-icon">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a>
                                 {{-- <a href="#">

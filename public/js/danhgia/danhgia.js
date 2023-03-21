@@ -21,5 +21,6 @@ inputAdd.addEventListener("blur", (e) => {
         .catch((err) => {
             errorNoti.classList.remove("hidden");
             setTimeout(() => errorNoti.classList.add("hidden"), 2000);
+            inputAdd.value = ''
         });
 });

@@ -4,60 +4,86 @@
 @endsection
 
 @section('content')
+@if($errors->any())
+    <script>
+        Swal.fire({
+        position: 'center',
+        icon: 'error',
+        // title: 'Vui lòng kiểm tra lại thông tin nhân viên',
+        title: '{{$errors->first()}}',
+
+        showConfirmButton: true,
+        confirmButtonText: 'Đóng',
+        timer: 3000
+    })
+    </script>
+@endif
+@if (session('message'))
+<script>
+    Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: '{{session('message')}}',
+    showConfirmButton: true,
+    confirmButtonText: 'Đóng',
+    timer: 3000
+})
+</script>
+@endif
     <div class="fluid-container">
         <div class="danhgia_chucnang">
             <div class="danhgia_main_container danhgia_main_page">
-            <div class="head_add_danhgia_main">
-                <a href="{{route('showListEvaluate')}}" class="title_danhgia_add">Danh sách đánh giá</a>
-                <span>></span>
-                <h5 class="title_add_danhgia">Thêm đánh giá</h5>
+                <div class="head_add_danhgia_main">
+                    <a href="{{route('showListEvaluate')}}" class="title_danhgia_add">Danh sách đánh giá</a>
+                    <span>></span>
+                    <h5 class="title_add_danhgia">Thêm đánh giá</h5>
+                </div>
+                <form action="{{route('storeEvaluate')}}" class="" method="post">
+                    @csrf
+                    <div class="form_list_danhgia">
+                        <div class="form_list_item_danhgia">
+                            <div class="form_add_danhgia" style="">
+                                <label for="" class="form_title_danhgia">Mã nhân viên</label> <br>
+                                <input type="text" name="MaNV" id="id" class="form-control form_input_add_danhgia input-id" value="{{old('MaNV')}}">
+                                <p class="error hidden">Vui lòng nhập đúng mã nhân viên</p>
+                            </div>
+                            <div class="form_add_danhgia" style="">
+                                <label for="" class="form_title_danhgia">Phân loại</label> <br>
+                                <select name="PhanLoai" id="phanloai" class="form_input_add_danhgia">
+                                    <option value="1" {{ old('PhanLoai') == 1 ? 'selected' : '' }}>Khen thưởng</option>
+                                    <option value="0" {{ old('PhanLoai') == 0 ? 'selected' : '' }}>Kỷ luật</option>
+                                </select>
+                            </div>
+                            <div class="form_add_danhgia">
+                                <label for="" class="form_title_danhgia">Nội dung</label> <br>
+                                <input type="text" name="NoiDung" id="noidung" class="form-control form_input_add_danhgia" value="{{old('NoiDung')}}">
+                            </div>
+                        </div>
+                        <div class="form_list_item_danhgia">
+                            <div class="form_add_danhgia">
+                                <label for="" class="form_title_danhgia">Tên nhân viên</label> <br>
+                                <input type="text" name="tennhanvien" style="background-color: #fff;" id="ten_nv" class="form-control form_input_add_danhgia input-name" value="{{old('tennhanvien')}}" readonly>
+                            </div>
+                            <div class="form_add_danhgia">
+                                <label for="" class="form_title_danhgia">Ngày quyết định</label> <br>
+                                <input type="date" name="NgayQuyetDinh" id="ngay_quyet_dinh" value="{{old('NgayQuyetDinh')}}" class="form-control form_input_add_danhgia">
+                            </div>
+                            <div class="form_add_danhgia">
+                                <label for="" class="form_title_danhgia">Giá trị</label> <br>
+                                <input type="number" name="GiaTri" id="giatri" class="form-control form_input_add_danhgia" value="{{old('GiaTri')}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_add_danhgia">
+                        <div class="bottom_exit_danhgia">
+                            <div class="link_exit">Thoát</div>
+                        </div>
+                        <div class="bottom_save_danhgia">
+                            <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <form action="" class="">
-                @csrf
-                <div class="form_list_danhgia">
-                    <div class="form_list_item_danhgia">
-                        <div class="form_add_danhgia">
-                            <label for="" class="form_title_danhgia">Mã nhân viên</label> <br>
-                            <input type="text" name="" id="id" class="form_input_add_danhgia input-id">
-                            <p class="error hidden">Vui lòng nhập đúng mã nhân viên</p>
-                        </div>
-                        <div class="form_add_danhgia">
-                            <label for="" class="form_title_danhgia">Phân loại</label> <br>
-                            <select name="phanloai" id="phanloai" class="form_input_add_danhgia">
-                                <option value="1">Khen thưởng</option>
-                                <option value="0">Kỷ luật</option>
-                            </select>
-                            {{-- <input type="text" name="" id="noidung" class="form_input_add_danhgia"> --}}
-                        </div>
-                        <div class="form_add_danhgia">
-                            <label for="" class="form_title_danhgia">Nội dung</label> <br>
-                            <input type="text" name="noidung" id="noidung" class="form_input_add_danhgia">
-                        </div>
-                    </div>
-                    <div class="form_list_item_danhgia">
-                        <div class="form_add_danhgia">
-                            <label for="" class="form_title_danhgia">Tên nhân viên</label> <br>
-                            <input type="text" name="tennhanvien" id="ten_nv" class="form_input_add_danhgia input-name" readonly>
-                        </div>
-                        <div class="form_add_danhgia">
-                            <label for="" class="form_title_danhgia">Ngày quyết định</label> <br>
-                            <input type="text" name="ngayquyetdinh" id="ngay_quyet_dinh" class="form_input_add_danhgia">
-                        </div>
-                        <div class="form_add_danhgia">
-                            <label for="" class="form_title_danhgia">Giá trị</label> <br>
-                            <input type="number" name="giatri" id="giatri" class="form_input_add_danhgia">
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom_add_danhgia">
-                    <div class="bottom_exit_danhgia">
-                        <div class="link_exit">Thoát</div>
-                    </div>
-                    <div class="bottom_save_danhgia">
-                        <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 @endsection

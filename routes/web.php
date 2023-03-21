@@ -68,10 +68,14 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/evaluate')->group(function(){
     Route::get('/','showListEvaluate')->name('showListEvaluate');
+    Route::get('/detail/{id}','showDetail')->name('showDetail');
     Route::get('/add','addEvaluate')->name('addEvaluate');
+    Route::post('/add','storeEvaluate')->name('storeEvaluate');
     Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
-
 });
+
+Route::get('/danhgia/danhgia_ls',[DanhGiaController::class,'ls_danhgia']);
+Route::get('/danhgia/danhgia_show',[DanhGiaController::class,'show_danhgia']);
 
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');

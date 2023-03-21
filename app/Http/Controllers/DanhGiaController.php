@@ -25,9 +25,27 @@ class DanhGiaController extends Controller
 
     public function storeEvaluate(Request $request){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $validator = $request->validate([
+            'MaNV' => 'required',
+            'NgayQuyetDinh' => 'required',
+            'NoiDung' => 'required',
+            'GiaTri' => 'required',
+            'PhanLoai' => 'required',
+        ],[
+            'required' => 'Vui lòng nhập đầy đủ thông tin'
+        ]);
+
         if(($request->PhanLoai == 1 && $request->GiaTri < 0) || ($request->PhanLoai == 0 && $request->GiaTri > 0)){
-            return redirect()->back()->with(['message' => 'Giá trị không hợp lệ','type' => 'error']);
+            return redirect()->back()->withInput()->with(['message' => 'Giá trị không hợp lệ','type' => 'error']);
         }
+
+        DanhGia::create([
+            'MaNV' => $request->MaNV,
+            'NgayQuyetDinh' => $request->NgayQuyetDinh,
+            'NoiDung' => $request->NoiDung,
+            'GiaTri' => $request->GiaTri,
+            'PhanLoai' => $request->PhanLoai,
+        ]);
         return redirect()->route('showListEvaluate')->with(['message' => 'Thêm thành công','type' => 'success']);
 
     }
@@ -36,5 +54,11 @@ class DanhGiaController extends Controller
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $evaluates = DanhGia::orderBy('NgayQuyetDinh','asc')->get();
         return view('danhgia.danhgia_edit',['user' => $user, 'evaluate' => null]);
+    }
+
+    public function showDetail($id){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        // $evaluates = DanhGia::orderBy('NgayQuyetDinh','asc')->where('MaNV')->get();
+        return view('danhgia.danhgia_show',['user' => $user]);
     }
 }
