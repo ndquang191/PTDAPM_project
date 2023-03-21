@@ -30,8 +30,29 @@ class BangCapController extends Controller
 
     public function store(Request $request,$id){
         $validator = $request->validate([
-            ''
+            'tenbangcap' => 'required|unique:App\Models\BangCap,TenBC',
+            'loaibangcap' => 'required',
+            'ngaycap' => 'required',
+        ],
+        [
+            'required' => 'Vui lòng nhập đầy đủ thông tin',
+            'tenbangcap.unique' => 'Tên bằng cấp đã tồn tại'
         ]);
+
+        BangCap::create([
+            'MaNV' => $id,
+            'TenBC' => $request->tenbangcap,
+            'LoaiBC' => $request->loaibangcap,
+            'NgayCap' => $request->ngaycap,
+        ]);
+
+        return redirect()->back()->with(['message' => 'Thêm thành công']);
     }
     
+
+    public function destroy($id){
+        BangCap::where('MaBC',$id)->delete();
+        return redirect()->back()->with(['message' => 'Xóa thành công']);
+
+    }
 }

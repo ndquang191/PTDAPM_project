@@ -42,8 +42,8 @@ class TaiKhoanController extends Controller
             'password' => 'required|min:6',
         ],
         [
-            'username.required' => "Vui lòng điển tên đăng nhập và đăng nhập.",
-            'password.required' => "Vui lòng điển mật khẩu và đăng nhập.",
+            'username.required' => "vui lòng điền tên đăng nhập và đăng nhập.",
+            'password.required' => "vui lòng điền mật khẩu và đăng nhập.",
             'password.min' => "Mật khẩu phải có 6 kí tự trở lên.",
         ]);
         if($exists){

@@ -46,6 +46,7 @@ Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
     Route::post('/{id}/degree/add','store')->name('storeDegree'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
+    Route::post('/degree/{degreeID}/delete','destroy')->name('deleteDegree');
 });
 
 Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/contract')->group(function(){

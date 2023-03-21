@@ -116,9 +116,6 @@
             })
             })
         });
-
-
-
     </script>
 @endsection
 @section('linkjs')
