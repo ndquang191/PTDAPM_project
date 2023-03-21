@@ -78,6 +78,8 @@ Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/add','addEvaluate')->name('addEvaluate');
     Route::post('/add','storeEvaluate')->name('storeEvaluate');
     Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
+    Route::post('/edit/{id}','updateEvaluate')->name('updateEvaluate');
+
 });
 
 Route::get('/danhgia/danhgia_ls',[DanhGiaController::class,'ls_danhgia']);
