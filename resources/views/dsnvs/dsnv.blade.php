@@ -33,7 +33,7 @@
                   </div>
               </div>
             </div>
-          <div class="table-search-bar">
+          <div class="table-search-bar ">
             <div class="search-bar">
               <div>
                 <select class="form-select" id="chooseSearch">
@@ -56,7 +56,7 @@
                   <th scope="col">Họ tên</th>
                   <th scope="col">Số điện thoại</th>
                   <th scope="col">Phòng ban</th>
-                  <th scope="col">Chức vự</th>
+                  <th scope="col">Chức vụ</th>
                   <th scope="col">Trạng thái</th>
                   <th scope="col">Hành động</th>
                 </tr>
@@ -71,7 +71,7 @@
                     <td>{{$employee->ChucVu != null ? $employee->chucvu->TenCV : "Trống"}}</td>
                     <td>{{$employee->TrangThai == 1 ? "Đang làm việc" : "Ngừng làm việc"}}</td>
                     <td>
-                      <a class="show" href="{{route('getEmployeeInfo',['id' => Crypt::encrypt($employee->MaNV)])}}"><i class="fa-solid fa-eye"></i></a>
+                      <a class="show" href="{{route('getEmployeeInfo',['id' => $employee->MaNV])}}"><i class="fa-solid fa-eye"></i></a>
                       {{-- <a href="" type="button" id="btn" value="Show Alert" onclick="saveEmployee()"><i class="fa-solid fa-trash"></i></a> --}}
                     </td>
                   </tr>

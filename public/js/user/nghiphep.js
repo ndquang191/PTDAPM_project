@@ -1,3 +1,5 @@
+// import { domain } from "../config"
+
 const month = document.querySelector('.month-nav')
 
 const backBtn = document.querySelector('.btn-back')
@@ -27,3 +29,10 @@ nextBtn.addEventListener('click' , () => {
 
 updateStr()
 
+
+//
+const domain = 'http://127.0.0.1:8000'
+
+fetch(`${domain}/api/getEmployeeLeave/10002`)
+.then((response) => response.json())
+.then((data) => console.log(data));

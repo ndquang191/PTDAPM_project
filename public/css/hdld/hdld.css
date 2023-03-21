@@ -1,6 +1,6 @@
 .hdld_ds{
     /* margin: 10px; */
-    padding: 20px 10px;
+    padding: 40px 40px;
 }
 .hdld_main_container{
     width: 100%;
@@ -18,9 +18,9 @@
 }
 .tilte_main{
     color: rgba(0, 0, 0, 0.7);
-    font-weight: 100;
+    font-weight: 350;
     margin-left: 5px;
-    font-size: 1.8rem;
+    font-size: 24px;
 }
 .link_add_btn{
     color: #c6cfda;
@@ -31,17 +31,14 @@
     padding: 5px 8px;
     text-align: center;
 }
+.add_btn:hover {
+    opacity: 0.875;
+}
+.add_btn:hover > .link_add_btn{
+    color: #c6cfda;
+}
 .icon_color{
     color: #39374E;
-}
-td{
-    font-size: 1.5rem;
-    color: #000000B2;
-}
-th{
-    font-size: 1.5rem;
-    font-weight: 300;
-    color:rgba(0, 0, 0, 0.65);
 }
 .input_search{
     float: right;
@@ -61,13 +58,19 @@ th{
     display: flex;
     color: #fff;
     border-radius: 3px ;
-    font-size: 14px;
+    font-size: 16px;
     align-items: center;
     justify-content: center;
     width: 3.5rem;
     height: 3.5rem;
     padding: 1rem;
     background-color: #39374E;
+}
+.search_btn:hover{
+    opacity: 0.875;
+}
+.search_btn:hover > i{
+    color: #fff;
 }
 
 .icon_color{
@@ -129,17 +132,13 @@ th{
 }
 .bottom_add_hdld{
     display: flex;
-    float: right;
+    justify-content: flex-end;
 }
 .bottom_exit_add_hdld{
     background-color: #CEDD7A;
-    /* width: 73px;
-    height: 37px; */
     padding: 7px 15px;
     margin: 0 2rem;
-    /* display: inline-block; */
     text-align: center;
-    /* line-height: 37px; */
 }
 .bottom_exit_add_hdld .link_exit{
     font-size: 1.8rem;
@@ -158,21 +157,23 @@ th{
 .bottom_exit_show{
     background-color: #39374E;
     text-align: center;
-    line-height: 37px;
+    cursor: pointer;
 }
 .bottom_exit_show .link_exit{
     color: #fff;
+    padding: 7px 15px;
+    display: inline-block;
     font-size: 1.8rem;
 }
 
 .bottom_save_add_hdld{
     background-color: #39374E;
-    padding: 7px 23px;
+    padding: 7px 15px;
 }
 .bottom_update_show{
     background-color: #CEDD7A;
     margin: 0 2rem;
-    /* padding: 7px 23px; */
+    padding: 7px 15px;
     text-align: center;
 }
 .bottom_update_show .link_exit{

@@ -35,8 +35,8 @@ class UserController extends Controller
 
     public function showInsurance(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $contract = BaoHiem::where("MaBH",Auth::user()->MaBH)->first();
-        return view('user.baohiem',['user' => $user,'contract' => $contract]);
+        $insurance = BaoHiem::where("MaBH",$user->MaBH)->first();
+        return view('user.baohiem',['user' => $user,'insurance' => $insurance]);
     }
 
     public function showLeave(){

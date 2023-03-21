@@ -19,13 +19,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">ID</label>
-                            <input class="form-control" type="number" readonly>
+                            <input class="form-control" type="number" readonly value="{{$contract->MaBH}}">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">Ngày bắt đầu</label>
-                            <input class="form-control" type="date" readonly>
+                            <input class="form-control" type="date" readonly value="{{$contract->NgayBatDau}}">
                         </div>
                     </div>
                 </div>
@@ -35,13 +35,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">Mức đóng QDTS</label>
-                            <input class="form-control" type="number" readonly>
+                            <input class="form-control" type="number" readonly value="{{$contract->MucDongQDTS}}">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">Mức đóng TNLD</label>
-                            <input class="form-control" type="number" readonly>
+                            <input class="form-control" type="number" readonly value={{$contract->MucDongTNLD}}>
                         </div>
                     </div>
                 </div>
@@ -51,13 +51,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">Mức đóng HT</label>
-                            <input class="form-control" type="number" readonly>
+                            <input class="form-control" type="number" readonly value={{$contract->MucDongHT}}>
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">Mức đóng BHTN</label>
-                            <input class="form-control" type="number" readonly>
+                            <input class="form-control" type="number" readonly value={{$contract->MucDongBHTN}}>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="">Tháng</label>
-                            <input class="form-control" type="number" readonly>
+                            <input class="form-control" type="number" readonly value={{$contract->Thang}} min="1" max="12">
                         </div>
                     </div>
                 </div>

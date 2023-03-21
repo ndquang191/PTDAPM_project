@@ -104,7 +104,7 @@
                       <tr>
                         <th scope="col">Ngày bắt đầu</th>
                         <th scope="col">Ngày kết thúc</th>
-                        <th scope="col">Số ngày nghỉ</th>
+                        <th scope="col">Loại</th>
                         <th scope="col">Lý do</th>
                       </tr>
                     </thead>
@@ -126,6 +126,7 @@
 
 
 @section('linkjs')
-     <script src="/js/user/nghiphep.js"></script> 
-     <script src="/js/Leave/fetchApi.js"></script>
+{{-- <script type="module" src="/js/config.js"></script> --}}
+<script  type="module" src="../js/user/nghiphep.js"></script>
+     {{-- <script src="/js/Leave/fetchApi.js"></script> --}}
 @endsection

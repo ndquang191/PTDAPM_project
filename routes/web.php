@@ -54,7 +54,7 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin',
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
     Route::post('/{id}/edit','updateHDLD')->name('updateHDLD');
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
-    Route::post('/{id]/delete','detroy')->name('deleteHDLD');
+    Route::post('/{id}/delete','destroy')->name('deleteHDLD');
 
 });
 
@@ -68,8 +68,10 @@ Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/','showListEvaluate')->name('showListEvaluate');
     Route::get('/add','addEvaluate')->name('addEvaluate');
     Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
-
 });
+
+Route::get('/danhgia/danhgia_ls',[DanhGiaController::class,'ls_danhgia']);
+Route::get('/danhgia/danhgia_show',[DanhGiaController::class,'show_danhgia']);
 
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');
@@ -100,4 +102,8 @@ Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/u
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
     Route::get('/leave','showLeave')->name('showLeaveUser');
     Route::post('/leave','storeLeaveRequest')->name('storeLeaveRequest');
+});
+
+Route::get('/bhember', function () {
+    return view('user.baohiem');
 });

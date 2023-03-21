@@ -29,7 +29,7 @@
     Swal.fire({
     position: 'center',
     icon: 'error',
-    title: 'Vui lòng kiểm tra lại thông tin',
+    title: '{{$errors->first()}}',
     showConfirmButton: true,
     confirmButtonText: 'Đóng',
     timer: 3000
@@ -153,8 +153,9 @@
                                 <label class="form-label" for="gender">Giới tính</label>
                                 <div>
                                     <select class="col-md-12" name="gender" id="gender">
-                                        <option value="0" {{ $employee->GioiTinh == 0 ? 'selected' : '' }}>Nam</option>
-                                        <option value="1" {{ $employee->GioiTinh == 1 ? 'selected' : '' }}>Nữ</option>
+                                        <option value="0" hidden>Chọn</option>
+                                        <option value="Nam" {{ old('gender') == 'Nam' ? 'selected' : '' }}>Nam</option>
+                                        <option value="Nữ" {{ old('gender') == 'Nữ' ? 'selected' : '' }}>Nữ</option>
                                     </select>
                                 </div>
                             </div>
@@ -171,7 +172,7 @@
                                 <input class="form-control" type="text" name="CCCD" id="CCCD" value={{$employee->CCCD}}>
                             </div>
                             <div class="col-6 col-md-4">
-                                <label class="form-label" for="nation">Dân tộc</label>
+                                <label class="form-label" for="nation">Nơi cấp</label>
                                 <input class="form-control" type="text" id="nation" name="nation" value={{$employee->DanToc}}>
                             </div>
                         </div>
@@ -182,15 +183,19 @@
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="religion">Tôn giáo</label>
-                        <input class="form-control" type="text" id="religion" name="religion" value={{$employee->TonGiao}}>
+                        <input class="form-control" type="text" id="religion" name="religion" value={{old('religion')}}>
                     </div>
-                    <div class="col-6 col-md-5">
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="dateRange">Ngày cấp CCCD</label>
+                        <input class="form-control" type="date" id="dateRange" name="dateRange" value="">
+                    </div>
+                    <div class="col-6 col-md-3">
                         <label class="form-label" for="placeofbirth">Nơi sinh</label>
-                        <input class="form-control" type="text" name="placeofbirth" id="placeofbirth" value={{$employee->NoiSinh}}>
+                        <input class="form-control" type="text" name="placeofbirth" id="placeofbirth" value={{old('placeofbirth')}}>
                     </div>
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-3">
                         <label class="form-label" for="address">Địa chỉ thường trú</label>
-                        <input class="form-control" type="text" name="address" id="address" value={{$employee->DiaChi}}>
+                        <input class="form-control" type="text" name="address" id="address" value={{old('address')}}>
                     </div>
                 </div>
                 
@@ -198,28 +203,20 @@
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="phonenumber">Số điện thoại</label>
-                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value={{$employee->SDT}}>
+                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value={{old('phonenumber')}}>
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" type="text" name="email" id="email" value={{$employee->Email}}>
+                        <input class="form-control" type="text" name="email" id="email" value={{old('email')}}>
                     </div>
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="">Trình độ học vấn</label>
-                        <div>
-                            <select class="col-md-12" name="trinhdo">
-                                <option value="0" hidden>Chọn</option>
-                                <option value="Trình độ 1" {{ $employee->TrinhDoHocVan == 'Trình độ 1' ? 'selected' : '' }}>Trình độ 1</option>
-                                <option value="Trình độ 2" {{ $employee->TrinhDoHocVan == 'Trình độ 2' ? 'selected' : '' }}>Trình độ 2</option>
-                                <option value="Trình độ 3" {{ $employee->TrinhDoHocVan == 'Trình độ 3' ? 'selected' : '' }}>Trình độ 3</option>
-                                <option value="Trình độ 4" {{ $employee->TrinhDoHocVan == 'Trình độ 4' ? 'selected' : '' }}>Trình độ 4</option>
-                            </select>
-                        </div>
+                        <label class="form-label" for="nation">Dân tộc</label>
+                        <input class="form-control" type="text" id="nation" name="nation" value={{old('nation')}}>
                     </div>
                     <div class="col-6 col-md-3">
                         <label for="exampleFormControlInput1" class="form-label">Trạng thái</label>
                         <div>
-                            <select class="col-md-12" aria-label="Default select example">
+                            <select class="col-md-12" aria-label="Default select example" name="TrangThai">
                                 <option value="1" {{$employee->TrangThai == 1 ? 'selected' : ''}}>Đang làm việc</option>
                                 <option value="0" {{$employee->TrangThai == 0 ? 'selected' : ''}}>Đã nghỉ việc</option>
                             </select>
@@ -253,14 +250,14 @@
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
-                        <label class="form-label" for="">Chuyên ngành</label>
+                        <label class="form-label" for="">Trình độ học vấn</label>
                         <div>
-                            <select class="col-md-12" name="chuyennganh">
-                                <option value="0" hidden >Chọn</option>
-                                <option value="Chuyên ngành 1" {{ $employee->ChuyenNganh == 'Chuyên ngành 1' ? 'selected' : '' }}>Chuyên ngành 1</option>
-                                <option value="Chuyên ngành 2" {{ $employee->ChuyenNganh == 'Chuyên ngành 2' ? 'selected' : '' }}>Chuyên ngành 2</option>
-                                <option value="Chuyên ngành 3" {{ $employee->ChuyenNganh == 'Chuyên ngành 3' ? 'selected' : '' }}>Chuyên ngành 3</option>
-                                <option value="Chuyên ngành 4" {{ $employee->ChuyenNganh == 'Chuyên ngành 4' ? 'selected' : '' }}>Chuyên ngành 4</option>
+                            <select class="col-md-12" name="trinhdo">
+                                <option value="0" hidden>Chọn</option>
+                                <option value="Trình độ 1" {{ $employee->TrinhDoHocVan == 'Trình độ 1' ? 'selected' : '' }}>Trình độ 1</option>
+                                <option value="Trình độ 2" {{ $employee->TrinhDoHocVan == 'Trình độ 2' ? 'selected' : '' }}>Trình độ 2</option>
+                                <option value="Trình độ 3" {{ $employee->TrinhDoHocVan == 'Trình độ 3' ? 'selected' : '' }}>Trình độ 3</option>
+                                <option value="Trình độ 4" {{ $employee->TrinhDoHocVan == 'Trình độ 4' ? 'selected' : '' }}>Trình độ 4</option>
                             </select>
                         </div>
                     </div>

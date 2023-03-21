@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="table-acc-list">
-                <table class="table table-striped" id="myTable">
+                <table class="table table-striped table-hover" id="myTable">
                     <thead>
                   <tr>
                     <th scope="col">Mã nhân viên</th>
@@ -77,7 +77,7 @@
                     <th scope="col"></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="">
                     @if (count($accounts) == 0)
                         <h5>Không có bản ghi</h5>
                     @else
@@ -86,20 +86,36 @@
                             <td scope="row">{{$account->MaNV}}</td>
                             <td>{{$account->nhanvien->TenNV}}</td>
                             <td>Không có dữ liệu</td>
-                            <td >
-                                <span class=
+                            <td class="role-col">
+                                <button class=
                                 @if ($account->QuyenTruyCap == 'member')
-                                "employee-color"
+                                "employee-color btn currentRole"
                                 @else
                                     @if($account->QuyenTruyCap == 'admin1')
-                                        "ADMIN1-color"
+                                        "ADMIN1-color btn currentRole"
                                     @else
-                                        "ADMIN2-color"
+                                        "ADMIN2-color btn currentRole"
                                     @endif
                                 @endif
                                 >
                                     {{$account->QuyenTruyCap}}
-                                </span>
+                                </button>
+
+                                <div class="role-menu">
+                                    @if ($account->QuyenTruyCap == 'member')
+                                        <button class="btn ADMIN1-color">admin1</button>
+                                        <button class="btn ADMIN2-color">admin2</button>
+                                    @else
+                                        @if($account->QuyenTruyCap == 'admin1')
+                                        <button class="btn employee-color">member</button>
+                                        <button class="btn ADMIN2-color">admin2</button>
+                                        @else
+                                        <button class="btn employee-color">member</button>
+                                        <button class="btn ADMIN1-color">admin1</button>
+                                        @endif
+                                    @endif
+                                </div>
+
                             </td>
                             <td>{{$account->NgayTao}}</td>
                             <td>
