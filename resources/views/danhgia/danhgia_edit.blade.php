@@ -83,9 +83,9 @@
                         </div>
                     </div>
                     <div class="bottom_add_danhgia">
-                        <a class="bottom_exit_danhgia" href="{{route('showListEvaluate')}}">
-                            <div class="link_exit">Thoát</div>
-                        </a>
+                        <div class="bottom_exit_danhgia">
+                            <a href="{{route('showListEvaluate')}}" class="link_exit" style="color: #fff;">Thoát</a>
+                        </div>
                         <div class="bottom_save_danhgia">
                             <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
                         </div>

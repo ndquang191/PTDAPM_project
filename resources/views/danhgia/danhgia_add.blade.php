@@ -34,7 +34,7 @@
         <div class="danhgia_chucnang">
             <div class="danhgia_main_container danhgia_main_page">
                 <div class="head_add_danhgia_main">
-                    <a href="{{route('showListEvaluate')}}" class="title_danhgia_add">Danh sách đánh giá</a>
+                    <a href="{{route('showListEvaluate')}}" id="add_contract_form" class="title_danhgia_add">Danh sách đánh giá</a>
                     <span>></span>
                     <h5 class="title_add_danhgia">Thêm đánh giá</h5>
                 </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="bottom_add_danhgia">
                         <div class="bottom_exit_danhgia">
-                            <div class="link_exit">Thoát</div>
+                            <a href="{{route('showListEvaluate')}}" style="color: #fff" class="link_exit">Thoát</a>
                         </div>
                         <div class="bottom_save_danhgia">
                             <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
