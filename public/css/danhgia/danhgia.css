@@ -179,7 +179,9 @@ th{
 
 .bottom_save_danhgia .danhgia_submit{
     color: #fff;
-    padding: 7px 15px;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
     border: none;
     text-align: center;
     background-color: #39374E;
@@ -188,12 +190,21 @@ th{
 
 .bottom_exit_danhgia{
     color: #fff;
-    padding: 7px 15px;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+    /* padding: 7px 15px; */
     cursor: pointer;
     text-align: center;
     background-color: red;
     font-size: 1.8rem;
     margin:0 2rem;
+}
+.bottom_save_danhgia:hover{
+    opacity: 0.875;
+}
+.bottom_exit_danhgia:hover{
+    opacity: 0.875;
 }
 .error {
     color: red;
