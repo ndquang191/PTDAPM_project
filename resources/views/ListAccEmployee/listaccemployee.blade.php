@@ -74,7 +74,7 @@
                     <th scope="col">Tài khoản</th>
                     <th scope="col">Quyền truy cập</th>
                     <th scope="col">Ngày tạo</th>
-                    <th scope="col"></th>
+                    <th scope="col">Chức năng</th>
                   </tr>
                 </thead>
                 <tbody class="">

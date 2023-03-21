@@ -31,7 +31,7 @@
                         <h5>{{ session('message') }}</h5>
                     </div>
                 @endif
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" class="login-btn">ĐĂNG NHẬP</button>
                 @csrf
             </form>
         </div>

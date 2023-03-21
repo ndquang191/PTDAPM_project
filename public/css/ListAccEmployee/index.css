@@ -16,11 +16,11 @@ p {
     /* top: 5rem; */
 }
 .title > h1 {
-    font-weight: 500;
-    font-size: 2.5rem;
-    line-height: 1.8rem;
-    color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 1.7rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 28px;
+    line-height: 33px;
 }
 .title {
     /* padding: 1.7rem 3rem; */
@@ -37,6 +37,8 @@ p {
     gap: 1rem;
     display: flex;
     flex-direction: column;
+    color: #5A5278;
+
 }
 .statistical-item p {
     font-weight: 400;
@@ -73,7 +75,7 @@ p {
 .table-stat-container {
     width: 100%;
     padding: 12px;
-    border: 0.5px solid black;
+    /* border: 0.5px solid black; */
     min-height: 40rem;
     background: #ffffff;
     border-radius: 5px;
@@ -118,7 +120,6 @@ p {
     background-color: #5a5278;
     display: flex;
     justify-content: center;
-    border-radius: 5px;
     cursor: pointer;
 }
 .input-search {
