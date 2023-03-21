@@ -48,11 +48,11 @@
                     <td>{{$leave->NoiDung}}</td>
                     <td>{{$leave->CoPhep}}</td>
                     <td class="muti-btn">
-                        <a href="">
+                        <a href="{{route('showHistory',['id' => $leave->MaNP])}}">
                           <i class="bi bi-person-lines-fill edit"></i>
                         </a>
                         {{-- sang lịch sử nghỉ phép --}}
-                        <a  href="">
+                        <a  href="{{route('showDetail',['id' => $leave->MaNP])}}">
                             <i class="bi bi-eye-fill edit"></i>
                         </a>
                          {{-- sang xem đơn nghỉ phép --}}
@@ -61,41 +61,7 @@
                   </tr>
                 </a>
                 @endforeach
-            @endif
-                <tr >
-                    <td scope="row">01</th>
-                    <td scope="row">2051060698</th>
-                    <td>Nguyễn Hà Thái</td>
-                    <td>02/07/ 2023</td>
-                    <td>03/07/2023</td>
-                    <td>Có phép</td>
-                    <td>Có phép</td>
-                    <td class="muti-btn">
-                        <a href="">
-                          <i class="bi bi-person-lines-fill edit"></i>
-                        </a>
-                        <a  href="">
-                            <i class="bi bi-eye-fill edit"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr >
-                    <td scope="row">01</th>
-                    <td scope="row">2051060698</th>
-                    <td>Nguyễn Hà Thái</td>
-                    <td>02/07/ 2023</td>
-                    <td>03/07/2023</td>
-                    <td>Có phép</td>
-                    <td>Có phép</td>
-                    <td class="muti-btn">
-                        <a href="">
-                          <i class="bi bi-person-lines-fill edit"></i>
-                        </a>
-                        <a  href="">
-                            <i class="bi bi-eye-fill edit"></i>
-                        </a>
-                    </td>
-                </tr>   
+            @endif 
         </tbody>
         </table>
     </div>

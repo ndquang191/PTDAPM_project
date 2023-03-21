@@ -59,9 +59,15 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin',
 });
 
 Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/leave')->group(function(){
-    Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
+    // Route::get('/','list')->name('showListLeave');
+    Route::get('/approve','listApprove')->name('showListApproveLeave');
+    Route::get('/request','listRequest')->name('showListRequestLeave');
+    Route::get('/request/detail/{requestID}','showRequestDetail')->name('showRequestDetail');
+    Route::post('/request/detail/{requestID}','approveLeaveRequest')->name('approveLeaveRequest');
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
     Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
+    Route::get('/detail/{id}','showDetail')->name('showDetail');
+    Route::get('/history/{id}','showHistory')->name('showHistory');
 
     //* SỬA ADDLEAVE.BLADE = XEMNGHIPHEP.BLADE*/
 });

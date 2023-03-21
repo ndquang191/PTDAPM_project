@@ -125,12 +125,12 @@
                        <span>Nghỉ phép</span>
                      </a>
                      <ul class="donnghi hidden">
-                      <li class="dropdown_main_menu_item" style="border-right:none" ><a href="{{route('showListLeave')}}" class="duyetdon link_dropdown_main_menu">
+                      <li class="dropdown_main_menu_item" style="border-right:none" ><a href="{{route('showListApproveLeave')}}" class="duyetdon link_dropdown_main_menu">
                         <i class="bi bi-person-check"></i>
                         <span>Đơn đã duyệt</span>
                       </a>
                     </li>
-                      <li class="dropdown_main_menu_item" ><a href="" class="duyetdon link_dropdown_main_menu">
+                      <li class="dropdown_main_menu_item" ><a href="{{route('showListRequestLeave')}}" class="duyetdon link_dropdown_main_menu">
                         <i class="bi bi-person"></i>
                         <span>Đơn chờ duyệt</span>  
                       </a>

@@ -3,6 +3,25 @@
     <link rel="stylesheet" href="/css/LeaveList/index.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'success',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
 <div class="fluid-container main_page">
     <div class="container">
         <h1 class="heading">Danh sách nghỉ phép</h1>
@@ -19,13 +38,13 @@
             <th scope="col">Ngày bắt đầu</th>
             <th scope="col">Ngày kết thúc</th>
             <th scope="col">Nội dung</th>
-            <th scope="col">Có phép</th>
+            <th scope="col">Loại</th>
             <th scope="col">Trạng thái</th>
           </tr>
         </thead>
         <tbody>
             @if (count($leaves) == 0)
-            <script>
+            {{-- <script>
                 Swal.fire({
                 position: 'center',
                 icon: 'error',
@@ -34,7 +53,8 @@
                 confirmButtonText: 'Đóng',
                 timer: 3000
               })
-              </script>
+              </script> --}}
+              <td><h1>Không có bản ghi</h1></td>
             @else
                 @foreach ($leaves as $leave)
                 <a href="{{route('editLeave',['id'=>$leave->MaNP])}}">
@@ -45,8 +65,8 @@
                     <td>{{$leave->NgayBatDau}}</td>
                     <td>{{$leave->NgayKetThuc}}</td>
                     <td>{{$leave->NoiDung}}</td>
-                    <td>{{$leave->CoPhep}}</td>
-                    <a href="">chờ duyệt</a>
+                    <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
+                    <td><a href="{{route('showRequestDetail',['requestID' => $leave->MaNP])}}">Chờ duyệt</a></td>
                     {{-- chờ duyệt sang form duyệt đơn  --}}
                   </tr>
                 </a>

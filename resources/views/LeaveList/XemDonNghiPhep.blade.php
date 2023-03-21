@@ -7,7 +7,7 @@
         <div class="container">
         <div style="height: 0.1rem"></div>
         <div class="add-function">
-                <a href="{{route('showListLeave')}}" class="navigation">Danh Sách đã xét duyệt</a>
+                <a href="{{route('showListApproveLeave')}}" class="navigation">Danh Sách đã xét duyệt</a>
                 <span>></span>
                 <p>Xem đơn nghỉ phép</p>
         </div>
