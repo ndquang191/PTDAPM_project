@@ -140,3 +140,14 @@
 .btn-update-exit button{
     border-radius: 5px;
 }
+
+.tab-hosonv , .tab-bangcap{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    padding: 5px;
+}
+
+.tab-hosonv.active , .tab-bangcap.active{
+    background-color: yellow;
+
+}
