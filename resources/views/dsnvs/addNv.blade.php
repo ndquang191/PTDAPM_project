@@ -102,17 +102,6 @@
                         <label class="form-label" for="nation">Dân tộc</label>
                         <input class="form-control" type="text" id="nation" name="nation" value={{old('nation')}}>
                     </div>
-                    {{-- <div class="col-6 col-md-3">
-                        <label for="exampleFormControlInput1" class="form-label">Trạng thái</label>
-                        <div>
-                            <select class="col-md-12" aria-label="Default select example">
-                                <option selected>Chọn</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div> --}}
                 </div>    
     
                 <div class="row align-items-start">
@@ -123,7 +112,7 @@
                                 @foreach ($phongbans as $phongban)  
                                 <option 
                                     value="{{$phongban->MaPB}}" 
-                                    {{ old('trinhdo') == $phongban->TenPhongBan ? 'selected' : '' }}>{{$phongban->TenPhongBan}}
+                                    {{ old('phongban') == $phongban->TenPhongBan ? 'selected' : '' }}>{{$phongban->TenPhongBan}}
                                 </option>
                                 @endforeach
                             </select>
@@ -136,24 +125,12 @@
                                 @foreach ($chucvus as $chucvu)  
                                 <option 
                                     value="{{$chucvu->MaCV}}" 
-                                    {{ old('trinhdo') == $chucvu->TenCV ? 'selected' : '' }}>{{$chucvu->TenCV}}
+                                    {{ old('chucvu') == $chucvu->TenCV ? 'selected' : '' }}>{{$chucvu->TenCV}}
                                 </option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    {{-- <div class="col-6 col-md-4">
-                        <label class="form-label" for="">Chuyên ngành</label>
-                        <div>
-                            <select class="col-md-12" name="chuyennganh">
-                                <option value="0" hidden >Chọn</option>
-                                <option value="Chuyên ngành 1" {{ old('chuyennganh') == 'Chuyên ngành 1' ? 'selected' : '' }}>Chuyên ngành 1</option>
-                                <option value="Chuyên ngành 2" {{ old('chuyennganh') == 'Chuyên ngành 2' ? 'selected' : '' }}>Chuyên ngành 2</option>
-                                <option value="Chuyên ngành 3" {{ old('chuyennganh') == 'Chuyên ngành 3' ? 'selected' : '' }}>Chuyên ngành 3</option>
-                                <option value="Chuyên ngành 4" {{ old('chuyennganh') == 'Chuyên ngành 4' ? 'selected' : '' }}>Chuyên ngành 4</option>
-                            </select>
-                        </div>
-                    </div> --}}
                     <div class="col-6 col-md-4">
                         <label class="form-label" for="">Trình độ học vấn</label>
                         <div>

@@ -26,7 +26,7 @@
             <table class="table" id="myTable">
                 <thead>
                     <tr>
-                        <th scope="col">STT</th>
+                        <th scope="col">Phân loại</th>
                         <th scope="col">Mã nhân viên</th>
                         <th scope="col">Tên nhân viên</th>
                         <th scope="col">Ngày quyết định</th>
@@ -44,14 +44,17 @@
                         @foreach ($evaluates as $evaluate)
                         <?php $count += 1 ?>
                         <tr>
-                            <td>{{$count}}</td>
+                            <td>{{$evaluate->PhanLoai == 1 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{$evaluate->nhanvien->MaNV}}</td>
                             <td>{{$evaluate->nhanvien->TenNV}}</td>
                             <td>{{$evaluate->NgayQuyetDinh}}</td>
                             <td>{{$evaluate->Giatri >= 0 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{number_format(intval($evaluate->Giatri))}}</td>
                             <td>
-                                <a href="{{route('addEvaluate')}}">
+                                <a href="">
+                                    <i class="fa-thin fa-eye"></i>
+                                </a>
+                                <a href="#">
                                     <i class="bi bi-plus-square icon_color"></i>
                                 </a>
                                 <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}">

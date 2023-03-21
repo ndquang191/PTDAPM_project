@@ -54,7 +54,7 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin',
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
     Route::post('/{id}/edit','updateHDLD')->name('updateHDLD');
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
-    Route::post('/{id]/delete','detroy')->name('deleteHDLD');
+    Route::post('/{id}/delete','destroy')->name('deleteHDLD');
 
 });
 

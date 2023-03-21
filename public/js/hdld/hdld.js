@@ -1,5 +1,5 @@
 function myFunction() {
-    let input, filter, tr, table, td, txtValue;
+    let input, filter, tr, table,txtValue, td;
     input = document.getElementById('myInput');
     filter = input.value.toUpperCase();
     table = document.getElementById('myTable');
@@ -17,3 +17,4 @@ function myFunction() {
         }
     }
 }
+
