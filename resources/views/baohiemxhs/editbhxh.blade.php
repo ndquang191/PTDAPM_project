@@ -36,13 +36,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="QDTS">Mức đóng QDTS</label>
-                            <input class="form-control" type="number" id="QDTS" name="QDTS" value="{{$contract->MucDongQDTS}}">
+                            <input class="form-control" type="number" id="QDTS" name="QDTS" value="{{$contract->MucDongQDTS}}" min="0">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="TNLD">Mức đóng TNLD</label>
-                            <input class="form-control" type="number" id="TNLD" name="TNLD" value="{{$contract->MucDongTNLD}}">
+                            <input class="form-control" type="number" id="TNLD" name="TNLD" value="{{$contract->MucDongTNLD}}" min="0">
                         </div>
                     </div>
                 </div>
@@ -52,13 +52,13 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="HT">Mức đóng HT</label>
-                            <input class="form-control" type="number" id="HT" name="HT" value="{{$contract->MucDongHT}}">
+                            <input class="form-control" type="number" id="HT" name="HT" value="{{$contract->MucDongHT}}" min="0">
                         </div>
                     </div>
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="BHTN">Mức đóng BHTN</label>
-                            <input class="form-control" type="number" id="BHTN" name="BHTN" value="{{$contract->MucDongBHTN}}">
+                            <input class="form-control" type="number" id="BHTN" name="BHTN" value="{{$contract->MucDongBHTN}}" min="0">
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="month">Tháng</label>
-                            <input class="form-control" type="number" name="month" id="month" value="{{$contract->Thang}}">
+                            <input class="form-control" type="number" name="month" id="month" value="{{$contract->Thang}}" min="1" max="12">
                         </div>
                     </div>
                 </div>

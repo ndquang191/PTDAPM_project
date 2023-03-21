@@ -27,5 +27,11 @@ class BangCapController extends Controller
         $degree = BangCap::find($degreeID);
         return view('bangcaps.editbc',['user' => $user,'degree' => $degree]);
     }
+
+    public function store(Request $request,$id){
+        $validator = $request->validate([
+            ''
+        ]);
+    }
     
 }
