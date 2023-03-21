@@ -51,7 +51,7 @@
                         <div class="bottom_exit_danhgia">
                             <div class="link_exit">Thoát</div>
                         </div>
-                        <div class="bottom_exit_danhgia">
+                        <div class="bottom_save_danhgia">
                             <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
                         </div>
                     </div>
