@@ -80,7 +80,7 @@ class DanhGiaController extends Controller
             'PhanLoai' => $request->PhanLoai,
         ]);
         
-        return redirect()->back()->with(['message' => 'Cập nhật thành công','type' => 'success']);
+        return redirect()->route("showDetail,['id' => $id]")->with(['message' => 'Cập nhật thành công','type' => 'success']);
     }
 
     public function showDetail($id){

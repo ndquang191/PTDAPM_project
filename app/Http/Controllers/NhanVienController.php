@@ -144,6 +144,12 @@ class NhanVienController extends Controller
                     'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
                 ]);
             }
+
+            if ($request->TrangThai == 0){
+                TaiKhoan::where('MaNV',$id)->update([
+                    'TrangThai' => 0,
+                ]);
+            }
         });
         return redirect()->route('getEmployeeInfo',['id' => $id])->with(['message' => 'Cập nhật thành công']);
     }
