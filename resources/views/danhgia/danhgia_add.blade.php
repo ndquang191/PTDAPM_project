@@ -47,13 +47,12 @@
                                 <input type="text" name="MaNV" id="id" class="form-control form_input_add_danhgia input-id" value="{{old('MaNV')}}">
                                 <p class="error hidden">Vui lòng nhập đúng mã nhân viên</p>
                             </div>
-                            <div class="form_add_danhgia" style="margin-top: -2rem; ">
+                            <div class="form_add_danhgia" style="">
                                 <label for="" class="form_title_danhgia">Phân loại</label> <br>
                                 <select name="PhanLoai" id="phanloai" class="form_input_add_danhgia">
                                     <option value="1" {{ old('PhanLoai') == 1 ? 'selected' : '' }}>Khen thưởng</option>
                                     <option value="0" {{ old('PhanLoai') == 0 ? 'selected' : '' }}>Kỷ luật</option>
                                 </select>
-                                {{-- <input type="text" name="" id="noidung" class="form_input_add_danhgia"> --}}
                             </div>
                             <div class="form_add_danhgia">
                                 <label for="" class="form_title_danhgia">Nội dung</label> <br>

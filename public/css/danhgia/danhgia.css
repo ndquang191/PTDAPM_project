@@ -51,9 +51,6 @@
     color: #000000B2;
 }
 
-.table{
-    width: 100%;
-}
 .icon_color{
     color: #39374E;
 }
@@ -63,12 +60,14 @@
 }
 td{
     font-size: 1.8rem;
+    text-align: center;
     color: #000000B2;
 }
 th{
     font-size: 1.8rem;
     color: #212529;
-    font-weight: 300;
+    font-weight: 500;
+    text-align: center;
 }
 .input_search{
     display: flex;
@@ -180,26 +179,32 @@ th{
 
 .bottom_save_danhgia .danhgia_submit{
     color: #fff;
-    width: 70px;
-    height: 37px;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
     border: none;
     text-align: center;
-    line-height: 37px;
     background-color: #39374E;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
 .bottom_exit_danhgia{
     color: #fff;
-    width: 70px;
-    height: 37px;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+    /* padding: 7px 15px; */
     cursor: pointer;
-    border: none;
     text-align: center;
-    line-height: 37px;
     background-color: red;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin:0 2rem;
+}
+.bottom_save_danhgia:hover{
+    opacity: 0.875;
+}
+.bottom_exit_danhgia:hover{
+    opacity: 0.875;
 }
 .error {
     color: red;

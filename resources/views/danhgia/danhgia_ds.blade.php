@@ -71,7 +71,7 @@
                             <td>{{number_format(intval($evaluate->Giatri))}}</td>
                             <td>
                                 <a href="{{route('showDetail',['id' => 1])}}" class="link-icon">
-                                    <i class="bi bi-eye icon-color"></i>
+                                    <i class="bi bi-eye icon_color"></i>
                                 </a>
                                 {{-- <a href="{{route('showHistory',['id' => 1])}}" class="link-icon">
                                     <i class="bi bi-person-video3 icon-color"></i>
