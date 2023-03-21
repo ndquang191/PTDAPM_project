@@ -105,9 +105,10 @@
             btn.addEventListener('click', (e)=>{
                 e.preventDefault()
                 Swal.fire({
-                title: 'Xác nhận xóa hợp đồng ?',
+                title: 'Bạn có muốn xóa hợp đồng ?',
                 showCancelButton: true,
-                confirmButtonText: 'Xóa',
+                confirmButtonText: 'Có',
+                cancelButtonText: 'Không'
                 }).then((result) => {
                 if (result.isConfirmed) {
                     deleteForm.setAttribute('action',`/contract/${btn.getAttribute('data-id')}/delete`)
