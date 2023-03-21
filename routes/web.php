@@ -70,8 +70,10 @@ Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/','showListEvaluate')->name('showListEvaluate');
     Route::get('/add','addEvaluate')->name('addEvaluate');
     Route::get('/edit/{id}','editEvaluate')->name('editEvaluate');
-
 });
+
+Route::get('/danhgia/danhgia_ls',[DanhGiaController::class,'ls_danhgia']);
+Route::get('/danhgia/danhgia_show',[DanhGiaController::class,'show_danhgia']);
 
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');

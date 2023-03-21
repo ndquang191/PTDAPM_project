@@ -1,9 +1,9 @@
 .danhgia_ds{
-    padding: 20px 10px;
+    padding: 40px 15px;
 }
 .danhgia_main_container{
     width: 100%;
-    padding: 15px;
+    padding: 20px;
     overflow: auto;
     padding-left: 5px;
     border-radius: 5px;
@@ -25,6 +25,10 @@
     margin-top: -5px;
     padding: 5px 8px;
     text-align: center;
+    color: #c6cfda;
+}
+.danhgia_add_btn:hover {
+    opacity: 0.875;
     color: #c6cfda;
 }
 .title_danhgia{
@@ -52,6 +56,10 @@
 }
 .icon_color{
     color: #39374E;
+}
+.link-icon{
+    display: inline-block;
+    margin-left: 1rem;
 }
 td{
     font-size: 1.8rem;
@@ -101,7 +109,7 @@ th{
     display: flex;
     color: #fff;
     border-radius: 3px ;
-    font-size: 14px;
+    font-size: 16px;
     align-items: center;
     justify-content: center;
     width: 3.5rem;
@@ -110,13 +118,18 @@ th{
     background-color: #39374E;
 }
 
+.search_btn:hover{
+    opacity: 0.875;
+}
+.search_btn:hover > i{
+    color: #fff;
+}
+
 /* form thêm đánh giá */
-.danhgia_add{
-    padding: 15px;
+.danhgia_chucnang{
+    padding: 30px 15px;
 }
 .head_add_danhgia_main {
-    margin-left: 1rem;
-    margin-top: 2rem;
     background-color: #dcdcdc;
 }
 .head_add_danhgia_main span{
@@ -142,7 +155,7 @@ th{
     margin-top: 2rem;
 }
 .form_add_danhgia{
-    margin: 2rem 4rem 0 2rem;
+    margin: 3rem 4rem 3rem 3rem;
 }
 .form_title_danhgia{
     color: black;
@@ -161,7 +174,7 @@ th{
 .bottom_add_danhgia{
     display: flex;
     justify-content: flex-end;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     margin-right: 5rem;
 }
 
@@ -196,4 +209,58 @@ th{
 .hidden {
     visibility: none;
     opacity: 0;
+}
+
+/* lịch sử đánh giá*/
+.head_ls_danhgia{
+    display: flex;
+    justify-content: space-between;
+}
+.danhgia_add_btn_exit{
+    color: #c6cfda;
+}
+.danhgia_ls_btn{
+    background-color: #39374E;
+    font-size: 1.8rem;
+    /* margin-top: -4px; */
+    padding: 4px 8px;
+    text-align: center;
+}
+.danhgia_ls_btn:hover >.danhgia_add_btn_exit{
+    color: #c6cfda;
+}
+.danhgia_ls_info{
+    display: flex;
+    margin: 2.5rem 2rem;
+}
+.danhgia_ls_img_avatar{
+    margin: 0 2rem;
+}
+.danhgia_ls_para{
+    font-size: 1.8rem;
+    margin: 2.5rem 0;
+}
+.link-icon-eye{
+    margin-left: 3rem;
+}
+.danhgia_main_show{
+    padding: 10px;
+}
+.full-row{
+    display: flex;
+    flex-direction: row;
+    padding: 8px 0px;
+    margin-bottom: 20px;
+    border-bottom: 0.5px solid black;
+}
+.title{
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+    width: 40%;
+}
+.value{
+    font-weight: 400;
+    width: 70%;
+    font-size: 16px;
 }

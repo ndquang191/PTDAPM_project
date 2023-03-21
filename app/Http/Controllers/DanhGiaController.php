@@ -37,4 +37,12 @@ class DanhGiaController extends Controller
         $evaluates = DanhGia::orderBy('NgayQuyetDinh','asc')->get();
         return view('danhgia.danhgia_edit',['user' => $user, 'evaluate' => null]);
     }
+    public function ls_danhgia(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('danhgia.danhgia_lichsu',['user' => $user, 'evaluate' => null]);
+    }
+    public function show_danhgia(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        return view('danhgia.danhgia_show',['user' => $user, 'evaluate' => null]);
+    }
 }

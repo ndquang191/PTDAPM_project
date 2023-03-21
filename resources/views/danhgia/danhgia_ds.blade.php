@@ -23,7 +23,7 @@
                     <i class="bi bi-search icon_color_search"></i>
                 </a>
             </div>
-            <table class="table" id="myTable">
+            <table class="table table-hover" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">Phân loại</th>
@@ -51,13 +51,13 @@
                             <td>{{$evaluate->Giatri >= 0 ? 'Khen thưởng' : 'Kỉ luật'}}</td>
                             <td>{{number_format(intval($evaluate->Giatri))}}</td>
                             <td>
-                                <a href="">
-                                    <i class="fa-thin fa-eye"></i>
+                                <a href="" class="link-icon">
+                                    <i class="bi bi-eye icon-color"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="bi bi-plus-square icon_color"></i>
+                                <a href="#" class="link-icon">
+                                    <i class="bi bi-person-video3 icon-color"></i>
                                 </a>
-                                <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}">
+                                <a href="{{route('editEvaluate',['id' => $evaluate->MaDG])}}" class="link-icon">
                                     <i class="bi bi-pencil-square icon_color"></i>
                                 </a>
                                 {{-- <a href="#">
