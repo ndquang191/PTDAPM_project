@@ -54,8 +54,7 @@
 }
 
 .tab-hosonv.active , .tab-bangcap.active{
-    background-color: yellow;
-
+    border-bottom: 1px solid #5A5278;
 }
 .table{
     margin-top: 20px;
