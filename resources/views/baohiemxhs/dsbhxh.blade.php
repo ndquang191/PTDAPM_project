@@ -4,6 +4,25 @@
     <link rel="stylesheet" href="./css/bhxh/dsbhxh.css">
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: '{{ session('type') }}',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
     <div class="fluid-container">
         <div>
             <div class="container-tilte-table">
@@ -47,19 +66,21 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach ($insurances as $insurance)
                             <tr>
-                              <td>1</td>
-                              <td>27/02/2002</td>
-                              <td>20000</td>
-                              <td>15000000</td>
-                              <td>15000000</td>
-                              <td>36000000</td>
-                              <td>1</td>
-                              <td>
-                                <a href="/editbhxh"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="/showbhxh"><i class="fa-solid fa-eye"></i></a>
-                              </td>
-                            </tr>
+                                <td>{{$insurance->MaBH}}</td>
+                                <td>{{$insurance->NgayBatDau}}</td>
+                                <td>{{$insurance->MucDongQDTS}}</td>
+                                <td>{{$insurance->MucDongTNLD}}</td>
+                                <td>{{$insurance->MucDongHT}}</td>
+                                <td>{{$insurance->MucDongBHTN}}</td>
+                                <td>{{$insurance->Thang}}</td>  
+                                <td>
+                                  <a href="{{route('editBHXH',['id' => $insurance->MaBH])}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                  <a href="{{route('getInfoBHXH',['id' => $insurance->MaBH])}}"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                              </tr>
+                            @endforeach
                           </tbody>
                     </table>
                 </div>

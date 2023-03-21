@@ -26,3 +26,4 @@ nextBtn.addEventListener('click' , () => {
 })
 
 updateStr()
+

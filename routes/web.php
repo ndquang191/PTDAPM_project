@@ -11,6 +11,7 @@ use App\Http\Controllers\NghiPhepController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\LuongController;
 use App\Http\Controllers\UserController;
+use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +41,7 @@ Route::controller(NhanVienController::class)->middleware(['checkLogin','checkAdm
     Route::post('/{id}','update')->name('updateEmployeeInfo'); // chỉnh sửa chi tiết hồ sơ nhân viên
 });
 
-Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/employee')->group(function(){
+Route::controller(BangCapController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/employee')->group(function(){
     Route::get('/{id}/degree','showByMaNV')->name('showDegree'); // Hiển thị danh sách bằng cấp của nhân viên
     Route::get('/{id}/degree/add','create')->name('addDegreeForm'); // Hiển thị form thêm bằng cấp nhân viên
     Route::get('/{id}/degree/{degreeID}/edit','edit')->name('editDegreeForm'); // Hiển thị danh sách bằng cấp của nhân viên
@@ -53,6 +54,7 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin',
     Route::get('/{id}/edit','editHDLD')->name('editHDLD'); // Hiển thị form sửa hợp đồng
     Route::post('/{id}/edit','updateHDLD')->name('updateHDLD');
     Route::get('/{id}/showDetail','showDetail')->name('showDetailHDLD'); // Hiển thị hợp đồng nhân viên
+    Route::post('/{id]/delete','detroy')->name('deleteHDLD');
 
 });
 
@@ -60,6 +62,8 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
     Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
     Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
+
+    //* SỬA ADDLEAVE.BLADE = XEMNGHIPHEP.BLADE*/
 });
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/evaluate')->group(function(){
@@ -72,7 +76,11 @@ Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmi
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');
     Route::get('/add','createBHXH')->name('createBHXH');
+    Route::post('/add','storeBHXH')->name('storeBHXH');
     Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
+    Route::get('/edit/{id}','editBHXH')->name('editBHXH');
+    Route::post('/edit/{id}','updateBHXH')->name('updateBHXH');
+
 
 });
 
@@ -84,35 +92,14 @@ Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdm
 Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/salary')->group(function(){
     Route::get('/','showSalary')->name('showSalary');
     Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
-
 });
+
 
 Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/evaluate','showEvaluate')->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
     Route::get('/info','showInfo')->name('showInfoUser'); // Hiển thị thông tin tài khoản
     Route::get('/contract','showContract')->name('showContractUser');
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
-
+    Route::get('/leave','showLeave')->name('showLeaveUser');
+    Route::post('/leave','storeLeaveRequest')->name('storeLeaveRequest');
 });
-
-
-Route::get('/test' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
-    return view('test',['user' => $user]);
-});
-
-Route::get('/testSubmit' , function(){
-    return redirect('/test')->with(['message' => 'test']);
-});
-
-Route::get('/test2' , function(){
-    $user = NhanVien::find(Auth::user()->MaNV);
-    return view('user.index',['user' => $user]);
-});
-Route::get('/showbhxh', function () {
-    return view('baohiemxhs.infobhxh');
-});
-Route::get('/editbhxh', function () {
-    return view('baohiemxhs.editbhxh');
-});
-

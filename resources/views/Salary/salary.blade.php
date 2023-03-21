@@ -3,6 +3,18 @@
     <link rel="stylesheet" href="/css/Salary/salary.css">
 @endsection
 @section('content')
+@if (session('message'))
+    <script>
+        Swal.fire({
+        position: 'center',
+        icon: '{{session('type')}}',
+        title: '{{session('message')}}',
+        showConfirmButton: true,
+        confirmButtonText: 'Đóng',
+        timer: 3000
+    })
+    </script>
+@endif
 <div class="fluid-container">
     <div class="heading-section">
         <div class="heading-primary">
@@ -35,27 +47,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="infor-data">
-                <td><p class="padding">01</p></td>
-                <td class="Employee-custom-table">
-                    <div class="">
-                        <span>NT</span>
-                    </div>
-                <p>
-                        Ngô Thị Tâm
-                </p>
-                </td>
-                <td> <p>Chuyên viên chính trị công tác</p> </td>
-                <td> <p>sinh viên</p> </td>
-                <td class="muti-btn">
-                    <a href="{{route('showSalaryDetail',['id' => 100000])}}">
-                        <i class="bi bi-pencil-square edit hidden"></i>
-                    </a>
-                    <a  href="{{route('showSalaryDetail',['id' => 10000])}}">
-                        <i class="bi bi-eye-fill edit"></i>
-                    </a>
-                </td>
-              </tr>
+                <?php $count = 0 ?>
+                @foreach ($employees as $employee)
+                <?php $count++ ?>
+                <tr class="infor-data">
+                    <td><p class="padding">{{$count}}</p></td>
+                    <td class="Employee-custom-table">
+                        <div class="">
+                            <span>NA</span>
+                        </div>
+                    <p>
+                            {{$employee->TenNV}}
+                    </p>
+                    </td>
+                    <td> <p> {{$employee->chucvu->TenCV}}</p> </td>
+                    <td> <p>{{$employee->phongban->TenPhongBan}}</p> </td>
+                    <td class="muti-btn">
+                        <a  href="{{route('showSalaryDetail',['id' => $employee->MaNV])}}">
+                            <i class="bi bi-eye-fill edit"></i>
+                        </a>
+                    </td>
+                  </tr>
+                @endforeach
             </tbody>
           </table>
     </div>

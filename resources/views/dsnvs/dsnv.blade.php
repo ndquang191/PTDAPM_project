@@ -33,7 +33,7 @@
                   </div>
               </div>
             </div>
-          <div class="table-search-bar">
+          <div class="table-search-bar ">
             <div class="search-bar">
               <div>
                 <select class="form-select" id="chooseSearch">
@@ -86,3 +86,5 @@
 @section('linkjs')
     <script src="/js/ListAccEmployee/index.js"></script>
 @endsection
+
+<?php ?>

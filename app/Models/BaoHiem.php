@@ -14,7 +14,7 @@ class BaoHiem extends Model
     protected $table = 'baohiem';
     protected $primaryKey = 'MaBHXH';
     protected $fillable = 
-    ['MaNV','TenCheDo','MucDong'];
+    ['NgayBatDau','MucDongQDTS','MucDongTNLD','MucDongHT','MucDongBHTN','Thang'];
 
     public function nhanvien(){
         return $this->belongsTo(NhanVien::class);

@@ -5,7 +5,8 @@
 
 @section('content')
     <div class="fluid-container">
-        <div class="danhgia_main_container danhgia_main_page">
+        <div class="danhgia_add">
+            <div class="danhgia_main_container danhgia_main_page">
             <div class="head_add_danhgia_main">
                 <a href="{{route('showListEvaluate')}}" class="title_danhgia_add">Danh sách đánh giá</a>
                 <span>></span>
@@ -45,6 +46,5 @@
                 </div>
             </form>
         </div>
-
     </div>
 @endsection

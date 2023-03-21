@@ -1,45 +1,54 @@
+.danhgia_ds{
+    padding: 20px 10px;
+}
 .danhgia_main_container{
-    position: absolute;
-    width: 105rem;
-    /* height: 41rem; */
-    left: 21%;
-    top: 15rem;
+    width: 100%;
+    padding: 15px;
+    overflow: auto;
+    padding-left: 5px;
     border-radius: 5px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.title_main{
-    margin-top: 1rem;
+.danhgia_title{
+    margin-top: 2rem;
+    display: flex;
+    line-height: 27px;
+    background-color: #dcdcdc;
+    align-items: center;
+    justify-content: space-between;
+}
+.danhgia_add_btn{
+    background-color: #39374E;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #c6cfda;
 }
 .title_danhgia{
     color: #212529;
+    font-size: 3rem;
     text-align: center;
 }
-.danhgia_title{
-    background-color: #dcdcdc;
-    width: 102rem;
-    margin-left: 1rem;
-    margin-top: 2rem;
-}
+
 .danhgia_title h5{
     font-size: 1.4rem;
     color: rgba(0, 0, 0, 1);
     font-weight: 500;
 }
 .danhgia_main_page{
-    top: 11rem;
     background-color: rgba(237, 237, 237, 0.87);
 }
 
 .tilte_main{
-    /* float: left; */
     text-align: center;
     color: #000000B2;
-    font-size: 1.5rem;
-    margin-left: 8rem;
-    /* margin-top: 1rem; */
-
 }
+
 .table{
     width: 103rem;
     margin: 0 auto;
@@ -54,18 +63,19 @@ td{
 th{
     font-size: 1.4rem;
     color: #212529;
+    font-weight: 300;
 }
 .input_search{
-    float: right;
-    margin: 3px 2rem 1.5rem 0;
     display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    margin-bottom: 1rem;
+    gap: 1rem;
 }
 .form_input{
     width: 20rem;
     height: 3rem;
-    /* padding: 0 10px; */
     border-radius: 3px ;
-    margin-right: 1rem;
     border: 1px solid #39374E;
 }
 .search_btn{
@@ -107,11 +117,13 @@ th{
 }
 
 /* form thêm đánh giá */
+.danhgia_add{
+    padding: 15px;
+}
 .head_add_danhgia_main {
     margin-left: 1rem;
     margin-top: 2rem;
     background-color: #dcdcdc;
-    width: 102rem;
 }
 .head_add_danhgia_main span{
     font-size: 1.8rem;
@@ -140,8 +152,8 @@ th{
 }
 .form_title_danhgia{
     color: black;
-    margin-bottom: 1.2rem;
-    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 .form_input_add_danhgia{
     width: 35rem;

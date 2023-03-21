@@ -13,7 +13,7 @@ use App\Models\TrinhDoHocVan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Str;
-use Crypt;
+use Illuminate\Support\Facades\Crypt;
 
 class NhanVienController extends Controller
 {
@@ -62,7 +62,6 @@ class NhanVienController extends Controller
                 NhanVien::create([
                     'TenNV' => $request->name,
                     'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
-                    'HinhAnh' => null,
                     'NgaySinh' => $request->birthday,
                     'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
                     'CCCD' => $request->CCCD,
@@ -118,7 +117,7 @@ class NhanVienController extends Controller
         ]);
         $employee = NhanVien::where('MaNV',$id)->first();
         
-        DB::transaction(function () {
+        DB::transaction(function () use($employee , $request) {
             $employee->update([
                 'TenNV' => $request->name,
                 'NgaySinh' => $request->birthday,

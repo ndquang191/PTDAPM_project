@@ -44,6 +44,7 @@
     justify-content: space-between;
     border-radius: 5px;
     margin-bottom: 3rem;
+    padding: 0.5rem;
 }
 .navigation {
     font-weight: 400;

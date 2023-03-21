@@ -29,7 +29,7 @@
                <i class="bi bi-file-earmark"></i>
                <span>Bảo hiểm xã hội</span>
           </a>
-          <a href="" class="user_box_item">
+          <a href="{{route('showLeaveUser')}}" class="user_box_item">
                <i class="bi bi-calendar2-plus"></i>
                <span>Nghỉ phép</span>
           </a>

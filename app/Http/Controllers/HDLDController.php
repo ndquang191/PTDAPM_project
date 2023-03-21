@@ -46,16 +46,24 @@ class HDLDController extends Controller
         if(NhanVien::where('MaNV',$request->MaNV)->first() == null){
             return redirect()->back()->withInput()->with(['error' => 'Mã nhân viên không tồn tại']);
         }
-        HDLD::create([
-            'MaNV' => $request->MaNV,
-            'LoaiHopDong' => $request->LoaiHD,
-            'NgayKi' => $request->NgayKi,
-            'NgayBatDau' => $request->NgayBatDau,
-            'NgayKetThuc' => $request->NgayKetThuc,
-            'DiaDiem' => $request->DiaDiem,
-            'PhapNhan' => $request->PhapNhan,
-            'ChuyenMon' => $request->ChuyenMon,
-        ]);
+        DB::transaction(function () use($request){
+            HDLD::where('MaNV',$request->MaNV)->update([
+                'TrangThai' => 0,
+            ]);
+            HDLD::create([
+                'MaNV' => $request->MaNV,
+                'LoaiHopDong' => $request->LoaiHD,
+                'NgayKi' => $request->NgayKi,
+                'NgayBatDau' => $request->NgayBatDau,
+                'NgayKetThuc' => $request->NgayKetThuc,
+                'DiaDiem' => $request->DiaDiem,
+                'PhapNhan' => $request->PhapNhan,
+                'ChuyenMon' => $request->ChuyenMon,
+                'LuongCoBan' => $request->Luong,
+                'HeSoLuong' => $request->HeSoLuong,
+            ]);
+        });
+
         return redirect()->route('showListHDLD')->with(['message' => 'Thêm hợp đồng thành công', 'type' => 'success']);
     }
 
@@ -86,7 +94,7 @@ class HDLDController extends Controller
             'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
 
         ]);
-        $contract = HDLD::where('MaHDLD',$id)->first();
+        $contract = HDLD::where('MaHDLD',$id)->with('nhanvien')->first();
         $contract->update([
             'LoaiHopDong' => $request->LoaiHD,
             'NgayKi' => $request->NgayKi,
@@ -95,7 +103,19 @@ class HDLDController extends Controller
             'DiaDiem' => $request->DiaDiem,
             'PhapNhan' => $request->PhapNhan,
             'ChuyenMon' => $request->ChuyenMon,
+            'TrangThai' => $request->TrangThai,
         ]);
-        return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật thông tin thành công', 'type' => 'success']);
+        if($request->TrangThai == 1){
+            HDLD::where('MaNV',$contract->MaNV)->where('MaHDLD','!=',$id)->update([
+                'TrangThai' => 0,
+            ]);
+        }
+
+        return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Cập nhật hợp đồng thành công', 'type' => 'success']);
+    }
+
+    public function detroy($id){
+        HDLD::where('MaHDLD', $id)->delete();
+        return redirect()->route('showDetailHDLD',['id' => $id])->with(['message' => 'Xóa hợp đồng thành công', 'type' => 'success']);
     }
 }

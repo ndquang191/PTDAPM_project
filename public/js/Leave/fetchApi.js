@@ -23,3 +23,4 @@ inputAdd.addEventListener("blur", (e) => {
             setTimeout(() => errorNoti.classList.add("hidden"), 2000);
         });
 });
+errorNoti.classList;

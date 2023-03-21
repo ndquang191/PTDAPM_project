@@ -11,11 +11,10 @@
           <div class="hdld_main_container">
                <div class="h5">Thông tin hợp đồng</div>
                <br>
-
-
+               @if ($contract)
                <div class="fullrow">
                     <div class="title">Tên hợp đồng</div>
-                    <div class="value">Hợp đồng A</div>
+                    <div class="value">Không có dữ liệu</div>
                </div>
 
                <div class="fullrow">
@@ -61,11 +60,9 @@
                     <div class="title">Hệ số lương</div>
                     <div class="value">Hợp đồng A</div>
                </div>
-
-
-               
-
-
+               @else
+                    <h1>Không có hợp đồng</h1>
+               @endif
           </div>
      </div>
     

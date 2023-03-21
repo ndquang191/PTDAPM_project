@@ -127,3 +127,37 @@ td {
     font-size: 2.4rem;
     line-height: 3.3rem;
 }
+.flex-infor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.infor-leave {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-right: 2rem;
+}
+.leave-legal {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+    border-bottom: 2px solid #ddd;
+    color: #000000;
+}
+.leave-unlegal {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #ff0000;
+}
+
+.edit {
+    font-size: 2rem;
+    color: #5a5278;
+    cursor: pointer;
+    margin: 0 1.5rem;
+    /* text-align: center; */
+}

@@ -73,7 +73,7 @@
                     <div class="row_item">
 
                          <div class="title_input">Trình độ học vấn</div>
-                         <div class="input">{{$employeeInfo->TrinhDoHocVan->TrinhDoChuyenMon}}</div>
+                         <div class="input">{{$employeeInfo->TrinhDoHocVan}}</div>
                     </div>
           
                </div>
@@ -83,12 +83,12 @@
                     <div class="row_item">
 
                          <div class="title_input">Phòng ban</div>
-                         <div class="input">{{$employeeInfo->PhongBan->TenPhongBan}}</div>
+                         <div class="input">{{$employeeInfo->PhongBan}}</div>
                     </div>
                     <div class="row_item">
 
                          <div class="title_input">Chức vụ</div>
-                         <div class="input">{{$employeeInfo->ChucVu->TenCV}}</div>
+                         <div class="input">{{$employeeInfo->ChucVu}}</div>
                     </div>
                     <div class="row_item">
 
@@ -107,7 +107,4 @@
 
 @endsection
 
-@section('linkjs')
-     <script src="/js/user/detail.js"></script>
-    
-@endsection
+@

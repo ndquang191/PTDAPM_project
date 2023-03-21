@@ -15,9 +15,9 @@
                <table class="table table-nghiphep table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">Nội dung</th>
-                        <th scope="col">Ngày quyết định</th>
-                        <th scope="col">Mức khen thưởng / kỉ luật</th>
+                        <th scope="col-4">Nội dung</th>
+                        <th scope="col-4">Ngày quyết định</th>
+                        <th scope="col-4">Mức khen thưởng / kỉ luật</th>
                       </tr>
                     </thead>
                     <tbody>

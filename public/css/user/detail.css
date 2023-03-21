@@ -34,14 +34,13 @@
      border-bottom: 1px solid black;
      width: 100%;
      margin-bottom: 8px;
-     height: fit-content;
 }
 
 .user_detail.tab_holder span{
      display: inline-block;
      font-weight: 400;
      font-size: 16px;
-     line-height: 19px;
+     line-height: 25px;
      margin: 6px 12px;
      cursor: pointer;
 }
@@ -99,4 +98,22 @@
 
 .user_detail_tab .d-flex{
      margin-bottom: 16px;
+}
+
+
+.tab_1.active{
+     border-top: 2px solid blue;
+}
+
+
+.tab_2.active{
+     border-top: 2px solid blue;
+}
+
+
+.user_detail_tab{
+     display: none
+}
+.user_detail_tab.show{
+     display: block;
 }

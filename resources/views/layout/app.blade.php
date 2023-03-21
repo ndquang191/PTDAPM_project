@@ -119,11 +119,23 @@
                        <span>Hợp đồng lao động</span>
                      </a>
                    </li>
-                   <li class="dropdown_main_menu_item" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
-                     <a href="{{route('showListLeave')}}" class="link_dropdown_main_menu">
-                      <i class="bi bi-calendar-check"></i>
+                   <li class="dropdown_main_menu_item hover-none" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
+                     <a  class="link_dropdown_main_menu btn-click-event">
+                      <i class="bi bi-calendar-check" ></i>
                        <span>Nghỉ phép</span>
                      </a>
+                     <ul class="donnghi hidden">
+                      <li class="dropdown_main_menu_item" style="border-right:none" ><a href="{{route('showListLeave')}}" class="duyetdon link_dropdown_main_menu">
+                        <i class="bi bi-person-check"></i>
+                        <span>Đơn đã duyệt</span>
+                      </a>
+                    </li>
+                      <li class="dropdown_main_menu_item" ><a href="" class="duyetdon link_dropdown_main_menu">
+                        <i class="bi bi-person"></i>
+                        <span>Đơn chờ duyệt</span>  
+                      </a>
+                      </li>
+                     </ul>
                    </li>
                    <li class="dropdown_main_menu_item dropdown_sub_menu" {{Auth::user()->QuyenTruyCap == 'admin2' ? '' : 'style=display:none;'}}>
                      <a href="{{route('showSalary')}}" class="link_dropdown_main_menu">
@@ -155,7 +167,11 @@
 </body>
 
 <script>
-
+    const leaveBtn = document.querySelector(".btn-click-event")
+      leaveBtn.addEventListener('click',(e)=>{
+        const donnghi = document.querySelector(".donnghi");
+        donnghi.classList.toggle("hidden");
+      })
     const exitBTN = document.getElementById('logout-btn')
         exitBTN.addEventListener('click',(e)=>{
           e.preventDefault();

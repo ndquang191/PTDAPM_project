@@ -119,8 +119,8 @@
                         <div class="btn-update-exit">
                             <div>
                                 {{-- <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button> --}}
-                                <a><button onclick="formShow()" onclick="myHiddenUpdate()" class="update" type="button" id="btn-update" value="Show Alert">Sửa</button></a>
-                                <a href="{{route('listEmployee')}}"><button class="exit" type="button">Thoát</button></a>
+                                <a><button onclick="formShow()" onclick="myHiddenUpdate()" class="btn btn-primary" type="button" id="btn-update" value="Show Alert">Cập nhật</button></a>
+                                <a href="{{route('listEmployee')}}"><button class="btn btn-success" type="button">Thoát</button></a>
                             </div>
                         </div>
                     </form>
@@ -277,3 +277,5 @@
 @section('linkjs')
     <script src="/js/ListAccEmployee/index.js"></script>
 @endsection
+
+<?php ?>
