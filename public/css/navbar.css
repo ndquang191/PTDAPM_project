@@ -281,8 +281,22 @@ h6 {
     background-color: #dcdcdc !important;
 }
 
-.dropdown_user_menu{
+.dropdown_user_menu {
     min-width: 250px;
 
     padding: 0;
+}
+.hover-none:hover {
+    border-right: none !important;
+}
+.donnghi li:hover {
+    border-right: 2px solid #333 !important;
+}
+.donnghi li {
+    padding-bottom: 0;
+}
+.hidden {
+    visibility: none;
+    opacity: 0;
+    height: 0;
 }

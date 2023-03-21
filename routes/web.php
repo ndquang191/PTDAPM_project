@@ -62,6 +62,8 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
     Route::get('/','list')->name('showListLeave'); // Hiển thị danh sách nghỉ phép
     Route::get('/add','create')->name('createLeave'); // Hiển thị form thêm hợp đồng
     Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
+
+    //* SỬA ADDLEAVE.BLADE = XEMNGHIPHEP.BLADE*/
 });
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/evaluate')->group(function(){

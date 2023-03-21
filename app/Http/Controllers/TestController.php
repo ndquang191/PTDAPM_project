@@ -16,9 +16,14 @@ class TestController extends Controller{
             return view('LeaveList/leavelist');
     }
     public function addleave(){
-        return view('LeaveList/addleave');
+        return view('LeaveList/XemDonNghiPhep');
     }    public function editleave(){
         return view('LeaveList/editleave');
+    } public function Duyetleave(){
+        return view('LeaveList/DuyetDon');
+    }
+    public function chodon(){
+        return view('LeaveList/ChoDuyet');
     }
     public function historyleave(){
         return view('LeaveList/historyleave');
