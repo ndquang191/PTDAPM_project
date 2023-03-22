@@ -32,8 +32,8 @@ form{
 .container{
     background-color: #EBEBEB;
 }
-img{
-    width: 130px;height: 150px;
+#image{
+    width: 150px;height: 150px;
 }
 .update-exit{
     float: right;margin-top: 20px;
