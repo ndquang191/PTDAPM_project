@@ -39,10 +39,15 @@ class TaiKhoanController extends Controller
         $exists = DB::table('taikhoan')->where('MaNV',$request->username)->first();
         $validated = $request->validate([
             'username' => 'bail|required',
-            'password' => 'required|min:6',
         ],
         [
             'username.required' => "Vui lòng điền tên đăng nhập và đăng nhập.",
+        ]);
+
+        $validated = $request->validate([
+            'password' => 'required|min:6',
+        ],
+        [
             'password.required' => "Vui lòng điền mật khẩu (mật khẩu trên 6 ký tự) và đăng nhập",
             'password.min' => "Vui lòng điền mật khẩu (mật khẩu trên 6 ký tự) và đăng nhập",
         ]);
