@@ -35,7 +35,7 @@ class NhanVienController extends Controller
     public function store(Request $request){
         $validator = $request->validate([
                 'image' => 'bail|required',
-                'birthday' => 'bail|required|before:1998-12-31',
+                'birthday' => 'bail|required|before:2006-1-1',
                 'ngaycap' => 'bail|required',
                 'noicap' => 'bail|required',
                 'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',

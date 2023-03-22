@@ -18,7 +18,6 @@
             timer: 3000
           })
         </script>
-        {{-- {!! implode('', $errors->all('<div>:message</div>')) !!} --}}
         @endif
         <div class="container">
             <form method="post" action="{{route('storeEmployee')}}" enctype="multipart/form-data">
