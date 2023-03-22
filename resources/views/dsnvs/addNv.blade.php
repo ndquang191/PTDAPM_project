@@ -77,8 +77,8 @@
                         <input class="form-control" type="text" id="noicap" name="noicap" value={{old('noicap')}}>
                     </div>
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="">Số điện thoại</label>
-                        <input class="form-control" value="" name="" id="" type="text" readonly>
+                        <label class="form-label" for="phonenumber">Số điện thoại</label>
+                        <input class="form-control" value="{{old('phonenumber')}}" name="phonenumber" id="phonenumber" type="text">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="placeofbirth">Nơi sinh</label>
@@ -100,13 +100,13 @@
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control" type="text" name="email" id="email" value={{old('email')}}>
                     </div>
-                    <div class="col-6 col-md-3">
+                    {{-- <div class="col-6 col-md-3">
                         <label class="form-label" for="">Trình độ học vấn</label>
                         <input class="form-control" type="text" name="" id="" value="">    
-                    </div>
+                    </div> --}}
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="">Trình độ chuyên môn</label>
-                        <input class="form-control" type="text" value="" name="" id="" readonly>
+                        <label class="form-label" for="trinhdochuyenmon">Trình độ chuyên môn</label>
+                        <input class="form-control" type="text" value="{{old('trinhdochuyenmon')}}" name="trinhdochuyenmon" id="trinhdochuyenmon">
                     </div>
                 </div>
                 
@@ -114,12 +114,12 @@
     
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="">Vị trí việc làm</label>
-                        <input class="form-control" type="text" value="" name="" id="">
+                        <label class="form-label" for="vitrilamviec">Vị trí việc làm</label>
+                        <input class="form-control" type="text" value="{{old('vitrilamviec')}}" name="vitrilamviec" id="vitrilamviec">
                     </div>
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="">Ngày nhậm chức</label>
-                        <input class="form-control" type="date" value="" name="" id="">
+                        <label class="form-label" for="ngaynhamchuc">Ngày nhậm chức</label>
+                        <input class="form-control" type="date" value="{{old('ngaynhamchuc')}}" name="ngaynhamchuc" id="ngaynhamchuc">
                     </div>
                     <div class="col-6 col-md-2">
                         <label class="form-label" for="">Phòng ban</label>
@@ -128,7 +128,7 @@
                                 @foreach ($phongbans as $phongban)  
                                 <option 
                                     value="{{$phongban->MaPB}}" 
-                                    {{ old('phongban') == $phongban->TenPhongBan ? 'selected' : '' }}>{{$phongban->TenPhongBan}}
+                                    {{ old('phongban') == $phongban->MaPB ? 'selected' : '' }}>{{$phongban->TenPhongBan}}
                                 </option>
                                 @endforeach
                             </select>
@@ -141,7 +141,7 @@
                                 @foreach ($chucvus as $chucvu)  
                                 <option 
                                     value="{{$chucvu->MaCV}}" 
-                                    {{ old('chucvu') == $chucvu->TenCV ? 'selected' : '' }}>{{$chucvu->TenCV}}
+                                    {{ old('chucvu') == $chucvu->MaVV ? 'selected' : '' }}>{{$chucvu->TenCV}}
                                 </option>
                                 @endforeach
                             </select>
@@ -154,7 +154,7 @@
                                 @foreach ($TDHVs as $TDHV)  
                                 <option 
                                     value="{{$TDHV->MaTDHV}}" 
-                                    {{ old('trinhdo') == $TDHV->TenHeDaoTao ? 'selected' : '' }}>{{$TDHV->TenHeDaoTao}}
+                                    {{ old('trinhdo') == $TDHV->MaTDHV ? 'selected' : '' }}>{{$TDHV->TenHeDaoTao}}
                                 </option>
                                 @endforeach
                             </select>

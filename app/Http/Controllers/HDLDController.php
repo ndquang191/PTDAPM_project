@@ -39,21 +39,21 @@ class HDLDController extends Controller
             'Luong' => 'required|numeric',
             'HeSoLuong' => 'required|numeric|max:8',
         ],[
-            'required' => "Nhập thiếu thông tin",
+            'required' => "Nhập thiếu thông tin vui lòng nhập đầy đủ thông tin !!!",
             'MaNV.numeric' => 'Mã nhân viên sai định dạng',
-            'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
+            'HeSoLuong.max' => 'Nhập quá hệ số lương cho phép. Vui lòng nhập lại !!!',
             'Luong.numeric' => 'Lương phải là số',
             'HeSoLuong.numeric' => 'Hệ số lương phải là số',
             'LoaiHD.regex' => "Loại hợp đồng sai định dạng",
-            'ChuyenMon.regex' => "Chuyên môn sai định dạng",
+            'ChuyenMon.regex' => "Nhập sai định dạng chuyên môn. Vui lòng nhập lại !!!",
             'PhapNhan.regex' => "Pháp nhân đồng sai định dạng",
 
         ]);
         if(NhanVien::where('MaNV',$request->MaNV)->first() == null){
-            return redirect()->back()->withInput()->with(['error' => 'Mã nhân viên không tồn tại']);
+            return redirect()->back()->withInput()->with(['error' => 'Mã nhân viên không tồn tại. Vui lòng kiểm tra mã nhân viên vừa nhập']);
         }
         if(Carbon::parse($request->NgayBatDau)->gt(Carbon::parse($request->NgayKetThuc))){
-            return redirect()->back()->withInput()->with(['error' => 'Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc']);
+            return redirect()->back()->withInput()->with(['error' => 'Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc. Vui lòng chọn lại ngày']);
         }
         DB::transaction(function () use($request){
             HDLD::where('MaNV',$request->MaNV)->update([
@@ -102,18 +102,18 @@ class HDLDController extends Controller
             'Luong' => 'required|numeric',
             'HeSoLuong' => 'required|numeric|max:8',
         ],[
-            'required' => "Nhập thiếu thông tin",
+            'required' => "Nhập thiếu thông tin vui lòng nhập đầy đủ thông tin !!!",
             'MaNV.numeric' => 'Mã nhân viên sai định dạng',
-            'HeSoLuong.max' => 'Hệ số lương không vượt quá 8',
+            'HeSoLuong.max' => 'Nhập quá hệ số lương cho phép. Vui lòng nhập lại !!!',
             'Luong.numeric' => 'Lương phải là số',
             'HeSoLuong.numeric' => 'Hệ số lương phải là số',
             'LoaiHD.regex' => "Loại hợp đồng sai định dạng",
-            'ChuyenMon.regex' => "Chuyên môn sai định dạng",
+            'ChuyenMon.regex' => "Nhập sai định dạng chuyên môn. Vui lòng nhập lại !!!",
             'PhapNhan.regex' => "Pháp nhân đồng sai định dạng",
 
         ]);
         if(Carbon::parse($request->NgayBatDau)->gt(Carbon::parse($request->NgayKetThuc))){
-            return redirect()->back()->withInput()->with(['error' => 'Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc']);
+            return redirect()->back()->withInput()->with(['error' => 'Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc. Vui lòng chọn lại ngày']);
         }
         $contract = HDLD::where('MaHDLD',$id)->with('nhanvien')->first();   
         $contract->update([
