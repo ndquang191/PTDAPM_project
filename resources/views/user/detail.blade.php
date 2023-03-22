@@ -104,7 +104,24 @@
                </div>
           </div>
           <div class="detail_degree user_detail_tab">
-
+               <table class="table table-striped">
+                    <thead>
+                         <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tên bằng cấp</th>
+                              <th scope="col">Loại bằng cấp</th>
+                              <th scope="col">Ngày cấp</th>
+                         </tr>
+                    </thead>
+                <tbody>
+                         <tr>
+                              <td scope="col">STT</td>
+                              <td scope="col" class="tbc">Tên bằng cấp</td>
+                              <td scope="col">Loại bằng cấp</td>
+                              <td scope="col">Ngày cấp</td>
+                         </tr>
+                </tbody>
+                </table>
 
           </div>
      </div>

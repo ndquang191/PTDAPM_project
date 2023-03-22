@@ -90,6 +90,7 @@
                 <td>Họ và tên</td>
                 <td>Tên bằng cấp</td>
                 <td>Ngày cấp</td>
+                <td>Loại Bằng Cấp</td>
                 <td>Hành động</td>
               </tr>
             </thead>
@@ -102,8 +103,48 @@
                     <td>{{$employee->TenNV}}</td>
                     <td>{{$degree->TenBC}}</td>
                     <td>{{$degree->NgayCap}}</td>
+                    <td>{{$degree->LoaiBC}}</td>
                     <td>
-                        <a class="show" href="{{route('editDegreeForm',['id' => $employee->MaNV,'degreeID' => $degree->MaBC])}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        {{-- <a class="show" href="{{route('editDegreeForm',['id' => $employee->MaNV,'degreeID' => $degree->MaBC])}}"></a> --}}
+
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" data-bs-whatever="@mdo"><i class="fa-solid fa-pen-to-square"></i></a>
+
+
+                        <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-body">
+                                <form method="get" action="{{route('editDegreeForm',['id' => $employee->MaNV,'degreeID' => $degree->MaBC])}}">
+                                  @csrf
+                                  <div class="mb-3">
+                                    <label for="tenBC" class="col-form-label">Tên bằng cấp</label>
+                                    <textarea class="form-control" id="tenBC" name="tenbangcap">{{$degree->TenBC}}</textarea>
+                                  </div>
+                                  <div class="mb-3 bottom-info">
+                                      <div class="left info">
+      
+                                          <label for="ngaycap" class="col-form-label">Ngày cấp</label>
+                                          <input type="date" class="form-control" id="ngaycap" name="ngaycap" value="{{$degree->NgayCap}}">
+                                      </div>
+                                      <div class="right info">
+                                              <label class="col-form-label" for="inputGroupSelect01">Loại bằng cấp</label>
+                                              <select class="form-select" id="inputGroupSelect01" name="loaibangcap">
+                                                <option value="Bằng cấp 1" {{ $degree->LoaiBC == 'Bằng cấp 1'  ? 'selected' : ''}}>Bằng cấp 1</option>
+                                                <option value="Bằng cấp 2" {{ $degree->LoaiBC == 'Bằng cấp 2'  ? 'selected' : ''}}>Băng cấp 2</option>
+                                                <option value="Bằng cấp 3" {{ $degree->LoaiBC == 'Bằng cấp 3'  ? 'selected' : ''}}>Băng cấp 3</option>
+                                              </select>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Thoát</button>
+                                  <button type="submit" class="btn btn-primary btn-lg">Lưu</button>
+                              </div>
+                          </form>
+                            </div>
+                          </div>
+                        </div>
+
                         <a href="" class="delete-btn" data-id={{$degree->MaBC}}><i class="fa-solid fa-trash"></i></a>
                     </td>
                   </tr>
