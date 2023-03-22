@@ -44,20 +44,3 @@ function danhgia_Timkiem() {
     }
 }
 
-
-const danhgiaExit = document.querySelector('.exit-btn')
-danhgiaExit.addEventListener('click',(e)=>{
-    e.preventDefault();
-    Swal.fire({
-        title: 'Bạn có muốn thoát ở đây ?',
-        showCancelButton: true,
-        confirmButtonText: 'Có',
-        cancelButtonText: 'Không',
-        icon: 'question',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = 'http://127.0.0.1:8000/evaluate';
-        }
-    })
-})
-
