@@ -12,7 +12,7 @@ class BangCap extends Model
     public $timestamps = false;
     protected $table = 'bangcap';
     protected $primaryKey = 'MaBC';
-    protected $fillable = ['MaNV','TenBC','NgayCap'];
+    protected $fillable = ['MaNV','TenBC','NgayCap','LoaiBC'];
 
     public function nhanvien(){
         return $this->belongsTo(NhanVien::class,'MaNV');
