@@ -24,9 +24,26 @@ class BaoHiemController extends Controller
 
     public function storeBHXH(Request $request){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $validator = $request->validate([
+            'startDate' => 'required',
+            'ID' => 'required',
+            'QDTS' => 'required',
+            'HT' => 'required',
+            'BHTN' => 'required',
+            'TNLD' => 'required',
+            'month' => 'required',
+        ],
+        [
+            'required' => "Nhập thiếu thông tin"
+        ]);
         $employee = NhanVien::where('MaNV',$request->ID)->first();
-        if($employee->MaBH != null){
-            return redirect()->back()->with(['message' => 'Nhân viên đã có bảo hiểm', 'type' => 'error']);
+        if($employee == null){
+            return redirect()->back()->with(['message' => 'Nhân viên không tồn tại', 'type' => 'error']);
+        }
+        else{
+            if ($employee->MaBH != null){
+                return redirect()->back()->with(['message' => 'Nhân viên đã có bảo hiểm', 'type' => 'error']);
+            }
         }
         DB::transaction(function () use($request){
             $baohiem = BaoHiem::create([
