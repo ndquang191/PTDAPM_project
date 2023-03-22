@@ -35,9 +35,8 @@ class TestController extends Controller{
     }
     public function addhdld(){
         return view('hdlds/hdld_add');
-    }    public function pdfsalary(){
-        return view('Salary/salarypdf');
-    }
-    
+    }    public function luong(){
+        return view('Salary/Luong');
+    } 
 }
 ?>

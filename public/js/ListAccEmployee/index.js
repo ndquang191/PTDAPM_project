@@ -153,6 +153,7 @@ function searchAccount() {
         stt = 3;
     }
     for (i = 0; i < tr.length; i++) {
+        // console.log(tr[i]);
         td = tr[i].getElementsByTagName("td")[stt];
         if (td) {
             txtValue = td.textContent || td.innerText;
@@ -173,3 +174,4 @@ function formShow() {
 //     searchAccount();
 // });
 //-------------------------------------------------------------------------------
+//-----------------------------------------------------

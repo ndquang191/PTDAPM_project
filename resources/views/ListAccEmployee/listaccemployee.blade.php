@@ -100,7 +100,6 @@
                                 >
                                     {{$account->QuyenTruyCap}}
                                 </button>
-
                                 <div class="role-menu">
                                     @if ($account->QuyenTruyCap == 'member')
                                         <button class="btn ADMIN1-color">admin1</button>
@@ -114,6 +113,7 @@
                                         <button class="btn ADMIN1-color">admin1</button>
                                         @endif
                                     @endif
+
                                 </div>
 
                             </td>
@@ -130,6 +130,7 @@
             </div>
     </div>
 </div>
+
 {{-- <div class="overlay hidden"></div>
 <div class="form-changepw hidden">
     <button class="btn-close-modal">x</button>
@@ -155,6 +156,7 @@
             title: 'Reset mật khẩu tài khoản ' + btn.getAttribute('data-id') + ' ?',
             showCancelButton: true,
             confirmButtonText: 'Reset',
+            // showConfirmButton:'admin2',
             }).then((result) => {
             if (result.isConfirmed) {
                 resetForm.setAttribute('action','/account/'+btn.getAttribute('data-id')+'/reset')
@@ -163,6 +165,7 @@
         })
         })
     });
+    
 </script>
 @endsection
 @section('linkjs')
