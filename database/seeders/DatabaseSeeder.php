@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             $phongbans = ['Phòng ban 1', 'Phòng ban 2', 'Phòng ban 3'];
             $trinhdos = ['Trình độ 1', 'Trình độ 2', 'Trình độ 3'];
             $chucvus = ['Chức vụ 1', 'Chức vụ 2', 'Chức vụ 3'];
+            
             foreach($phongbans as $phongban){
                 $randomStr = Str::random(10);
                 PhongBan::create([
@@ -58,6 +59,9 @@ class DatabaseSeeder extends Seeder
                     'TenNV' => Str::random(10),
                     'HinhAnh' => null,
                     'NgaySinh' => Carbon::now(),
+                    'NgayNhamChuc' => Carbon::now(),
+                    'ViTriLamViec' => Str::random(10),
+                    'TrinhDoChuyenMon' => Str::random(10),
                     'GioiTinh' => floor(rand(0,1)),
                     'CCCD' => '0000000000000',
                     'NgayCap' => Carbon::now(),

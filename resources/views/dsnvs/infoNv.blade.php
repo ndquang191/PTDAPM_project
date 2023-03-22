@@ -55,7 +55,7 @@
                     <label for=""><i class="fa-solid fa-user"></i> {{$employee->TenNV}}</label>
                     <label for=""><i class="fa-brands fa-steam-symbol"></i></i>{{$employee->PhongBan == null ? "Trống" : $employee->PhongBan->TenPhongBan}}</label>
                     <label for=""><i class="fa-solid fa-envelope"></i>{{$employee->Email == null ? "Trống" : $employee->Email}}</label>
-                    <label for=""><i class="fa-solid fa-phone"></i>{{$employee->SDT == null ? "Trống" : $employee->SDT}}1</label>
+                    <label for=""><i class="fa-solid fa-phone"></i>{{$employee->SDT == null ? "Trống" : $employee->SDT}}</label>
                     <label for=""><i class="fa-solid fa-calendar-days"></i>{{$employee->NgaySinh == null ? "Trống" : $employee->NgaySinh}}</label>
                     <label for=""><i class="fa-solid fa-venus-mars"></i>{{$employee->GioiTinh == 0 ? "Nam" : "Nữ"}}</label>
                 </div>
@@ -73,11 +73,11 @@
                             </div>
                             <div class="col-6 col-md-2">
                                 <label class="form-label" for="">Giới tính</label>
-                                <input class="form-control" type="text" name="" value="" readonly>
+                                <input class="form-control" type="text" name="" value="{{$employee->GioiTinh == 0 ? "Nam" : "Nữ"}}" readonly>
                             </div>
                             <div class="col-6 col-md-3">
                                 <label class="form-label" for="">Ngày sinh</label>
-                                <input class="form-control" type="date" name="" value="">
+                                <input class="form-control" type="date" name="" value="{{$employee->NgaySinh}}">
                             </div>
                             <div class="col-6 col-md-2">
                                 <label class="form-label" for="">Dân tộc</label>
@@ -91,15 +91,15 @@
                             </div>
                             <div class="col-6 col-md-3">
                                 <label class="form-label" for="">Ngày cấp</label>
-                                <input class="form-control" value="" name="" id="" type="date" readonly>
+                                <input class="form-control" value="{{$employee->NgayCap}}" name="" id="" type="date" readonly>
                             </div>
                             <div class="col-6 col-md-3">
                                 <label class="form-label" for="">Nơi cấp</label>
-                                <input class="form-control" value="" name="" id="" type="text" readonly>
+                                <input class="form-control" value="{{$employee->NoiCap}}" name="" id="" type="text" readonly>
                             </div>
                             <div class="col-6 col-md-2">
                                 <label class="form-label" for="">Số điện thoại</label>
-                                <input class="form-control" value="" name="" id="" type="text" readonly>
+                                <input class="form-control" value="{{$employee->SDT}}" name="" id="" type="text" readonly>
                             </div>
                         </div>
                         <div class="row align-items-start">
@@ -113,7 +113,7 @@
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="">Email</label>
-                                <input class="form-control" type="text" value="" name="" id="" readonly>
+                                <input class="form-control" type="text" value="{{$employee->Email}}" name="" id="" readonly>
                             </div>
                         </div>
                         <div class="row align-items-start">
@@ -123,11 +123,11 @@
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="">Trình độ chuyên môn</label>
-                                <input class="form-control" type="text" value="" name="" id="" readonly>
+                                <input class="form-control" type="text" value="{{$employee->TrinhDoChuyenMon}}" name="" id="" readonly>
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="">Vị trí việc làm</label>
-                                <input class="form-control" type="text" value="" name="" id="" readonly>
+                                <input class="form-control" type="text" value="{{$employee->ViTriLamViec}}" name="" id="" readonly>
                             </div>
                         </div>
                         <div class="row align-items-start">
@@ -141,7 +141,7 @@
                             </div>
                             <div class="col-6 col-md-3">
                                 <label class="form-label" for="">Ngày nhậm chức</label>
-                                <input class="form-control" type="date" value="" name="" id="" readonly>
+                                <input class="form-control" type="date" value="{{$employee->NgayNhamChuc}}" name="" id="" readonly>
                             </div>
                             <div class="col-6 col-md-3">
                                 <label class="form-label" for="">Phòng ban</label>
@@ -245,17 +245,14 @@
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control" type="text" name="email" id="email" value="{{$employee->Email}}">
                     </div>
-                    <div class="col-6 col-md-2">
-                        <label class="form-label" for="">Trình độ học vấn</label>
-                        <input class="form-control" type="text" name="" id="" value="">    
-                    </div>
+
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="">Trình độ chuyên môn</label>
-                        <input class="form-control" type="text" value="" name="" id="" readonly>
+                        <input class="form-control" type="text" value="{{$employee->TrinhDoChuyenMon}}" name="trinhdochuyenmon" id="trinhdochuyenmon" readonly>
                     </div>
-                    <div class="col-6 col-md-2">
-                        <label class="form-label" for="">Vị trí việc làm</label>
-                        <input class="form-control" type="text" value="" name="" id="">
+                    <div class="col-6 col-md-4">
+                        <label class="form-label" for="vitrilamviec">Vị trí việc làm</label>
+                        <input class="form-control" type="text" value="{{$employee->ViTriLamViec}}" name="vitrilamviec" id="vitrilamviec">
                     </div>
                 </div>    
     
@@ -271,7 +268,7 @@
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="">Ngày nhậm chức</label>
-                        <input class="form-control" type="date" value="" name="" id="">
+                        <input class="form-control" type="date" value="{{$employee->NgayNhamChuc}}" name="ngaynhamchuc" id="">
                     </div>
                     <div class="col-6 col-md-2">
                         <label class="form-label" for="">Phòng ban</label>

@@ -26,6 +26,9 @@ return new class extends Migration
             $table->string('DanToc');
             $table->string('SDT',12);
             $table->string('Email',50);
+            $table->string('ViTriLamViec',100);
+            $table->string('TrinhDoChuyenMon',100);
+            $table->date('NgayNhamChuc');
             $table->unsignedBigInteger('MaTDHV');
             $table->unsignedBigInteger('MaPB');
             $table->unsignedBigInteger('MaCV');
