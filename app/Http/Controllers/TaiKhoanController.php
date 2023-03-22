@@ -71,12 +71,12 @@ class TaiKhoanController extends Controller
                 }
             }
             else{
-                return redirect()->back()->with(['message' => 'Mật khẩu không đúng']);
+                return redirect()->back()->with(['message' => 'Tài khoản hoặc mật khẩu sai, vui lòng thử lại']);
 
             }
         }
         else{
-            return redirect()->back()->with(['message' => 'Tài khoản không tồn tại']);
+            return redirect()->back()->with(['message' => 'Tài khoản hoặc mật khẩu sai, vui lòng thử lại']);
         }
     }
 

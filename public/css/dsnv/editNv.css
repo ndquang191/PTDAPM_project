@@ -32,7 +32,10 @@ form{
 .container{
     background-color: #EBEBEB;
 }
-#image{
+img{
+    max-width: 100%;
+}
+#image,img{
     width: 150px;height: 150px;
 }
 .update-exit{
