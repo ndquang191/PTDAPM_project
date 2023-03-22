@@ -68,7 +68,7 @@
                           <tbody>
                             @foreach ($insurances as $insurance)
                             <tr>
-                                <td>{{$insurance->MaBH}}</td>
+                                <td>{{$insurance->MaNV}}</td>
                                 <td>{{$insurance->NgayBatDau}}</td>
                                 <td>{{$insurance->MucDongQDTS}}</td>
                                 <td>{{$insurance->MucDongTNLD}}</td>

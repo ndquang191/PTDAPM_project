@@ -66,8 +66,8 @@ class NhanVienController extends Controller
             DB::transaction(function () use($request) {
                 NhanVien::create([
                     'TenNV' => $request->name,
-                    'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
-                    // 'HinhAnh' => null,
+                    // 'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                    'HinhAnh' => null,
                     'NgaySinh' => $request->birthday,
                     'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
                     'CCCD' => $request->CCCD,

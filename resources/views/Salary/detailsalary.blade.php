@@ -32,7 +32,7 @@
                 <p class="salary-2 heSoLuong">{{$hesoluong}}</p>
                 {{-- hệ số lương --}}
                 <div class="eye-hide">
-                    <p class="salary-1 LuongChinh">1.000.000 VND</p>
+                    <p class="salary-1 LuongChinh">{{number_format(intval($luongcoban * $hesoluong))}} VND</p>
                 </div>
             </div>
             <div class="salary-base">
@@ -41,7 +41,7 @@
                 <p class="salary-2 soTienMat1Ngay">- {{number_format(intval($leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}} VND</p>
                 <p class="salary-1 soNgayNghi"> {{$leaveDayCount}}</p>
                 <div class="eye-hide " >
-                    <p class="salary-1 TongSoTienMat">1.000.000 VND</p>
+                    <p class="salary-1 TongSoTienMat">{{number_format(intval($leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}}gi VND</p>
 
                 </div>
             </div>
