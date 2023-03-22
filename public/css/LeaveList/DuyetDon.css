@@ -10,7 +10,7 @@ l.main_page {
     font-family: "Roboto", sans-serif;
 }
 .container {
-    width: 100%;
+    max-width: 160rem;
     min-height: 50rem;
     min-height: 80%;
     background: #e3e3e3;

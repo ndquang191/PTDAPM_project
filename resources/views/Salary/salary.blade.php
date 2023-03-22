@@ -54,10 +54,9 @@
                     <td><p class="padding">{{$count}}</p></td>
                     <td class="Employee-custom-table">
                         <div class="">
-                            <span>NA</span>
+                            <span class="sign-name">NA</span>
                         </div>
-                    <p>
-                            {{$employee->TenNV}}
+                    <p class="nameEmployee">{{$employee->TenNV}}
                     </p>
                     </td>
                     <td> <p> {{$employee->chucvu->TenCV}}</p> </td>
