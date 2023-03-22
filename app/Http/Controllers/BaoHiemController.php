@@ -13,8 +13,9 @@ class BaoHiemController extends Controller
 {
     public function showListBHXH(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
-        $insurances = BaoHiem::all();
-        return view('baohiemxhs.dsbhxh',['user' => $user,'insurances' => $insurances]);
+        $employees = NhanVien::with('baohiem')->where('MaBH','!=',null)->get();
+        // return $employees;
+        return view('baohiemxhs.dsbhxh',['user' => $user,'employees' =>  $employees]);
     }
 
     public function createBHXH(){
