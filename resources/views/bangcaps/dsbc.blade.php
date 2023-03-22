@@ -46,7 +46,7 @@
             <div class="btn-add">
                 <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Thêm</button>
 
-
+                {{-- Modal thêm --}}
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -109,7 +109,7 @@
 
                         <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" data-bs-whatever="@mdo"><i class="fa-solid fa-pen-to-square"></i></a>
 
-
+                        {{-- Modal sửa --}}
                         <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">

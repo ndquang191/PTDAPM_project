@@ -22,10 +22,21 @@ class BangCapController extends Controller
         return view('bangcaps.addbc',['user' => $user]);
     }
 
-    public function edit($id,$degreeID){
-        $user = NhanVien::find(Auth::user()->MaNV);
-        $degree = BangCap::find($degreeID);
-        return view('bangcaps.dsbc',['user' => $user,'degree' => $degree]);
+    public function edit($id,$degreeID,Request $request){
+        $request->validate([
+            'tenbangcap' => 'required',
+            'loaibangcap' => 'required',
+            'ngaycap' => 'required',
+        ],[
+            'required' => "Nhập thiếu thông tin"
+        ]);
+
+        BangCap::find($degreeID)->update([
+            'TenBC' => $request->tenbangcap,
+            'LoaiBC' => $request->loaibangcap,
+            'NgayCap' => $request->ngaycap,
+        ]);
+        return redirect()->route("showDegree",['id' => $id])->with(['message' => "Sửa thành công"]);
     }
 
     public function store(Request $request,$id){
