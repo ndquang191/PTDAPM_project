@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.user1')
 @section('linkcss')
 <link rel="stylesheet" href="/css/Salary/detailsalary.css">
 @endsection

@@ -104,3 +104,8 @@
     </script>
 @endsection
 
+
+@section('linkjs')
+    <script src="/js/danhgia/danhgia.js"></script>
+    
+@endsection
