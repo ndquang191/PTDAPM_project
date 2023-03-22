@@ -41,9 +41,6 @@
                         </select>
                     </div>
                     <input type="text" name="search" id="myInput" placeholder="Tìm kiếm theo MNV, trạng thái" class="form_input form-input" onkeyup="myFunction()">
-                    <a href="#" class="search_btn" onclick="myFunction()">
-                        <i class="bi bi-search icon_color_search"></i>
-                    </a>
                 </div>
                 <table class="table table-hover" id="myTable">
                     <thead>

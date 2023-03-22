@@ -38,9 +38,6 @@
                 <form action="">
                     <input type="text" name="search" id="myInput" placeholder="Tìm kiếm ..." class="form_input" onkeyup="danhgia_Timkiem()" >
                 </form>
-                <a href="#" class="search_btn" onclick="danhgia_Timkiem()">
-                    <i class="bi bi-search icon_color_search"></i>
-                </a>
             </div>
             <table class="table table-hover" id="myTable">
                 <thead>
