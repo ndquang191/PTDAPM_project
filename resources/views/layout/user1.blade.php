@@ -97,7 +97,7 @@
                <div class="main_navbar">
                  <ul class="dropdown_main_menu">
                    <li class="dropdown_main_menu_item">
-                     <a href="/" class="link_dropdown_main_menu">
+                     <a href="{{route('getHomepage')}}" class="link_dropdown_main_menu">
                        <i class="fa-solid fa-house"></i>
                        <span>Trang chủ</span>
                      </a>
@@ -132,6 +132,13 @@
                        <span>Đánh giá</span>
                      </a>
                    </li>
+
+                   <li class="dropdown_main_menu_item dropdown_sub_menu">
+                    <a href="{{route('showSalaryUser')}}" class="link_dropdown_main_menu">
+                       <i class="bi bi-wallet-fill"></i>
+                      <span>Lương</span>
+                    </a>
+                  </li>
                  </ul>
                </div>
                <div class="main_content" >

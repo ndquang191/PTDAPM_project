@@ -35,7 +35,7 @@ class NhanVienController extends Controller
     public function store(Request $request){
         $validator = $request->validate([
                 'image' => 'bail|required',
-                'birthday' => 'bail|required|before:1998-12-31',
+                'birthday' => 'bail|required|before:2006-1-1',
                 'ngaycap' => 'bail|required',
                 'noicap' => 'bail|required',
                 'name' => 'bail|required|regex:/^[\p{L}][\p{L}\s]*$/u',
@@ -63,7 +63,9 @@ class NhanVienController extends Controller
             DB::transaction(function () use($request) {
                 NhanVien::create([
                     'TenNV' => $request->name,
-                    'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                    // 'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
+                    'HinhAnh' => null,
+                    
                     'NgaySinh' => $request->birthday,
                     'GioiTinh' => $request->gender == 'Nam' ? 0 : 1,
                     'CCCD' => $request->CCCD,

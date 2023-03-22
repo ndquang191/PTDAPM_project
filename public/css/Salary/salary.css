@@ -1,4 +1,5 @@
 .container {
+    max-width: 160rem;
     height: 80vh;
     background: #ffff;
     border-radius: 5px;
@@ -134,4 +135,5 @@ td > p {
     width: 20rem;
     height: 4rem;
     margin: 0;
+    font-size: 1.8rem;
 }

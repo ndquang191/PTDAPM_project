@@ -16,6 +16,18 @@
             })
     </script>
 @endif
+@if($errors->any())
+<script>
+    Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: '{{$errors->first()}}',
+    showConfirmButton: true,
+    confirmButtonText: 'Đóng',
+    timer: 3000
+  })
+</script>
+@endif
     <div class="fluid-container">
         <div class="container-tilte-table">
             <div class="socialInsuranceList-addSocialInsurance">

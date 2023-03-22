@@ -26,7 +26,7 @@
                <span>Hợp đồng lao động</span>
           </a>
           <a href="{{route('showInsuranceUser')}}" class="user_box_item">
-               <i class="bi bi-file-earmark"></i>
+               <i class="bi bi-shield-plus"></i>
                <span>Bảo hiểm xã hội</span>
           </a>
           <a href="{{route('showLeaveUser')}}" class="user_box_item">
@@ -36,7 +36,12 @@
           <a href="{{route('showEvaluateUser')}}" class="user_box_item">
                <i class="bi bi-clipboard-data"></i>
                <span>Đánh giá</span>
+          </a>
 
+          <a href="{{route('showSalaryUser')}}" class="user_box_item">
+               <i class="bi bi-wallet-fill"></i>
+
+               <span>Lương</span>
           </a>
 
      </div>

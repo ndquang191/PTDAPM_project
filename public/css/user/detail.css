@@ -117,3 +117,18 @@
 .user_detail_tab.show{
      display: block;
 }
+
+.table th{
+     font-size: Inter;
+     Font-style: Semi Bold;
+     Font-size: 16px;
+     text-align: center;
+}
+
+.table tr td{
+     text-align: center;
+     font-size: 16px;
+}
+.table .tbc{
+     text-align: left;
+}

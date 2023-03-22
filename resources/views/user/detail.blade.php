@@ -9,7 +9,7 @@
                @if ($employeeInfo->HinhAnh == null)
                     <img src="./image/navbar/avatar_user.jpg" alt="">  
                @else
-                    <img src="data:image/jpeg;base64,{{ base64_encode($employee->HinhAnh) }}" alt="Image">    
+                    <img src="data:image/jpeg;base64,{{ base64_encode($employeeInfo->HinhAnh) }}" alt="Image">    
                @endif
                
                <div class="user_name">{{$employeeInfo->TenNV}}</div>
@@ -104,7 +104,28 @@
                </div>
           </div>
           <div class="detail_degree user_detail_tab">
-
+               <table class="table table-striped">
+                    <thead>
+                         <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tên bằng cấp</th>
+                              <th scope="col">Loại bằng cấp</th>
+                              <th scope="col">Ngày cấp</th>
+                         </tr>
+                    </thead>
+                <tbody>
+                    <?php $count = 0 ?>
+                    @foreach ($degrees as $degree)
+                    <?php $count++ ?>
+                         <tr>
+                              <td scope="col">{{$count}}</td>
+                              <td scope="col" class="tbc">{{$degree->TenBC}}</td>
+                              <td scope="col">{{$degree->LoaiBC}}</td>
+                              <td scope="col">{{$degree->NgayCap}}</td>
+                         </tr>
+                    @endforeach
+                </tbody>
+                </table>
 
           </div>
      </div>

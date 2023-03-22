@@ -61,7 +61,6 @@ Route::controller(HDLDController::class)->middleware(['checkLogin','checkAdmin',
 });
 
 Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/leave')->group(function(){
-    // Route::get('/','list')->name('showListLeave');
     Route::get('/approve','listApprove')->name('showListApproveLeave');
     Route::get('/request','listRequest')->name('showListRequestLeave');
     Route::get('/request/detail/{requestID}','showRequestDetail')->name('showRequestDetail');
@@ -70,8 +69,6 @@ Route::controller(NghiPhepController::class)->middleware(['checkLogin','checkAdm
     Route::get('/{id}/edit','edit')->name('editLeave'); // Hiển thị form sửa hợp đồng
     Route::get('/detail/{id}','showDetail')->name('showDetailLeave');
     Route::get('/history/{id}','showHistory')->name('showHistory');
-
-    //* SỬA ADDLEAVE.BLADE = XEMNGHIPHEP.BLADE*/
 });
 
 Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/evaluate')->group(function(){
@@ -84,9 +81,6 @@ Route::controller(DanhGiaController::class)->middleware(['checkLogin','checkAdmi
 
 });
 
-Route::get('/danhgia/danhgia_ls',[DanhGiaController::class,'ls_danhgia']);
-Route::get('/danhgia/danhgia_show',[DanhGiaController::class,'show_danhgia']);
-
 Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmin','checkAdmin2'])->prefix('/insurance')->group(function(){
     Route::get('/','showListBHXH')->name('showListBHXH');
     Route::get('/add','createBHXH')->name('createBHXH');
@@ -94,8 +88,6 @@ Route::controller(BaoHiemController::class)->middleware(['checkLogin','checkAdmi
     Route::get('/info/{id}','getInfoBHXH')->name('getInfoBHXH');
     Route::get('/edit/{id}','editBHXH')->name('editBHXH');
     Route::post('/edit/{id}','updateBHXH')->name('updateBHXH');
-
-
 });
 
 Route::controller(TaiKhoanController::class)->middleware(['checkLogin','checkAdmin','checkAdmin1'])->prefix('/account')->group(function(){
@@ -108,7 +100,6 @@ Route::controller(LuongController::class)->middleware(['checkLogin','checkAdmin'
     Route::get('/{id}/detail','showSalaryDetail')->name('showSalaryDetail');
 });
 
-
 Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/user')->group(function(){
     Route::get('/evaluate','showEvaluate')->name('showEvaluateUser'); // Hiển thị danh sách đánh giá
     Route::get('/info','showInfo')->name('showInfoUser'); // Hiển thị thông tin tài khoản
@@ -116,4 +107,5 @@ Route::controller(UserController::class)->middleware(['checkLogin'])->prefix('/u
     Route::get('/insurance','showInsurance')->name('showInsuranceUser');
     Route::get('/leave','showLeave')->name('showLeaveUser');
     Route::post('/leave','storeLeaveRequest')->name('storeLeaveRequest');
+    Route::get('/salary','showSalary')->name('showSalaryUser');
 });

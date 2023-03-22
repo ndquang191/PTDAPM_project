@@ -11,6 +11,8 @@ use App\Models\DanhGia;
 use App\Models\HDLD;
 use App\Models\BaoHiem;
 use App\Models\NghiPhep;
+use App\Models\BangCap;
+
 
 
 
@@ -25,7 +27,8 @@ class UserController extends Controller
     public function showInfo(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employeeInfo = NhanVien::where("MaNV",Auth::user()->MaNV)->first();
-        return view('user.detail',['user' => $user,'employeeInfo' => $employeeInfo]);
+        $degrees = BangCap::where('MaNV',Auth::user()->MaNV)->get();
+        return view('user.detail',['user' => $user,'employeeInfo' => $employeeInfo,'degrees' => $degrees]);
     }
 
     public function showContract(){
@@ -62,4 +65,66 @@ class UserController extends Controller
         ]);
         return redirect()->route('showLeaveUser')->with(['message' => "Gửi yêu cầu thành công !", 'type' => 'success']);
     }
+
+    public function showSalary(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $employee = NhanVien::where('MaNV',Auth::user()->MaNV)->first();
+        $hopdong = HDLD::where('MaNV' ,Auth::user()->MaNV)->first();
+
+        if ($hopdong == null){
+            return redirect()->route('getHomepage')->with(['message' => 'Không thể xem lương khi chưa có hợp đồng !','type' => 'error']);
+        }
+
+        $luongcoban = $hopdong->LuongCoBan;
+        $hesoluong = $hopdong->HeSoLuong;
+        $currentMonth = Carbon::now()->month;
+        // $dayInMonth = Carbon::now()->month($currentMonth)->daysInMonth;
+        $danhgias = DanhGia::where('MaNV',Auth::user()->MaNV)->whereMonth('NgayQuyetDinh',$currentMonth)->get();
+        $khenthuong = 0;
+        $kiluat = 0;
+        $nghipheps = NghiPhep::where('MaNV',Auth::user()->MaNV)->whereMonth('NgayBatDau',$currentMonth)->where('PheDuyet',1)->get();
+        $leaveDayCount = 0;
+        // return $nghipheps;
+        foreach($danhgias as $danhgia){
+            if($danhgia->PhanLoai == 1){
+                $khenthuong = $khenthuong + $danhgia->Giatri;
+            }
+            else{
+                $kiluat += $danhgia->Giatri;
+            }
+        };
+        foreach($nghipheps as $nghiphep){
+            if($nghiphep->LiDo == null){ 
+                    $start = Carbon::parse($nghiphep->NgayBatDau);
+                    $end = Carbon::parse($nghiphep->NgayKetThuc);
+                    if($start->month != $currentMonth){ 
+                        $dayInMonth = $end->day;
+                        $leaveDay = $end->day;
+                    }
+                    else if($end->month != $currentMonth){
+                        $dayInMonth = $start->daysInMonth;
+                        $leaveDay = $dayInMonth - $start->day;
+                    }
+                    else{
+                        $leaveDay = $end->day - $start->day;
+                    }
+                    $leaveDayCount += $leaveDay;
+                }
+        };
+
+        return view('Salary.LuongNhanVien',
+        [
+            'user' => $user,
+            'employee' => $employee,
+            'luongcoban' => $luongcoban,
+            'hesoluong' => $hesoluong,
+            'khenthuong' => $khenthuong,
+            'kiluat' => $kiluat,
+            'leaveDayCount' => $leaveDayCount,
+            'dayInMonth' => Carbon::now()->month($currentMonth)->daysInMonth,
+        ]);
+        // return view('Salary.LuongNhanVien',['user' => $user,'salary' => $salary]);
+    }
+
+    
 }

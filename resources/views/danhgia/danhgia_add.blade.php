@@ -76,7 +76,11 @@
                     </div>
                     <div class="bottom_add_danhgia">
                         <div class="bottom_exit_danhgia">
-                            <div class="link-exit">Thoát</div>
+<<<<<<< HEAD
+                            <div class="link_exit">Thoát</div>
+=======
+                            <a href="" style="color: #fff" class="link_exit exit-btn">Thoát</a>
+>>>>>>> origin/newFeature
                         </div>
                         <div class="bottom_save_danhgia">
                             <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
@@ -105,4 +109,9 @@
 @endsection
 @section('linkjs')
     <script src="/js/danhgia/danhgia.js"></script>
+@endsection
+
+@section('linkjs')
+    <script src="/js/danhgia/danhgia.js"></script>
+    
 @endsection
