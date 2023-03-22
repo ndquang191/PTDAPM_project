@@ -8,7 +8,9 @@
 	<title>Login</title>
 </head>
 <style>
-    .error{
+    .error
+    {
+        padding: 0px 20px;
         color: red;
     }
 </style>

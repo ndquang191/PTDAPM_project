@@ -109,17 +109,14 @@
                       </tr>
                     </thead>
                     <tbody>
-                      {{-- @if (count($leaves) == 0)
-                        <h4>Không có bản ghi</h4>
-                      @else --}}
                       @foreach ($leaves as $leave)
                       <tr>
-                        <td>{{$leave->ngaybatdau}}</td>
-                        <td>{{$leave->ngayketthuc}}</td>
-                        <td>{{$leave->loai}}</td>
-                        <td>{{$leave->lydo}}</td>
-                        @endforeach
-                        {{-- @endif --}}
+                        <td>{{$leave->NgayBatDau}}</td>
+                        <td>{{$leave->NgayKetThuc}}</td>
+                        <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
+                        <td>{{$leave->NoiDung}}</td>
+                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
           </div>
