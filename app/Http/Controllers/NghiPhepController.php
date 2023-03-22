@@ -67,62 +67,73 @@ class NghiPhepController extends Controller
             // return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
 
             foreach($approvedLeaves as $leave){
-                $startA = Carbon::parse($leave->NgayBatDau);
-                $endA = Carbon::parse($leave->NgayKetThuc);
-                $startB = Carbon::parse($requestLeave->NgayBatDau);
-                $endB = Carbon::parse($requestLeave->NgayBatDau);
-                /*
-                Yêu cầu có khoảng tg nằm trong khoảng đã phê duyệt        
-                       ( Start A -> [Start B - End B] -> End A )        
-                => Xóa request B
-                */
-                if ($startA->lte($startB) && $endB->lte($endA)) {
-                    $requestLeave->delete();
-                    return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
-                }
+                // $startA = Carbon::parse($leave->NgayBatDau);
+                // $endA = Carbon::parse($leave->NgayKetThuc);
+                // $startB = Carbon::parse($requestLeave->NgayBatDau);
+                // $endB = Carbon::parse($requestLeave->NgayBatDau);
+                // /*
+                // Yêu cầu có khoảng tg nằm trong khoảng đã phê duyệt        
+                //        ( Start A -> [Start B - End B] -> End A )        
+                // => Xóa request B
+                // */
+                // if ($startA->lte($startB) && $endB->lte($endA)) {
+                //     $requestLeave->delete();
+                //     return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
+                // }
 
 
-                /*
-                Yêu cầu có khoảng tg trùng trước           
-                    [Start B -> (Start A ->  End B] -> End A)        
-                => Gộp thành Start B -> End A, Xóa Request B, Update lại A
-                */
+                // /*
+                // Yêu cầu có khoảng tg trùng trước           
+                //     [Start B -> (Start A ->  End B] -> End A)        
+                // => Gộp thành Start B -> End A, Xóa Request B, Update lại A
+                // */
 
-                if ($startB->lte($startA) && $endB->lte($endA)){
-                    $leave->update([
-                        'NgayBatDau' => $requestLeave->NgayBatDau,
-                    ]);
-                    $requestLeave->delete();
-                    return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
-                }
+                // if ($startB->lte($startA) && $endB->lte($endA)){
+                //     $leave->update([
+                //         'NgayBatDau' => $requestLeave->NgayBatDau,
+                //     ]);
+                //     $requestLeave->delete();
+                //     return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
+                // }
 
-                /*
-                Yêu cầu có khoảng tg trùng sau           
-                    (Start A -> [Start B  -> End A) -> End B]    
-                => Gộp thành Start A -> End B,, Xóa Request B, Update lại A
-                */
+                // /*
+                // Yêu cầu có khoảng tg trùng sau           
+                //     (Start A -> [Start B  -> End A) -> End B]    
+                // => Gộp thành Start A -> End B,, Xóa Request B, Update lại A
+                // */
 
-                if ($startA->lte($startB) && $endA->lte($endB)){
-                    $leave->update([
-                        'NgayKetThuc' => $requestLeave->NgayKetThuc,
-                    ]);
-                    $requestLeave->delete();
-                    return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
-                }
+                // if ($startA->lte($startB) && $endA->lte($endB)){
+                //     $leave->update([
+                //         'NgayKetThuc' => $requestLeave->NgayKetThuc,
+                //     ]);
+                //     $requestLeave->delete();
+                //     return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
+                // }
 
-                /*
-                Yêu cầu mới có khoảng tg lớn hơn đã phê duyệt
-                    [Start B -> (Start A -> End A) -> End B]
-                => Xóa A
-                */
+                // /*
+                // Yêu cầu mới có khoảng tg lớn hơn đã phê duyệt
+                //     [Start B -> (Start A -> End A) -> End B]
+                // => Xóa A
+                // */
 
-                if ($startB->lte($startA) && $endA->lte($endB)){
-                    $leave->delete();
-                    $requestLeave->update([
+                // if ($startB->lte($startA) && $endA->lte($endB)){
+                //     $leave->delete();
+                //     $requestLeave->update([
+                //         'PheDuyet' => 1,
+                //     ]);
+                //     return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
+                // }
+
+                // if ($endA->lt($startB)){
+                //     NghiPhep::update([
+                //         'PheDuyet' => 1,
+                //     ]);
+                //     return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
+                // }
+                $requestLeave->update([
                         'PheDuyet' => 1,
                     ]);
-                    return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
-                }
+                return redirect()->route('showListRequestLeave')->with(['message' => 'Đã phê duyệt đơn nghỉ phép (ID: '.$requestID.')']);
             }
         }
   
