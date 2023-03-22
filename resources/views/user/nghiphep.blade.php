@@ -109,12 +109,14 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach ($leaves as $leave)
                       <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>{{$leave->NgayBatDau}}</td>
+                        <td>{{$leave->NgayKetThuc}}</td>
+                        <td>{{$leave->CoPhep == 1 ? 'Có phép' : 'Không phép'}}</td>
+                        <td>{{$leave->NoiDung}}</td>
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
           </div>
