@@ -28,4 +28,8 @@ function searchSalary() {
         }
     }
 }
-preventDefault;
+const signName = document.querySelectorAll(".sign-name");
+const nameEmployee = document.querySelectorAll(".nameEmployee");
+nameEmployee.forEach((e, index) => {
+    signName[index].textContent = e.textContent.slice(0, 2).toUpperCase();
+});
