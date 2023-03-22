@@ -5,6 +5,37 @@
     {{-- <link rel="stylesheet" href="/css/dsnv/editNv.css"> --}}
 @endsection
 @section('content')
+@if (session('message'))
+<script>
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
+  Toast.fire({
+    icon: 'success',
+    html: '<span style="font-size: 20px">{{ session('message') }}</span>'
+  })
+</script>
+@endif
+@if($errors->any())
+<script>
+    Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: '{{$errors->first()}}',
+    showConfirmButton: true,
+    confirmButtonText: 'Đóng',
+    timer: 3000
+  })
+</script>
+@endif
     <div class="fluid-container">
         <div class="container-header">
             <div class="header-content">
@@ -15,51 +46,43 @@
             <div class="btn-add">
                 <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Thêm</button>
 
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-body">
-                          <form>
+                          <form method="post" action="{{route('storeDegree',['id' => $employee->MaNV])}}">
+                            @csrf
                             <div class="mb-3">
                               <label for="tenBC" class="col-form-label">Tên bằng cấp</label>
-                              <textarea class="form-control" id="tenBC"></textarea>
+                              <textarea class="form-control" id="tenBC" name="tenbangcap"></textarea>
                             </div>
                             <div class="mb-3 bottom-info">
                                 <div class="left info">
 
                                     <label for="ngaycap" class="col-form-label">Ngày cấp</label>
-                                    <input type="date" class="form-control" id="ngaycap">
+                                    <input type="date" class="form-control" id="ngaycap" name="ngaycap">
                                 </div>
-
                                 <div class="right info">
-
                                         <label class="col-form-label" for="inputGroupSelect01">Loại bằng cấp</label>
-                                        <select class="form-select" id="inputGroupSelect01">
-                                          <option value="1" selected>Bằng cấp 1</option>
-                                          <option value="2">Băng cấp 2</option>
-                                          <option value="3">Băng cấp 3</option>
+                                        <select class="form-select" id="inputGroupSelect01" name="loaibangcap">
+                                          <option value="Bằng cấp 1" selected>Bằng cấp 1</option>
+                                          <option value="Băng cấp 2">Băng cấp 2</option>
+                                          <option value="Băng cấp 3">Băng cấp 3</option>
                                         </select>
-                                      
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="loaibang" class="col-form-label">Loại bằng</label>
-                                <input type="text" class="form-control" id="loaibang">
-                            </div>
-                          </form>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Thoát</button>
-                          <button type="button" class="btn btn-primary btn-lg">Lưu</button>
+                            <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Thoát</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Lưu</button>
                         </div>
+                    </form>
                       </div>
                     </div>
                   </div>
-                  
             </div>
-
-
-                  
+           
         </div>
         <table id="table-infor" class="table">
             <thead>
@@ -81,200 +104,35 @@
                     <td>{{$degree->NgayCap}}</td>
                     <td>
                         <a class="show" href="{{route('editDegreeForm',['id' => $employee->MaNV,'degreeID' => $degree->MaBC])}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href=""><i class="fa-solid fa-trash"></i></a>
+                        <a href="" class="delete-btn" data-id={{$degree->MaBC}}><i class="fa-solid fa-trash"></i></a>
                     </td>
                   </tr>
                   @endforeach
               @endif
             </tbody>
         </table>
-
-
-
-        <div id="body-content" class="body-content">
-            {{-- <form action="">
-                <div class="inf-user">
-                    <div>
-                        <img src="./image/avatar_user.jpg" alt="">
-                    </div>
-                    <div>
-                        <div>
-                            <label for="">Mã nhân viên</label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label for="">Ngày sinh</label>
-                            <input type="date">
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label for="">Họ và tên nhân viên</label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label for="">Số CMND/Thẻ căn cước</label>
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div>
-                        <div>  
-                            <label for="">Giới tính</label>
-                            <select>
-                                <option value="0">Chọn</option>
-                                <option value="1">Audi</option>
-                                <option value="2">BMW</option>
-                                <option value="3">Citroen</option>
-                                <option value="4">Ford</option>
-                                <option value="5">Honda</option>
-                                <option value="6">Jaguar</option>
-                                <option value="7">Land Rover</option>
-                                <option value="8">Mercedes</option>
-                                <option value="9">Mini</option>
-                                <option value="10">Nissan</option>
-                                <option value="11">Toyota</option>
-                                <option value="12">Volvo</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="">Dân tộc</label>
-                            <input type="text">
-                        </div>
-                    </div>
-                </div>
-      
-      
-      
-      
-      
-                <div class="religion-placeofbirth-permanentaddress">
-                    <div class="religion">
-                        <label for="">Tôn giáo</label>
-                        <input type="text">
-                    </div>
-                    <div class="placeofbirth">
-                        <label for="">Nơi sinh</label>
-                        <input type="text">
-                    </div>
-                    <div class="permanentaddress">
-                        <label for="">Địa chỉ thường trú</label>
-                        <input type="text">
-                    </div>
-                </div>
-      
-      
-      
-      
-                <div class="phonenumber-email-qualification-status">
-                    <div class="phonenumber">
-                        <label for="">Số điện thoại</label>
-                        <input type="text">
-                    </div>
-                    <div class="email">
-                        <label for="">Email</label>
-                        <input type="text">
-                    </div>
-                    <div class="qualification">
-                        <label for="">Trình độ học vấn</label>
-                        <select>
-                            <option value="0">Chọn</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Citroen</option>
-                            <option value="4">Ford</option>
-                            <option value="5">Honda</option>
-                            <option value="6">Jaguar</option>
-                            <option value="7">Land Rover</option>
-                            <option value="8">Mercedes</option>
-                            <option value="9">Mini</option>
-                            <option value="10">Nissan</option>
-                            <option value="11">Toyota</option>
-                            <option value="12">Volvo</option>
-                        </select>
-                    </div>
-                    <div class="status">
-                        <label for="">Trạng thái</label>
-                        <select>
-                            <option value="0">Chọn</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Citroen</option>
-                            <option value="4">Ford</option>
-                            <option value="5">Honda</option>
-                            <option value="6">Jaguar</option>
-                            <option value="7">Land Rover</option>
-                            <option value="8">Mercedes</option>
-                            <option value="9">Mini</option>
-                            <option value="10">Nissan</option>
-                            <option value="11">Toyota</option>
-                            <option value="12">Volvo</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="department-position-specialty">
-                    <div>
-                        <label for="">Phòng ban</label>
-                        <select>
-                            <option value="0">Chọn</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Citroen</option>
-                            <option value="4">Ford</option>
-                            <option value="5">Honda</option>
-                            <option value="6">Jaguar</option>
-                            <option value="7">Land Rover</option>
-                            <option value="8">Mercedes</option>
-                            <option value="9">Mini</option>
-                            <option value="10">Nissan</option>
-                            <option value="11">Toyota</option>
-                            <option value="12">Volvo</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="">Chức vụ</label>
-                        <select>
-                            <option value="0">Chọn</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Citroen</option>
-                            <option value="4">Ford</option>
-                            <option value="5">Honda</option>
-                            <option value="6">Jaguar</option>
-                            <option value="7">Land Rover</option>
-                            <option value="8">Mercedes</option>
-                            <option value="9">Mini</option>
-                            <option value="10">Nissan</option>
-                            <option value="11">Toyota</option>
-                            <option value="12">Volvo</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="">Chuyên ngành</label>
-                        <select>
-                            <option value="0">Chọn</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Citroen</option>
-                            <option value="4">Ford</option>
-                            <option value="5">Honda</option>
-                            <option value="6">Jaguar</option>
-                            <option value="7">Land Rover</option>
-                            <option value="8">Mercedes</option>
-                            <option value="9">Mini</option>
-                            <option value="10">Nissan</option>
-                            <option value="11">Toyota</option>
-                            <option value="12">Volvo</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="btn-save-exit">
-                    <div>
-                        <button class="save" onclick="myFunction2()">Cập nhật</button>
-                        <button class="exit" onclick="myFunction2()">Thoát</button>
-                    </div>
-                </div>
-            </form> --}}
-        </div>
+        <form action="" id="delete-form" method="post" style="display: none">
+            @csrf
+        </form>
+        <script>
+            const deleteBTN = document.querySelectorAll('.delete-btn');
+            const deleteForm = document.getElementById('delete-form')
+            deleteBTN.forEach(btn => {
+                btn.addEventListener('click', (e)=>{
+                    e.preventDefault()
+                    Swal.fire({
+                    title: 'Xác nhận xóa bằng cấp ?',
+                    showCancelButton: true,
+                    confirmButtonText: 'Xóa',
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        deleteForm.setAttribute('action',`/employee/degree/${btn.getAttribute('data-id')}/delete`)
+                        deleteForm.submit();
+                    }
+                })
+                })
+            });
+        </script>
     </div>
     <script>
         function myFunction() {

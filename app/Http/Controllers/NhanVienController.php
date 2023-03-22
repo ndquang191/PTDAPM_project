@@ -9,6 +9,7 @@ use App\Models\NhanVien;
 use App\Models\TaiKhoan;
 use App\Models\PhongBan;
 use App\Models\ChucVu;
+use App\Models\HDLD;
 use App\Models\TrinhDoHocVan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -120,8 +121,7 @@ class NhanVienController extends Controller
             'email.email' => "Email không hợp lệ",
         ]);
         $employee = NhanVien::where('MaNV',$id)->first();
-        
-        DB::transaction(function () use($employee , $request) {
+        DB::transaction(function () use($employee , $request, $id) {
             $employee->update([
                 'TenNV' => $request->name,
                 'NgaySinh' => $request->birthday,
@@ -144,6 +144,21 @@ class NhanVienController extends Controller
                     'HinhAnh' => file_get_contents($request->file('image')->getPathname()),
                 ]);
             }
+
+            if ($request->TrangThai == 0){
+                TaiKhoan::where('MaNV',$id)->update([
+                    'TrangThai' => 0,
+                ]);
+            }
+            else{
+                TaiKhoan::where('MaNV',$id)->update([
+                    'TrangThai' => 1,
+                ]);
+            }
+
+            HDLD::where('MaNV',$id)->update([
+                'TrangThai' => 0,
+            ]);
         });
         return redirect()->route('getEmployeeInfo',['id' => $id])->with(['message' => 'Cập nhật thành công']);
     }

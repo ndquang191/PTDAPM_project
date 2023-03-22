@@ -16,6 +16,18 @@
     })
     </script>
     @endif 
+    @if(session('error'))
+    <script>
+        Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: '{{session('error')}}',
+        showConfirmButton: true,
+        confirmButtonText: 'Đóng',
+        timer: 3000
+    })
+    </script>
+    @endif
     <div class="add_hdld_main">
         <div class="head_add_hdld_main">
             <h1 class="title_add_htld">Hợp đồng lao động</h1>
@@ -99,7 +111,7 @@
             Swal.fire({
                 title: 'Bạn có muốn thoát ?',
                 showCancelButton: true,
-                confirmButtonText: 'Có',
+                confirmButtonText: 'Xác nhận',
                 cancelButtonText: 'Không',
                 icon: 'question',
             }).then((result) => {
