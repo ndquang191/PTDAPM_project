@@ -114,12 +114,16 @@
                          </tr>
                     </thead>
                 <tbody>
+                    <?php $count = 0 ?>
+                    @foreach ($degrees as $degree)
+                    <?php $count++ ?>
                          <tr>
-                              <td scope="col">STT</td>
-                              <td scope="col" class="tbc">Tên bằng cấp</td>
-                              <td scope="col">Loại bằng cấp</td>
-                              <td scope="col">Ngày cấp</td>
+                              <td scope="col">{{$count}}</td>
+                              <td scope="col" class="tbc">{{$degree->TenBC}}</td>
+                              <td scope="col">{{$degree->LoaiBC}}</td>
+                              <td scope="col">{{$degree->NgayCap}}</td>
                          </tr>
+                    @endforeach
                 </tbody>
                 </table>
 

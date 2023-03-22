@@ -11,6 +11,8 @@ use App\Models\DanhGia;
 use App\Models\HDLD;
 use App\Models\BaoHiem;
 use App\Models\NghiPhep;
+use App\Models\BangCap;
+
 
 
 
@@ -25,7 +27,8 @@ class UserController extends Controller
     public function showInfo(){
         $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
         $employeeInfo = NhanVien::where("MaNV",Auth::user()->MaNV)->first();
-        return view('user.detail',['user' => $user,'employeeInfo' => $employeeInfo]);
+        $degrees = BangCap::where('MaNV',Auth::user()->MaNV)->get();
+        return view('user.detail',['user' => $user,'employeeInfo' => $employeeInfo,'degrees' => $degrees]);
     }
 
     public function showContract(){
