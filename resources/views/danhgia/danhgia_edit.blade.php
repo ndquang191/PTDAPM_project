@@ -95,7 +95,7 @@
         </div>
     </div>
     <script>
-        const exitBTN = document.querySelector('.bottom_exit_danhgia')
+        const exit_BTN = document.querySelector('.bottom_exit_danhgia')
          exitBTN.addEventListener('click',()=>{
              Swal.fire({
                  title: 'Bạn có muốn thoát ở đây ?',

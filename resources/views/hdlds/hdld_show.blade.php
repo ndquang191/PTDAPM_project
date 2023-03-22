@@ -95,8 +95,8 @@
         </div>
     </div>
     <script>
-        const exitBTN = document.querySelector('.bottom_exit_show')
-        exitBTN.addEventListener('click',(e)=>{
+        const exit_BTN = document.querySelector('.bottom_exit_show')
+        exit_BTN.addEventListener('click',(e)=>{
             e.preventDefault();
             Swal.fire({
                 title: 'Bạn có muốn thoát ở đây ?',
