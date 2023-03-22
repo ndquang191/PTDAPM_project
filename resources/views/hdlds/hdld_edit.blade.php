@@ -105,8 +105,8 @@
         </div>
     </div>
     <script>
-        const exitBTN = document.querySelector('.bottom_exit_add_hdld')
-        exitBTN.addEventListener('click',(e)=>{
+        const exit_BTN = document.querySelector('.bottom_exit_add_hdld')
+        exit_BTN.addEventListener('click',(e)=>{
             e.preventDefault();
             Swal.fire({
                 title: 'Bạn có muốn thoát ?',
