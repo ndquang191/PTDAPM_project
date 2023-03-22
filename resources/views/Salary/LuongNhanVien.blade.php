@@ -6,7 +6,7 @@
 <div class="fluid-container">
     <div class="heading-section">
         <div class="heading-primary">
-            <p>Bảng lương nhân viên : {{$employee->TenNV}} </p>
+            <p>Bảng lương nhân viên : {{$user->TenNV}} </p>
         </div>
     </div>
     <div class="container">
@@ -17,8 +17,8 @@
                         <img src="image/detailsalary/NgoThiTam.png" alt="">
                     </div>
                     <div class="infor">
-                        <P class="idEm">Mã nhân viên:{{$employee->MaNV}}</P>
-                        <p class="nameEm">{{$employee->TenNV}}</p>
+                        <P class="idEm">Mã nhân viên:{{$user->MaNV}}</P>
+                        <p class="nameEm">{{$user->TenNV}}</p>
                     </div>
                 </div>
             </div>

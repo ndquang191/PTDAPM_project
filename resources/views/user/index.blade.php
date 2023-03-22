@@ -38,8 +38,9 @@
                <span>Đánh giá</span>
           </a>
 
-          <a href="{{route('showEvaluateUser')}}" class="user_box_item">
-               <i class="bi bi-wallet"></i>
+          <a href="{{route('showSalaryUser')}}" class="user_box_item">
+               <i class="bi bi-wallet-fill"></i>
+
                <span>Lương</span>
           </a>
 

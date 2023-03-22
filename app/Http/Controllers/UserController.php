@@ -65,4 +65,12 @@ class UserController extends Controller
         ]);
         return redirect()->route('showLeaveUser')->with(['message' => "Gửi yêu cầu thành công !", 'type' => 'success']);
     }
+
+    public function showSalary(){
+        $user = DB::table('nhanvien')->where('MaNV',Auth::user()->MaNV)->first();
+        $salary = NghiPhep::where("MaNV",Auth::user()->MaNV)->get();
+        return view('Salary.LuongNhanVien',['user' => $user,'salary' => $salary]);
+    }
+
+    
 }

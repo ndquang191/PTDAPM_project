@@ -66,9 +66,9 @@
                                 <div class="right info">
                                         <label class="col-form-label" for="inputGroupSelect01">Loại bằng cấp</label>
                                         <select class="form-select" id="inputGroupSelect01" name="loaibangcap">
-                                          <option value="Bằng cấp 1" selected>Bằng cấp 1</option>
-                                          <option value="Bằng cấp 2">Bằng cấp 2</option>
-                                          <option value="Bằng cấp 3">Bằng cấp 3</option>
+                                          <option value="Bằng Tiếng Anh" selected>Bằng Tiếng Anh</option>
+                                          <option value="Bằng Tin Học">Bằng Tin Học</option>
+                                          <option value="Bằng cấp Chuyên Môn">Bằng cấp Chuyên Môn</option>
                                         </select>
                                 </div>
                             </div>
@@ -129,16 +129,16 @@
                                       <div class="right info">
                                               <label class="col-form-label" for="inputGroupSelect01">Loại bằng cấp</label>
                                               <select class="form-select" id="inputGroupSelect01" name="loaibangcap">
-                                                <option value="Bằng cấp 1" {{ $degree->LoaiBC == 'Bằng cấp 1'  ? 'selected' : ''}}>Bằng cấp 1</option>
-                                                <option value="Bằng cấp 2" {{ $degree->LoaiBC == 'Bằng cấp 2'  ? 'selected' : ''}}>Băng cấp 2</option>
-                                                <option value="Bằng cấp 3" {{ $degree->LoaiBC == 'Bằng cấp 3'  ? 'selected' : ''}}>Băng cấp 3</option>
+                                                <option value="Bằng Tiếng Anh" {{ $degree->LoaiBC == 'Bằng Tiếng Anh'  ? 'selected' : ''}}>Bằng Tiếng Anh</option>
+                                                <option value="Bằng Tin Học" {{ $degree->LoaiBC == 'Bằng Tin Học'  ? 'selected' : ''}}>Băng cấp 2</option>
+                                                <option value="Bằng cấp Chuyên Môn" {{ $degree->LoaiBC == 'Bằng cấp Chuyên Môn'  ? 'selected' : ''}}>Băng cấp 3</option>
                                               </select>
                                       </div>
                                   </div>
                               </div>
                               <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Thoát</button>
-                                  <button type="submit" class="btn btn-primary btn-lg">Lưu</button>
+                                  <button type="submit" class="btn btn-primary btn-lg">Thêm mới</button>
                               </div>
                           </form>
                             </div>
