@@ -41,9 +41,6 @@
                        class="logo_header_img"
                      />
                    </a>
-                   <div class="menu_sidebar">
-                     <i class="fa-solid fa-bars"></i>
-                   </div>
                  </div>
                  <div class="navbar_info_user_header">
                    <ul class="navbar_logo_user">

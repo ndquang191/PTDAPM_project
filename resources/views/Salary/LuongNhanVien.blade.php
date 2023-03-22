@@ -5,12 +5,10 @@
 @endsection
 @section('content')
 <div class="fluid-container">
-    <div class="heading-section">
-        <div class="heading-primary">
-            <p>Bảng lương nhân viên : {{$user->TenNV}} </p>
-        </div>
-    </div>
     <div class="container">
+        <div class="title">
+            <p>Lương</p>
+        </div>
         <div class="infor-employee">
             <div class="">
                 <div class="infor-box">
@@ -18,7 +16,6 @@
                         <img src="/image/detailsalary/NgoThiTam.png" alt="">
                     </div>
                     <div class="infor">
-                        <P class="idEm">Mã nhân viên:{{$user->MaNV}}</P>
                         <p class="nameEm">{{$user->TenNV}}</p>
                     </div>
                 </div>
@@ -83,11 +80,8 @@
         </div>
     </div>
 </div>
-<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
-<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 @endsection
 @section('linkjs')
- <script src="/js/salary/pdfsalary.js"></script>
  <script >
     
 const month = document.querySelector('.month-nav')

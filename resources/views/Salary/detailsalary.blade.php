@@ -6,7 +6,7 @@
 <div class="fluid-container">
     <div class="heading-section">
         <div class="heading-primary">
-            <p>Bảng lương nhân viên : {{$employee->TenNV}} </p>
+            <p>Bảng lương nhân viên </p>
         </div>
     </div>
     <div class="container">
@@ -22,6 +22,11 @@
                     </div>
                 </div>
             </div>
+            <div class="fullrow">
+                <button class="btn btn-back primary-btn"><i class="bi bi-caret-left"></i></button>
+                <div class="month-nav">Tháng 5</div>
+                <button class="btn btn-next primary-btn"><i class="bi bi-caret-right"></i></button>
+           </div>
         </div>
         <div class="detail-salary">
             <div class="box-black"></div>
@@ -41,8 +46,8 @@
                 <p class="salary-2 soTienMat1Ngay">- {{number_format(intval($leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}} VND</p>
                 <p class="salary-1 soNgayNghi"> {{$leaveDayCount}}</p>
                 <div class="eye-hide " >
-                    <p class="salary-1 TongSoTienMat">{{number_format(intval($leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}}gi VND</p>
-
+                    <p class="salary-1 TongSoTienMat">{{number_format(intval($leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}} VND</p>
+                    
                 </div>
             </div>
             <div class="salary-base box-gray">
@@ -52,7 +57,7 @@
                 <p class="salary-2"></p>
                 <div class="eye-hide">
                     <p class="salary-1 khenthuong">{{number_format($khenthuong)}} VND</p>
-
+                    
                 </div>
             </div>
             <div class="salary-base">
@@ -62,7 +67,7 @@
                 <p class="salary-1"></p>
                 <div class="eye-hide">
                     <p class="salary-1 kyluat">{{number_format($kiluat)}} VND</p>
-
+                    
                 </div>
             </div>
             <div class="salary-base summary" style="background-color: #eee">
@@ -90,9 +95,39 @@
         </div>
     </div>
 </div>
+</div>
 <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
 <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 @endsection
 @section('linkjs')
  <script src="/js/salary/pdfsalary.js"></script>
+ <script>    
+    const month = document.querySelector('.month-nav')
+    
+    const backBtn = document.querySelector('.btn-back')
+    const nextBtn = document.querySelector('.btn-next')
+    
+    let today = new Date();
+    
+    
+    function updateStr(){
+         const str = "Tháng " + (today.getMonth()+1) + " năm " + (1900 + today.getYear()) ; 
+         month.innerHTML = str;
+    
+    }
+    
+    backBtn.addEventListener('click' , () => {
+         today = new Date(today.setMonth(today.getMonth() - 1 ));
+    
+         updateStr()
+    })
+    
+    
+    nextBtn.addEventListener('click' , () => {
+         today = new Date(today.setMonth(today.getMonth() + 1 ));
+    
+         updateStr()
+    })
+    
+    updateStr()</script>
 @endsection
