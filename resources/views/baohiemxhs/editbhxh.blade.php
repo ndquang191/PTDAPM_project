@@ -63,7 +63,7 @@
                     </div>
                 </div>
     
-                <div class="row">wd
+                <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
                             <label class="form-label" for="month">Tháng</label>

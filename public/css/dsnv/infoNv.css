@@ -63,7 +63,7 @@
 }
 .container-emloyee{
     width: 75%;
-    padding: 40px;
+    padding: 10px;
 }
 .staffinformation{
     display: flex;
@@ -150,4 +150,7 @@
 .tab-hosonv.active , .tab-bangcap.active{
     border-bottom: 1px solid #5A5278;
 
+}
+.col-6{
+    margin-bottom: 30px !important;
 }
