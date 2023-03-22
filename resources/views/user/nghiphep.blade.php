@@ -109,12 +109,17 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {{-- @if (count($leaves) == 0)
+                        <h4>Không có bản ghi</h4>
+                      @else --}}
+                      @foreach ($leaves as $leave)
                       <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
+                        <td>{{$leave->ngaybatdau}}</td>
+                        <td>{{$leave->ngayketthuc}}</td>
+                        <td>{{$leave->loai}}</td>
+                        <td>{{$leave->lydo}}</td>
+                        @endforeach
+                        {{-- @endif --}}
                     </tbody>
                   </table>
           </div>
