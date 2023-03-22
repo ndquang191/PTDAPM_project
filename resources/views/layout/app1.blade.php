@@ -35,7 +35,7 @@
                  <div class="navbar_logo_header">
                    <a href="index.html" class="link_logo_header_img">
                      <img
-                       src="img/logo-small.png"
+                       src="/img/logo-small.png"
                        alt="tlu_logo"
                        class="logo_header_img"
                      />

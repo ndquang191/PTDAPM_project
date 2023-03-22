@@ -6,7 +6,7 @@
      <div class="fluid-container user_detail_container">
 
           <div class="user_detail img_container">
-               <img src="./image/navbar/avatar_user.jpg" alt="">
+               <img src="/image/avatar_user.jpg" alt="">
                <div class="user_name">{{$employeeInfo->TenNV}}</div>
           </div>
 

@@ -7,7 +7,7 @@
 
           <div class="user_detail img_container">
                @if ($employeeInfo->HinhAnh == null)
-                    <img src="./image/navbar/avatar_user.jpg" alt="">  
+                    <img src="/image/avatar_user.jpg" alt="">  
                @else
                     <img src="data:image/jpeg;base64,{{ base64_encode($employeeInfo->HinhAnh) }}" alt="Image">    
                @endif

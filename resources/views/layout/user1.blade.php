@@ -36,7 +36,7 @@
                  <div class="navbar_logo_header">
                    <a href="index.html" class="link_logo_header_img">
                      <img
-                       src="img/logo-small.png"
+                       src="/img/logo-small.png"
                        alt="tlu_logo"
                        class="logo_header_img"
                      />
@@ -50,7 +50,7 @@
                      <li class="dropdown_user">
                        <a href="#" class="link_navbar_logo_user">
                          <img
-                           src="img/no-profile-photo-small.png"
+                           src="/img/no-profile-photo-small.png"
                            alt="user"
                            class="user_img"
                          />
@@ -62,7 +62,7 @@
                          <li class="dropdown_user_item-1">
                            <a href="#" class="link_dropdown_user_item">
                              <img
-                               src="img/no-profile-photo-small.png"
+                               src="/img/no-profile-photo-small.png"
                                alt="user"
                                class="user_img"
                              />

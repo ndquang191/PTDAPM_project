@@ -1,6 +1,6 @@
 .container {
     max-width: 160rem;
-    height: 80vh;
+    /* height: 80vh; */
     background: #ffff;
     border-radius: 5px;
     box-shadow: 0 1rem 2rem rgb(0 0 0 / 25%);

@@ -14,7 +14,7 @@
             <div class="">
                 <div class="infor-box">
                     <div class="img-box">
-                        <img src="image/detailsalary/NgoThiTam.png" alt="">
+                        <img src="/image/detailsalary/NgoThiTam.png" alt="">
                     </div>
                     <div class="infor">
                         <P class="idEm">Mã nhân viên:{{$employee->MaNV}}</P>
