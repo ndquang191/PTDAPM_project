@@ -76,7 +76,11 @@
                     </div>
                     <div class="bottom_add_danhgia">
                         <div class="bottom_exit_danhgia">
+<<<<<<<<< Temporary merge branch 1
+                            <div class="link_exit">Thoát</div>
+=========
                             <a href="" style="color: #fff" class="link_exit exit-btn">Thoát</a>
+>>>>>>>>> Temporary merge branch 2
                         </div>
                         <div class="bottom_save_danhgia">
                             <button type="submit" class="danhgia_submit" id="danhgia_submit">Lưu</button>
