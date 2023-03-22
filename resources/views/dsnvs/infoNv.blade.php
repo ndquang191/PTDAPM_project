@@ -62,63 +62,94 @@
                 <div class="container-emloyee">
                     <form action="{{route('updateEmployeeInfo',['id' => $employee->MaNV])}}" name="myForm" method="POST">
                         @csrf
-                        <div class="Employeeinformationchange">
-                            <div class="info-left">
-                                <div class="info-employeecode">
-                                    <label for="">Mã nhân viên</label>
-                                    <input type="text" id="employeeCode" name="employeeCode" value="{{$employee->MaNV}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Dân tộc</label>
-                                    <input type="text" id="nation" name="nation" value="{{$employee->DanToc}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Tôn giáo</label>
-                                    <input type="text" id="religion" name="religion" value="{{$employee->TonGiao}}" name="" id="" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Trình độ học vấn</label>
-                                    <input type="text" name="" id="academicLevel" value="{{$employee->TrinhDoHocVan->TenHeDaoTao}}" readonly>    
-                                </div>
-                                <div>
-                                    <label for="">Chuyên ngành</label>
-                                    <input type="text" name="" id="Specialized" value="{{$employee->ChuyenNganh}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Trạng thái</label>
-                                    <input type="text" name="" id="status" value="{{$employee->TrangThai == 1 ? 'Đang làm việc' : "Đã nghỉ việc"}}" readonly>
-                                </div>
+                        <div class="row align-items-start">
+                            <div class="col-6 col-md-2">
+                                <label class="form-label" for="">Mã nhân viên</label>
+                                <input class="form-control" type="text" id="employeeCode" name="employeeCode" value="{{$employee->MaNV}}" readonly>
                             </div>
-                            <div class="info-right">
-                                <div>
-                                    <label for="">Họ và tên nhân viên</label>
-                                    <input type="text" name="name" id="nameEmployee" value="{{$employee->TenNV}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Số CMND/Thẻ căn cước</label>
-                                    <input type="text" id="citizenIdentification" name="CCCD" value="{{$employee->CCCD}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Nơi sinh</label>
-                                    <input type="text" name="" id="placeOfBirth" name="placeofbirth" value="{{$employee->NoiSinh}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Địa chỉ thường trú</label>
-                                    <input type="text" name="" id="permanentAddress" name="address" value="{{$employee->DiaChi}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Chức vụ</label>
-                                    <input type="text" name="" id="position" value="{{$employee->ChucVu->TenCV}}" readonly>
-                                </div>
-                                <div>
-                                    <label for="">Phòng ban</label>
-                                    <input type="text" name="" id="department" value="{{$employee->PhongBan->TenPhongBan}}" readonly>
-                                </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Họ và tên nhân viên</label>
+                                <input class="form-control" type="text" name="name" id="nameEmployee" value="{{$employee->TenNV}}" readonly>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <label class="form-label" for="">Giới tính</label>
+                                <input class="form-control" type="text" name="" value="" readonly>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Ngày sinh</label>
+                                <input class="form-control" type="date" name="" value="">
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <label class="form-label" for="">Dân tộc</label>
+                                <input class="form-control" type="text" id="nation" name="nation" value="{{$employee->DanToc}}" readonly>
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Số CMND/Thẻ căn cước</label>
+                                <input class="form-control" type="text" id="citizenIdentification" name="CCCD" value="{{$employee->CCCD}}" readonly>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Ngày cấp</label>
+                                <input class="form-control" value="" name="" id="" type="date" readonly>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Nơi cấp</label>
+                                <input class="form-control" value="" name="" id="" type="text" readonly>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <label class="form-label" for="">Số điện thoại</label>
+                                <input class="form-control" value="" name="" id="" type="text" readonly>
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Nơi sinh</label>
+                                <input class="form-control" type="text" name="" id="placeOfBirth" name="placeofbirth" value="{{$employee->NoiSinh}}" readonly>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Địa chỉ thường trú</label>
+                                <input class="form-control" type="text" name="" id="permanentAddress" name="address" value="{{$employee->DiaChi}}" readonly>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Email</label>
+                                <input class="form-control" type="text" value="" name="" id="" readonly>
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Trình độ học vấn</label>
+                                <input class="form-control" type="text" name="" id="academicLevel" value="{{$employee->TrinhDoHocVan->TenHeDaoTao}}" readonly>    
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Trình độ chuyên môn</label>
+                                <input class="form-control" type="text" value="" name="" id="" readonly>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <label class="form-label" for="">Vị trí việc làm</label>
+                                <input class="form-control" type="text" value="" name="" id="" readonly>
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Chức vụ</label>
+                                <input class="form-control" type="text" name="" id="position" value="{{$employee->ChucVu->TenCV}}" readonly>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Trạng thái</label>
+                                <input class="form-control" type="text" name="" id="status" value="{{$employee->TrangThai == 1 ? 'Đang làm việc' : "Đã nghỉ việc"}}" readonly>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Ngày nhậm chức</label>
+                                <input class="form-control" type="date" value="" name="" id="" readonly>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="">Phòng ban</label>
+                                <input class="form-control" type="text" name="" id="department" value="{{$employee->PhongBan->TenPhongBan}}" readonly>
                             </div>
                         </div>
                         <div class="btn-update-exit">
                             <div>
-                                {{-- <button type="submit" class="save" id="btn-save" value="Show Alert">Lưu</button> --}}
                                 <a><button onclick="formShow()" onclick="myHiddenUpdate()" class="btn btn-primary" type="button" id="btn-update" value="Show Alert">Cập nhật</button></a>
                                 <a href="{{route('listEmployee')}}"><button class="btn btn-success" type="button">Thoát</button></a>
                             </div>
@@ -131,14 +162,14 @@
             <form method="post" action="{{route('updateEmployeeInfo',['id' => $employee->MaNV])}}" enctype="multipart/form-data">
                 @csrf
                 <div class="row align-items-start" id="container-form">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         @if ($employee->HinhAnh == null)
                         <img src="/image/avatar_user.jpg" alt="">  
                     @else
                         <img src="data:image/jpeg;base64,{{ base64_encode($employee->HinhAnh) }}" alt="Image">
                     @endif
                     </div>
-                    <div class="col-6 col-md-9">
+                    <div class="col-6 col-md-10">
                         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                         <div class="row align-items-start">
                             <div class="col-6 col-md-4">
@@ -162,17 +193,22 @@
                         
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="row align-items-start">
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-md-3">
                                 <label class="form-label" for="birthday">Ngày sinh</label>
                                 <input class="form-control" type="date" name="birthday" id="birthday" value={{$employee->NgaySinh}}>
                             </div>
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="nation">Dân tộc</label>
+                                <input class="form-control" type="text" id="nation" name="nation" value="{{$employee->DanToc}}">
+                            </div>
+                            <div class="col-6 col-md-3">
                                 <label class="form-label" for="CCCD">Số CMND/Thẻ căn cước</label>
                                 <input class="form-control" type="text" name="CCCD" id="CCCD" value={{$employee->CCCD}}>
                             </div>
-                            <div class="col-6 col-md-4">
-                                <label class="form-label" for="nation">Nơi cấp</label>
-                                <input class="form-control" type="text" id="nation" name="noicap" value={{$employee->DanToc}}>
+                            
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="dateRange">Ngày cấp</label>
+                                <input class="form-control" type="date" id="dateRange" name="ngaycap" value="{{$employee->NgayCap}}">
                             </div>
                         </div>
                     </div>
@@ -181,12 +217,12 @@
     
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="religion">Tôn giáo</label>
-                        <input class="form-control" type="text" id="religion" name="religion" value="{{$employee->TonGiao}}">
+                        <label class="form-label" for="nation">Nơi cấp</label>
+                        <input class="form-control" type="text" id="nation" name="noicap" value={{$employee->DanToc}}>
                     </div>
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="dateRange">Ngày cấp CCCD</label>
-                        <input class="form-control" type="date" id="dateRange" name="ngaycap" value="{{$employee->NgayCap}}">
+                        <label class="form-label" for="phonenumber">Số điện thoại</label>
+                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value="{{$employee->SDT}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="placeofbirth">Nơi sinh</label>
@@ -200,18 +236,30 @@
                 
                 <!-- Columns are always 50% wide, on mobile and desktop -->
                 <div class="row align-items-start">
-                    <div class="col-6 col-md-3">
-                        <label class="form-label" for="phonenumber">Số điện thoại</label>
-                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value="{{$employee->SDT}}">
+                    
+                    <div class="col-6 col-md-2">
+                        <label class="form-label" for="religion">Tôn giáo</label>
+                        <input class="form-control" type="text" id="religion" name="religion" value="{{$employee->TonGiao}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control" type="text" name="email" id="email" value="{{$employee->Email}}">
                     </div>
-                    <div class="col-6 col-md-3">
-                        <label class="form-label" for="nation">Dân tộc</label>
-                        <input class="form-control" type="text" id="nation" name="nation" value="{{$employee->DanToc}}">
+                    <div class="col-6 col-md-2">
+                        <label class="form-label" for="">Trình độ học vấn</label>
+                        <input class="form-control" type="text" name="" id="" value="">    
                     </div>
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="">Trình độ chuyên môn</label>
+                        <input class="form-control" type="text" value="" name="" id="" readonly>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <label class="form-label" for="">Vị trí việc làm</label>
+                        <input class="form-control" type="text" value="" name="" id="">
+                    </div>
+                </div>    
+    
+                <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label for="exampleFormControlInput1" class="form-label">Trạng thái</label>
                         <div>
@@ -221,10 +269,11 @@
                             </select>
                         </div>
                     </div>
-                </div>    
-    
-                <div class="row align-items-start">
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="">Ngày nhậm chức</label>
+                        <input class="form-control" type="date" value="" name="" id="">
+                    </div>
+                    <div class="col-6 col-md-2">
                         <label class="form-label" for="">Phòng ban</label>
                         <div>
                             <select class="col-md-12" name="phongban">
@@ -237,7 +286,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-2">
                         <label class="form-label" for="">Chức vụ</label>
                         <div>
                             <select class="col-md-12" name="chucvu">
@@ -250,7 +299,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-2">
                         <label class="form-label" for="">Trình độ học vấn</label>
                         <div>
                             <select class="col-md-12" name="trinhdo">

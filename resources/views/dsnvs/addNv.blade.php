@@ -23,10 +23,10 @@
             <form method="post" action="{{route('storeEmployee')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="row align-items-start" id="container-form">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <img src="/image/photo_user.jpg" id="image" alt="">
                     </div>
-                    <div class="col-6 col-md-9">
+                    <div class="col-6 col-md-10">
                         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                         <div class="row align-items-start">
                             <div class="col-6 col-md-4">
@@ -51,31 +51,34 @@
                         
                         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
                         <div class="row align-items-start">
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-md-3">
                                 <label class="form-label" for="birthday">Ngày sinh</label>
                                 <input class="form-control" type="date" name="birthday" id="birthday" value={{old('birthday')}}>
                             </div>
-                            <div class="col-6 col-md-4">
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="nation">Dân tộc</label>
+                                <input class="form-control" type="text" id="nation" name="nation" value={{old('nation')}}>
+                            </div>
+                            <div class="col-6 col-md-3">
                                 <label class="form-label" for="CCCD">Số CMND/Thẻ căn cước</label>
                                 <input class="form-control" type="text" name="CCCD" id="CCCD" value={{old('CCCD')}}>
                             </div>
-                            <div class="col-6 col-md-4">
-                                <label class="form-label" for="noicap">Nơi cấp</label>
-                                <input class="form-control" type="text" id="noicap" name="noicap" value={{old('noicap')}}>
+                            <div class="col-6 col-md-3">
+                                <label class="form-label" for="ngaycap">Ngày cấp</label>
+                                <input class="form-control" type="date" name="ngaycap" id="ngaycap" value={{old('ngaycap')}}>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-    
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="religion">Tôn giáo</label>
-                        <input class="form-control" type="text" id="religion" name="religion" value={{old('religion')}}>
+                        <label class="form-label" for="noicap">Nơi cấp</label>
+                        <input class="form-control" type="text" id="noicap" name="noicap" value={{old('noicap')}}>
                     </div>
                     <div class="col-6 col-md-3">
-                        <label class="form-label" for="ngaycap">Ngày cấp CCCD</label>
-                        <input class="form-control" type="date" name="ngaycap" id="ngaycap" value={{old('ngaycap')}}>
+                        <label class="form-label" for="">Số điện thoại</label>
+                        <input class="form-control" value="" name="" id="" type="text" readonly>
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="placeofbirth">Nơi sinh</label>
@@ -86,25 +89,39 @@
                         <input class="form-control" type="text" name="address" id="address" value={{old('address')}}>
                     </div>
                 </div>
-                
-                <!-- Columns are always 50% wide, on mobile and desktop -->
+    
                 <div class="row align-items-start">
-                    <div class="col-6 col-md-4">
-                        <label class="form-label" for="phonenumber">Số điện thoại</label>
-                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value={{old('phonenumber')}}>
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="religion">Tôn giáo</label>
+                        <input class="form-control" type="text" id="religion" name="religion" value={{old('religion')}}>
                     </div>
-                    <div class="col-6 col-md-4">
+                    
+                    <div class="col-6 col-md-3">
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control" type="text" name="email" id="email" value={{old('email')}}>
                     </div>
-                    <div class="col-6 col-md-4">
-                        <label class="form-label" for="nation">Dân tộc</label>
-                        <input class="form-control" type="text" id="nation" name="nation" value={{old('nation')}}>
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="">Trình độ học vấn</label>
+                        <input class="form-control" type="text" name="" id="" value="">    
                     </div>
-                </div>    
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="">Trình độ chuyên môn</label>
+                        <input class="form-control" type="text" value="" name="" id="" readonly>
+                    </div>
+                </div>
+                
+                <!-- Columns are always 50% wide, on mobile and desktop -->   
     
                 <div class="row align-items-start">
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="">Vị trí việc làm</label>
+                        <input class="form-control" type="text" value="" name="" id="">
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <label class="form-label" for="">Ngày nhậm chức</label>
+                        <input class="form-control" type="date" value="" name="" id="">
+                    </div>
+                    <div class="col-6 col-md-2">
                         <label class="form-label" for="">Phòng ban</label>
                         <div>
                             <select class="col-md-12" name="phongban">
@@ -117,7 +134,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-2">
                         <label class="form-label" for="">Chức vụ</label>
                         <div>
                             <select class="col-md-12" name="chucvu">
@@ -130,7 +147,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-2">
                         <label class="form-label" for="">Trình độ học vấn</label>
                         <div>
                             <select class="col-md-12" name="trinhdo">

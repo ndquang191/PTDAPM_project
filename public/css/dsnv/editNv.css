@@ -23,9 +23,6 @@ button{
 #container-form{
     display: flex;
 }
-.col-6{
-    margin-bottom: 15px;
-}
 form{
     overflow-x: hidden !important;
     background-color: #FFFFFF;
@@ -40,4 +37,7 @@ img{
 }
 .update-exit{
     float: right;margin-top: 20px;
+}
+.col-6{
+    margin-bottom: 30px !important;
 }
