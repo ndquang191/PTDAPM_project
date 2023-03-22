@@ -1,6 +1,6 @@
 @extends('layout.user1')
 @section('linkcss')
-<link rel="stylesheet" href="/css/Salary/detailsalary.css">
+{{-- <link rel="stylesheet" href="/css/Salary/detailsalary.css"> --}}
 <link rel="stylesheet" href="/css/Salary/LuongNhanVien.css">
 @endsection
 @section('content')

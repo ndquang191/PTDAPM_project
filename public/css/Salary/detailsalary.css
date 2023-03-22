@@ -10,10 +10,6 @@
     flex-direction: column;
     padding: 3rem 5rem;
 }
-* {
-    font-family: "Roboto", sans-serif !important;
-}
-
 .fluid-container {
     display: flex;
     flex-direction: column;
