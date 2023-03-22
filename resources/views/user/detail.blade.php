@@ -9,7 +9,7 @@
                @if ($employeeInfo->HinhAnh == null)
                     <img src="./image/navbar/avatar_user.jpg" alt="">  
                @else
-                    <img src="data:image/jpeg;base64,{{ base64_encode($employee->HinhAnh) }}" alt="Image">    
+                    <img src="data:image/jpeg;base64,{{ base64_encode($employeeInfo->HinhAnh) }}" alt="Image">    
                @endif
                
                <div class="user_name">{{$employeeInfo->TenNV}}</div>

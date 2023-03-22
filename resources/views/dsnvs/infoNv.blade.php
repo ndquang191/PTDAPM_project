@@ -153,9 +153,8 @@
                                 <label class="form-label" for="gender">Giới tính</label>
                                 <div>
                                     <select class="col-md-12" name="gender" id="gender">
-                                        <option value="0" hidden>Chọn</option>
-                                        <option value="Nam" {{ old('gender') == 'Nam' ? 'selected' : '' }}>Nam</option>
-                                        <option value="Nữ" {{ old('gender') == 'Nữ' ? 'selected' : '' }}>Nữ</option>
+                                        <option value="0" {{ $employee->GioiTinh == 0 ? 'selected' : '' }}>Nam</option>
+                                        <option value="1" {{ $employee->GioiTinh == 1 ? 'selected' : '' }}>Nữ</option>
                                     </select>
                                 </div>
                             </div>
@@ -173,7 +172,7 @@
                             </div>
                             <div class="col-6 col-md-4">
                                 <label class="form-label" for="nation">Nơi cấp</label>
-                                <input class="form-control" type="text" id="nation" name="nation" value={{$employee->DanToc}}>
+                                <input class="form-control" type="text" id="nation" name="noicap" value={{$employee->DanToc}}>
                             </div>
                         </div>
                     </div>
@@ -183,19 +182,19 @@
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="religion">Tôn giáo</label>
-                        <input class="form-control" type="text" id="religion" name="religion" value={{old('religion')}}>
+                        <input class="form-control" type="text" id="religion" name="religion" value="{{$employee->TonGiao}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="dateRange">Ngày cấp CCCD</label>
-                        <input class="form-control" type="date" id="dateRange" name="dateRange" value="">
+                        <input class="form-control" type="date" id="dateRange" name="ngaycap" value="{{$employee->NgayCap}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="placeofbirth">Nơi sinh</label>
-                        <input class="form-control" type="text" name="placeofbirth" id="placeofbirth" value={{old('placeofbirth')}}>
+                        <input class="form-control" type="text" name="placeofbirth" id="placeofbirth" value="{{$employee->NoiSinh}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="address">Địa chỉ thường trú</label>
-                        <input class="form-control" type="text" name="address" id="address" value={{old('address')}}>
+                        <input class="form-control" type="text" name="address" id="address" value="{{$employee->DiaChi}}">
                     </div>
                 </div>
                 
@@ -203,15 +202,15 @@
                 <div class="row align-items-start">
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="phonenumber">Số điện thoại</label>
-                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value={{old('phonenumber')}}>
+                        <input class="form-control" type="text" name="phonenumber" id="phonenumber" value="{{$employee->SDT}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="email">Email</label>
-                        <input class="form-control" type="text" name="email" id="email" value={{old('email')}}>
+                        <input class="form-control" type="text" name="email" id="email" value="{{$employee->Email}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label class="form-label" for="nation">Dân tộc</label>
-                        <input class="form-control" type="text" id="nation" name="nation" value={{old('nation')}}>
+                        <input class="form-control" type="text" id="nation" name="nation" value="{{$employee->DanToc}}">
                     </div>
                     <div class="col-6 col-md-3">
                         <label for="exampleFormControlInput1" class="form-label">Trạng thái</label>
@@ -229,11 +228,12 @@
                         <label class="form-label" for="">Phòng ban</label>
                         <div>
                             <select class="col-md-12" name="phongban">
-                                <option value="0" hidden>Chọn</option>
-                                <option value="Phòng ban 1" {{ $employee->PhongBan == 'Phòng ban 1' ? 'selected' : '' }}>Phòng ban 1</option>
-                                <option value="Phòng ban 2" {{ $employee->PhongBan == 'Phòng ban 2' ? 'selected' : '' }}>Phòng ban 2</option>
-                                <option value="Phòng ban 3" {{ $employee->PhongBan == 'Phòng ban 3' ? 'selected' : '' }}>Phòng ban 3</option>
-                                <option value="Phòng ban 4" {{ $employee->PhongBan == 'Phòng ban 4' ? 'selected' : '' }}>Phòng ban 4</option>
+                                @foreach ($phongbans as $phongban)  
+                                <option 
+                                    value="{{$phongban->MaPB}}" 
+                                    {{ $employee->MaPB == $phongban->MaPB ? 'selected' : '' }}>{{$phongban->TenPhongBan}}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -241,11 +241,12 @@
                         <label class="form-label" for="">Chức vụ</label>
                         <div>
                             <select class="col-md-12" name="chucvu">
-                                <option value="0" hidden>Chọn</option>
-                                <option value="Chức vụ 1" {{ $employee->ChucVu == 'Chức vụ 1' ? 'selected' : '' }}>Chức vụ 1</option>
-                                <option value="Chức vụ 2" {{ $employee->ChucVu == 'Chức vụ 2' ? 'selected' : '' }}>Chức vụ 2</option>
-                                <option value="Chức vụ 3" {{ $employee->ChucVu == 'Chức vụ 3' ? 'selected' : '' }}>Chức vụ 3</option>
-                                <option value="Chức vụ 4" {{ $employee->ChucVu == 'Chức vụ 4' ? 'selected' : '' }}>Chức vụ 4</option>
+                                @foreach ($chucvus as $chucvu)  
+                                <option 
+                                    value="{{$chucvu->MaCV}}" 
+                                    {{ $employee->MaCV == $chucvu->MaCV ? 'selected' : '' }}>{{$chucvu->TenCV}}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -253,11 +254,12 @@
                         <label class="form-label" for="">Trình độ học vấn</label>
                         <div>
                             <select class="col-md-12" name="trinhdo">
-                                <option value="0" hidden>Chọn</option>
-                                <option value="Trình độ 1" {{ $employee->TrinhDoHocVan == 'Trình độ 1' ? 'selected' : '' }}>Trình độ 1</option>
-                                <option value="Trình độ 2" {{ $employee->TrinhDoHocVan == 'Trình độ 2' ? 'selected' : '' }}>Trình độ 2</option>
-                                <option value="Trình độ 3" {{ $employee->TrinhDoHocVan == 'Trình độ 3' ? 'selected' : '' }}>Trình độ 3</option>
-                                <option value="Trình độ 4" {{ $employee->TrinhDoHocVan == 'Trình độ 4' ? 'selected' : '' }}>Trình độ 4</option>
+                                @foreach ($TDHVs as $TDHV)  
+                                <option 
+                                    value="{{$TDHV->MaTDHV}}" 
+                                    {{ $employee->MaTDHV == $TDHV->MaTDHV ? 'selected' : '' }}>{{$TDHV->TenHeDaoTao}}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

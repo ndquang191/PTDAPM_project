@@ -101,7 +101,7 @@
             Swal.fire({
                 title: 'Bạn có muốn thoát ở đây ?',
                 showCancelButton: true,
-                confirmButtonText: 'Có',
+                confirmButtonText: 'Xác nhận',
                 cancelButtonText: 'Không',
                 icon: 'question',
             }).then((result) => {
