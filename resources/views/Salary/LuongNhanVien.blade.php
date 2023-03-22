@@ -1,6 +1,7 @@
 @extends('layout.user1')
 @section('linkcss')
 <link rel="stylesheet" href="/css/Salary/detailsalary.css">
+<link rel="stylesheet" href="/css/Salary/LuongNhanVien.css">
 @endsection
 @section('content')
 <div class="fluid-container">
@@ -22,11 +23,11 @@
                     </div>
                 </div>
             </div>
-            <div class="date">
-                <span class="previous-month"><</span>
-                <p>03/2023</p>
-                <span class="next-month">></span>
-            </div>
+               <div class="fullrow">
+                    <button class="btn btn-back primary-btn"><i class="bi bi-caret-left"></i></button>
+                    <div class="month-nav">Tháng 5</div>
+                    <button class="btn btn-next primary-btn"><i class="bi bi-caret-right"></i></button>
+               </div>
         </div>
         <div class="detail-salary">
             <div class="box-black"></div>
@@ -79,19 +80,6 @@
                 </div>
                 <p class="salary-1 Total">{{number_format(intval($luongcoban * $hesoluong + $khenthuong + $kiluat - $leaveDayCount * $luongcoban * $hesoluong  / $dayInMonth))}} VND</p>
             </div>
-            <div class="muti-btn">
-                <button class="">
-                    <a href="" class="print-btn" >
-                        <i class="bi bi-printer-fill"></i>
-                        <p>Xuất</p>
-                    </a>
-                </button>
-                <button class="">
-                    <a href="{{route('getHomepage')}}" class="exit-btn">
-                        <p>Thoát</p>
-                    </a>
-                </button>
-            </div>
         </div>
     </div>
 </div>
@@ -100,4 +88,35 @@
 @endsection
 @section('linkjs')
  <script src="/js/salary/pdfsalary.js"></script>
+ <script >
+    
+const month = document.querySelector('.month-nav')
+
+const backBtn = document.querySelector('.btn-back')
+const nextBtn = document.querySelector('.btn-next')
+
+let today = new Date();
+
+
+function updateStr(){
+     const str = "Tháng " + (today.getMonth()+1) + " năm " + (1900 + today.getYear()) ; 
+     month.innerHTML = str;
+
+}
+
+backBtn.addEventListener('click' , () => {
+     today = new Date(today.setMonth(today.getMonth() - 1 ));
+
+     updateStr()
+})
+
+
+nextBtn.addEventListener('click' , () => {
+     today = new Date(today.setMonth(today.getMonth() + 1 ));
+
+     updateStr()
+})
+
+updateStr()
+ </script>
 @endsection
