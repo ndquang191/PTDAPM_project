@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="ID">ID</label>
+                            <label class="form-label" for="ID">ID nhân viên</label>
                             <input class="form-control" type="number" min="1" id="ID" name="ID">
                         </div>
                     </div>

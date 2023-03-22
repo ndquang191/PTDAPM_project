@@ -17,6 +17,6 @@ class BaoHiem extends Model
     ['NgayBatDau','MucDongQDTS','MucDongTNLD','MucDongHT','MucDongBHTN','Thang'];
 
     public function nhanvien(){
-        return $this->belongsTo(NhanVien::class);
+        return $this->belongsTo(NhanVien::class,'MaBH');
     }
 }

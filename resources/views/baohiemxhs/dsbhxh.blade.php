@@ -55,29 +55,23 @@
                     <table class="table table-hover" id="myTable">
                         <thead>
                             <tr>
-                              <th scope="col">ID</th>
+                              <th scope="col">Mã nhân viên</th>
+                              <th scope="col">Tên nhân viên</th>
                               <th scope="col">Ngày bắt đầu</th>
-                              <th scope="col">Mức đóng QDTS</th>
-                              <th scope="col">Mức đóng TNLD</th>
-                              <th scope="col">Mức đóng HT</th>
-                              <th scope="col">Mức đóng BHTN</th>
                               <th scope="col">Tháng</th>
                               <th>Chức năng</th>
                             </tr>
                           </thead>
                           <tbody>
-                            @foreach ($insurances as $insurance)
+                            @foreach ($employees as $employee)
                             <tr>
-                                <td>{{$insurance->MaNV}}</td>
-                                <td>{{$insurance->NgayBatDau}}</td>
-                                <td>{{$insurance->MucDongQDTS}}</td>
-                                <td>{{$insurance->MucDongTNLD}}</td>
-                                <td>{{$insurance->MucDongHT}}</td>
-                                <td>{{$insurance->MucDongBHTN}}</td>
-                                <td>{{$insurance->Thang}}</td>  
+                                <td>{{$employee->MaNV}}</td>
+                                <td>{{$employee->TenNV}}</td>
+                                <td>{{$employee->baohiem->NgayBatDau}}</td>
+                                <td>{{$employee->baohiem->Thang}}</td>  
                                 <td>
-                                  <a href="{{route('editBHXH',['id' => $insurance->MaBH])}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                  <a href="{{route('getInfoBHXH',['id' => $insurance->MaBH])}}"><i class="fa-solid fa-eye"></i></a>
+                                  <a href="{{route('editBHXH',['id' => $employee->baohiem->MaBH])}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                  <a href="{{route('getInfoBHXH',['id' => $employee->baohiem->MaBH])}}"><i class="fa-solid fa-eye"></i></a>
                                 </td>
                               </tr>
                             @endforeach

@@ -45,7 +45,7 @@ class NhanVien extends Model
     }
 
     public function baohiem(){
-        return $this->hasMany(BaoHiem::class,'MaNV');
+        return $this->hasOne(BaoHiem::class,'MaBH','MaBH');
     }
 
     public function phongban(){

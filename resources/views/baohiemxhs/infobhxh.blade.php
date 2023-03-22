@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-6 col-md-6">
                         <div>
-                            <label class="form-label" for="">ID</label>
+                            <label class="form-label" for="">ID bảo hiểm</label>
                             <input class="form-control" type="number" readonly value="{{$contract->MaBH}}">
                         </div>
                     </div>
