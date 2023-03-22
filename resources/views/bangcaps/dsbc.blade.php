@@ -67,8 +67,8 @@
                                         <label class="col-form-label" for="inputGroupSelect01">Loại bằng cấp</label>
                                         <select class="form-select" id="inputGroupSelect01" name="loaibangcap">
                                           <option value="Bằng cấp 1" selected>Bằng cấp 1</option>
-                                          <option value="Băng cấp 2">Băng cấp 2</option>
-                                          <option value="Băng cấp 3">Băng cấp 3</option>
+                                          <option value="Bằng cấp 2">Bằng cấp 2</option>
+                                          <option value="Bằng cấp 3">Bằng cấp 3</option>
                                         </select>
                                 </div>
                             </div>

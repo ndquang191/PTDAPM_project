@@ -30,13 +30,12 @@ class BangCapController extends Controller
 
     public function store(Request $request,$id){
         $validator = $request->validate([
-            'tenbangcap' => 'required|unique:App\Models\BangCap,TenBC',
+            'tenbangcap' => 'required',
             'loaibangcap' => 'required',
             'ngaycap' => 'required',
         ],
         [
             'required' => 'Vui lòng nhập đầy đủ thông tin',
-            'tenbangcap.unique' => 'Tên bằng cấp đã tồn tại'
         ]);
 
         BangCap::create([
