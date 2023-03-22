@@ -100,7 +100,7 @@
                                 >
                                     {{$account->QuyenTruyCap}}
                                 </button>
-                                <div class="role-menu">
+                                {{-- <div class="role-menu">
                                     @if ($account->QuyenTruyCap == 'member')
                                         <button class="btn ADMIN1-color">admin1</button>
                                         <button class="btn ADMIN2-color">admin2</button>
@@ -114,7 +114,7 @@
                                         @endif
                                     @endif
 
-                                </div>
+                                </div> --}}
 
                             </td>
                             <td>{{$account->NgayTao}}</td>
