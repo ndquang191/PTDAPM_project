@@ -9,7 +9,7 @@ class TaiKhoan extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'TaiKhoan';
+    protected $table = 'taikhoan';
     protected $primaryKey = 'MaNV';
     protected $fillable = ['MaNV','MatKhau','TrangThai','QuyenTruyCap','NgayTao'];
 
