@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Nhanvien;
+use App\Models\NhanVien;
 
 
 class NghiPhep extends Model
